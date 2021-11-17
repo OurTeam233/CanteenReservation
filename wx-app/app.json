@@ -1,14 +1,41 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/login/index",
+    "pages/search/index",
+    "pages/window/index",
+    "pages/order/index",
+    "pages/appointment/index",
+    "pages/community/index",
+    "pages/information/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "食堂订餐",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/order/index",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/community/index",
+        "text": "社区"
+      },
+      {
+        "pagePath": "pages/information/index",
+        "text": "我的"
+      }
+    ]
+  },
   "usingComponents": {
     "van-button": "@vant/weapp/button/index"
   }

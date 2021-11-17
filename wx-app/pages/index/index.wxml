@@ -1,2 +1,8 @@
 <!--index.wxml-->
-<van-button type="primary">按钮</van-button>
+<van-search bindtap="handleToSearch"
+            value="{{ value }}"
+            input-align="center"
+            placeholder="请输入搜索关键词"
+            disabled
+/>
+
