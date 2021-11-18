@@ -1,8 +1,47 @@
 <!--index.wxml-->
+<!--搜索框-->
 <van-search bindtap="handleToSearch"
             value="{{ value }}"
             input-align="center"
             placeholder="请输入搜索关键词"
             disabled
 />
+<!--轮播图-->
+<swiper indicator-dots autoplay interval="3000" duration="800" circular>
+  <block>
+    <swiper-item>
+      <view style="width: 100%; height: 100%; background-color: #dfe;"></view>
+    </swiper-item>
+    <swiper-item>
+      <view style="width: 100%; height: 100%; background-color: #ffe;"></view>
+    </swiper-item>
+    <swiper-item>
+      <view style="width: 100%; height: 100%; background-color: #00f;"></view>
+    </swiper-item>
+  </block>
+</swiper>
 
+<!--食堂切换-->
+<van-grid>
+  <van-grid-item icon="photo-o" text="文字"/>
+  <van-grid-item icon="photo-o" text="文字"/>
+  <van-grid-item icon="photo-o" text="文字"/>
+  <van-grid-item icon="photo-o" text="文字"/>
+</van-grid>
+
+<!--类别推荐-->
+<van-grid column-num="{{6}}">
+  <van-grid-item icon="photo-o" text="文字"/>
+  <van-grid-item icon="photo-o" text="文字"/>
+  <van-grid-item icon="photo-o" text="文字"/>
+  <van-grid-item icon="photo-o" text="文字"/>
+  <van-grid-item icon="photo-o" text="文字"/>
+  <van-grid-item icon="photo-o" text="文字"/>
+</van-grid>
+
+<!--菜品详情-->
+<canteen imageURL="{{imageURL}}"
+         sales="{{sales}}"
+         perCost="{{perCost}}"
+         score="{{score}}"
+></canteen>

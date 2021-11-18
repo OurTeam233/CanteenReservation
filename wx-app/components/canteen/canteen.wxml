@@ -1,0 +1,28 @@
+<!--components/canteen/canteen.wxml-->
+<van-card
+    title="一食堂第二窗口"
+    thumb="{{ imageURL }}"
+    title-class="title-class"
+    custom-class="custom-class"
+>
+  <view slot="desc" class="desc-class">
+    <view class="description-1">
+      <view>
+        <van-icon name="star"/> {{score}}
+      </view>
+      <text>月售{{sales}}</text>
+    </view>
+    <view class="description-2">
+      <van-tag mark type="warning">描述描述描述描述描述描</van-tag>
+      <text>人均{{perCost}}￥</text>
+    </view>
+  </view>
+  <view slot="bottom" class="tags-group">
+    <van-tag type="danger">标签</van-tag>
+    <van-tag type="danger">标签</van-tag>
+    <van-tag type="danger">标签</van-tag>
+    <van-tag type="danger">标签</van-tag>
+    <van-tag type="danger">标签</van-tag>
+    <van-tag type="danger">标签</van-tag>
+  </view>
+</van-card>
