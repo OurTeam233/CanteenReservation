@@ -1,28 +1,28 @@
 <!--components/canteen/canteen.wxml-->
 <van-card
     title="一食堂第二窗口"
-    thumb="{{ imageURL }}"
+    thumb="{{ propertyImageURL }}"
     title-class="title-class"
     custom-class="custom-class"
+    thumb-link="{{propertyNavUrl}}"
+    lazy-load
 >
   <view slot="desc" class="desc-class">
     <view class="description-1">
       <view>
-        <van-icon name="star"/> {{score}}
+        <van-icon name="star" color="orange"/> {{propertyScore}}
       </view>
-      <text>月售{{sales}}</text>
+      <text>月售{{propertySales}}</text>
     </view>
     <view class="description-2">
-      <van-tag mark type="warning">描述描述描述描述描述描</van-tag>
-      <text>人均{{perCost}}￥</text>
+      <van-tag mark type="warning">{{description}}</van-tag>
+      <text>人均{{propertyPerCost}}￥</text>
     </view>
   </view>
   <view slot="bottom" class="tags-group">
-    <van-tag type="danger">标签</van-tag>
-    <van-tag type="danger">标签</van-tag>
-    <van-tag type="danger">标签</van-tag>
-    <van-tag type="danger">标签</van-tag>
-    <van-tag type="danger">标签</van-tag>
-    <van-tag type="danger">标签</van-tag>
+    <van-tag type="danger"
+             wx:for="{{propertyTagList}}"
+             wx:key="*this"
+    >{{item}}</van-tag>
   </view>
 </van-card>

@@ -1,1 +1,84 @@
-/* pages/information/index.wxss */
+page {
+  padding-bottom: 70rpx;
+}
+/*标题部分*/
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 200rpx;
+  margin: 10rpx 40rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+.container .info-wrap {
+  flex: 5;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.container .info-wrap .title-wrap {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 25rpx;
+}
+.container .info-wrap .title-wrap .title {
+  font-size: 40rpx;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.container .info-wrap .score-wrap {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 25rpx;
+}
+.container .info-wrap .score-wrap .score {
+  font-size: 24rpx;
+  font-weight: bold;
+  color: red;
+}
+.container .logo {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*菜品部分*/
+.menu-info {
+  display: flex;
+  margin: 10rpx 40rpx;
+}
+.menu-info .menu-custom-class {
+  flex: 2;
+  position: sticky;
+  top: 30rpx;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+.menu-info .goods-wrapper {
+  width: 100%;
+}
+/*底部预约*/
+.appointment-wrapper {
+  position: relative;
+  z-index: 999 !important;
+}
+.appointment-wrapper .shopping-cart-icon {
+  position: relative;
+  top: -50rpx;
+  left: 30rpx;
+}
+/*全部菜品*/
+.all-goods-wrapper .title-wrapper {
+  height: 45rpx;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 30rpx;
+}
+.all-goods-wrapper .goods-card .stepper {
+  float: right;
+  display: inline;
+}

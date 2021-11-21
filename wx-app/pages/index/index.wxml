@@ -40,8 +40,16 @@
 </van-grid>
 
 <!--菜品详情-->
-<canteen imageURL="{{imageURL}}"
-         sales="{{sales}}"
-         perCost="{{perCost}}"
-         score="{{score}}"
+<canteen propertyImageURL="{{imageURL}}"
+         propertySales="{{sales}}"
+         propertyPerCost="{{perCost}}"
+         propertyScore="{{score}}"
+         propertyDescription="{{description}}"
+         propertyTagList="{{tagList}}"
+         propertyNavUrl="{{navUrl}}"
+         class="canteen"
+         wx:for="{{6}}"
+         wx:key="{{index}}"
 ></canteen>
+
+<van-divider contentPosition="center">我也是有底线的</van-divider>

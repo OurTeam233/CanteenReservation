@@ -1,1 +1,19 @@
-/* pages/appointment/index.wxss */
+.content {
+  margin: 0 40rpx;
+}
+.content .goods-list-wrapper .title {
+  margin: 30rpx 0;
+}
+.content .goods-list-wrapper .all-goods-wrapper .title-wrapper {
+  height: 45rpx;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 30rpx;
+}
+.content .goods-list-wrapper .all-goods-wrapper .goods-card {
+  margin: 10rpx 0;
+}
+.content .goods-list-wrapper .all-goods-wrapper .goods-card .stepper {
+  float: right;
+  display: inline;
+}

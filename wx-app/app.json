@@ -7,7 +7,10 @@
     "pages/order/index",
     "pages/appointment/index",
     "pages/community/index",
-    "pages/information/index"
+    "pages/information/index",
+    "pages/mine/index",
+    "pages/confessionWall/index",
+    "pages/lostFound/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -38,6 +41,10 @@
   },
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
-    "van-icon": "@vant/weapp/icon/index"
+    "van-icon": "@vant/weapp/icon/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-sticky": "@vant/weapp/sticky/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-popup": "@vant/weapp/popup/index"
   }
 }
