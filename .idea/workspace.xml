@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="219ac672-b86c-4fbc-9509-1369bc6da38d" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/wx-app/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/app.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/app.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/components/canteen/canteen.js" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/components/canteen/canteen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/components/canteen/canteen.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/components/canteen/canteen.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/components/canteen/canteen.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/components/canteen/canteen.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/index/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/pages/index/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/index/index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/index/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/pages/index/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/index/index.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/pages/information/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/information/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/pages/information/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/information/index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/pages/information/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/information/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/pages/information/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/information/index.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wx-app/pages/appointment/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/appointment/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wx-app/pages/appointment/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/appointment/index.wxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +30,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="project.structure.last.edited" value="Facet" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.23214285" />
   </component>
   <component name="RunManager">
     <configuration name="CanteenReservation" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="CanteenReservation" ALTERNATIVE_JRE_ENABLED="false">
@@ -146,6 +138,7 @@
       <workItem from="1637198234421" duration="4000" />
       <workItem from="1637216249129" duration="50000" />
       <workItem from="1637310837444" duration="283000" />
+      <workItem from="1637563775285" duration="17000" />
     </task>
     <servers />
   </component>

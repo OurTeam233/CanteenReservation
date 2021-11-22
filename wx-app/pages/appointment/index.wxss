@@ -1,5 +1,5 @@
 .content {
-  margin: 0 40rpx;
+  margin: 0 40rpx 300rpx;
 }
 .content .goods-list-wrapper .title {
   margin: 30rpx 0;
@@ -16,4 +16,31 @@
 .content .goods-list-wrapper .all-goods-wrapper .goods-card .stepper {
   float: right;
   display: inline;
+}
+.content .appointment-time-wrapper .title {
+  margin: 30rpx 0;
+}
+.content .appointment-time-wrapper .select-time {
+  background-color: #FAFAFA;
+  padding: 25rpx;
+}
+.content .appointment-time-wrapper .select-time .date-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25rpx;
+}
+.content .appointment-time-wrapper .select-time .time-time {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.content .input-class {
+  margin: 30rpx 0;
+}
+.content .input-class .notes-title {
+  margin: 30rpx 0;
+}
+.content .input-class .notes-input-class {
+  height: 100rpx !important;
 }

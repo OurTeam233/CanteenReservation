@@ -29,6 +29,12 @@
           "pathName": "pages/appointment/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "订单界面",
+          "pathName": "pages/order/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

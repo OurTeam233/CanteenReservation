@@ -21,8 +21,10 @@
   </view>
   <view slot="bottom" class="tags-group">
     <van-tag type="danger"
+             plain
              wx:for="{{propertyTagList}}"
              wx:key="*this"
+             custom-class="tags"
     >{{item}}</van-tag>
   </view>
 </van-card>

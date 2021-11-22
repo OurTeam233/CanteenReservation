@@ -45,6 +45,8 @@
     "van-image": "@vant/weapp/image/index",
     "van-sticky": "@vant/weapp/sticky/index",
     "van-divider": "@vant/weapp/divider/index",
-    "van-popup": "@vant/weapp/popup/index"
+    "van-popup": "@vant/weapp/popup/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index"
   }
 }

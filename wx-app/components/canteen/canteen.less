@@ -1,32 +1,33 @@
 /* components/canteen/canteen.wxss */
-
 .title-class {
-  font-size: 35rpx;
+  font-size: 25rpx;
+}
 
-  .desc-class {
+.desc-class {
+  margin-top: 10rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  .description-2 {
     margin-top: 10rpx;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-
-    .description-1 {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .description-2 {
-      margin-top: 10rpx;
-      display: flex;
-      justify-content: space-between;
-    }
+    display: flex;
+    justify-content: space-between;
   }
 
-  .tags-group {
-    margin-top: 10rpx;
-    overflow: hidden;
-    white-space: nowrap;
-    &:not(:last-child) {
-      margin-right: 10rpx;
-    }
+  .description-1 {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.tags-group {
+  margin-top: 10rpx;
+  overflow: hidden;
+  white-space: nowrap;
+
+  .tags {
+    margin-right: 15rpx !important;
+
   }
 }
