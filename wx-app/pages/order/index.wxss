@@ -80,3 +80,7 @@
   align-items: center;
   padding: 20rpx 30rpx;
 }
+.content .top-tabBar-wrapper .err-order .err-order-bottom .err-order-desc {
+  color: #EB1B1B;
+  font-size: 26rpx;
+}

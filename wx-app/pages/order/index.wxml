@@ -74,7 +74,7 @@
               </van-cell-group>
             </view>
             <view class="err-order-bottom">
-              <view class="err-order-all-price">总计: ￥ 15</view>
+              <view class="err-order-desc">违规原因: 未在规定时间取餐</view>
               <van-button round plain size="small" type="danger">申诉</van-button>
             </view>
           </view>
