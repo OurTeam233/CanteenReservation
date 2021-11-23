@@ -40,14 +40,14 @@
 .content .top-tabBar-wrapper .ordered .ordered-place {
   display: flex;
   justify-content: center;
-  padding: 14rpx 0;
+  padding: 20rpx 0;
 }
 .content .top-tabBar-wrapper .ordered .ordered-middle-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 26rpx;
-  padding: 10rpx 30rpx;
+  padding: 20rpx 30rpx;
 }
 .content .top-tabBar-wrapper .ordered .ordered-bottom {
   display: flex;
@@ -55,11 +55,28 @@
   align-items: center;
   padding: 20rpx 30rpx;
 }
-.content .top-tabBar-wrapper .ordered .ordered-bottom .ordered-all-price {
-  flex: 4;
+.content .top-tabBar-wrapper .ordered .ordered-bottom .ordered-button {
+  margin-right: 20rpx;
 }
-.content .top-tabBar-wrapper .ordered .ordered-bottom .ordered-button-wrapper {
-  flex: 3;
+.content .top-tabBar-wrapper .err-order {
+  margin-top: 30rpx;
+  background-color: #FFFFFF;
+}
+.content .top-tabBar-wrapper .err-order .err-order-place {
+  display: flex;
+  justify-content: center;
+  padding: 20rpx 0;
+}
+.content .top-tabBar-wrapper .err-order .err-order-middle-wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  font-size: 26rpx;
+  padding: 20rpx 30rpx;
+}
+.content .top-tabBar-wrapper .err-order .err-order-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 30rpx;
 }
