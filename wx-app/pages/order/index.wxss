@@ -1,0 +1,35 @@
+.content {
+  margin: 0 40rpx 300rpx;
+}
+.content .top-tabBar-wrapper .ordering {
+  margin-top: 30rpx;
+  background-color: #FFFFFF;
+}
+.content .top-tabBar-wrapper .ordering .ordering-title {
+  display: flex;
+  justify-content: center;
+  padding: 10rpx 0;
+}
+.content .top-tabBar-wrapper .ordering .ordering-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200rpx;
+  font-size: 70rpx;
+}
+.content .top-tabBar-wrapper .ordering .ordering-place {
+  padding-left: 30rpx;
+  padding-bottom: 20rpx;
+  font-size: 26rpx;
+}
+.content .top-tabBar-wrapper .ordering .ordering-time {
+  padding-left: 30rpx;
+  padding-bottom: 20rpx;
+  font-size: 26rpx;
+}
+.content .top-tabBar-wrapper .ordering .ordering-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 30rpx;
+}

@@ -1,0 +1,45 @@
+<!--pages/order/index.wxml-->
+<view class="content">
+<!--  顶部导航栏-->
+  <view class="top-tabBar-wrapper">
+    <van-tabs active="{{ active }}"
+              bind:change="changePage"
+              sticky
+              animated
+              swipeable
+              line-width="130rpx"
+    >
+      <van-tab title="未取订单">
+        <view class="order-wrapper">
+          <view class="ordering"
+                wx:for="{{3}}"
+          >
+            <view class="ordering-title">取餐号</view>
+            <view class="ordering-number">1-3-75</view>
+            <view class="ordering-place">取餐地点: 1食堂麻辣烫</view>
+            <view class="ordering-time">预约取餐时间: 12:00 - 12:30</view>
+            <view class="ordering-info-wrapper">
+              <van-cell-group>
+                <van-cell title="单元格" value="内容"/>
+                <van-cell title="单元格" value="内容" border="{{ false }}"/>
+              </van-cell-group>
+            </view>
+            <view class="ordering-bottom">
+              <view class="ordering-all-price">总计: ￥ 15</view>
+              <van-button round type="danger">取消订单</van-button>
+            </view>
+          </view>
+        </view>
+      </van-tab>
+      <van-tab title="历史订单">
+        <view class="order-wrapper">
+          
+        </view>
+      </van-tab>
+      <van-tab title="违规订单">
+        <view class="order-wrapper"></view>
+      </van-tab>
+    </van-tabs>
+  </view>
+
+</view>
