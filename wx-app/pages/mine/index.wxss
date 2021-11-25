@@ -75,55 +75,6 @@
   padding-right: 9rpx;
 }
 .content .recommend-card .recommend-title {
-  margin: 50rpx 0 10rpx;
+  margin: 40rpx 0 20rpx;
   font-size: 28rpx;
-}
-.content .recommend-card .recommend-card-wrapper {
-  background-color: #fff;
-  border-radius: 20rpx;
-  margin: 30rpx 0;
-  padding: 20rpx 20rpx;
-}
-.content .recommend-card .recommend-card-wrapper .recommend-card-top-wrapper {
-  display: flex;
-  justify-content: space-between;
-}
-.content .recommend-card .recommend-card-wrapper .recommend-card-top-wrapper .recommend-left-card-wrapper {
-  flex: 1;
-}
-.content .recommend-card .recommend-card-wrapper .recommend-card-top-wrapper .recommend-right-card-wrapper {
-  flex: 5;
-  padding: 10rpx 10rpx;
-}
-.content .recommend-card .recommend-card-wrapper .recommend-card-top-wrapper .recommend-right-card-wrapper .nickname {
-  font-weight: bold;
-}
-.content .recommend-card .recommend-card-wrapper .recommend-card-top-wrapper .recommend-right-card-wrapper .card-info {
-  padding-top: 10rpx;
-  padding-bottom: 20rpx;
-  font-size: 26rpx;
-}
-.content .recommend-card .recommend-card-wrapper .recommend-card-top-wrapper .recommend-right-card-wrapper .card-all-image {
-  flex-flow: nowrap;
-}
-.content .recommend-card .recommend-card-wrapper .recommend-card-top-wrapper .recommend-right-card-wrapper .card-all-image .card-image {
-  padding-right: 9rpx;
-}
-.content .recommend-card .recommend-card-wrapper .recommend-card-bottom-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.content .recommend-card .recommend-card-wrapper .recommend-card-bottom-wrapper .card-time {
-  font-size: 24rpx;
-}
-.content .recommend-card .recommend-card-wrapper .recommend-card-bottom-wrapper .card-button-wrapper {
-  display: flex;
-  padding: 10rpx 30rpx;
-}
-.content .recommend-card .recommend-card-wrapper .recommend-card-bottom-wrapper .card-button-wrapper .card-time {
-  padding-left: 40rpx;
-}
-.content .recommend-card .recommend-card-wrapper .recommend-card-bottom-wrapper .card-button-wrapper .button-good-job {
-  margin-right: 30rpx;
 }

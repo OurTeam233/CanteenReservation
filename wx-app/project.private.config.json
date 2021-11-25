@@ -47,6 +47,12 @@
           "pathName": "pages/mine/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "个人信息编辑页",
+          "pathName": "pages/editProfile/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

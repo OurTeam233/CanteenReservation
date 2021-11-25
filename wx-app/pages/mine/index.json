@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "van-tag": "@vant/weapp/tag/index",
-    "van-divider": "@vant/weapp/divider/index"
+    "van-divider": "@vant/weapp/divider/index",
+    "card": "../../components/card/card"
   }
 }

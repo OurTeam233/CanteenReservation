@@ -1,0 +1,49 @@
+.card-wrapper {
+  margin: 20rpx 0;
+  background-color: #fff;
+  padding: 20rpx 20rpx;
+  border-radius: 20rpx;
+}
+.card-wrapper .card-top-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.card-wrapper .card-top-wrapper .left-card-wrapper {
+  flex: 1;
+}
+.card-wrapper .card-top-wrapper .right-card-wrapper {
+  flex: 5;
+  padding: 10rpx 10rpx;
+}
+.card-wrapper .card-top-wrapper .right-card-wrapper .nickname {
+  font-weight: bold;
+}
+.card-wrapper .card-top-wrapper .right-card-wrapper .card-info {
+  padding-top: 10rpx;
+  padding-bottom: 20rpx;
+  font-size: 26rpx;
+}
+.card-wrapper .card-top-wrapper .right-card-wrapper .card-all-image {
+  flex-flow: nowrap;
+}
+.card-wrapper .card-top-wrapper .right-card-wrapper .card-all-image .card-image {
+  padding-right: 9rpx;
+}
+.card-wrapper .card-bottom-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-wrapper .card-bottom-wrapper .card-time {
+  font-size: 24rpx;
+}
+.card-wrapper .card-bottom-wrapper .card-button-wrapper {
+  display: flex;
+  padding: 10rpx 30rpx;
+}
+.card-wrapper .card-bottom-wrapper .card-button-wrapper .card-time {
+  padding-left: 40rpx;
+}
+.card-wrapper .card-bottom-wrapper .card-button-wrapper .button-good-job {
+  margin-right: 30rpx;
+}

@@ -1,7 +1,9 @@
 <!--pages/mine/index.wxml-->
 <view class="content">
 <!--  个人信息-->
-  <view class="top">
+  <view class="top"
+        bind:tap="editProfile"
+  >
     <view class="left-mine-wrapper">
       <view class="my-head-portraits">
         <van-image width="50" height="50" round src="https://img.yzcdn.cn/vant/cat.jpeg"/>
@@ -57,47 +59,9 @@
   </view>
 <!--  推荐帖子-->
   <view class="recommend-card">
-    <view class="recommend-title">
-      你可能感兴趣的帖子
-    </view>
-    <view class="recommend-card-info">
-      <view class="recommend-card-wrapper"
-            wx:for="{{3}}"
-      >
-        <view class="recommend-card-top-wrapper">
-          <view class="recommend-left-card-wrapper">
-            <view class="head-portraits">
-              <van-image width="50" height="50" round src="https://img.yzcdn.cn/vant/cat.jpeg"/>
-            </view>
-          </view>
-          <view class="recommend-right-card-wrapper">
-            <view class="nickname">小明</view>
-            <view class="card-info">
-              {{"好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶"}}
-            </view>
-            <view class="card-all-image">
-              <van-image width="160rpx" height="160rpx"
-                         custom-class="card-image"
-                         src="https://img.yzcdn.cn/vant/cat.jpeg"
-                         wx:for="{{8}}"
-              />
-            </view>
-          </view>
-        </view>
-        <view class="recommend-card-bottom-wrapper">
-          <view class="card-time">1990-01-01 19 : 00</view>
-          <view class="card-button-wrapper">
-            <view class="button-good-job">
-              <van-icon name="good-job-o"/>
-              {{19}}
-            </view>
-            <view class="button-chat">
-              <van-icon name="chat-o"/>
-              {{20}}
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
+    <view class="recommend-title">你可能感兴趣的帖子</view>
+    <card
+        wx:for="{{3}}"
+    ></card>
   </view>
 </view>

@@ -1,0 +1,36 @@
+<!--components/card/card.wxml-->
+<view class="card-wrapper">
+  <view class="card-top-wrapper">
+    <view class="left-card-wrapper">
+      <view class="head-portraits">
+        <van-image width="50" height="50" round src="https://img.yzcdn.cn/vant/cat.jpeg"/>
+      </view>
+    </view>
+    <view class="right-card-wrapper">
+      <view class="nickname">小明</view>
+      <view class="card-info">
+        {{"好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶"}}
+      </view>
+      <view class="card-all-image">
+        <van-image width="160rpx" height="160rpx"
+                   custom-class="card-image"
+                   src="https://img.yzcdn.cn/vant/cat.jpeg"
+                   wx:for="{{8}}"
+        />
+      </view>
+    </view>
+  </view>
+  <view class="card-bottom-wrapper">
+    <view class="card-time">1990-01-01 19 : 00</view>
+    <view class="card-button-wrapper">
+      <view class="button-good-job">
+        <van-icon name="good-job-o"/>
+        {{19}}
+      </view>
+      <view class="button-chat">
+        <van-icon name="chat-o"/>
+        {{20}}
+      </view>
+    </view>
+  </view>
+</view>

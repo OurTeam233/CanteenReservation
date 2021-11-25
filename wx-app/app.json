@@ -10,7 +10,8 @@
     "pages/information/index",
     "pages/mine/index",
     "pages/confessionWall/index",
-    "pages/lostFound/index"
+    "pages/lostFound/index",
+    "pages/editProfile/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
