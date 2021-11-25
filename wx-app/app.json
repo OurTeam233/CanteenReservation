@@ -14,12 +14,16 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "食堂订餐",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#ed4450",
+    "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
+    "color": "#999",
+    "selectedColor": "#ff2d4a",
+    "backgroundColor": "#fafafa",
+    "position": "bottom",
+    "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -34,7 +38,7 @@
         "text": "社区"
       },
       {
-        "pagePath": "pages/information/index",
+        "pagePath": "pages/mine/index",
         "text": "我的"
       }
     ]

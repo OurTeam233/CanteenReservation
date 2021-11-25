@@ -1,1 +1,124 @@
-/* pages/community/index.wxss */
+.top-tabBar-wrapper {
+  margin-bottom: 300rpx;
+}
+.top-tabBar-wrapper .card-wrapper {
+  margin: 20rpx 40rpx;
+  background-color: #fff;
+  padding: 20rpx 20rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+.top-tabBar-wrapper .card-wrapper .card-top-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.top-tabBar-wrapper .card-wrapper .card-top-wrapper .left-card-wrapper {
+  flex: 1;
+}
+.top-tabBar-wrapper .card-wrapper .card-top-wrapper .right-card-wrapper {
+  flex: 5;
+  padding: 10rpx 10rpx;
+}
+.top-tabBar-wrapper .card-wrapper .card-top-wrapper .right-card-wrapper .nickname {
+  font-weight: bold;
+}
+.top-tabBar-wrapper .card-wrapper .card-top-wrapper .right-card-wrapper .card-info {
+  padding-top: 10rpx;
+  padding-bottom: 20rpx;
+  font-size: 26rpx;
+}
+.top-tabBar-wrapper .card-wrapper .card-top-wrapper .right-card-wrapper .card-all-image {
+  flex-flow: nowrap;
+}
+.top-tabBar-wrapper .card-wrapper .card-top-wrapper .right-card-wrapper .card-all-image .card-image {
+  padding-right: 9rpx;
+}
+.top-tabBar-wrapper .card-wrapper .card-bottom-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-tabBar-wrapper .card-wrapper .card-bottom-wrapper .card-time {
+  font-size: 24rpx;
+}
+.top-tabBar-wrapper .card-wrapper .card-bottom-wrapper .card-button-wrapper {
+  display: flex;
+  padding: 10rpx 30rpx;
+}
+.top-tabBar-wrapper .card-wrapper .card-bottom-wrapper .card-button-wrapper .card-time {
+  padding-left: 40rpx;
+}
+.top-tabBar-wrapper .card-wrapper .card-bottom-wrapper .card-button-wrapper .button-good-job {
+  margin-right: 30rpx;
+}
+.top-tabBar-wrapper .search-search {
+  display: flex;
+  align-items: center;
+  font-size: 20rpx;
+  background-color: #fff;
+}
+.top-tabBar-wrapper .search-search .search-button-find {
+  height: 100%;
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+.top-tabBar-wrapper .search-search .search-button-search {
+  height: 100%;
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+.top-tabBar-wrapper .search-search .search-wrapper {
+  flex: 4;
+}
+.top-tabBar-wrapper .my-wrapper {
+  margin: 20rpx 40rpx;
+  background-color: #fff;
+  padding: 20rpx 20rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+.top-tabBar-wrapper .my-wrapper .my-top-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.top-tabBar-wrapper .my-wrapper .my-top-wrapper .left-my-wrapper {
+  flex: 1;
+}
+.top-tabBar-wrapper .my-wrapper .my-top-wrapper .right-my-wrapper {
+  flex: 5;
+  padding: 10rpx 10rpx;
+}
+.top-tabBar-wrapper .my-wrapper .my-top-wrapper .right-my-wrapper .nickname {
+  font-weight: bold;
+}
+.top-tabBar-wrapper .my-wrapper .my-top-wrapper .right-my-wrapper .my-info {
+  padding-top: 10rpx;
+  padding-bottom: 20rpx;
+  font-size: 26rpx;
+}
+.top-tabBar-wrapper .my-wrapper .my-top-wrapper .right-my-wrapper .my-all-image {
+  flex-flow: nowrap;
+}
+.top-tabBar-wrapper .my-wrapper .my-top-wrapper .right-my-wrapper .my-all-image .my-image {
+  padding-right: 9rpx;
+}
+.top-tabBar-wrapper .my-wrapper .my-bottom-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-tabBar-wrapper .my-wrapper .my-bottom-wrapper .my-time {
+  font-size: 24rpx;
+}
+.top-tabBar-wrapper .my-wrapper .my-bottom-wrapper .my-button-wrapper {
+  display: flex;
+  padding: 10rpx 30rpx;
+}
+.top-tabBar-wrapper .my-wrapper .my-bottom-wrapper .my-button-wrapper .my-time {
+  padding-left: 40rpx;
+}
+.top-tabBar-wrapper .my-wrapper .my-bottom-wrapper .my-button-wrapper .button-good-job {
+  margin-right: 30rpx;
+}

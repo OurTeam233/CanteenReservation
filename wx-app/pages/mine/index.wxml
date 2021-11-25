@@ -1,2 +1,103 @@
 <!--pages/mine/index.wxml-->
-<text>pages/mine/index.wxml</text>
+<view class="content">
+<!--  个人信息-->
+  <view class="top">
+    <view class="left-mine-wrapper">
+      <view class="my-head-portraits">
+        <van-image width="50" height="50" round src="https://img.yzcdn.cn/vant/cat.jpeg"/>
+      </view>
+    </view>
+    <view class="right-mine-wrapper">
+      <view class="mine-info">
+        <view class="nickname">小明</view>
+        <view class="vip">
+          <van-tag type="danger">会员</van-tag>
+        </view>
+      </view>
+      <view class="mine-desc">
+        个性签名: css也太难改了吧!!!
+      </view>
+    </view>
+  </view>
+  <van-divider/>
+<!--  历史订单 收藏等-->
+  <view class="entrance">
+    <view class="ordered">
+      <view class="ordered-number">33</view>
+      <view class="ordered-info">历史订单</view>
+    </view>
+    <view class="store">
+      <view class="store-number">33</view>
+      <view class="store-info">收藏</view>
+    </view>
+    <view class="follow">
+      <view class="follow-number">33</view>
+      <view class="follow-info">关注</view>
+    </view>
+    <view class="fans">
+      <view class="fans-number">2333</view>
+      <view class="fans-info">粉丝</view>
+    </view>
+  </view>
+  <van-divider/>
+<!--  推荐菜品-->
+  <view class="recommend-goods">
+    <view class="recommend-title">
+      你可能感兴趣的菜品
+    </view>
+    <view class="recommend-goods-info">
+      <view class="card-all-image">
+        <van-image width="186rpx" height="186rpx"
+                   custom-class="card-image"
+                   src="https://img.yzcdn.cn/vant/cat.jpeg"
+                   wx:for="{{6}}"
+        />
+      </view>
+    </view>
+  </view>
+<!--  推荐帖子-->
+  <view class="recommend-card">
+    <view class="recommend-title">
+      你可能感兴趣的帖子
+    </view>
+    <view class="recommend-card-info">
+      <view class="recommend-card-wrapper"
+            wx:for="{{3}}"
+      >
+        <view class="recommend-card-top-wrapper">
+          <view class="recommend-left-card-wrapper">
+            <view class="head-portraits">
+              <van-image width="50" height="50" round src="https://img.yzcdn.cn/vant/cat.jpeg"/>
+            </view>
+          </view>
+          <view class="recommend-right-card-wrapper">
+            <view class="nickname">小明</view>
+            <view class="card-info">
+              {{"好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶"}}
+            </view>
+            <view class="card-all-image">
+              <van-image width="160rpx" height="160rpx"
+                         custom-class="card-image"
+                         src="https://img.yzcdn.cn/vant/cat.jpeg"
+                         wx:for="{{8}}"
+              />
+            </view>
+          </view>
+        </view>
+        <view class="recommend-card-bottom-wrapper">
+          <view class="card-time">1990-01-01 19 : 00</view>
+          <view class="card-button-wrapper">
+            <view class="button-good-job">
+              <van-icon name="good-job-o"/>
+              {{19}}
+            </view>
+            <view class="button-chat">
+              <van-icon name="chat-o"/>
+              {{20}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
