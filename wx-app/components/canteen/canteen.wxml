@@ -9,22 +9,29 @@
 >
   <view slot="desc" class="desc-class">
     <view class="description-1">
-      <view>
-        <van-icon name="star" color="orange"/> {{propertyScore}}
+      <view class="description-1-icon">
+        <van-icon name="star" color="red" size="20rpx"/>
+        {{propertyScore}}
       </view>
       <text>月售{{propertySales}}</text>
     </view>
     <view class="description-2">
-      <van-tag mark type="warning">{{description}}</van-tag>
+      <van-tag mark type="warning" plain
+               custom-class="tags"
+      >{{description}}
+      </van-tag>
       <text>人均{{propertyPerCost}}￥</text>
     </view>
-  </view>
-  <view slot="bottom" class="tags-group">
-    <van-tag type="danger"
-             plain
-             wx:for="{{propertyTagList}}"
-             wx:key="*this"
-             custom-class="tags"
-    >{{item}}</van-tag>
+
+    <view class="tags-wrapper">
+      <van-tag type="danger"
+               plain
+               wx:for="{{propertyTagList}}"
+               wx:key="*this"
+               custom-class="tags"
+      >{{item}}
+      </van-tag>
+    </view>
+
   </view>
 </van-card>

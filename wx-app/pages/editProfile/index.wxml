@@ -1,2 +1,14 @@
 <!--pages/editProfile/index.wxml-->
-<text>pages/editProfile/index.wxml</text>
+<view class="content">
+  <!--  顶部头像和个人主页-->
+  <view class="title">
+    <view class="top-mine-wrapper">
+      <view class="my-head-portraits">
+        <van-image width="70" height="70" round src="https://img.yzcdn.cn/vant/cat.jpeg"/>
+      </view>
+    </view>
+    <view class="bottom-mine-wrapper">
+      <view class="nickname">小明</view>
+    </view>
+  </view>
+</view>
