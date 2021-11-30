@@ -5,57 +5,73 @@
   border-radius: 20rpx;
 
   .card-top-wrapper {
-    display: flex;
-    justify-content: space-between;
+    .title-card-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .title-left-card-wrapper {
+        display: flex;
 
-    .left-card-wrapper {
-      flex: 1;
+        .head-portraits {}
+
+        .title-text-wrapper {
+          margin-left: 20rpx;
+          display: flex;
+          flex-direction: column;
+
+          .nickname {
+            margin: 10rpx 0;
+          }
+
+          .card-time {
+            font-size: 20rpx;
+            color: #8E8C9D;
+          }
+        }
+      }
+
+      .title-right-card-wrapper {
+        margin-right: 20rpx;
+        opacity: 0.8;
+      }
+
+      .wall-title-right-card-wrapper {
+        height: 70rpx;
+        line-height: 70rpx;
+        padding-right: 17rpx;
+        color: #B1B1B1;
+        border-right: 6rpx solid #FC011A;
+      }
     }
 
-    .right-card-wrapper {
-      flex: 5;
-      padding: 10rpx 10rpx;
+    .text-card-wrapper {
+      margin: 20rpx 0;
+      font-size: 30rpx;
+      line-height: 44rpx;
+      letter-spacing: .2rpx;
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+    }
 
-      .nickname {
-        font-weight: bold;
-      }
-
-      .card-info {
-        padding-top: 10rpx;
-        padding-bottom: 20rpx;
-        font-size: 26rpx;
-      }
-
-      .card-all-image {
-        flex-flow: nowrap;
-
-        .card-image {
-          padding-right: 9rpx;
-        }
+    .image-card-wrapper {
+      .card-image {
+        margin-right: 8rpx;
       }
     }
   }
 
   .card-bottom-wrapper {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: row-reverse;
 
-    .card-time {
-      font-size: 24rpx;
+    .button-chat {
+      margin-right: 10rpx;
     }
 
-    .card-button-wrapper {
-      display: flex;
-      padding: 10rpx 30rpx;
-
-      .card-time {
-        padding-left: 40rpx;
-      }
-
-      .button-good-job {
-        margin-right: 30rpx;
-      }
+    .button-good-job {
+      margin-right: 30rpx;
     }
   }
 }

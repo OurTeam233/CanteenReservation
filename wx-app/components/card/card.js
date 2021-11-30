@@ -4,7 +4,14 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    proUsedFor: {
+      type: Boolean,
+      value: true
+    },
+    proImageList: {
+      type: Array,
+      value: []
+    }
   },
 
   /**

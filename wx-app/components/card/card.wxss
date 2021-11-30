@@ -4,46 +4,57 @@
   padding: 20rpx 20rpx;
   border-radius: 20rpx;
 }
-.card-wrapper .card-top-wrapper {
-  display: flex;
-  justify-content: space-between;
-}
-.card-wrapper .card-top-wrapper .left-card-wrapper {
-  flex: 1;
-}
-.card-wrapper .card-top-wrapper .right-card-wrapper {
-  flex: 5;
-  padding: 10rpx 10rpx;
-}
-.card-wrapper .card-top-wrapper .right-card-wrapper .nickname {
-  font-weight: bold;
-}
-.card-wrapper .card-top-wrapper .right-card-wrapper .card-info {
-  padding-top: 10rpx;
-  padding-bottom: 20rpx;
-  font-size: 26rpx;
-}
-.card-wrapper .card-top-wrapper .right-card-wrapper .card-all-image {
-  flex-flow: nowrap;
-}
-.card-wrapper .card-top-wrapper .right-card-wrapper .card-all-image .card-image {
-  padding-right: 9rpx;
-}
-.card-wrapper .card-bottom-wrapper {
+.card-wrapper .card-top-wrapper .title-card-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.card-wrapper .card-bottom-wrapper .card-time {
-  font-size: 24rpx;
-}
-.card-wrapper .card-bottom-wrapper .card-button-wrapper {
+.card-wrapper .card-top-wrapper .title-card-wrapper .title-left-card-wrapper {
   display: flex;
-  padding: 10rpx 30rpx;
 }
-.card-wrapper .card-bottom-wrapper .card-button-wrapper .card-time {
-  padding-left: 40rpx;
+.card-wrapper .card-top-wrapper .title-card-wrapper .title-left-card-wrapper .title-text-wrapper {
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
 }
-.card-wrapper .card-bottom-wrapper .card-button-wrapper .button-good-job {
+.card-wrapper .card-top-wrapper .title-card-wrapper .title-left-card-wrapper .title-text-wrapper .nickname {
+  margin: 10rpx 0;
+}
+.card-wrapper .card-top-wrapper .title-card-wrapper .title-left-card-wrapper .title-text-wrapper .card-time {
+  font-size: 20rpx;
+  color: #8E8C9D;
+}
+.card-wrapper .card-top-wrapper .title-card-wrapper .title-right-card-wrapper {
+  margin-right: 20rpx;
+  opacity: 0.8;
+}
+.card-wrapper .card-top-wrapper .title-card-wrapper .wall-title-right-card-wrapper {
+  height: 70rpx;
+  line-height: 70rpx;
+  padding-right: 17rpx;
+  color: #B1B1B1;
+  border-right: 6rpx solid #FC011A;
+}
+.card-wrapper .card-top-wrapper .text-card-wrapper {
+  margin: 20rpx 0;
+  font-size: 30rpx;
+  line-height: 44rpx;
+  letter-spacing: 0.2rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+}
+.card-wrapper .card-top-wrapper .image-card-wrapper .card-image {
+  margin-right: 8rpx;
+}
+.card-wrapper .card-bottom-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.card-wrapper .card-bottom-wrapper .button-chat {
+  margin-right: 10rpx;
+}
+.card-wrapper .card-bottom-wrapper .button-good-job {
   margin-right: 30rpx;
 }

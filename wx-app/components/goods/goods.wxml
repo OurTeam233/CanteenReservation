@@ -1,31 +1,30 @@
 <!--components/goods/goods.wxml-->
 <view class="components-wrapper">
   <view class="image-wrapper">
-    <van-image width="90rpx"
-               height="90rpx"
+    <van-image width="180rpx"
+               height="140rpx"
                lazy-load
                custom-class="image-class"
-               src="https://img.yzcdn.cn/vant/cat.jpeg"/>
+               src="https://img95.699pic.com/photo/50074/8934.jpg_wh300.jpg"/>
   </view>
   <view class="info-wrapper">
     <view class="title">猪脚饭</view>
+    <view>
+      <view class="middle-wrapper">
+        <view class="origin-price">原价 {{10}}￥</view>
+        <view class="sell-number">月售 300</view>
+      </view>
 
-    <view class="middle-wrapper">
-      <view class="origin-price">原价 {{10}}￥</view>
-      <view class="sell-number">月售 300</view>
+      <view class="bottom-wrapper">
+        <view class="vip-prices">会员价 5￥</view>
+        <van-stepper value="{{ 0 }}" disable-input
+                     long-press="{{ false }}"
+                     input-class="number-input-class"
+                     bind:change="onChange"
+                     theme="round"
+                     button-size="34rpx"
+        />
+      </view>
     </view>
-
-
-    <view class="bottom-wrapper">
-      <view class="vip-prices">会员价 5￥</view>
-      <van-stepper value="{{ 0 }}" disable-input
-                   long-press="{{ false }}"
-                   input-class="number-input-class"
-                   bind:change="onChange"
-                   theme="round"
-                   button-size="34rpx"
-      />
-    </view>
-
   </view>
 </view>

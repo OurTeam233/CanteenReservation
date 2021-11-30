@@ -4,6 +4,7 @@
 .content .top-tabBar-wrapper .ordering {
   margin-top: 30rpx;
   background-color: #FFFFFF;
+  border-radius: 20rpx;
 }
 .content .top-tabBar-wrapper .ordering .ordering-title {
   display: flex;
@@ -36,6 +37,7 @@
 .content .top-tabBar-wrapper .ordered {
   margin-top: 30rpx;
   background-color: #FFFFFF;
+  border-radius: 20rpx;
 }
 .content .top-tabBar-wrapper .ordered .ordered-place {
   display: flex;
@@ -61,6 +63,7 @@
 .content .top-tabBar-wrapper .err-order {
   margin-top: 30rpx;
   background-color: #FFFFFF;
+  border-radius: 20rpx;
 }
 .content .top-tabBar-wrapper .err-order .err-order-place {
   display: flex;

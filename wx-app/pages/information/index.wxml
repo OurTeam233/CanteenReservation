@@ -33,12 +33,10 @@
       bind:change="handleMenuNavigation"
       custom-class="menu-custom-class"
   >
-    <van-sidebar-item title="标签名 1"/>
-    <van-sidebar-item title="标签名 1"/>
-    <van-sidebar-item title="标签名 1"/>
-    <van-sidebar-item title="标签名 1"/>
-    <van-sidebar-item title="标签名 1"/>
-    <van-sidebar-item title="标签名 1"/>
+    <van-sidebar-item title="标签名 1"
+                      custom-class="menu-custom"
+                      wx:for="{{3}}"
+    />
   </van-sidebar>
 
 <!--  菜品列表-->

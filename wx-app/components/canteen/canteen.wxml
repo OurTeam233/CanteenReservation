@@ -4,8 +4,8 @@
     thumb="{{ propertyImageURL }}"
     title-class="title-class"
     custom-class="custom-class"
-    thumb-link="{{propertyNavUrl}}"
     lazy-load
+    bind:tap="navTo"
 >
   <view slot="desc" class="desc-class">
     <view class="description-1">

@@ -6,36 +6,69 @@
             swipeable
             line-width="130rpx"
   >
-    <van-tab title="浏览"
-    >
+    <van-tab title="浏览">
       <view class="card-wrapper">
-        <card class="card" wx:for="{{3}}"></card>
+        <card proUsedFor="{{true}}" class="card" wx:for="{{3}}" proImageList="{{imageList}}"></card>
       </view>
     </van-tab>
     <van-tab title="表白墙">
-      表白墙
+      <view class="confessionWall-wrapper">
+        <card proUsedFor="{{false}}" class="card" wx:for="{{3}}" proImageList="{{imageList}}"></card>
+      </view>
     </van-tab>
     <van-tab title="寻物屋">
       <view class="search-search">
-        <view class="search-button-find">寻物启事</view>
-        <view class="search-button-search">失物招领</view>
-        <view class="search-wrapper">
-          <van-search
-              value="{{ value }}"
-              placeholder="请输入搜索关键词"
-              use-action-slot
-              bind:change="onChange"
-              bind:search="onSearch"
-              shape="round"
+        <view class="search-title">
+          <view class="search-button-find {{activeSearch?'active-search':''}}" bind:tap="tapFind">
+            <van-transition show="{{ show }}" name="fade-left">
+              <text class="search-button-find-text">寻物启事</text>
+            </van-transition>
+            <text class="iconfont icon-xunwu search-button-find-icon"></text>
+          </view>
+          <view class="search-button-search {{!activeSearch?'active-search':''}}" bind:tap="tapSearch">
+              <van-transition show="{{ show }}" name="fade-left">
+                <text class="search-button-search-text">失物招领</text>
+              </van-transition>
+              <text class="iconfont icon-shiwuzhaoling search-button-search-icon"></text>
+            </view>
+          <view class="search-wrapper">
+            <van-search
+                  value="{{ value }}"
+                  placeholder="请输入关键词"
+                  use-action-slot
+                  bind:search="onSearch"
+                  bind:focus="focusSearch"
+                  bind:blur="blurSearch"
+                  custom-class="search"
+                  shape="round"
+              >
+                <view slot="action" bind:tap="onClick">搜索</view>
+              </van-search>
+          </view>
+        </view>
+        <!--寻物启事或失物招领展示区-->
+        <view class="search-card-wrapper">
+          <van-card
+              title="{{'商品标题'}}"
+              thumb="{{ imageURL }}"
+              tag="{{'失物'}}"
+              custom-class="search-card"
+              wx:for="{{2}}"
           >
-            <view slot="action" bind:tap="onClick">搜索</view>
-          </van-search>
+            <view slot="desc">
+              <view>丢失地点: {{"丢失的地点"}}</view>
+              <view>描述: 一串长的跟钥匙一样的钥匙</view>
+            </view>
+            <view slot="price">
+              <view>时间: {{"1990-10-01"}}</view>
+            </view>
+          </van-card>
         </view>
       </view>
     </van-tab>
     <van-tab class="card" title="我的">
       <view class="card-wrapper">
-        <card class="card" wx:for="{{3}}"></card>
+        <card class="card" wx:for="{{3}}" proImageList="{{imageList}}"></card>
       </view>
     </van-tab>
   </van-tabs>

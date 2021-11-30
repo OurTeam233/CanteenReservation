@@ -7,7 +7,7 @@ Page({
     score: 4.4,
     description: "描述描述描述描述描述描述描述描述描述描述描述描述",
     tagList: ['热销', '新品', '推荐', '爆款'],
-    navUrl: 'https://img13.360buyimg.com/'
+    navUrl: '../information/index'
   },
   handleToSearch() {
     wx.navigateTo ({

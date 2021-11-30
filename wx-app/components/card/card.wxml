@@ -1,36 +1,60 @@
 <!--components/card/card.wxml-->
 <view class="card-wrapper">
   <view class="card-top-wrapper">
-    <view class="left-card-wrapper">
-      <view class="head-portraits">
-        <van-image width="50" height="50" round src="https://img.yzcdn.cn/vant/cat.jpeg"/>
+    <!--标题头像时间部分-->
+    <view class="title-card-wrapper">
+      <view class="title-left-card-wrapper">
+        <view class="head-portraits">
+          <van-image width="50" height="50" round src="https://img.yzcdn.cn/vant/cat.jpeg"/>
+        </view>
+        <view class="title-text-wrapper">
+          <view class="nickname">小明</view>
+          <view class="card-time">1990-01-01 19 : 00</view>
+        </view>
+      </view>
+      <view wx:if="{{proUsedFor}}" class="title-right-card-wrapper">
+        <van-button size="small" plain="{{false}}" round type="danger">关注</van-button>
+      </view>
+      <view wx:else class="wall-title-right-card-wrapper">
+        对{{"所有人"}}表白
       </view>
     </view>
-    <view class="right-card-wrapper">
-      <view class="nickname">小明</view>
+    <!--文本-->
+    <view class="text-card-wrapper">
       <view class="card-info">
         {{"好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶好耶"}}
       </view>
-      <view class="card-all-image">
-        <van-image width="160rpx" height="160rpx"
+    </view>
+    <!--图片-->
+    <view class="image-card-wrapper">
+      <!--多张图片-->
+      <view class="image-card" wx:if="{{proImageList.length>1}}">
+        <van-image width="200rpx" height="200rpx"
                    custom-class="card-image"
-                   src="https://img.yzcdn.cn/vant/cat.jpeg"
-                   wx:for="{{8}}"
+                   wx:for="{{proImageList}}"
+                   wx:key="*this"
+                   src="{{item}}"
+        />
+      </view>
+      <!--一张图片-->
+      <view class="image-card" wx:else>
+        <van-image height="300rpx" fit="heightFix"
+                   custom-class="card-image"
+                   wx:for="{{proImageList}}"
+                   wx:key="*this"
+                   src="{{item}}"
         />
       </view>
     </view>
   </view>
   <view class="card-bottom-wrapper">
-    <view class="card-time">1990-01-01 19 : 00</view>
-    <view class="card-button-wrapper">
-      <view class="button-good-job">
-        <van-icon name="good-job-o"/>
-        {{19}}
-      </view>
-      <view class="button-chat">
-        <van-icon name="chat-o"/>
-        {{20}}
-      </view>
+    <view class="button-chat">
+      <van-icon name="chat-o"/>
+      {{20}}
+    </view>
+    <view class="button-good-job">
+      <van-icon name="good-job-o"/>
+      {{19}}
     </view>
   </view>
 </view>

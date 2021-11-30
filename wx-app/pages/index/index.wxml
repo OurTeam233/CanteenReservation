@@ -22,7 +22,7 @@
   </block>
 </swiper>
 
-    <!--分类-->
+<!--分类-->
 <view class="classify-wrapper">
   <!--食堂切换-->
   <van-grid border="{{false}}" clickable>
@@ -61,7 +61,7 @@
     </van-grid-item>
   </van-grid>
 </view>
-    <!--菜品详情-->
+<!--菜品详情-->
 <view class="dishes-wrapper">
   <canteen propertyImageURL="{{imageURL}}"
            propertySales="{{sales}}"

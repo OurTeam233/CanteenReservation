@@ -43,7 +43,14 @@ Component({
   /**
    * 组件的方法列表
    */
-  methods: {},
+  methods: {
+    // 点击跳转
+    navTo (event) {
+      wx.navigateTo({
+        url: this.data.propertyNavUrl,
+      })
+    },
+  },
   lifetimes: {
     ready: function () {
       // 对描述信息进行处理
