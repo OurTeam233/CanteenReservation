@@ -1,27 +1,60 @@
-<view class="content">
-  <view class="background-image">
-    <van-image height="50vh" width="750rpx" image-class="image" src="https://img.yzcdn.cn/vant/cat.jpeg"/>
-  </view>
-  <!--  顶部头像-->
-  <view class="title">
-    <view class="top-mine-wrapper">
-      <view class="my-head-portraits">
-        <van-image width="70" height="70" round src="https://img.yzcdn.cn/vant/cat.jpeg"/>
-      </view>
+<!--pages/mine/mine.wxml-->
+<!-- 头部 -->
+<view class='mine-info'>
+  <image class='mine-banner' src='../../image/mine/earth.png'></image>
+  <view class='mine-info-head'>
+    <view class='mine-head-left' bindtap='info'>
+      <image class='mine-head-leftPic' src='../../image/mine/info.png'></image>
+      <view class='mine-head-leftDes'>收藏</view>
     </view>
-    <view class="bottom-mine-wrapper">
-      <view class="bottom-title-mine-wrapper">
-        <view class="nickname">小明</view>
-        <van-tag type="danger">VIP</van-tag>
+    <view class='br'></view>
+    <view class='mine-head-center'>
+      <view class='headBorder'>
+        <open-data type="userAvatarUrl" class="Head"></open-data>
       </view>
-      <view class="bottom-info-wrapper">
-        <view class="focus">关注</view>
-        <view class="fans">粉丝</view>
-        <view class="collections">收藏</view>
+      <view class='dian'></view>
+      <view class='nameBox'>
+        <open-data type="userNickName" lang="zh_CN" class="name"></open-data>
       </view>
-      <view class="bottom-edit">
-        编辑个人信息
-      </view>
+      <view class='lv'>VIP</view>
+    </view>
+    <view class='br'></view>
+    <view class='mine-head-right' bindtap='addr'>
+      <image src='../../image/mine/addr.png' class='mine-head-rightPic'></image>
+      <view class='mine-head-rightDes'>粉丝</view>
     </view>
   </view>
 </view>
+<!-- 内容 -->
+<view class='list-content'>
+  <view class='list' bindtap='restMoney'>
+    <view class='list-left'>
+      <image class='listIcon' src='../../image/mine/restMoney.png'></image>
+      <view class='listName'>我的关注</view>
+    </view>
+    <image src='../../image/mine/jiantou.png' class='jiantou'></image>
+  </view>
+  <view class='list' bindtap='realName'>
+    <view class='list-left'>
+      <image class='listIcon' src='../../image/mine/realName.png'></image>
+      <view class='listName'>我的收藏</view>
+    </view>
+    <image src='../../image/mine/jiantou.png' class='jiantou'></image>
+  </view>
+  <view class='list' bindtap='view'>
+    <view class='list-left'>
+      <image class='listIcon' src='../image/view.png'></image>
+      <view class='listName'>历史订单</view>
+    </view>
+    <image src='../../image/mine/jiantou.png' class='jiantou'></image>
+  </view>
+  <view class='list'>
+    <view class='list-left'>
+      <image class='listIcon' src='../image/share.png'></image>
+      <view class='listName'>联系我们</view>
+    </view>
+    <image src='../../image/mine/jiantou.png' class='jiantou'></image>
+  </view>
+  <button class='signOut' bindtap='signOut'>退出登录</button>
+</view>
+<!-- 热线 -->

@@ -49,8 +49,8 @@
           "scene": null
         },
         {
-          "name": "个人信息编辑页",
-          "pathName": "pages/editProfile/index",
+          "name": "登录",
+          "pathName": "pages/login/index",
           "query": "",
           "scene": null
         }

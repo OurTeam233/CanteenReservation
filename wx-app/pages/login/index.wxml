@@ -1,2 +1,73 @@
-<!--pages/login/index.wxml-->
-<text>pages/login/index.wxml</text>
+<!--pages/logs/log.wxml-->
+<view class='main'>
+  <!--logo-->
+  <view class="logo">
+    <van-image
+        width="200rpx"
+        fit="widthFix"
+        src="https://img.alicdn.com/tfs/TB10aMXfaNj0u4jSZFyXXXgMVXa-500-128.svg"
+    />
+  </view>
+
+  <!-- 输入框 -->
+  <view class='input-wrapper'>
+    <van-field
+        placeholder="请选择学院" label="学院" focus readonly required size="large" center
+        bind:click-input="showPopupCollege"
+        model:value="{{ valueCollege }}"
+        custom-style="border-bottom: 1.5rpx solid #E5E5E5; height: 100rpx;"
+    />
+    <van-field
+        placeholder="请选择班级" label="班级" focus readonly required size="large" center
+        bind:click-input="showPopupClass"
+        model:value="{{ valueClass }}"
+        custom-style="border-bottom: 1.5rpx solid #E5E5E5; height: 100rpx;"
+    />
+    <van-field
+        value="{{ username }}"
+        size="large" label="学号"
+        placeholder="请输入学号"
+        clearable required center
+        custom-style="border-bottom: 1.5rpx solid #E5E5E5; height: 100rpx;"
+    />
+  </view>
+
+
+  <!-- 微信登录 -->
+  <view class='box'>
+    <view class='log'>
+      <button class='logBtn' bindtap='toggleDialog' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+        登录
+      </button>
+    </view>
+  </view>
+</view>
+
+<!--弹出框-->
+<!--学院-->
+<van-popup show="{{ showCollege }}" bind:close="onClose" round
+           position="bottom"
+           custom-style="height: 40%;">
+
+  <van-picker columns="{{ columns }}"
+              show-toolbar
+              title="请选择学院"
+              bind:cancel="onClose"
+              bind:confirm="tapConfirmCollege"
+              loading="{{false}}"
+  />
+
+</van-popup>
+<!--班级-->
+<van-popup show="{{ showClass }}" bind:close="onClose" round
+           position="bottom"
+           custom-style="height: 40%;">
+
+  <van-picker columns="{{ columns }}"
+              show-toolbar
+              title="请选择班级"
+              bind:cancel="onClose"
+              bind:confirm="tapConfirmClass"
+              loading="{{false}}"
+  />
+</van-popup>
