@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="219ac672-b86c-4fbc-9509-1369bc6da38d" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/wx-app/pages/appointment/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/appointment/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/pages/appointment/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/appointment/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wx-app/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wx-app/pages/editProfile/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wx-app/pages/editProfile/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wx-app/pages/editProfile/index.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wx-app/pages/editProfile/index.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wx-app/pages/editProfile/index.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wx-app/pages/mine/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/mine/index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wx-app/pages/mine/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/mine/index.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wx-app/pages/mine/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/mine/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wx-app/pages/mine/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/mine/index.wxss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +42,7 @@
     <property name="project.structure.last.edited" value="Facet" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.23214285" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
     <configuration name="CanteenReservation" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="CanteenReservation" ALTERNATIVE_JRE_ENABLED="false">
@@ -139,6 +149,11 @@
       <workItem from="1637216249129" duration="50000" />
       <workItem from="1637310837444" duration="283000" />
       <workItem from="1637563775285" duration="17000" />
+      <workItem from="1638282475938" duration="419000" />
+      <workItem from="1638319421019" duration="157000" />
+      <workItem from="1638319618592" duration="355000" />
+      <workItem from="1638320000368" duration="1672000" />
+      <workItem from="1638327374167" duration="203000" />
     </task>
     <servers />
   </component>

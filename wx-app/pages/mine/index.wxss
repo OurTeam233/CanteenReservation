@@ -1,80 +1,54 @@
-.content {
-  padding: 30rpx 40rpx;
+.content .background-image {
+  filter: blur(10rpx);
 }
-.content .top {
+.content .title {
+  position: relative;
+  top: -170rpx;
+  z-index: 999;
+}
+.content .title .top-mine-wrapper {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
-.content .top .left-mine-wrapper {
-  margin-right: 40rpx;
-}
-.content .top .right-mine-wrapper .mine-info {
+.content .title .bottom-mine-wrapper {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  top: 80rpx;
+  left: 50%;
+  margin-left: -300rpx;
+  width: 600rpx;
+  z-index: -1;
+  height: 300rpx;
+  border-radius: 20rpx;
+  padding-top: 100rpx;
   display: flex;
+  flex-direction: column;
 }
-.content .top .right-mine-wrapper .mine-info .nickname {
-  margin-right: 40rpx;
+.content .title .bottom-mine-wrapper .bottom-title-mine-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.content .top .right-mine-wrapper .mine-desc {
+.content .title .bottom-mine-wrapper .bottom-title-mine-wrapper .nickname {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20rpx;
+}
+.content .title .bottom-mine-wrapper .bottom-info-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 20rpx;
 }
-.content .entrance {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80rpx;
+.content .title .bottom-mine-wrapper .bottom-info-wrapper .focus {
+  border-right: 3rpx solid #000;
+  margin-right: 20rpx;
+  padding-right: 20rpx;
 }
-.content .entrance .ordered {
-  flex: 1;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-.content .entrance .store {
-  flex: 1;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-.content .entrance .follow {
-  flex: 1;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-.content .entrance .fans {
-  flex: 1;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-.content .recommend-goods .recommend-title {
-  margin-bottom: 20rpx;
-  padding-left: 20rpx;
-  font-size: 28rpx;
-}
-.content .recommend-goods .recommend-goods-info {
-  background-color: #fff;
-  border-radius: 20rpx;
-  padding: 30rpx 0;
-}
-.content .recommend-goods .recommend-goods-info .card-all-image {
-  flex-flow: wrap;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.content .recommend-goods .recommend-goods-info .card-all-image .card-image {
-  padding-right: 9rpx;
-}
-.content .recommend-card .recommend-title {
-  margin: 40rpx 0 20rpx;
-  font-size: 28rpx;
+.content .title .bottom-mine-wrapper .bottom-info-wrapper .fans {
+  border-right: 3rpx solid #000;
+  margin-right: 20rpx;
+  padding-right: 20rpx;
 }

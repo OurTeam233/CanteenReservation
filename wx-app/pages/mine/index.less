@@ -1,104 +1,66 @@
 .content {
-  padding: 30rpx 40rpx;
+  .background-image {
+    filter: blur(10rpx);
+  }
 
-  .top {
-    display: flex;
-    align-items: center;
+  .title {
+    position: relative;
+    top: -170rpx;
+    z-index: 999;
 
-    .left-mine-wrapper {
-      margin-right: 40rpx;
+    .top-mine-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .right-mine-wrapper {
-      .mine-info {
+    .bottom-mine-wrapper {
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.9);
+      top: 80rpx;
+      left: 50%;
+      margin-left: -300rpx;
+      width: 600rpx;
+      z-index: -1;
+      height: 300rpx;
+      border-radius: 20rpx;
+      padding-top: 100rpx;
+      display: flex;
+      flex-direction: column;
+
+      .bottom-title-mine-wrapper {
         display: flex;
+        align-items: center;
+        justify-content: center;
 
         .nickname {
-          margin-right: 40rpx;
-        }
-
-        .vip {
-
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 20rpx;
         }
       }
 
-      .mine-desc {
-        margin-top: 20rpx;
-      }
-    }
-  }
-
-  .entrance {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80rpx;
-
-    .ordered {
-      flex: 1;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .store {
-      flex: 1;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .follow {
-      flex: 1;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .fans {
-      flex: 1;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-    }
-  }
-
-  .recommend-goods {
-    .recommend-title {
-      margin-bottom: 20rpx;
-      padding-left: 20rpx;
-      font-size: 28rpx;
-    }
-
-    .recommend-goods-info {
-      background-color: #fff;
-      border-radius: 20rpx;
-      padding: 30rpx 0;
-
-      .card-all-image {
-        flex-flow: wrap;
+      .bottom-info-wrapper {
         display: flex;
         justify-content: center;
         align-items: center;
-        .card-image {
-          padding-right: 9rpx;
+        margin-top: 20rpx;
+
+        .focus {
+          border-right: 3rpx solid #000;
+          margin-right: 20rpx;
+          padding-right: 20rpx;
+        }
+
+        .fans {
+          border-right: 3rpx solid #000;
+          margin-right: 20rpx;
+          padding-right: 20rpx;
         }
       }
-    }
-  }
 
-  .recommend-card {
-    .recommend-title {
-      margin: 40rpx 0 20rpx;
-      font-size: 28rpx;
+
     }
   }
 }
