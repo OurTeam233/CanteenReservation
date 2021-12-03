@@ -53,4 +53,10 @@ Page({
       show: true
     })
   },
+  // 发帖
+  navigateToPublish () {
+    wx.navigateTo({
+      url: '../publish/index'
+    })
+  }
 })

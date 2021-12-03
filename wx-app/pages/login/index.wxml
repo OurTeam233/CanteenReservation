@@ -36,7 +36,8 @@
   <!-- 微信登录 -->
   <view class='box'>
     <view class='log'>
-      <button class='logBtn' bindtap='toggleDialog' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+      <button class='logBtn'
+      open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">
         登录
       </button>
     </view>

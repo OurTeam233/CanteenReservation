@@ -1,0 +1,39 @@
+<!--components/post/post.wxml-->
+    <!--内容 -->
+<view class="zhongdian" wx:for='{{list}}' wx:key="{{id}}">
+  <!-- 第一层 -->
+  <view class="one">
+    <!-- 头像 -->
+    <view class="img">
+      <image class="touxiang" src="{{item.touxiang}}"></image>
+    </view>
+    <view class="one-left">
+      <text class="nicheng">{{item.nicheng}}</text>
+      <view class="one-left-xiao">
+        <text>{{item.shijian}}</text>
+        <image class="qq" src="/images/zuixin/app_img_location.png"></image>
+      </view>
+    </view>
+    <view class="ll">
+      <!--弹框 事件-->
+      <image class="hh toast" src="/images/zuixin/more_icon.png"></image>
+    </view>
+
+  </view>
+  <!-- 第二层 -->
+  <view class="two">
+    <text class="neirong">{{item.neirong}}</text>
+    <image src="{{item.tupian}}"></image>
+  </view>
+  <!-- 第三层 -->
+  <view class="three">
+    <view class="mm">
+      <image src="../../image/components/app_img_comment.png"></image>
+      <text class="t2">{{item.pinglunliang}}</text>
+    </view>
+    <view class="gg">
+      <image src="../../image/components/app_img_like.png"></image>
+      <text class="t2">{{item.dianzanliang}}</text>
+    </view>
+  </view>
+</view>

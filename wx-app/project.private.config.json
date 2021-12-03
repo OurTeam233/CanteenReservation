@@ -53,6 +53,18 @@
           "pathName": "pages/login/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "关注",
+          "pathName": "pages/attention/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "发布帖子",
+          "pathName": "pages/publish/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

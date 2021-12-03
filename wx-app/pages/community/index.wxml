@@ -7,8 +7,11 @@
             line-width="130rpx"
   >
     <van-tab title="浏览">
+<!--      <view class="card-wrapper">-->
+<!--        <card proUsedFor="{{true}}" class="card" wx:for="{{3}}" proImageList="{{imageList}}"></card>-->
+<!--      </view>-->
       <view class="card-wrapper">
-        <card proUsedFor="{{true}}" class="card" wx:for="{{3}}" proImageList="{{imageList}}"></card>
+        <post></post>
       </view>
     </van-tab>
     <van-tab title="表白墙">
@@ -72,4 +75,7 @@
       </view>
     </van-tab>
   </van-tabs>
+</view>
+<view class="publish-button" bindtap="navigateToPublish">
+  <image class="publish-button-icon" src="../../image/community/publish-icon.svg"/>
 </view>

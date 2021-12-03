@@ -27,9 +27,9 @@
 </view>
 <!-- 内容 -->
 <view class='list-content'>
-  <view class='list' bindtap='restMoney'>
+  <view class='list' bindtap='toAttention'>
     <view class='list-left'>
-      <image class='listIcon' src='../../image/mine/restMoney.png'></image>
+      <image class='listIcon' src=''></image>
       <view class='listName'>我的关注</view>
     </view>
     <image src='../../image/mine/jiantou.png' class='jiantou'></image>

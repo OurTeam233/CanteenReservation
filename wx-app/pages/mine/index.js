@@ -13,10 +13,10 @@ Page({
       url: '',
     })
   },
-  //个人中心的我的余额,点击跳转到我的余额
-  restMoney () {
+  // 点击跳转到我的关注
+  toAttention () {
     wx.navigateTo({
-      url: '',
+      url: '../../pages/attention/index',
     })
   },
   //个人中心的意见反馈,点击跳转到意见反馈

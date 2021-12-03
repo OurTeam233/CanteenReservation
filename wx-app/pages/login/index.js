@@ -44,24 +44,18 @@ Page({
         console.log(err);
       }
     });
-    // 获取用户信息
-    wx.getUserInfo({
-      success: function (res) {
-        let userInfo = res.userInfo
-        // const {nickName, avatarUrl, gender, province, city, country}
-        //   = userInfo
-        let nickName = userInfo.nickName
-        let avatarUrl = userInfo.avatarUrl
-        let gender = userInfo.gender //性别 0：未知、1：男、2：女
-        let province = userInfo.province
-        let city = userInfo.city
-        let country = userInfo.country
-        console.log(userInfo)
-      }
-    })
     // 跳转到首页
     wx.switchTab({
       url: '../../pages/index/index',
     })
   },
+  // 获取昵称和头像
+  handleGetUserInfo (e) {
+    console.log(e);
+    const { userInfo } = e.detail;
+    console.log(userInfo)
+    wx.navigateBack({
+      delta: 1
+    });
+  }
 })
