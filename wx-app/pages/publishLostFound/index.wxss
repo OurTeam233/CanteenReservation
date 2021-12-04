@@ -1,0 +1,21 @@
+/* pages/publishLostFound/index.wxss */
+.box{
+  margin:20rpx;
+}
+
+.text{
+  font-weight: bold;
+  margin: 30rpx 0;
+}
+
+.time{
+  text-align: center;
+  line-height:70rpx;
+  background-color: #fff;
+  height:70rpx;
+}
+
+.checkbox{
+  display:flex;
+  justify-content:space-between;
+}

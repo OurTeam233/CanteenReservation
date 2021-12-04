@@ -12,7 +12,8 @@
     "pages/confessionWall/index",
     "pages/lostFound/index",
     "pages/attention/index",
-    "pages/publish/index"
+    "pages/publish/index",
+    "pages/publishLostFound/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

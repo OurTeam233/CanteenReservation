@@ -1,0 +1,84 @@
+<!--pages/publishLostFound/index.wxml-->
+
+<view class="box">
+
+  <view class="text">物品名称：</view>
+  <van-cell-group>
+    <van-field
+      value="{{ value }}"
+      placeholder="请输入物品名称"
+      border="{{ false }}"
+      bind:change="onChange"
+    />
+  </van-cell-group>
+
+  
+  
+  <view bind:tap="showPopup">
+    <view class="text">发生时间：</view>
+    <view class="time">{{year}} 年 {{month}} 月 {{day}} 日</view>
+  </view>
+  <van-popup
+    show="{{ show }}"
+    round
+    position="bottom"
+    custom-style="height: 50%"
+    bind:close="onClose"
+  >
+    <van-datetime-picker
+      type="date"
+      value="{{ currentDate }}"
+      bind:input="onInput"
+      max-date="{{ maxtDate }}"
+      min-date="{{ minDate }}"
+      formatter="{{ formatter }}"
+      bind:confirm="confirm"
+    />
+  </van-popup>
+
+  
+  <view class="text">联系方式：</view>
+  <view class="checkbox">
+    <van-checkbox name="a" value="{{ checked }}" bind:change="onChange">微信号</van-checkbox>
+    <van-checkbox name="b" value="{{ checked }}" bind:change="onChange">手机号</van-checkbox>
+    <van-checkbox name="c" value="{{ checked }}" bind:change="onChange">站内信</van-checkbox>
+
+  </view>
+
+  <view class="text">物品描述：</view>
+  <van-cell-group>
+    <van-field
+      value="{{ message }}"
+      
+      type="textarea"
+      placeholder="请输入物品描述(300字以内)"
+      autosize
+      border="{{ false }}"
+    />
+  </van-cell-group>
+
+  <view class="text">物品图片：</view>
+  <van-uploader
+    class="uploader"
+    upload-text="上传图片"
+    max-count="{{ maxCount }}"
+    max-size="{{ maxSize }}"
+    accept="{{ accept }}"
+    disabled="{{ disabled }}"
+    bind:change="onChange"
+    bind:upload="onUpload"
+    bind:remove="onRemove"
+  />
+
+
+  <view class="buttom">
+    <van-button type="danger" size="large">提交</van-button>
+  </view>
+  
+
+</view>
+
+
+
+
+

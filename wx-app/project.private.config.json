@@ -65,6 +65,12 @@
           "pathName": "pages/publish/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "失物招领发布页",
+          "pathName": "pages/publishLostFound/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

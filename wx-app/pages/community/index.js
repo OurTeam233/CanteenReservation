@@ -58,5 +58,6 @@ Page({
     wx.navigateTo({
       url: '../publish/index'
     })
-  }
+  },
+
 })
