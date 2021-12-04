@@ -1,0 +1,50 @@
+<!--pages/edit/index.wxml-->
+<view class="content">
+  <van-cell-group inset>
+    <van-cell title="头像" is-link custom-class="header" bind:click="tapShowUpload">
+      <van-uploader file-list="{{ fileList }}"
+                    show-upload="{{showUploadHeader}}"
+                    deletable="{{false}}"
+                    preview-size="120rpx"
+      />
+    </van-cell>
+    <van-field
+        model:value="{{ nickName }}" is-link input-align="right"
+        label="用户名"
+        border="{{ false }}"
+        input-class="input-class"
+    />
+    <van-field
+        model:value="{{ studentNumber }}" is-link input-align="right" disabled
+        label="学号"
+        border="{{ false }}"
+        input-class="input-class"
+    />
+    <van-field
+        model:value="{{ college }}" is-link input-align="right" disabled
+        label="学院"
+        border="{{ false }}"
+        input-class="input-class"
+    />
+    <van-field
+        model:value="{{ career }}" is-link input-align="right" disabled
+        label="专业"
+        border="{{ false }}"
+        input-class="input-class"
+    />
+    <van-cell title="性别" is-link>
+      <van-radio-group value="{{ gender }}" bind:change="onChangeGender" direction="horizontal">
+        <van-radio name="1">男</van-radio>
+        <van-radio name="2">女</van-radio>
+      </van-radio-group>
+    </van-cell>
+    <van-field
+        model:value="{{ profileValue }}" is-link input-align="right"
+        label="个人简介"
+        border="{{ false }}"
+        input-class="input-class"
+    />
+  </van-cell-group>
+
+  <van-button type="danger" size="large" custom-class="button">提交</van-button>
+</view>

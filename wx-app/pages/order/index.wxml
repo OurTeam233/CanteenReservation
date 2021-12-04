@@ -2,7 +2,7 @@
 <view class="content">
 <!--  顶部导航栏-->
   <view class="top-tabBar-wrapper">
-    <van-tabs active="{{ active }}"
+    <van-tabs active="{{ activePage }}"
               bind:change="changePage"
               sticky
               animated

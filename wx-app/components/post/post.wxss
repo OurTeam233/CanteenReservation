@@ -13,10 +13,10 @@
 .one {
   display: flex;
   flex-direction: row;
-  margin-top: 24rpx;
+  justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  margin-left: 30rpx;
+  padding: 0 20rpx;
 }
 
 .one-left {
@@ -89,6 +89,7 @@
 
 .neirong {
   word-break: break-all;
+  padding: 0 14rpx;
 }
 
 .two {
@@ -99,7 +100,7 @@
   padding: 0 30rpx;
 }
 
-.two image {
+.one-image image {
   width: 680rpx;
   height: 400rpx;
   margin-top: 26rpx;
@@ -149,4 +150,34 @@
   width: 1000rpx;
   margin-top: 16rpx;
   margin-left: -40rpx;
+}
+
+.one-right {
+  padding-right: 20rpx;
+}
+
+.title-right-card-wrapper {
+  margin-right: 20rpx;
+  opacity: 0.8;
+}
+
+.wall-title-right-card-wrapper {
+  height: 70rpx;
+  line-height: 70rpx;
+  padding-right: 17rpx;
+  color: #B1B1B1;
+  border-right: 6rpx solid #FC011A;
+}
+
+.image-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.nine-image {
+  width: 220rpx;
+  height: 220rpx;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
 }

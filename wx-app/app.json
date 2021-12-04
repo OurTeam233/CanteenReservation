@@ -13,7 +13,10 @@
     "pages/lostFound/index",
     "pages/attention/index",
     "pages/publish/index",
-    "pages/publishLostFound/index"
+    "pages/publishLostFound/index",
+    "pages/fans/index",
+    "pages/collecting/index",
+    "pages/edit/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

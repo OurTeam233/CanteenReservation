@@ -2,23 +2,19 @@
 page {
   /*padding-bottom: 200rpx;*/
 }
-
 .van-card .title-class {
   font-size: 32rpx;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-
 .classify-wrapper {
   margin: 20rpx 20rpx 0;
   border-radius: 20rpx;
 }
-
 .dishes-wrapper {
   margin: 0 20rpx;
 }
-
 .dishes-wrapper .canteen--custom-class {
   margin-top: 20rpx;
 }

@@ -1,0 +1,19 @@
+<view class="content">
+  <view class="content-list" wx:for="{{myFollowList}}" wx:key="id" wx:for-item="myFollow">
+    <image class="content-img" src="{{myFollow.src}}"/>
+    <view class="content-head-c">
+      <view class="head-name">{{myFollow.name}}</view>
+      <view class="list-color1">{{myFollow.tag}}</view>
+    </view>
+    <view class="list-center">
+      <view></view>
+      <view></view>
+    </view>
+    <view class="list-att" bindtap="toAttention" data-id="{{myFollow.id}}">
+      <view wx:if="{{myFollow.isFollow}}" class="att">已互关</view>
+      <view class="no-att" wx:else>+ 关注</view>
+    </view>
+  </view>
+</view>
+
+

@@ -1,29 +1,51 @@
 <!--components/post/post.wxml-->
     <!--内容 -->
-<view class="zhongdian" wx:for='{{list}}' wx:key="{{id}}">
+<view class="zhongdian" wx:for='{{proList}}' wx:key="{{id}}">
   <!-- 第一层 -->
   <view class="one">
     <!-- 头像 -->
-    <view class="img">
-      <image class="touxiang" src="{{item.touxiang}}"></image>
-    </view>
-    <view class="one-left">
-      <text class="nicheng">{{item.nicheng}}</text>
-      <view class="one-left-xiao">
-        <text>{{item.shijian}}</text>
-        <image class="qq" src="/images/zuixin/app_img_location.png"></image>
+    <view class="one">
+      <view class="img">
+        <image class="touxiang" src="{{item.touxiang}}"></image>
+      </view>
+      <view class="one-left">
+        <text class="nicheng">{{item.nicheng}}</text>
+        <view class="one-left-xiao">
+          <text>{{item.shijian}}</text>
+        </view>
       </view>
     </view>
-    <view class="ll">
-      <!--弹框 事件-->
-      <image class="hh toast" src="/images/zuixin/more_icon.png"></image>
+    <view class="one-right">
+      <view wx:if="{{proUsedFor}}" class="title-right-card-wrapper">
+        <van-button size="small" plain="{{false}}" round type="danger">关注</van-button>
+      </view>
+      <view wx:else class="wall-title-right-card-wrapper">
+        对{{"所有人"}}表白
+      </view>
     </view>
-
   </view>
   <!-- 第二层 -->
   <view class="two">
     <text class="neirong">{{item.neirong}}</text>
-    <image src="{{item.tupian}}"></image>
+    <!--多张图片-->
+    <view class="image-card" wx:if="{{item.tupian.length>1}}">
+      <image wx:for="{{item.tupian}}"
+             mode="aspectFill"
+             class="nine-image"
+             wx:for-item="photo" wx:for-index="photoIndex"
+             wx:key="*this"
+             src="{{photo}}"
+             bind:tap="tapImage" data-photoIndex="{{photoIndex}}" data-index="{{index}}"
+      />
+    </view>
+    <!--一张图片-->
+    <view class="one-image" wx:if="{{item.tupian.length===1}}">
+      <image src="{{item.tupian}}"
+             bind:tap="tapImage" data-photoIndex="{{photoIndex}}" data-index="{{index}}"
+      ></image>
+    </view>
+    <!--没有图片-->
+    <view class="one-image" wx:else></view>
   </view>
   <!-- 第三层 -->
   <view class="three">

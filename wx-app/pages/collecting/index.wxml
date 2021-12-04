@@ -1,0 +1,14 @@
+<!--pages/collecting/index.wxml-->
+<view class="dishes-wrapper">
+  <canteen propertyImageURL="{{imageURL}}"
+           propertySales="{{sales}}"
+           propertyPerCost="{{perCost}}"
+           propertyScore="{{score}}"
+           propertyDescription="{{description}}"
+           propertyTagList="{{tagList}}"
+           propertyNavUrl="{{navUrl}}"
+           class="canteen"
+           wx:for="{{6}}"
+           wx:key="{{index}}"
+  ></canteen>
+</view>
