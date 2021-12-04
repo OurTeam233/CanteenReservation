@@ -1,0 +1,77 @@
+.top-tabBar-wrapper {
+  margin-bottom: 300rpx;
+}
+.top-tabBar-wrapper .card-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.top-tabBar-wrapper .confessionWall-wrapper {
+  margin: 0 40rpx;
+}
+.top-tabBar-wrapper .search-search .search-title {
+  display: flex;
+  align-items: center;
+  font-size: 21rpx;
+  background-color: #fff;
+  margin: 0;
+}
+.top-tabBar-wrapper .search-search .search-title .search-button-find {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20rpx 0 20rpx;
+}
+.top-tabBar-wrapper .search-search .search-title .search-button-find .search-button-find-text {
+  margin-right: 8rpx;
+}
+.top-tabBar-wrapper .search-search .search-title .search-button-find .search-button-find-icon {
+  font-size: 45rpx;
+}
+.top-tabBar-wrapper .search-search .search-title .search-button-search {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top-tabBar-wrapper .search-search .search-title .search-button-search .search-button-search-text {
+  margin-right: 8rpx;
+}
+.top-tabBar-wrapper .search-search .search-title .search-button-search .search-button-search-icon {
+  font-size: 45rpx;
+}
+.top-tabBar-wrapper .search-search .search-title .search-wrapper {
+  flex: 1;
+}
+.top-tabBar-wrapper .search-search .search-title .active-search {
+  color: #ED4450;
+}
+.top-tabBar-wrapper .search-search .search-card-wrapper {
+  padding: 20rpx 20rpx;
+}
+.top-tabBar-wrapper .search-search .search-card-wrapper .search-card {
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.publish-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 50rpx;
+  bottom: 50rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0rpx 0rpx 101rpx 0rpx rgba(0, 0, 0, 0.08), 0rpx 12rpx 26rpx 0rpx rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  z-index: 999;
+}
+
+.publish-button-icon {
+  width: 50%;
+  height: 50%;
+}

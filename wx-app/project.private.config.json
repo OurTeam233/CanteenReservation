@@ -1,0 +1,78 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "窗口详情",
+          "pathName": "pages/information/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "首页",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "预约界面",
+          "pathName": "pages/appointment/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "订单界面",
+          "pathName": "pages/order/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "社区界面",
+          "pathName": "pages/community/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/mine/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "登录",
+          "pathName": "pages/login/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "关注",
+          "pathName": "pages/attention/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "发布帖子",
+          "pathName": "pages/publish/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "失物招领发布页",
+          "pathName": "pages/publishLostFound/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

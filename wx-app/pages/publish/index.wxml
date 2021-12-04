@@ -1,0 +1,33 @@
+<!--components/post/post.wxml-->
+<view class="one">
+  <!-- 头像 -->
+  <view class="img">
+    <image class="touxiang" src="{{mineInfo.touxiang}}"></image>
+  </view>
+  <view class="one-left">
+    <text class="nicheng">{{mineInfo.nicheng}}</text>
+  </view>
+  <view class="ll">
+    <!--弹框 事件-->
+    <image class="hh toast" src="/images/zuixin/more_icon.png"></image>
+  </view>
+</view>
+
+<view class="text">
+  <van-field
+      model:value="{{ value }}"
+      type="textarea"
+      maxlength="255" show-word-limit
+      placeholder="分享新鲜事~"
+      custom-style="height: 40vh;background-color: #fff;border: 2px solid #F5F5F5;box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"
+      input-class="input-class"
+  />
+</view>
+
+<view class="file">
+  <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" deletable max-count="9"/>
+</view>
+
+<view class="button-wrapper">
+  <van-button type="danger" custom-class="button" size="large" round>发布</van-button>
+</view>

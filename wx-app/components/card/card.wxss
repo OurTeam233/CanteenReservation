@@ -1,0 +1,60 @@
+.card-wrapper {
+  margin: 20rpx 0;
+  background-color: #fff;
+  padding: 20rpx 20rpx;
+  border-radius: 20rpx;
+}
+.card-wrapper .card-top-wrapper .title-card-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-wrapper .card-top-wrapper .title-card-wrapper .title-left-card-wrapper {
+  display: flex;
+}
+.card-wrapper .card-top-wrapper .title-card-wrapper .title-left-card-wrapper .title-text-wrapper {
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+.card-wrapper .card-top-wrapper .title-card-wrapper .title-left-card-wrapper .title-text-wrapper .nickname {
+  margin: 10rpx 0;
+}
+.card-wrapper .card-top-wrapper .title-card-wrapper .title-left-card-wrapper .title-text-wrapper .card-time {
+  font-size: 20rpx;
+  color: #8E8C9D;
+}
+.card-wrapper .card-top-wrapper .title-card-wrapper .title-right-card-wrapper {
+  margin-right: 20rpx;
+  opacity: 0.8;
+}
+.card-wrapper .card-top-wrapper .title-card-wrapper .wall-title-right-card-wrapper {
+  height: 70rpx;
+  line-height: 70rpx;
+  padding-right: 17rpx;
+  color: #B1B1B1;
+  border-right: 6rpx solid #FC011A;
+}
+.card-wrapper .card-top-wrapper .text-card-wrapper {
+  margin: 20rpx 0;
+  font-size: 30rpx;
+  line-height: 44rpx;
+  letter-spacing: 0.2rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+}
+.card-wrapper .card-top-wrapper .image-card-wrapper .card-image {
+  margin-right: 8rpx;
+}
+.card-wrapper .card-bottom-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.card-wrapper .card-bottom-wrapper .button-chat {
+  margin-right: 10rpx;
+}
+.card-wrapper .card-bottom-wrapper .button-good-job {
+  margin-right: 30rpx;
+}

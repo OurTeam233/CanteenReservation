@@ -1,0 +1,46 @@
+/* components/canteen/canteen.wxss */
+.custom-class {
+  background-color: #fff;
+  border-radius: 15rpx;
+}
+
+.title-class {
+  font-size: 27rpx;
+}
+.desc-class {
+  margin-top: 10rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.desc-class .description-2 {
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.desc-class .description-2 .tags {
+  font-size: xx-small;
+}
+
+.desc-class .description-1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.desc-class .description-1 .description-1-icon {
+  font-size: 20rpx;
+}
+
+.tags-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.tags-wrapper .tags {
+  margin-right: 10rpx !important;
+  margin-top: 20rpx;
+  font-size: 16rpx;
+  height: 25rpx;
+}

@@ -1,15 +1,67 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/login/index",
+    "pages/search/index",
+    "pages/window/index",
+    "pages/order/index",
+    "pages/appointment/index",
+    "pages/community/index",
+    "pages/information/index",
+    "pages/mine/index",
+    "pages/confessionWall/index",
+    "pages/lostFound/index",
+    "pages/attention/index",
+    "pages/publish/index",
+    "pages/publishLostFound/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#ed4450",
+    "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#ff2d4a",
+    "backgroundColor": "#fafafa",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/image/tabbar/index.png",
+        "selectedIconPath": "/image/tabbar/index-active.png"
+      },
+      {
+        "pagePath": "pages/order/index",
+        "text": "订单",
+        "iconPath": "/image/tabbar/order.png",
+        "selectedIconPath": "/image/tabbar/order-active.png"
+      },
+      {
+        "pagePath": "pages/community/index",
+        "text": "社区",
+        "iconPath": "/image/tabbar/community.png",
+        "selectedIconPath": "/image/tabbar/community-active.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "/image/tabbar/mine.png",
+        "selectedIconPath": "/image/tabbar/mine-active.png"
+      }
+    ]
+  },
   "usingComponents": {
-    "van-button": "@vant/weapp/button/index"
+    "van-button": "@vant/weapp/button/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-sticky": "@vant/weapp/sticky/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index"
   }
 }

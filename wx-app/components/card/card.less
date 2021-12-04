@@ -1,0 +1,77 @@
+.card-wrapper {
+  margin: 20rpx 0;
+  background-color: #fff;
+  padding: 20rpx 20rpx;
+  border-radius: 20rpx;
+
+  .card-top-wrapper {
+    .title-card-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .title-left-card-wrapper {
+        display: flex;
+
+        .head-portraits {}
+
+        .title-text-wrapper {
+          margin-left: 20rpx;
+          display: flex;
+          flex-direction: column;
+
+          .nickname {
+            margin: 10rpx 0;
+          }
+
+          .card-time {
+            font-size: 20rpx;
+            color: #8E8C9D;
+          }
+        }
+      }
+
+      .title-right-card-wrapper {
+        margin-right: 20rpx;
+        opacity: 0.8;
+      }
+
+      .wall-title-right-card-wrapper {
+        height: 70rpx;
+        line-height: 70rpx;
+        padding-right: 17rpx;
+        color: #B1B1B1;
+        border-right: 6rpx solid #FC011A;
+      }
+    }
+
+    .text-card-wrapper {
+      margin: 20rpx 0;
+      font-size: 30rpx;
+      line-height: 44rpx;
+      letter-spacing: .2rpx;
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+    }
+
+    .image-card-wrapper {
+      .card-image {
+        margin-right: 8rpx;
+      }
+    }
+  }
+
+  .card-bottom-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .button-chat {
+      margin-right: 10rpx;
+    }
+
+    .button-good-job {
+      margin-right: 30rpx;
+    }
+  }
+}

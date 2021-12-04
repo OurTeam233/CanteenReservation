@@ -1,0 +1,10 @@
+<!--pages/template/template.wxml-->
+<template name="rexian">
+<view class='rexian'>
+  <view class='tel'>服务热线：4008-888-999</view>
+  <view class='kefu'>
+    <image class='kufu_pic' src='../image/kefu.png'></image>
+    <view class='kefu_describe'>在线客服</view>
+  </view>
+</view>
+</template>

@@ -1,10 +1,12 @@
 /**app.wxss**/
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-} 
+@import '/styles/icon.wxss';
+page {
+  background-color: #f5f5f5;
+  --themeColor: #ed4450;
+  --fontSize: 24rpx;
+  --titleSize: 28rpx
+}
+
+.content {
+  /*margin: 30rpx 40rpx;*/
+}

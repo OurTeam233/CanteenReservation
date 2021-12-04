@@ -1,0 +1,152 @@
+/* components/zuixin/zuixin.wxss */
+.page1 {
+
+}
+
+.zhongdian {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.one {
+  display: flex;
+  flex-direction: row;
+  margin-top: 24rpx;
+  align-items: center;
+  box-sizing: border-box;
+  margin-left: 30rpx;
+}
+
+.one-left {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+}
+
+.one-left-xiao {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.img {
+  width: 82rpx;
+  height: 82rpx;
+  border-radius: 50%;
+  border: 2px solid pink;
+
+}
+
+.touxiang {
+  width: 78rpx;
+  height: 78rpx;
+  border-radius: 50%;
+}
+
+.biaoshi {
+  width: 52rpx;
+  height: 30rpx;
+  margin-top: 58rpx;
+  margin-left: -45rpx;
+}
+
+.qq {
+  width: 20rpx;
+  height: 22rpx;
+  margin-top: 8rpx;
+  margin-left: 20rpx;
+}
+
+.ee {
+  width: 40rpx;
+  height: 26rpx;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+}
+
+.one-left-xiao text {
+  font-size: 24rpx;
+  color: #C0C0C0;
+  margin-top: 10rpx;
+}
+
+.tt {
+  margin-left: 4rpx;
+}
+
+.toast {
+  width: 45rpx;
+  height: 10rpx;
+  margin-left: 270rpx;
+}
+
+.nicheng {
+  font-size: 28rpx;
+}
+
+.neirong {
+  word-break: break-all;
+}
+
+.two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 26rpx;
+  padding: 0 30rpx;
+}
+
+.two image {
+  width: 680rpx;
+  height: 400rpx;
+  margin-top: 26rpx;
+  border-radius: 14rpx;
+}
+
+.three {
+  font-size: 28rpx;
+  color: #C0C0C0;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-top: 26rpx;
+  margin-right: 80rpx;
+}
+
+.three image {
+  width: 30rpx;
+  height: 32rpx;
+}
+
+.aa {
+  margin-left: 160rpx;
+  align-items: center;
+}
+
+.mm {
+  margin-left: 90rpx;
+}
+
+.gg {
+  margin-left: 104rpx;
+}
+
+.aa, .mm, .gg, .ww {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.t2 {
+  margin-left: 10rpx;
+}
+
+.wall {
+  border-bottom: 1px solid #eee;
+  width: 1000rpx;
+  margin-top: 16rpx;
+  margin-left: -40rpx;
+}
