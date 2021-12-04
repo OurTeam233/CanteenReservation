@@ -1,0 +1,8 @@
+/* pages/collecting/index.wxss */
+.dishes-wrapper {
+  margin: 20rpx 20rpx;
+}
+
+.dishes-wrapper .canteen--custom-class {
+  margin-top: 20rpx;
+}

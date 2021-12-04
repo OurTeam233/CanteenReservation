@@ -17,10 +17,7 @@ Page({
 
   // 标签切换事件
   changePage (event) {
-    wx.showToast({
-      title: `切换到标签 ${event.detail.name}`,
-      icon: 'none',
-    });
+    console.log(event.detail.index)
   },
   onClick () {
     console.log(this.data.value)

@@ -1,10 +1,16 @@
 // pages/mine/mine.js
 Page({
   data: {},
-  //个人中心的消息,点击跳转到我的消息
-  info () {
+  // 跳转个人信息编辑页
+  toEditor () {
     wx.navigateTo({
-      url: '',
+      url: '../edit/index'
+    })
+  },
+  // 收藏页面跳转
+  collecting () {
+    wx.navigateTo({
+      url: '../collecting/index',
     })
   },
   //个人中心的实名认证,点击跳转到实名认证
@@ -19,22 +25,23 @@ Page({
       url: '../../pages/attention/index',
     })
   },
-  //个人中心的意见反馈,点击跳转到意见反馈
-  view () {
-    wx.navigateTo({
-      url: '',
+  // 点击跳转到历史订单
+  ordered () {
+    wx.setStorageSync("orderActivePage", 1);
+    wx.switchTab({
+      url: '../order/index',
     })
   },
-  //我的地址
-  addr () {
+  //我的粉丝
+  fans () {
     wx.navigateTo({
-      url: '',
+      url: '../../pages/fans/index',
     })
   },
   //退出登录
   signOut () {
     console.log('saaaa')
-    wx.navigateTo({
+    wx.reLaunch({
       url: '../login/index',
     })
   }

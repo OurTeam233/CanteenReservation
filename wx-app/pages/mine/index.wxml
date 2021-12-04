@@ -1,9 +1,9 @@
 <!--pages/mine/mine.wxml-->
 <!-- 头部 -->
-<view class='mine-info'>
+<view class='mine-info' bind:tap="toEditor">
   <image class='mine-banner' src='../../image/mine/earth.png'></image>
   <view class='mine-info-head'>
-    <view class='mine-head-left' bindtap='info'>
+    <view class='mine-head-left' bindtap='collecting'>
       <image class='mine-head-leftPic' src='../../image/mine/info.png'></image>
       <view class='mine-head-leftDes'>收藏</view>
     </view>
@@ -19,7 +19,7 @@
       <view class='lv'>VIP</view>
     </view>
     <view class='br'></view>
-    <view class='mine-head-right' bindtap='addr'>
+    <view class='mine-head-right' bindtap='fans'>
       <image src='../../image/mine/addr.png' class='mine-head-rightPic'></image>
       <view class='mine-head-rightDes'>粉丝</view>
     </view>
@@ -41,7 +41,7 @@
     </view>
     <image src='../../image/mine/jiantou.png' class='jiantou'></image>
   </view>
-  <view class='list' bindtap='view'>
+  <view class='list' bindtap='ordered'>
     <view class='list-left'>
       <image class='listIcon' src='../image/view.png'></image>
       <view class='listName'>历史订单</view>

@@ -15,8 +15,8 @@
       </view>
     </van-tab>
     <van-tab title="表白墙">
-      <view class="confessionWall-wrapper">
-        <card proUsedFor="{{false}}" class="card" wx:for="{{3}}" proImageList="{{imageList}}"></card>
+      <view class="card-wrapper">
+        <post></post>
       </view>
     </van-tab>
     <van-tab title="寻物屋">
@@ -71,7 +71,7 @@
     </van-tab>
     <van-tab class="card" title="我的">
       <view class="card-wrapper">
-        <card class="card" wx:for="{{3}}" proImageList="{{imageList}}"></card>
+        <post></post>
       </view>
     </van-tab>
   </van-tabs>

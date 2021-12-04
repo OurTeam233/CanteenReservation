@@ -12,7 +12,10 @@
     "pages/confessionWall/index",
     "pages/lostFound/index",
     "pages/attention/index",
-    "pages/publish/index"
+    "pages/publish/index",
+    "pages/fans/index",
+    "pages/collecting/index",
+    "pages/edit/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

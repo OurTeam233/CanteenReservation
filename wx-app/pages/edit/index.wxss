@@ -1,0 +1,20 @@
+.content {
+  margin-top: 30rpx;
+}
+.content .van-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content .input-class {
+  height: 70rpx;
+  padding-right: 20rpx;
+  color: #666;
+}
+.content .van-radio-group {
+  float: right;
+}
+.content .button {
+  position: fixed;
+  bottom: 0;
+}

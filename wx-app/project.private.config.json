@@ -65,6 +65,18 @@
           "pathName": "pages/publish/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "我的收藏",
+          "pathName": "pages/collecting/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "个人编辑页",
+          "pathName": "pages/edit/index",
+          "query": "",
+          "scene": null
         }
       ]
     }
