@@ -13,12 +13,6 @@ Page({
       url: '../collecting/index',
     })
   },
-  //个人中心的实名认证,点击跳转到实名认证
-  realName () {
-    wx.navigateTo({
-      url: '',
-    })
-  },
   // 点击跳转到我的关注
   toAttention () {
     wx.navigateTo({

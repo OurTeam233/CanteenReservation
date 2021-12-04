@@ -34,7 +34,7 @@
     </view>
     <image src='../../image/mine/jiantou.png' class='jiantou'></image>
   </view>
-  <view class='list' bindtap='realName'>
+  <view class='list' bindtap='collecting'>
     <view class='list-left'>
       <image class='listIcon' src='../../image/mine/realName.png'></image>
       <view class='listName'>我的收藏</view>

@@ -1,3 +1,6 @@
+page {
+  background: #fff;
+}
 .top-tabBar-wrapper {
   margin-bottom: 300rpx;
 }
@@ -54,7 +57,6 @@
   border-radius: 20rpx;
   margin-bottom: 20rpx;
 }
-
 .publish-button {
   display: flex;
   justify-content: center;
@@ -70,8 +72,8 @@
   overflow: hidden;
   z-index: 999;
 }
-
-.publish-button-icon {
+.publish-button .publish-button-icon {
   width: 50%;
   height: 50%;
+  color: #000;
 }
