@@ -4,6 +4,7 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    // true是浏览帖子，false是表白墙帖子
     proUsedFor: {
       type: Boolean,
       value: true
@@ -11,6 +12,10 @@ Component({
     proList: {
       type: Array,
       value: []
+    },
+    proClickable: {
+      type: Boolean,
+      value: true
     },
   },
 
@@ -25,6 +30,7 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    // 预览图片
     tapImage (event) {
       // 帖子编号
       const {index} = event.target.dataset
@@ -38,6 +44,21 @@ Component({
         current: photoList[photoIndex],
         urls: photoList
       })
+    },
+    // 进入帖子详情
+    intoPost (event) {
+      if (!this.properties.proClickable) {
+        return
+      }
+      // 跳转到帖子详情页
+      wx.navigateTo({
+        url: `../../pages/posts/index?postId=${1}`
+      })
+    },
+    // 点赞相关逻辑
+    tapLike (event) {
+      console.log(event)
+      // TODO  点赞相关逻辑
     }
   }
 })

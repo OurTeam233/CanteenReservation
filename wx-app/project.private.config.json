@@ -83,6 +83,18 @@
           "pathName": "pages/edit/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "帖子详情页",
+          "pathName": "pages/posts/index",
+          "query": "postId=1",
+          "scene": null
+        },
+        {
+          "name": "失物招领详情页",
+          "pathName": "pages/lostFoundInfo/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

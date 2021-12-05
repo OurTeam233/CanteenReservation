@@ -9,14 +9,15 @@
     "pages/community/index",
     "pages/information/index",
     "pages/mine/index",
-    "pages/confessionWall/index",
     "pages/lostFound/index",
     "pages/attention/index",
     "pages/publish/index",
     "pages/publishLostFound/index",
     "pages/fans/index",
     "pages/collecting/index",
-    "pages/edit/index"
+    "pages/edit/index",
+    "pages/posts/index",
+    "pages/lostFoundInfo/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

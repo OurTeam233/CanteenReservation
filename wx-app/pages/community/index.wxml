@@ -47,7 +47,7 @@
           </view>
         </view>
         <!--寻物启事或失物招领展示区-->
-        <view class="search-card-wrapper">
+        <view class="search-card-wrapper" bind:tap="intoLostFoundInfo">
           <van-card
               title="{{'商品标题'}}"
               thumb="{{ imageURL }}"
@@ -74,5 +74,5 @@
   </van-tabs>
 </view>
 <view class="publish-button" bindtap="navigateToPublish">
-  <image class="publish-button-icon" src="../../image/community/publish-icon.svg"/>
+  <van-icon name="plus" custom-class="publish-button-icon" size="50rpx"/>
 </view>

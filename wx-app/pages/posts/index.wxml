@@ -1,0 +1,7 @@
+<!--pages/posts/index.wxml-->
+<view class="header">
+  <post proList="{{topic}}" proClickable="{{false}}"></post>
+</view>
+<view>
+  <post proList="{{comment}}" proClickable="{{false}}"></post>
+</view>

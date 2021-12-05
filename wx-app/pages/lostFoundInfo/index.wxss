@@ -1,0 +1,43 @@
+page {
+  margin: 40rpx 20rpx 0;
+}
+.title {
+  font-size: 36rpx;
+  color: #333333;
+  margin: 20rpx 20rpx 0;
+}
+.title .time {
+  font-size: 24rpx;
+  color: #999999;
+}
+.description {
+  font-size: 27rpx;
+  margin: 40rpx 20rpx 20rpx;
+}
+.photo .image-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.photo .nine-image {
+  width: 220rpx;
+  height: 220rpx;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+}
+.phone {
+  margin: 40rpx 20rpx 20rpx;
+  font-size: 27rpx;
+  position: fixed;
+  bottom: 20rpx;
+  width: 100%;
+}
+.phone .phone-number {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.phone .phone-number .van-button {
+  margin-right: 100rpx;
+}

@@ -1,6 +1,6 @@
 <!--components/post/post.wxml-->
     <!--内容 -->
-<view class="zhongdian" wx:for='{{proList}}' wx:key="{{id}}">
+<view class="zhongdian" wx:for='{{proList}}' wx:key="{{id}}" bind:tap="intoPost">
   <!-- 第一层 -->
   <view class="one">
     <!-- 头像 -->
@@ -16,17 +16,19 @@
       </view>
     </view>
     <view class="one-right">
-      <view wx:if="{{proUsedFor}}" class="title-right-card-wrapper">
-        <van-button size="small" plain="{{false}}" round type="danger">关注</van-button>
-      </view>
-      <view wx:else class="wall-title-right-card-wrapper">
-        对{{"所有人"}}表白
-      </view>
+<!--      <view wx:if="{{proUsedFor}}" class="title-right-card-wrapper">-->
+<!--        <van-button size="small" plain="{{false}}" round type="danger">关注</van-button>-->
+<!--      </view>-->
+<!--      <view wx:else class="wall-title-right-card-wrapper">-->
+<!--        对{{"所有人"}}表白-->
+<!--      </view>-->
     </view>
   </view>
   <!-- 第二层 -->
   <view class="two">
-    <text class="neirong">{{item.neirong}}</text>
+    <view>
+      <text class="neirong">{{item.neirong}}</text>
+    </view>
     <!--多张图片-->
     <view class="image-card" wx:if="{{item.tupian.length>1}}">
       <image wx:for="{{item.tupian}}"
@@ -49,12 +51,12 @@
   </view>
   <!-- 第三层 -->
   <view class="three">
-    <view class="mm">
-      <image src="../../image/components/app_img_comment.png"></image>
+    <view class="mm" wx:if="{{proClickable}}">
+      <van-icon name="chat-o"/>
       <text class="t2">{{item.pinglunliang}}</text>
     </view>
-    <view class="gg">
-      <image src="../../image/components/app_img_like.png"></image>
+    <view class="gg {{}}" bind:tap="tapLike" data-index="{{index}}">
+      <van-icon name="good-job-o"/>
       <text class="t2">{{item.dianzanliang}}</text>
     </view>
   </view>
