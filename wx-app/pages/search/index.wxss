@@ -1,1 +1,14 @@
 /* pages/search/index.wxss */
+.v {
+  margin: 0 30rpx 0 30rpx;
+}
+.van-field {
+  width: 600rpx;
+  height: 50rpx;
+  border-radius: 10%;
+  background: rgba(18, 18, 230, 0.5);
+  color: blueviolet;
+}
+.button {
+  margin-left: 15rpx;
+}

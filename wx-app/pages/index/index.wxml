@@ -26,7 +26,7 @@
 <view class="classify-wrapper">
   <!--食堂切换-->
   <van-grid border="{{false}}" clickable>
-    <van-grid-item text="一食堂">
+    <van-grid-item text="一食堂" bindtap="onChange" data-operation="{{1}}">
       <van-image slot="icon" fit="contain" width="70rpx" height="70rpx" src="/image/index/dukan-1.svg"/>
     </van-grid-item>
     <van-grid-item text="二食堂">
@@ -63,16 +63,18 @@
 </view>
 <!--菜品详情-->
 <view class="dishes-wrapper">
-  <canteen propertyImageURL="{{imageURL}}"
-           propertySales="{{sales}}"
-           propertyPerCost="{{perCost}}"
-           propertyScore="{{score}}"
-           propertyDescription="{{description}}"
-           propertyTagList="{{tagList}}"
-           propertyNavUrl="{{navUrl}}"
+  <canteen propertyImageURL="{{itemName.imageURL}}"
+           propertyTitle="{{itemName.title}}"
+           propertySales="{{itemName.sales}}"
+           propertyPerCost="{{itemName.perCost}}"
+           propertyScore="{{itemName.score}}"
+           propertyDescription="{{itemName.description}}"
+           propertyTagList="{{itemName.tagList}}"
+           propertyNavUrl="{{itemName.navUrl}}"
            class="canteen"
-           wx:for="{{6}}"
+           wx:for="{{No1array}}"
            wx:key="{{index}}"
+           wx:for-index="idx" wx:for-item="itemName" 
   ></canteen>
 </view>
 

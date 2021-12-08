@@ -33,9 +33,11 @@
       bind:change="handleMenuNavigation"
       custom-class="menu-custom-class"
   >
-    <van-sidebar-item title="标签名 1"
+    <van-sidebar-item title="{{itemName.titleName}}"
                       custom-class="menu-custom"
-                      wx:for="{{3}}"
+                      wx:for="{{titleName}}"
+                      wx:for-index='id'
+                      wx:for-item='itemName'
     />
   </van-sidebar>
 
@@ -43,7 +45,16 @@
   <view class="goods-wrapper">
     <goods
         class="goods-list"
-        wx:for="{{10}}"
+        proImageURL="{{itemName.imageURL}}"
+        proMenuName="{{itemName.menuName}}"
+        proPrice="{{itemName.price}}"
+        proVIPPric="{{itemName.monthSales}}"
+        proMonthSales="{{itemName.monthSales}}"
+        proMoney="{{money}}"
+        wx:for="{{titleMenu[num].goods}}"
+        wx:key="{{index}}"
+        wx:for-index="idx" 
+        wx:for-item="itemName"
     >
     </goods>
   </view>

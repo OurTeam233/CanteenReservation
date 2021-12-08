@@ -7,6 +7,6 @@ page {
   --titleSize: 28rpx
 }
 
-.content {
-  /*margin: 30rpx 40rpx;*/
-}
+/* .content { 
+  margin: 30rpx 40rpx;
+}  */

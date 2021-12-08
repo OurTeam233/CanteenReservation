@@ -44,7 +44,7 @@
   "compileType": "miniprogram",
   "libVersion": "2.20.2",
   "appid": "wxc2b4d4783308ec5a",
-  "projectname": "CanteenReservation",
+  "projectname": "Canteen",
   "debugOptions": {
     "hidedInDevtools": []
   },

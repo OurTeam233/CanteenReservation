@@ -1,6 +1,6 @@
 <!--components/canteen/canteen.wxml-->
 <van-card
-    title="一食堂第二窗口"
+    title="{{propertyTitle}}"
     thumb="{{ propertyImageURL }}"
     title-class="title-class"
     custom-class="custom-class"
