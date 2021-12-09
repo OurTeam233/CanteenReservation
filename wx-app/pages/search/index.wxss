@@ -2,12 +2,17 @@
 .v {
   margin: 0 30rpx 0 30rpx;
 }
+.v-find {
+  margin-top: 10rpx;
+  display: flex;
+  font-size: 10px;
+  color: rgba(216, 44, 44, 0.5);
+}
 .van-field {
   width: 600rpx;
   height: 50rpx;
   border-radius: 10%;
-  background: rgba(18, 18, 230, 0.5);
-  color: blueviolet;
+  background: rgba(218, 218, 219, 0.5);
 }
 .button {
   margin-left: 15rpx;
