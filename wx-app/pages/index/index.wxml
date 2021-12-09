@@ -63,7 +63,7 @@
 </view>
 <!--菜品详情-->
 <view class="dishes-wrapper">
-  <canteen propertyImageURL="{{itemName.imageURL}}"
+  <canteen propertyImageURL="{{itemName.logoUrl}}"
            propertyTitle="{{itemName.title}}"
            propertySales="{{itemName.sales}}"
            propertyPerCost="{{itemName.perCost}}"
@@ -72,7 +72,7 @@
            propertyTagList="{{itemName.tagList}}"
            propertyNavUrl="{{itemName.navUrl}}"
            class="canteen"
-           wx:for="{{No1array}}"
+           wx:for="{{arrayList}}"
            wx:key="{{index}}"
            wx:for-index="idx" wx:for-item="itemName" 
   ></canteen>

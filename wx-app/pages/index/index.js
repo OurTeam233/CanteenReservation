@@ -1,69 +1,33 @@
 // index.js
+import { request } from '../../utils/request'
 Page({
   data: {
     num: 0,
-    // 一食堂餐口
-    No1array: [{
-        title: '一食堂一楼餐口1',
-        imageURL: 'https://img13.360buyimg.com/seckillcms/s280x280_jfs/t1/201538/1/15733/203257/61922484E96bab620/bc25dc3d9ddfdd57.jpg.webp',
-        sales: 300,
-        perCost: 10,
-        score: 4.4,
-        description: "描述描述描述描述描述描述描述描述描述描述描述描述",
-        tagList: ['热销', '新品', '推荐', '爆款'],
-        navUrl: '../information/index',
-      },
-      {
-        title: '一食堂一楼餐口1',
-        imageURL: 'https://img13.360buyimg.com/seckillcms/s280x280_jfs/t1/201538/1/15733/203257/61922484E96bab620/bc25dc3d9ddfdd57.jpg.webp',
-        sales: 300,
-        perCost: 10,
-        score: 4.4,
-        description: "描述描述描述描述描述描述描述描述描述描述描述描述",
-        tagList: ['热销', '新品', '推荐', '爆款'],
-        navUrl: '../information/index',
-      },
-
-    ],
-    //二食堂餐口
-    No2array: [{
-        title: '二食堂一楼餐口1',
-        imageURL: 'https://img13.360buyimg.com/seckillcms/s280x280_jfs/t1/201538/1/15733/203257/61922484E96bab620/bc25dc3d9ddfdd57.jpg.webp',
-        sales: 300,
-        perCost: 10,
-        score: 4.4,
-        description: "描述描述描述描述描述描述描述描述描述描述描述描述",
-        tagList: ['热销', '新品', '推荐', '爆款'],
-        navUrl: '../information/index',
-      },
-      {
-        title: '二食堂一楼餐口1',
-        imageURL: 'https://img13.360buyimg.com/seckillcms/s280x280_jfs/t1/201538/1/15733/203257/61922484E96bab620/bc25dc3d9ddfdd57.jpg.webp',
-        sales: 300,
-        perCost: 10,
-        score: 4.4,
-        description: "描述描述描述描述描述描述描述描述描述描述描述描述",
-        tagList: ['热销', '新品', '推荐', '爆款'],
-        navUrl: '../information/index',
-      },
-    ],
-    arrayList: [{
-      title: '二食堂一楼餐口1',
-      imageURL: 'https://img13.360buyimg.com/seckillcms/s280x280_jfs/t1/201538/1/15733/203257/61922484E96bab620/bc25dc3d9ddfdd57.jpg.webp',
-      sales: 300,
-      perCost: 10,
-      score: 4.4,
-      description: "描述描述描述描述描述描述描述描述描述描述描述描述",
-      tagList: ['热销', '新品', '推荐', '爆款'],
-      navUrl: '../information/index',
-    }],
+    arrayList: [],
   },
   onLoad() {
-    // 页面加载时发送请
+    // 页面加载时发送请求
+    request({
+      url: '/SelectStoreServlet'
+    }).then(
+      res => {
+        console.log(res)
+        res.forEach(obj => {
+          obj.title = obj.canteen.name + obj.address
+          obj.tagList = []
+          obj.tags.forEach(tag => obj.tagList.push(tag.name));
+          obj.navUrl = `../information/index?id=${this.data.arrayList.id}`
+        })
+        this.setData({
+          arrayList: res
+        })
+        console.log(this.data.arrayList)
+      }
+    )
   },
   handleToSearch() {
     wx.navigateTo({
-      url: '../search/index'
+      url: `../search/index`
     })
   },
   onChange(e) {
@@ -76,15 +40,6 @@ Page({
     console.log(this.data.num)
 
     // //发送请求
-    wx.request({
-      url: 'http://canteen?page=' + num,
-      data: {},
-      //请求成功
-      success: function (params) {
-        this.setData({
-          arrayList: params
-        })
-      }
-    })
+
   }
 })
