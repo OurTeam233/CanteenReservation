@@ -55,6 +55,7 @@
         wx:key="{{index}}"
         wx:for-index="idx" 
         wx:for-item="itemName"
+        bindcalculation="handleCalculation"
     >
     </goods>
   </view>
@@ -67,7 +68,7 @@
 
 <!--底部预约-->
 <van-submit-bar
-    price="{{ 3050 }}"
+    price="{{allMoney*100}}"
     button-text="我选好了"
     bind:submit="tapSubmit"
     custom-class="appointment-wrapper"

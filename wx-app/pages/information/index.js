@@ -6,8 +6,13 @@ Page({
    * 页面的初始数据
    */
   data: {
+    num:0,
     //分类标签
-    num: 0,
+    amount: 0,
+    //单个菜品总金额
+    money: 0,
+    //总金额
+    allMoney: 0,
     // 评分
     grade: '3',
     // logo的url
@@ -38,46 +43,46 @@ Page({
     ],
     //每个标签对应的菜品列表
     titleMenu: [{
-      title: '荤菜',
-      goods: [{
-          imageURL: '',
-          menuName: '豆芽',
-          price: '5',
-          vipPrice: '8',
-          monthSales: '11000001',
-        },
-        {
-          imageURL: '',
-          menuName: '红烧鸡柳',
-          price: '8',
-          vipPrice: '6',
-          monthSales: '201',
-        }
-      ]
-    },
-    {
-      title: '素菜',
-      goods: [{
-          imageURL: '',
-          menuName: '猪脚饭',
-          price: '12',
-          vipPrice: '8',
-          monthSales: '111',
-        },
-        {
-          imageURL: '',
-          menuName: '红烧鸡柳',
-          price: '8',
-          vipPrice: '6',
-          monthSales: '201',
-        }
-      ]
-    }, 
-   ]
+        title: '荤菜',
+        goods: [{
+            imageURL: '',
+            menuName: '豆芽',
+            price: '5',
+            vipPrice: '8',
+            monthSales: '11000001',
+          },
+          {
+            imageURL: '',
+            menuName: '红烧鸡柳',
+            price: '8',
+            vipPrice: '6',
+            monthSales: '201',
+          }
+        ]
+      },
+      {
+        title: '素菜',
+        goods: [{
+            id:1,
+            imageURL: '',
+            menuName: '猪脚饭',
+            price: '12',
+            vipPrice: '8',
+            monthSales: '111',
+          },
+          {
+            id:2,
+            imageURL: '',
+            menuName: '红烧鸡柳',
+            price: '8',
+            vipPrice: '6',
+            monthSales: '201',
+          }
+        ]
+      },
+    ]
 
   },
-
-
 
   // 触摸左侧菜单导航栏
   handleMenuNavigation(event) {
@@ -86,6 +91,24 @@ Page({
     })
     console.log(this.data.num)
   },
+  //计算单个菜品总金额
+  handleCalculation(e) {
+    //接收传来的数据
+    console.log(e)
+    const amount = e.detail.all.amount
+    const money = e.detail.all.money
+    const allMoney =money
+    this.setData({
+      amount:amount,
+      money:money,
+      allMoney:allMoney
+    })
+    
+    console.log(amount)
+    console.log(money)
+    console.log(this.data.allMoney)
+  },
+
   // 展开全部以选中的菜品
   spreadAllSelectedGoods(event) {
     this.setData({

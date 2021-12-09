@@ -20,6 +20,8 @@
         <van-stepper value="{{0}}"  min="0" disable-input
                      long-press="{{ false }}"
                      input-class="number-input-class"
+                     bind:plus="stepperPlus"
+                     bind:minus="stepperMinus"
                      bind:change="onChange"
                      theme="round"
                      button-size="34rpx"
