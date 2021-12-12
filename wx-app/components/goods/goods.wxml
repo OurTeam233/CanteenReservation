@@ -5,7 +5,7 @@
                height="140rpx"
                lazy-load
                custom-class="image-class"
-               src="https://img95.699pic.com/photo/50074/8934.jpg_wh300.jpg"/>
+               src="{{proImageURL}}"/>
   </view>
   <view class="info-wrapper">
     <view class="title">{{proMenuName}}</view>
@@ -20,8 +20,6 @@
         <van-stepper value="{{0}}"  min="0" disable-input
                      long-press="{{ false }}"
                      input-class="number-input-class"
-                     bind:plus="stepperPlus"
-                     bind:minus="stepperMinus"
                      bind:change="onChange"
                      theme="round"
                      button-size="34rpx"

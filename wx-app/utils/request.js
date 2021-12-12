@@ -18,7 +18,7 @@ export const request = (params) => {
   })
 
   // 定义公共的url
-  const baseUrl = 'http://localhost:8080/CanteenWeb'
+  const baseUrl = 'http://121.43.56.241:8080/CanteenWeb'
   return new Promise((resolve, reject) => {
     wx.request({
       ...params,

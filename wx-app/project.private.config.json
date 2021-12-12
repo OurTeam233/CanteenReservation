@@ -21,7 +21,7 @@
         {
           "name": "首页",
           "pathName": "pages/index/index",
-          "query": "",
+          "query": "cid",
           "scene": null
         },
         {
@@ -105,6 +105,12 @@
         {
           "name": "",
           "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/information/index",
           "query": "",
           "scene": null
         },

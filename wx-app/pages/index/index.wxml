@@ -7,61 +7,62 @@
             disabled
             shape="round"
 />
-<!--轮播图-->
-<swiper indicator-dots autoplay interval="3000" duration="800" circular>
+<!--搜索结束-->
+
+<!--轮播图开始-->
+<swiper indicator-dots autoplay interval="3000" duration="800" circular class="swiper" >
   <block>
-    <swiper-item>
-      <view style="width: 100%; height: 100%; background-color: #dfe;"></view>
-    </swiper-item>
-    <swiper-item>
-      <view style="width: 100%; height: 100%; background-color: #ffe;"></view>
-    </swiper-item>
-    <swiper-item>
-      <view style="width: 100%; height: 100%; background-color: #00f;"></view>
+    <swiper-item wx:for="{{slideshowArray}}" wx:key="id" wx:for-item="itemName">
+    <navigator>
+      <image wx:if="{{itemName.pictureUrl}}"  mode="scaleToFill"  src="{{itemName.pictureUrl}}" style="width: 750rpx; height: 350rpx;"></image>
+    </navigator>
     </swiper-item>
   </block>
 </swiper>
+<!--轮播图结束-->
 
-<!--分类-->
+<!--导航开始-->
 <view class="classify-wrapper">
   <!--食堂切换-->
   <van-grid border="{{false}}" clickable>
     <van-grid-item text="一食堂" bindtap="onChange" data-operation="{{1}}">
       <van-image slot="icon" fit="contain" width="70rpx" height="70rpx" src="/image/index/dukan-1.svg"/>
     </van-grid-item>
-    <van-grid-item text="二食堂">
+    <van-grid-item text="三食堂" bindtap="onChange" data-operation="{{2}}">
       <van-image slot="icon" fit="contain" width="70rpx" height="70rpx" src="/image/index/dukan-2.svg"/>
     </van-grid-item>
-    <van-grid-item text="三食堂">
+    <van-grid-item text="四食堂" bindtap="onChange" data-operation="{{3}}">
       <van-image slot="icon" fit="contain" width="70rpx" height="70rpx" src="/image/index/dukan-3.svg"/>
     </van-grid-item>
-    <van-grid-item text="四食堂">
+    <van-grid-item text="五食堂" bindtap="onChange" data-operation="{{4}}">
       <van-image slot="icon" fit="contain" width="70rpx" height="70rpx" src="/image/index/dukan-4.svg"/>
     </van-grid-item>
   </van-grid>
   <!--类别推荐-->
   <van-grid column-num="{{6}}" border="{{false}}" clickable>
-    <van-grid-item text="推荐">
+    <van-grid-item text="推荐" bindtap="onCommand" data-operation="{{0}}">
       <van-image slot="icon" fit="contain" width="70rpx" height="70rpx" src="/image/index/ChickenLeg.svg"/>
     </van-grid-item>
-    <van-grid-item text="米饭">
+    <van-grid-item text="米饭"  bindtap="onCommand" data-operation="{{1}}">
       <van-image slot="icon" fit="contain" width="70rpx" height="70rpx" src="/image/index/Rice.svg"/>
     </van-grid-item>
-    <van-grid-item text="面食">
+    <van-grid-item text="面食"  bindtap="onCommand" data-operation="{{2}}">
       <van-image slot="icon" fit="contain" width="70rpx" height="70rpx" src="/image/index/Pasta.svg"/>
     </van-grid-item>
-    <van-grid-item text="特色">
+    <van-grid-item text="特色"  bindtap="onCommand" data-operation="{{3}}">
       <van-image slot="icon" fit="contain" width="70rpx" height="70rpx" src="/image/index/Steak.svg"/>
     </van-grid-item>
-    <van-grid-item text="水果">
+    <van-grid-item text="水果"  bindtap="onCommand" data-operation="{{4}}">
       <van-image slot="icon" fit="contain" width="70rpx" height="70rpx" src="/image/index/Apple.svg"/>
     </van-grid-item>
-    <van-grid-item text="自助">
-      <van-image slot="icon" fit="contain" width="70rpx" height="70rpx" src="/image/index/Salad.svg"/>
+    <van-grid-item text="自助"  bindtap="onCommand" data-operation="{{5}}">
+      <van-image slot="icon" fit="contain" wid   th="70rpx" height="70rpx" src="/image/index/Salad.svg"/>
     </van-grid-item>
   </van-grid>
 </view>
-<!--菜品详情-->
+<!--导航结束-->
+
+<!--店铺详情开始-->
 <view class="dishes-wrapper">
   <canteen propertyImageURL="{{itemName.logoUrl}}"
            propertyTitle="{{itemName.title}}"
@@ -73,10 +74,11 @@
            propertyNavUrl="{{itemName.navUrl}}"
            class="canteen"
            wx:for="{{arrayList}}"
-           wx:key="{{index}}"
+           wx:key="id"
            wx:for-index="idx" wx:for-item="itemName" 
   ></canteen>
 </view>
+<!-- 店铺详情结束 -->
 
 
 <van-divider contentPosition="center">我也是有底线的</van-divider>
