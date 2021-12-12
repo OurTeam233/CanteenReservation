@@ -17,10 +17,11 @@
 
       <view class="bottom-wrapper">
         <view class="vip-prices">会员价 {{proVIPPrice}}￥</view>
-        <van-stepper value="{{0}}"  min="0" disable-input
+        <van-stepper value="{{proNumber}}"  min="0" disable-input
                      long-press="{{ false }}"
                      input-class="number-input-class"
-                     bind:change="onChange"
+                     bind:plus="tapPlus"
+                     bind:minus="tapMinus"
                      theme="round"
                      button-size="34rpx"
         />

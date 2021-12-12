@@ -6,9 +6,9 @@ Component({
    */
   properties: {
     //菜品id
-    proId:{
-      type:Number,
-      value:0
+    proId: {
+      type: Number,
+      value: 0,
     },
     //菜品图片
     proImageURL: {
@@ -28,10 +28,14 @@ Component({
     //菜品vip价
     proVIPPrice: {
       type: Number,
-      value:6,
+      value: 6,
     },
     //菜品月售
     proMonthSales: {
+      type: Number,
+      value: 0,
+    },
+    proNumber: {
       type: Number,
       value: 0,
     },
@@ -40,15 +44,21 @@ Component({
    * 组件的方法列表
    */
   methods: {
-     //监听到输入值的变化
-  onChange(event) {
-    // console.log(event.detail);
-    const v ={
-      id:this.properties.proId,
-      num:event.detail,
+    tapPlus () {
+      this.properties.proDishes.forEach(obj => {
+        if (obj.id === this.properties.proId) {
+          obj.num++
+        }
+      })
+      this.triggerEvent('handleItem', this.properties.proDishes)
+    },
+    tapMinus () {
+      this.properties.proDishes.forEach(obj => {
+        if (obj.id === this.properties.proId) {
+          obj.num--
+        }
+      })
+      this.triggerEvent('handleItem', this.properties.proDishes)
     }
-     //将菜品id和num返回给父页面
-      this.triggerEvent('handleItem',v)
-  }
-  }
+  },
 })
