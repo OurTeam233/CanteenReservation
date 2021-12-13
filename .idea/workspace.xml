@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="219ac672-b86c-4fbc-9509-1369bc6da38d" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/pages/editProfile/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/pages/editProfile/index.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/pages/editProfile/index.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/pages/editProfile/index.wxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/pages/editProfile/index.wxss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/pages/mine/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/mine/index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/pages/mine/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/mine/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/pages/mine/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/mine/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wx-app/pages/mine/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/mine/index.wxss" afterDir="false" />
-    </list>
+    <list default="true" id="219ac672-b86c-4fbc-9509-1369bc6da38d" name="变更" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +27,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Facet" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.23214285" />
@@ -136,6 +125,9 @@
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
       <changelist id="219ac672-b86c-4fbc-9509-1369bc6da38d" name="变更" comment="" />
@@ -154,11 +146,12 @@
       <workItem from="1638319618592" duration="355000" />
       <workItem from="1638320000368" duration="1672000" />
       <workItem from="1638327374167" duration="203000" />
+      <workItem from="1639358215214" duration="396000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
