@@ -111,7 +111,7 @@ Page({
     } = e.detail;
     userInfo.class = this.data.valueClass
     userInfo.department = this.data.valueCollege
-    userInfo.seuqence = this.data.suqence
+    userInfo.sequence = this.data.suqence
     console.log(userInfo)
     wx.login({
       success: res => {
@@ -122,7 +122,7 @@ Page({
         const code = res.code
         // 2. 将code发送给服务器，这里就需要我们的接口了S
         const token = wx.request({
-          url: 'http://121.43.56.241:8080/CanteenWeb/Login/Student?code=' + code,
+          url: 'http://localhost:8080/CanteenWeb/Login/Student?code=' + code,
           data: {
             userInfo
           },
