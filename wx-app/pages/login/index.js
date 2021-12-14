@@ -111,7 +111,7 @@ Page({
     } = e.detail;
     userInfo.class = this.data.valueClass
     userInfo.department = this.data.valueCollege
-    userInfo.seuqence = this.data.suqence
+    userInfo.sequence = this.data.suqence
     console.log(userInfo)
     wx.login({
       success: res => {
