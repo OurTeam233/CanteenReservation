@@ -56,7 +56,7 @@
       <van-image slot="icon" fit="contain" width="70rpx" height="70rpx" src="/image/index/Apple.svg"/>
     </van-grid-item>
     <van-grid-item text="自助"  bindtap="onCommand" data-operation="{{5}}">
-      <van-image slot="icon" fit="contain" wid   th="70rpx" height="70rpx" src="/image/index/Salad.svg"/>
+      <van-image slot="icon" fit="contain" width="70rpx" height="70rpx" src="/image/index/Salad.svg"/>
     </van-grid-item>
   </van-grid>
 </view>

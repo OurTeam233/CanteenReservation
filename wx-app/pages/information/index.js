@@ -17,7 +17,7 @@ Page({
     //右侧菜品列表
     rightContent:[],
     //定义购物车数组
-    cart:[],
+    carts:[],
     //接口返回数据（所有分类菜品）
     cates:[],
 
@@ -32,7 +32,7 @@ Page({
     // 选中商品的总价值
     sumPrice: "99.00",
     // 选中商品的数量
-    dishesNumber: 10,
+    dishesNumber: 77,
     // 是否展开全部商品
     showAllSelections: false,
     // 左侧菜单被选中的id
@@ -68,13 +68,13 @@ Page({
       url: '/Store?storeId=4'
     }).then(
       res => {
-        // console.log(res)
-        this.Store=res
-        //将数据存入本地中
-        wx.setStorageSync('store', {time:Date.now(),data:this.Store})
+        console.log(res)
+        const store = res;
         this.setData({
           store:res,
         })
+        //将数据存入本地中
+        wx.setStorageSync('store',store)
     })
   },
   //获取店铺菜品数据
@@ -100,7 +100,9 @@ Page({
           cates
         })
       }
-    )
+    );
+    //将菜品总数据数据存入缓存中
+    wx.setStorageSync('cates',cates);
   },
   // 触摸左侧菜单导航栏
   handleMenuNavigation(event) {
@@ -151,6 +153,34 @@ Page({
     this.setData({
       rightContent,
       cates:temp
-    })
-  }
+    });
+    //将加入num字段的cates存入本地
+    wx.setStorageSync('cates', this.data.cates);
+    this.getCarts()
+  },
+  //判断购物车的菜品，其金额和总数量
+  getCarts(){
+    const cates = this.data.cates;
+    const sumPrice = 0;
+    const dishesNumber = 0;
+    const carts = [];
+    cates.forEach(obj=>{
+      obj.dishes.forEach(v=>{
+        sumPrice +=v.price*v.num;
+        if(v.num!=0){
+          carts.push(v);
+        };
+        dishesNumber +=v.num;
+      })
+    });
+    this.setData({
+      sumPrice:sumPrice,
+      dishesNumber:dishesNumber,
+      carts:carts,
+    });
+    //将加入购物菜品以及金额存入本地
+    wx.setStorageSync('carts', this.carts);
+    wx.setStorageSync('sumPrice', this.sumPrice);
+  },
+
 })

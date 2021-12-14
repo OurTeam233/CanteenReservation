@@ -24,7 +24,7 @@
         custom-style="border-bottom: 1.5rpx solid #E5E5E5; height: 100rpx;"
     />
     <van-field
-        value="{{ username }}"
+        model:value="{{ suqence }}"
         size="large" label="学号"
         placeholder="请输入学号"
         clearable required center
@@ -37,7 +37,7 @@
   <view class='box'>
     <view class='log'>
       <button class='logBtn'
-      open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">
+      open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo" >
         登录
       </button>
     </view>
@@ -50,7 +50,7 @@
            position="bottom"
            custom-style="height: 40%;">
 
-  <van-picker columns="{{ columns }}"
+  <van-picker columns="{{ columns1}}"
               show-toolbar
               title="请选择学院"
               bind:cancel="onClose"
@@ -64,7 +64,7 @@
            position="bottom"
            custom-style="height: 40%;">
 
-  <van-picker columns="{{ columns }}"
+  <van-picker columns="{{ columns2 }}"
               show-toolbar
               title="请选择班级"
               bind:cancel="onClose"

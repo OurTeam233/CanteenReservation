@@ -4,11 +4,13 @@ let ajaxTimes = 0
  */
 export const request = (params) => {
   // 判断 url中是否带有 /my/ 请求的是私有的路径 带上header token
+  // header['Authorization'] = wx.getStorageSync('token')
   let header = { ...params.header }
-  if (params.url.includes('/my/')) {
-    // 拼接header 带上token
-    header['Authorization'] = wx.getStorageSync('token')
-  }
+  header['Authorization'] = wx.getStorageSync('token')
+  // if (params.url.includes('/my/')) {
+  //   // 拼接header 带上token
+  //   header['Authorization'] = wx.getStorageSync('token')
+  // }
 
   ajaxTimes++
   // 显示加载中 效果

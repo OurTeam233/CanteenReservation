@@ -7,6 +7,8 @@ Page({
   data: {
     imageURL: 'https://img01.yzcdn.cn/vant/ipad.jpeg',
     showSelectTime: false,
+    carts:[],//购物车
+    sumPrice:0,//购物总金额
     currentYear: new Date().getFullYear(),
     currentMonth: new Date().getMonth() + 1,
     currentDay: new Date().getDate(),
@@ -28,6 +30,16 @@ Page({
     },
     notesValue: '',
 
+  },
+  //事件加载
+  onLoad(){
+    //获取购物车数据
+    const carts = wx.getStorageSync('carts');
+    const sumPrice = wx.getStorageSync('sumPrice');
+    this.setData({
+      carts:carts,
+      sumPrice:sumPrice,
+    })
   },
   // 点击打开时间选择栏
   selectTime: function () {
@@ -72,4 +84,6 @@ Page({
     })
     // TODO 提交成功代码
   }
+  //监听步进器
+  
 })

@@ -21,14 +21,14 @@ Page({
     3 有旧的数据同时没有过期就是使用本地存储的旧数据
      */
 
-     // 1 获取l轮播本地存储数据
+     // 1 获取轮播本地存储数据
      const SlideshowArray = wx.getStorageSync('slideshowArray');
      //判断 
      if(!SlideshowArray){
        //不存在，发送请求获取数据
        this.getSlideshow()
      }else{
-       //有旧数据 定义过期时间100s
+       //有旧数据 定义过期时间1000s
        if((Date.now()-SlideshowArray.time)>1000*100){
          //重新发送请求数据
          this.getSlideshow();
@@ -45,8 +45,8 @@ Page({
        //不存在，发送请求获取数据
        this.getDetial();
      }else{
-       //有旧数据 定义过期时间100s
-       if((Date.now()-ArrayList.time)>1000*100){
+       //有旧数据 定义过期时间1000s
+       if((Date.now()-ArrayList.time)>1000*1000){
          //重新发送请求数据
          this.getDetial();
        }else{
@@ -58,11 +58,13 @@ Page({
 
   //轮播数据获取
   getSlideshow(){
+     //获取缓存里面的token
+     const token = wx.getStorageSync('token');
     //发送请求
     request({
-      url: '/Slideshow',}).then(res=>{
+      url: '/Slideshow',
+    }).then(res=>{
         this.SlideshowArray = res
-        
         //把接口数据存入本地
         wx.setStorageSync('slideshowArray', {time:Date.now(),data:this.SlideshowArray})
         this.setData({
