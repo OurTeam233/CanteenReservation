@@ -1,29 +1,24 @@
 <!--pages/appointment/index.wxml-->
 <view class="content">
-  <!--菜品详情-->
+  <!--加入购物车详情开始-->
   <view class="goods-list-wrapper">
     <view class="title">菜品详情</view>
-    <view class="all-goods-wrapper">
+    <view class="all-goods-wrapper" wx:for="{{cates}}" wx:for-index="idx" wx:for-item="itemName1">
       <van-card
           custom-class="goods-card"
-          price="10.00"
-          desc="描述信息"
-          title="商品标题"
-          thumb="{{ imageURL }}"
-          wx:for="{{20}}"
-      >
-        <view slot="num" class="stepper">
-          <van-stepper value="{{ 0 }}" disable-input
-                       long-press="{{ false }}"
-                       input-class="number-input-class"
-                       bind:change="onChange"
-                       theme="round"
-                       button-size="34rpx"
-          />
-        </view>
+          wx:if="{{itemName2.num>0}}"
+          wx:for="{{itemName1.dishes}}"
+          wx:for-index="idx"
+          wx:for-item="itemName2"
+          price="{{itemName2.price}}"
+          title="{{itemName2.name}}"
+          thumb="{{itemName2.imgUrl}}"
+          num="{{itemName2.num}}"
+      >    
       </van-card>
     </view>
   </view>
+  <!-- 菜品加入购物车详情结束 -->
 
   <!--预约时间-->
   <view class="appointment-time-wrapper">
@@ -57,7 +52,7 @@
 
   <!--底部栏-->
   <van-submit-bar
-      price="{{ 3050 }}"
+      price="{{ sumPrice*100 }}"
       button-text="提交预约"
       bind:submit="tapSubmit"
       custom-class="appointment-wrapper"

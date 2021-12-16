@@ -1,32 +1,27 @@
 <!--pages/information/index.wxml-->
-    <!--店铺详细信息开始-->
+<!--店铺详细信息开始-->
 <view class="container">
   <view class="info-wrap">
     <view class="title-wrap">
-      <text class="title">三食堂一楼窗口1</text>
+      <text class="title">{{store.canteen.name}}{{store.address}}</text>
       <van-button plain size="mini" type="danger">评论</van-button>
     </view>
     <view class="score-wrap">
       <view class="score">
-        <van-rate readonly allow-half value="{{ grade }}" size="30rpx"/>
-        {{grade}}分
+        <van-rate readonly allow-half value="{{ store.score }}" size="30rpx" />
+        {{store.score}}分
       </view>
       <van-button plain size="mini" type="default">收藏</van-button>
     </view>
   </view>
-  <van-image width="160rpx" height="160rpx" fit="fill" class="logo" src="{{logoUrl}}"/>
+  <van-image wx:if="{{store.logoUrl}}" width="160rpx" height="160rpx" fit="fill" class="logo" src="{{sotre.logoUrl}}" />
 </view>
-    <!--店铺详细信息结束-->
+<!--店铺详细信息结束-->
 
 <view class="menu-info">
   <!--左侧菜单开始-->
-  <van-sidebar active-key="{{ activeKey }}" bind:change="handleMenuNavigation"
-               data-index="{{index}}"
-               custom-class="menu-custom-class">
-    <van-sidebar-item
-        title="{{itemName}}"
-        custom-class="menu-custom"
-        wx:for="{{leftMenuList}}" wx:for-index='id' wx:for-item='itemName'/>
+  <van-sidebar active-key="{{ activeKey }}" bind:change="handleMenuNavigation" data-index="{{index}}" custom-class="menu-custom-class">
+    <van-sidebar-item title="{{itemName}}" custom-class="menu-custom" wx:for="{{leftMenuList}}" wx:for-index='id' wx:for-item='itemName' />
   </van-sidebar>
   <!-- 左侧菜单结束 -->
 
@@ -34,11 +29,7 @@
   <view class="goods-wrapper">
     <view class="goods-components-wrapper" wx:for="{{rightContent}}">
       <view class="image-wrapper">
-        <van-image width="180rpx"
-                   height="140rpx"
-                   lazy-load
-                   custom-class="image-class"
-                   src="{{item.imgUrl}}"/>
+        <van-image width="180rpx" height="140rpx" lazy-load custom-class="image-class" src="{{item.imgUrl}}" />
       </view>
       <view class="info-wrapper">
         <view class="title">{{item.name}}</view>
@@ -49,13 +40,7 @@
           </view>
           <view class="bottom-wrapper">
             <view class="vip-prices">会员价 {{item.vipprice}}￥</view>
-            <van-stepper value="{{item.num}}" min="0" disable-input
-                         long-press="{{ false }}"
-                         input-class="number-input-class"
-                         bind:change="handleStepperChange" data-id="{{item.id}}"
-                         theme="round"
-                         button-size="34rpx"
-            />
+            <van-stepper value="{{item.num}}" min="0" disable-input long-press="{{ false }}" input-class="number-input-class" bind:change="handleStepperChange" data-id="{{item.id}}" theme="round" button-size="34rpx" />
           </view>
         </view>
       </view>
@@ -65,39 +50,31 @@
 </view>
 
 
-    <!--分隔线-->
+<!--分隔线-->
 <van-divider contentPosition="center">没菜了</van-divider>
-    <!--底部预约-->
-<van-submit-bar price="{{0}}" button-text="我选好了" bind:submit="tapSubmit"
-                custom-class="appointment-wrapper">
-  <van-icon name="shopping-cart" size="50px" class="shopping-cart-icon" info="{{dishesNumber}}"
-            bind:tap="spreadAllSelectedGoods"/>
+<!--底部预约-->
+<van-submit-bar price="{{sumPrice*100}}" button-text="我选好了" bind:submit="tapSubmit" custom-class="appointment-wrapper">
+  <van-icon name="shopping-cart" size="50px" class="shopping-cart-icon" info="{{dishesNumber}}" bind:tap="spreadAllSelectedGoods" />
 </van-submit-bar>
 
-    <!--展开部分：全部菜品-->
-<van-popup show="{{showAllSelections}}" round safe-area-inset-top position="bottom" z-index="100"
-           custom-style="height: 70%" bind:close="closeAllSelectedGoods">
+<!--展开部分：全部菜品-->
+<van-popup show="{{showAllSelections}}" round safe-area-inset-top position="bottom" z-index="100" custom-style="height: 70%" bind:close="closeAllSelectedGoods">
   <view class="all-goods-wrapper">
     <view class="title-wrapper">
       <view class="all-goods-title">已选商品</view>
-      <view class="button-clear">
+      <view class="button-clear" bindtap="clearCates">
         全部清除
-        <van-icon name="delete-o" size="20"/>
+        <van-icon name="delete-o" size="20" bindtap="clearCates" />
       </view>
     </view>
-    <!-- <van-card class="goods-card" price="10.00" desc="描述信息" title="商品标题" thumb="{{ imageURL }}" wx:for="{{2}}">
-      <view slot="num" class="stepper">
-        <van-stepper value="{{ 0 }}" disable-input long-press="{{ false }}" input-class="number-input-class" bind:change="onChange" theme="round" button-size="34rpx" />
-      </view>
-    </van-card> -->
 
-    <van-card class="goods-card" wx:for="{{Cart}}" wx:for-index='id' wx:for-item='itemName'
-              price="{{itemName.price}}" desc="{{itemName.sales}}" title="{{itemName.name}}"
-              thumb="{{itemName.imgUrl}}">
-      <view slot="num" class="stepper">
-        <van-stepper value="{{0}}" disable-input long-press="{{ false }}" input-class="number-input-class"
-                     bind:change="onChange" theme="round" button-size="34rpx"/>
-      </view>
-    </van-card>
+    <view class="goods-card" wx:for="{{cates}}" wx:key="item" wx:for-index="idx" wx:for-item="itemName1">
+      <van-card wx:for="{{itemName1.dishes}}" wx:key="id" wx:index="idx" wx:for-item="itemName2" wx:if='{{itemName2.num>0}}' price="{{itemName2.price}}" thumb="{{itemName2.imgUrl}}" title="{{itemName2.name}}">
+          <view slot="num" class="stepper">
+          <van-stepper value="{{itemName2.num}}" min="0" disable-input long-press="{{ false }}" input-class="number-input-class" bind:change="handleStepperChange" data-id="{{itemName2.id}}" theme="round" button-size="34rpx" />
+        </view>
+      </van-card>
+    </view>
+    <van-card></van-card>
   </view>
 </van-popup>

@@ -122,7 +122,7 @@ Page({
         const code = res.code
         // 2. 将code发送给服务器，这里就需要我们的接口了S
         const token = wx.request({
-          url: 'http://localhost:8080/CanteenWeb/Login/Student?code=' + code,
+          url: 'http://121.43.56.241:8080/CanteenWeb/Login/Student?code=' + code,
           data: {
             userInfo
           },
@@ -130,77 +130,26 @@ Page({
           success: function (result) {
             //json转化
             console.log(result)
-            // const res = JSON.parse(result);
-            // //解构赋值
-            // const {
-            //   openid,
-            //   session_key,
-            //   unionid,
-            //   errorcode
-            // } = res.data;
-            // // console.log(res.data)
-            // //errorcode 状态码
-            // if (errorcode === -1) {
-            //   console.log('系统繁忙，请稍微重试');
-            //   //弹窗
-            //   wx.showToast({
-            //     title: '系统繁忙',
-            //     icon: 'error',
-            //     duration: 1000,
-            //     mask: true
-            //   })
-            //   return;
-            // } else if (errorcode === 0) {
-            //   console.log('请求成功');
-            //   // 跳转到首页
-            //   wx.switchTab({
-            //     url: '../../pages/index/index',
-            //   })
-            // } else if (errorcode === 40029) {
-            //   console.log('code无效');
-            //   wx.showToast({
-            //     title: '请求失败',
-            //     icon: 'error',
-            //     duration: 1000,
-            //     mask: true
-            //   })
-            //   return;
-            // } else if (errorcode === 45011) {
-            //   console.log('请求过于频繁');
-            //   wx.showToast({
-            //     title: '请求过于平凡繁忙',
-            //     icon: 'error',
-            //     duration: 1000,
-            //     mask: true
-            //   })
-            //   return
-            // } else {
-            //   console.log('未知错误');
-            //   wx.showToast({
-            //     title: '未知错误',
-            //     icon: 'error',
-            //     duration: 1000,
-            //     mask: true
-            //   })
-            //   return
-            // };
-            // wx.setStorageSync('errorcode',errorcode )
-          },
-          fail: function (result) {
-            console.log(result);
-            wx.showToast({
-              title: '请求失败',
-              icon: 'error',
-              duration: 1000,
-              mask: true
-            })
+            //解构赋值
+            console.log(result.data)
+             // openid,
+            const {
+              success,
+              token,
+              openId
+            } = result.data;
+            if (success) {
+              console.log(success)
+              console.log(token)
+              console.log(openId)
+              wx.setStorageSync("token", token);
+              wx.setStorageSync('openId', openId)
+              wx.switchTab({
+                url: '../../pages/index/index',
+              })
+            }
           },
         });
-        console.log('token：'+token);
-        // 3. 将token存入storge
-        wx.setStorageSync('token', token);
-        //4.将个人信息写入缓存中
-        wx.setStorageSync('userInfo', userInfo);
       }
     });
   }
