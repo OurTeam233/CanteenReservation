@@ -1,4 +1,7 @@
 // pages/appointment/index.js
+import{
+  request
+}from '../../utils/request'
 Page({
 
   /**
@@ -42,6 +45,7 @@ Page({
       cates: cates,
       sumPrice: sumPrice,
     })
+    this.getCarts()
   },
   //获取加入购物车的菜品
   getCarts(){
@@ -50,8 +54,9 @@ Page({
     for(const item1 of cates){
       for(const item2 of item1.dishes){
         if(item2.num!=0){
-          this.v;
-          v.id=item2.id;
+          var v = new Object();
+          //为对象添加动态属性
+          v.dishesId=item2.id;
           v.num = item2.num
           carts.push(v);
         }
@@ -60,6 +65,7 @@ Page({
     this.setData({
       carts
     })
+    console.log(this.data.carts)
   },
   // 点击打开时间选择栏
   selectTime: function () {
@@ -100,13 +106,22 @@ Page({
   tapSubmit: function (event) {
     const order = this.all();
     console.log(order);
+    const token = wx.getStorageSync('token')
     //发送请求给后端
-    request({
-      url: 'url',
-      data: order,
-    }).then(res=>{
-      console.log(res)
+    wx.request({
+      url: 'http://121.43.56.241:8080/CanteenWeb/Order/Insert',
+      data: {
+        order,
+      },
+      header:{token},
+      method: "POST",
+      success: (result) => {
+        console.log(result)
+        console.log("成功了吗")
+      },
     })
+  
+    
     //跳转也页面
     wx.switchTab({
       url: '/pages/order/index'
@@ -115,16 +130,36 @@ Page({
   },
   //整合传递数据，
   all(){
-    const order={};
+    const order=new Object();
     const store = wx.getStorageSync('store');
-    order.storeId = store.id;//店铺id
-    order.carts = this.data.carts;//菜品数据（id,num）
-    order.sumPrice = this.data.sumPrice;//总价
-    order.notesValue = this.data.notesValue;//备注
-    order.startHour = this.data.startHour;//开始时间hour
-    order.startMin = this.data.startMin;//开始时间min
-    order.endHour = this.data.endHour;//结束时间hour
-    order.endMin = this.data.endMin;//结束时间min
+    //或去当前时间的毫秒值
+    const time = new Date().getTime();
+    console.log(time);
+    //获取去当前年月日
+    const currentYear = this.data.currentYear;
+    const currentMonth = this.data.currentMonth;
+    const currentDay = this.data.currentDay;
+    //获取预定时间
+    const startHour = this.data.startHour;
+    const startMin = this.data.startMin;
+    if(currentMonth<10){
+      currentMonth = `0${currentMonth}`
+    };
+    if(currentDay<10){
+      currentDay = `0${currentDay}`
+    };
+    //拼接预定时间 (new Date("2017/04/25 19:44:11"))
+    const ordertime = `${currentYear}/${currentMonth}/${currentDay} ${startHour}:${startMin}:00`
+    //获取预定时间毫秒值
+    const orderTime =  (new Date(ordertime)).getTime(); 
+    console.log(orderTime);
+    console.log(this.data.carts)
+    order.storeId  = store.id;//店铺id
+    order.dishes = this.data.carts;//菜品数据（id,num）
+    order.totalPrice = this.data.sumPrice;//总价
+    order.note = this.data.notesValue;//备注、
+    order.time = time//当前下单时间（ms）
+    order.orderTime = ordertime;//预定时间(ms)
     this.setData({
       order
     });
