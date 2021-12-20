@@ -41,6 +41,23 @@ Page({
       url: '/Order/Select'
     }).then(res=>{
       console.log(res)
+      //将订单里的数据全部转成年月日时分秒
+      for(const item of res){
+        //下单预定时间,将时间转化成年月日时分秒
+        var time = new Date(item.orderTime);
+        const orderTime  = item.orderTime;
+        item.orderTime =time.getHours()+":"+time.getMinutes()
+        // console.log('下单预定时间'+item.orderTime);
+        //下单取餐截止时间
+        const mss = parseInt(orderTime)+30*60*1000;
+        var time3 = new Date(mss)
+        const getTime = time3.getHours()+":"+time3.getMinutes()
+        item.getTime = getTime//插入获取截止时间
+        //下单时间时间
+        var time2 = new Date(item.time);
+        item.time = time2.getFullYear()+":"+(time2.getMonth()+1)+":"+time2.getDate()+":"+time2.getHours()+":"+time2.getMinutes()
+         // console.log('下单时间'+item.time);
+      };
       const newList = new Array();
       const historyList = new Array();
       const illegalList =  new Array();
@@ -72,18 +89,24 @@ Page({
       //  console.log(illegalList)
     })
   },
-  //将毫秒数转化成时间
-  changeTime(){
-  },
   //取消订单
-  abolishOrder(){
-
+  abolishOrder(e){
+    //获取参数
+    const id = e.currentTarget.dataset.id
+    console.log(id);
+    request({
+      url:'url',
+      data:id
+    })
   },
   //跳转评价页面
   skipLoad(e){
     wx.navigateTo({
       url:"/page/Loading/index"
   })
+  },
+  //在来一单
+  anotheList(){
   },
   //申诉
   appealOrder(){
