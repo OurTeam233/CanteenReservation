@@ -101,24 +101,6 @@
           "pathName": "pages/search/index",
           "query": "",
           "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/index/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/information/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/information/index",
-          "query": "",
-          "scene": null
         }
       ]
     }

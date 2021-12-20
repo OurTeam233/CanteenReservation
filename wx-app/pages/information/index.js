@@ -48,12 +48,14 @@ Page({
   },
   //事件加载
   onLoad(options) {
-    // console.log(options)
+    console.log(options)
     //获取上一个页面参数
     this.QueryParams.query = options.id;
     //或去缓存数据
-    this.getMenu()
     this.getCanteenList()
+    this.getMenu()
+    this.getCount()
+   
   },
   onReady() {
     // console.log(this.data.cates)
@@ -65,7 +67,7 @@ Page({
   //获取店铺数据
   getCanteenList() {
     request({
-      url: '/Store?storeId=4'
+      url: '/Store?storeId='+this.QueryParams.query
     }).then(
       res => {
         // console.log(res)
@@ -73,7 +75,7 @@ Page({
         // console.log(res.score)
         const score = res.score.toFixed(1)
         res.score = score
-        //将数据存入本地中
+        //将店铺数据存入本地中
         wx.setStorageSync('store', this.Store)
         this.setData({
           store: res,
@@ -82,57 +84,48 @@ Page({
   },
   //获取店铺菜品数据
   getMenu() {
-    //判断缓存中是否有数据
-    const Cates = wx.getStorageSync('cates')
-    console.log(Cates)
-    if(!Cates){
-      request({
-        url: `/Dishes?storeId=` + this.QueryParams.query,
+    // //判断缓存中是否有数据
+    const againCarts = wx.getStorageSync('againCarts')
+    request({
+        url: `/Dishes?storeId=`+this.QueryParams.query
       }).then(
         res => {
           let cates = res
-          console.log(cates)
-          //写入本地
+          console.log(res)
+          //将店铺菜品数据写入本地
           wx.setStorageSync('cates', res)
           //构造左侧菜单数据
           let leftMenuList = cates.map(v => v.name);
           // 解析出所有菜品并加入num字段
+          const dishesNumber = 0;
           cates.forEach(obj => {
             obj.dishes.forEach(v => {
-              v.num = 0
+              v.num = 0;
+              for(const item of againCarts){
+                if(item.dishesId == v.id){
+                  v.num = parseInt(item.num)
+                  this.dishesNumber = this.dishesNumber + v.num
+                  this.sumPrice = this.sumPrice + v.num*v.price
+                }
+              }
             })
           })
+          console.log(cates)
+          //将数据存入本地
+          wx.setStorageSync('cates', cates)
           //构造右侧商品数据
           let rightContent = cates[0].dishes;
           this.setData({
             leftMenuList,
             rightContent,
-            cates
+            cates,
+            dishesNumber:this.dishesNumber,
+            sumPrice:this.sumPrice
           })
         }
+        
       );
-
-    }else{
-      let cates = Cates;
-      console.log(cates)
-      //构造左侧菜单数据
-      let leftMenuList = cates.map(v => v.name);
-      // 解析出所有菜品并加入num字段
-      cates.forEach(obj => {
-        obj.dishes.forEach(v => {
-          v.num = 0
-        })
-      })
-      //构造右侧商品数据
-      let rightContent = cates[0].dishes;
-      this.setData({
-        leftMenuList,
-        rightContent,
-        cates
-      })
-      
-
-    }
+      wx.setStorageSync('againCarts', [])
   },
   // 触摸左侧菜单导航栏
   handleMenuNavigation(event) {
@@ -216,7 +209,7 @@ Page({
   //计算总价格和数量
   getCount() {
     const carts = this.data.cates
-    // console.log(carts);
+    console.log(carts);
     this.sumPrice = 0;
     this.dishesNumber = 0;
     for (const item1 of carts) {

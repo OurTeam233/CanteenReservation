@@ -19,12 +19,12 @@
           >
             <view class="ordering-title">取餐号</view>
             <view class="ordering-number">{{item.orderNumber}}</view>
-            <view class="ordering-place">取餐地点: {{item.canteen}}{{item.address}}</view>
+            <view class="ordering-place">取餐地点: {{item. canteenName}}{{item.address}}</view>
             <view class="ordering-time">预约取餐时间:{{item.orderTime}}-{{item.getTime}}</view>
             <view class="ordering-info-wrapper">
               <van-cell-group>
                 <van-cell  wx:for="{{item.orderDetailsList}}" wx:for-index="idx2" wx:for-item="item2" title="菜品" value="{{item2.name}}  ￥{{item2.price}}*{{item2.num}}" border="{{ false }}"/>
-                <van-cell wx:if="{{item2.note}}" title="备注：" value="{{item2.note}}" />
+                <van-cell wx:if="{{item.note}}" title="备注：" value="{{item.note}}" />
               </van-cell-group>
             </view>
             <view class="ordering-bottom">
@@ -44,7 +44,7 @@
           wx:for-index="idx"
           wx:for-item="item1"
           >
-            <view class="ordered-place">{{item1.canteen}}{{item1.address}}</view>
+            <view class="ordered-place">{{item1. canteenName}}{{item1.address}}</view>
             <view class="ordered-middle-wrapper">
               <view class="ordered-number">取餐号:{{item1.orderNumber}}</view>
               <view class="ordered-time">下单时间:{{item1.time}}</view>

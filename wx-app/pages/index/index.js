@@ -86,6 +86,7 @@ Page({
           obj.title = obj.canteen.name + obj.address
           obj.tagList = []
           obj.tags.forEach(tag => obj.tagList.push(tag.name));
+          console.log(obj.id)
           obj.navUrl = `../information/index?id=${obj.id}`
         })
         this.setData({
@@ -93,9 +94,6 @@ Page({
         })
       })
   },
-
-
-
   //点击搜索框事件
   handleToSearch() {
     wx.navigateTo({

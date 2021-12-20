@@ -28,13 +28,13 @@
     <van-grid-item text="一食堂" bindtap="onChange" data-operation="{{1}}">
       <van-image slot="icon" fit="contain" width="70rpx" height="70rpx" src="/image/index/dukan-1.svg"/>
     </van-grid-item>
-    <van-grid-item text="三食堂" bindtap="onChange" data-operation="{{2}}">
+    <van-grid-item text="三食堂" bindtap="onChange" data-operation="{{3}}">
       <van-image slot="icon" fit="contain" width="70rpx" height="70rpx" src="/image/index/dukan-2.svg"/>
     </van-grid-item>
-    <van-grid-item text="四食堂" bindtap="onChange" data-operation="{{3}}">
+    <van-grid-item text="四食堂" bindtap="onChange" data-operation="{{4}}">
       <van-image slot="icon" fit="contain" width="70rpx" height="70rpx" src="/image/index/dukan-3.svg"/>
     </van-grid-item>
-    <van-grid-item text="五食堂" bindtap="onChange" data-operation="{{4}}">
+    <van-grid-item text="五食堂" bindtap="onChange" data-operation="{{5}}">
       <van-image slot="icon" fit="contain" width="70rpx" height="70rpx" src="/image/index/dukan-4.svg"/>
     </van-grid-item>
   </van-grid>

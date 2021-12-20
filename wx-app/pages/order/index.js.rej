@@ -1,0 +1,25 @@
+diff a/wx-app/pages/order/index.js b/wx-app/pages/order/index.js	(rejected hunks)
+@@ -41,6 +41,23 @@
+       url: '/Order/Select'
+     }).then(res=>{
+       console.log(res)
++      //将订单里的数据全部转成年月日时分秒
++      for(const item of res){
++        //下单预定时间,将时间转化成年月日时分秒
++        var time = new Date(item.orderTime);
++        const orderTime  = item.orderTime;
++        item.orderTime =time.getHours()+":"+time.getMinutes()
++        // console.log('下单预定时间'+item.orderTime);
++        //下单取餐截止时间
++        const mss = parseInt(orderTime)+30*60*1000;
++        var time3 = new Date(mss)
++        const getTime = time3.getHours()+":"+time3.getMinutes()
++        item.getTime = getTime//插入获取截止时间
++        //下单时间时间
++        var time2 = new Date(item.time);
++        item.time = time2.getFullYear()+":"+(time2.getMonth()+1)+":"+time2.getDate()+":"+time2.getHours()+":"+time2.getMinutes()
++         // console.log('下单时间'+item.time);
++      };
+       const newList = new Array();
+       const historyList = new Array();
+       const illegalList =  new Array();

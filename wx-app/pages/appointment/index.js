@@ -118,6 +118,7 @@ Page({
       success: (result) => {
         console.log(result)
         console.log("成功了吗")
+        wx.setStorageSync('cates', [])
       },
     })
   
@@ -134,7 +135,7 @@ Page({
     const store = wx.getStorageSync('store');
     //或去当前时间的毫秒值
     const time = new Date().getTime();
-    console.log(time);
+    // console.log(time);
     //获取去当前年月日
     const currentYear = this.data.currentYear;
     const currentMonth = this.data.currentMonth;
@@ -152,9 +153,10 @@ Page({
     const ordertime = `${currentYear}/${currentMonth}/${currentDay} ${startHour}:${startMin}:00`
     //获取预定时间毫秒值
     const orderTime =  (new Date(ordertime)).getTime(); 
-    console.log(orderTime);
-    console.log(this.data.carts)
+    // console.log(orderTime);
+    // console.log(this.data.carts)
     order.storeId  = store.id;//店铺id
+    console.log(order.storeId)
     order.dishes = this.data.carts;//菜品数据（id,num）
     order.totalPrice = this.data.sumPrice;//总价
     order.note = this.data.notesValue;//备注、
