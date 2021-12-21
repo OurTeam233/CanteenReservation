@@ -1,10 +1,9 @@
 <!--index.wxml-->
 <!--搜索框-->
-<van-search bindtap="handleToSearch"
+<van-search bind:search="handleToSearch"
             value="{{ value }}"
-            input-align="center"
             placeholder="请输入搜索关键词"
-            disabled
+            show-action
             shape="round"
 />
 <!--搜索结束-->
@@ -65,7 +64,7 @@
 <!--店铺详情开始-->
 <view class="dishes-wrapper">
   <canteen propertyImageURL="{{itemName.logoUrl}}"
-           propertyTitle="{{itemName.title}}"
+           propertyTitle="{{itemName.canteen.name}}{{itemName.address}}--{{itemName.name}}"
            propertySales="{{itemName.sales}}"
            propertyPerCost="{{itemName.perCost}}"
            propertyScore="{{itemName.score}}"

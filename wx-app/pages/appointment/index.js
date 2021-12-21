@@ -158,7 +158,7 @@ Page({
     order.storeId  = store.id;//店铺id
     console.log(order.storeId)
     order.dishes = this.data.carts;//菜品数据（id,num）
-    order.totalPrice = this.data.sumPrice;//总价
+    order.totalPrice = this.data.sumPrice*100;//总价（分）
     order.note = this.data.notesValue;//备注、
     order.time = time//当前下单时间（ms）
     order.orderTime = ordertime;//预定时间(ms)

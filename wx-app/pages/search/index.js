@@ -1,3 +1,5 @@
+import { request } from "../../utils/request";
+
 // pages/search/index.js
 Page({
 
@@ -33,7 +35,24 @@ Page({
     // event.detail 为当前输入的值
     console.log(event.detail);
   },
-  onSearch() {},
+  onSearch(e) {
+     // event.detail 为当前输入的值
+     const keyWord = e.detail
+     console.log(keyWord)
+      wx.request({
+      url: 'http://121.43.56.241:8080/CanteenWeb/Store/Like',
+      header: {
+        token: wx.getStorageSync('token')
+      },
+      data:{
+        keyword: keyWord
+      },
+      method:"POST",
+      success:function (result) {
+        console.log(result)
+      }
+    })  
+  },
   onCance() {
 
   },

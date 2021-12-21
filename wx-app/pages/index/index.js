@@ -12,8 +12,14 @@ Page({
     //导航对应的数组信息
     arrayList: [],
     num: 0,
+    keyWord:" "
   },  
-
+  QueryParams: {
+    query: "",
+    cid: "",
+    pagenum: 1,
+    pagesize: 10,
+  },
   onLoad() {
     /*
     1 先判断有无旧数据
@@ -95,16 +101,33 @@ Page({
       })
   },
   //点击搜索框事件
-  handleToSearch() {
-    wx.navigateTo({
-      url: `../search/index`
-    })
+  handleToSearch(e) {
+    //获取输入框内容
+    const keyWord = e.detail
+    //发送请求
+     wx.request({
+     url: 'http://121.43.56.241:8080/CanteenWeb/Store/Like',
+     header: {
+       token: wx.getStorageSync('token')
+     },
+     data:{
+       keyword: keyWord
+     },
+     method:"POST",
+     success:(result)=>{
+       this.setData({
+         arrayList:result.data
+       })
+      //  console.log(this.data.arrayList)
+     },
+   })
+   
   },
   //点击导航——菜品分类事件
   onChange(e) {
     //获取参数
     const operation = e.currentTarget.dataset.operation;
-    console.log(operation)
+    // console.log(operation)
     //发送请求
     request({
       url: '/StoreList?canteenId='+operation
@@ -120,19 +143,15 @@ Page({
         this.setData({
           arrayList: res
         })
+        // console.log(res)
       })
-    // //将参数赋值给this.data.num
-    // this.setData({
-    //   num: operation,
-    // })
-    // console.log(this.data.num)
   },
 
   //点击导航——推荐菜品事件
   onCommand(e) {
     //获取参数
     const operation = e.currentTarget.dataset.operation;
-    console.log(operation)
+    // console.log(operation)
     //发送请求
     request({
       url: '/StoreList?tagsId='+operation
@@ -150,5 +169,4 @@ Page({
         })
       })
   },
-
 })

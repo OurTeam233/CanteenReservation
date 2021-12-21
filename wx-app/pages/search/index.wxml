@@ -1,7 +1,12 @@
 <!--pages/search/index.wxml-->
-<van-search class="" value="{{ value }}" placeholder="请输入搜索关键词" shape="round" 
-bind:search="onSearch"
+<van-search
+  value="{{ value }}"
+  placeholder="请输入搜索关键词"
+  shape="round"
+  show-action
+  bind:search="onSearch"
   bind:cancel="onCancel"
+  
 />
 <view class="v">
   <van-divider contentPosition="center" fontSize="12">搜索发现
