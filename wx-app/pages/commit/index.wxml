@@ -1,0 +1,15 @@
+<!--pages/search/index.wxml-->
+<view class="main">
+  <van-cell-group>
+  <van-field
+    value="{{ message }}"
+    type="textarea"
+    placeholder="请输入你的评论......"
+    autosize
+    max-count="9"
+    border="{{ true }}"
+    class="input-class"
+  />
+</van-cell-group>
+<van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" deletable="{{ true }}" bind:delete="delete"/>
+</view>

@@ -11,7 +11,7 @@
         <van-rate readonly allow-half value="{{ store.score }}" size="30rpx" />
         {{store.score}}分
       </view>
-      <van-button plain size="mini" type="default">收藏</van-button>
+      <van-button plain size="mini" type="default" bind:click="collect">{{collect}}</van-button>
     </view>
   </view>
   <van-image wx:if="{{store.logoUrl}}" width="160rpx" height="160rpx" fit="fill" class="logo" src="{{sotre.logoUrl}}" />

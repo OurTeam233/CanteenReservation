@@ -97,8 +97,8 @@
           "scene": null
         },
         {
-          "name": "搜索页面",
-          "pathName": "pages/search/index",
+          "name": "评论",
+          "pathName": "pages/commit/index",
           "query": "",
           "scene": null
         }

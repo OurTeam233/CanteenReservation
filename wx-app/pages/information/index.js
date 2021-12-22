@@ -38,6 +38,9 @@ Page({
     leftIndex: 0,
     //是否跳转选好了界面
     flag:'false',
+    //收藏
+    collected:false,//boolean
+    collect:''
   },
   //接口数据要的参数
   QueryParams: {
@@ -55,7 +58,9 @@ Page({
     this.getCanteenList()
     this.getMenu()
     this.getCount()
-   
+  },
+  onShow(){
+    this.getCanteenList()
   },
   onReady() {
     // console.log(this.data.cates)
@@ -70,9 +75,24 @@ Page({
       url: '/Store?storeId='+this.QueryParams.query
     }).then(
       res => {
-        // console.log(res)
         this.Store = res
-        // console.log(res.score)
+        //店铺收藏状态
+        let collected1 = res.collected
+        console.log(res)
+        console.log(collected1)
+        if(collected1){
+          this.setData({
+            collected:true,
+            collect:'已收藏'
+          })
+        }else{
+          this.setData({
+            collected:false,
+            collect:'收藏'
+          })
+        }
+        console.log(this.data.collected)
+        console.log(this.data.collect)
         const score = res.score.toFixed(1)
         res.score = score
         //将店铺数据存入本地中
@@ -248,4 +268,43 @@ Page({
     this.getMenu();
     this.closeAllSelectedGoods();
   },
+  //点击收藏
+  collect(e){
+    //获取店铺storeId
+    console.log(e)
+    let storeId = this.data.store.id
+    let collected = this.data.store.collected
+    console.log(storeId)
+    console.log(collected)
+    if(collected){
+      //店铺已经收藏，取消收藏状态
+      request({
+        url:'/Collection/Delete?storeId='+storeId
+      }).then(res=>{
+        console.log(res)
+        this.setData({
+          collected:false,
+          collect:'收藏'
+        })
+        console.log(this.data.collected)
+        console.log(this.data.collect)
+        this.getCanteenList();
+      })
+    }else{
+      //店铺未收藏，添加收藏状态
+      request({
+        url:'/Collection/Insert?storeId='+storeId
+      }).then(res=>{
+        console.log(res)
+        this.setData({
+          collected:true,
+          collect:'已收藏'
+        })
+        console.log(this.data.collected)
+        console.log(this.data.collect)
+        this.getCanteenList();
+      })
+    }
+    
+  }
 })

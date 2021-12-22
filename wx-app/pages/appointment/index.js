@@ -9,15 +9,28 @@ Page({
    */
   data: {
     imageURL: 'https://img01.yzcdn.cn/vant/ipad.jpeg',
-    showSelectTime: false,
+    
     cates: [], //菜品数据
     carts:[],//菜品购物车
     sumPrice: 0, //购物总金额
+    //
+    show: false,
+    currentDate: new Date().getTime(),
+    minDate: new Date().getTime(),
+    maxDate:new Date().getTime()+24*60*60*1000*2,
+    //
+    showSelectTime: false,
     currentYear: new Date().getFullYear(),
     currentMonth: new Date().getMonth() + 1,
     currentDay: new Date().getDate(),
     currentHour: new Date().getHours(),
     currentMinute: new Date().getMinutes(),
+    //预约年月日
+    year:new Date().getFullYear(),
+    month: new Date().getMonth() + 1,
+    date:new Date().getDate(),
+    millisecond:new Date().getTime(),
+    //
     selectDate: '',
     startHour: '00',
     startMin: '00',
@@ -47,6 +60,7 @@ Page({
     })
     this.getCarts()
   },
+  
   //获取加入购物车的菜品
   getCarts(){
     const cates = this.data.cates;
@@ -65,7 +79,39 @@ Page({
     this.setData({
       carts
     })
-    console.log(this.data.carts)
+    // console.log(this.data.carts)
+  },
+  //日期弹出层打开
+  showPopup() {
+    this.setData({ show: true });
+  },
+  //日期弹出层关闭
+  onClose() {
+    this.setData({ show: false });
+  },
+  //日期
+  onInput(event) {
+    this.setData({
+      currentDate: event.detail,
+    });
+  },
+  //点击选择日期完成按钮
+  dateConfirm: function (e){
+    const year = new Date(e.detail).getFullYear();
+    const date = new Date(e.detail).getDate();
+    const month = new Date(e.detail).getMonth()+1;
+    // console.log(year,month,date)
+    this.setData({
+      year:year,
+      month:month,
+      date:date, 
+      millisecond:e.detail,
+      show: false
+     });
+  },
+  //点击选择日期取消按钮
+  dateCancel(){
+    this.setData({ show: false });
   },
   // 点击打开时间选择栏
   selectTime: function () {
@@ -83,6 +129,7 @@ Page({
   tapConfirm: function (event) {
     const [startHour, startMin] = event.detail.split(':')
     let afterDate = new Date()
+    // console.log(afterDate)
     afterDate.setHours(startHour)
     afterDate.setMinutes(Number.parseInt(startMin) + 30)
     // console.log(afterDate)
@@ -95,6 +142,41 @@ Page({
       endMin,
       showSelectTime: false
     })
+    this.legalTime();
+  },
+  //判断预定时间是否符合条件
+  legalTime(){
+    //获取当前时间
+    const time = new Date().getTime();
+    const ordertime = this.getMillisecond();
+    if(ordertime<time){
+       //预约无效
+       wx.showToast({
+        title: '日期无效',
+        icon: 'error',
+      })
+      return false;
+    }
+    //获取预定时间
+    const startHour = Number.parseInt(this.data.startHour); 
+    /*预约取餐合法时间 早上6:00-9:00 中午10:00-13:00 晚上16:00-19:00 */
+    if((startHour>=6&&startHour<=13)||(startHour>=16&&startHour<=19)){
+      //合法预约
+      return true;
+    }else{
+      //预约无效
+      wx.showToast({
+        title: '无效预约时间',
+        icon: 'error',
+      })
+      this.setData({
+        startHour:'00',
+        startMin:'00',
+        endHour:'00',
+        endMin:'00'
+      })
+      return false;
+    }
   },
   // 输入备注
   inputNotes: function (event) {
@@ -129,17 +211,11 @@ Page({
     })
     // TODO 提交成功代码
   },
-  //整合传递数据，
-  all(){
-    const order=new Object();
-    const store = wx.getStorageSync('store');
-    //或去当前时间的毫秒值
-    const time = new Date().getTime();
-    // console.log(time);
-    //获取去当前年月日
-    const currentYear = this.data.currentYear;
-    const currentMonth = this.data.currentMonth;
-    const currentDay = this.data.currentDay;
+  getMillisecond(){
+    //获取去预定年月日
+    const currentYear = this.data.year;
+    const currentMonth = this.data.month;
+    const currentDay = this.data.date;
     //获取预定时间
     const startHour = this.data.startHour;
     const startMin = this.data.startMin;
@@ -153,14 +229,19 @@ Page({
     const ordertime = `${currentYear}/${currentMonth}/${currentDay} ${startHour}:${startMin}:00`
     //获取预定时间毫秒值
     const orderTime =  (new Date(ordertime)).getTime(); 
-    // console.log(orderTime);
-    // console.log(this.data.carts)
+    return orderTime;
+},
+  //整合传递数据，
+  all(){
+    const order=new Object();
+    const store = wx.getStorageSync('store');
+    const ordertime = this.getMillisecond();
     order.storeId  = store.id;//店铺id
     console.log(order.storeId)
     order.dishes = this.data.carts;//菜品数据（id,num）
     order.totalPrice = this.data.sumPrice*100;//总价（分）
     order.note = this.data.notesValue;//备注、
-    order.time = time//当前下单时间（ms）
+    order.time = new Date().getTime()//当前下单时间（ms）
     order.orderTime = ordertime;//预定时间(ms)
     this.setData({
       order
@@ -168,5 +249,7 @@ Page({
     // console.log(this.data.order);
     return this.data.order;
   },
+  //获取预约时间毫秒值
+ 
 
 })

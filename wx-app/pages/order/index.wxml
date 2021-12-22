@@ -28,7 +28,7 @@
               </van-cell-group>
             </view>
             <view class="ordering-bottom">
-              <view class="ordering-all-price">总计: ￥ {{item.totalPrice}}</view>
+              <view class="ordering-all-price">总计: ￥ {{item.totalPrice*0.01}}</view>
               <van-button round plain size="small" type="danger" bindtap="abolishOrder" data-id="{{item.id}}">取消订单</van-button>
             </view>
           </view>

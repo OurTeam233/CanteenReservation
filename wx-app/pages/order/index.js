@@ -96,8 +96,12 @@ Page({
     const id = e.currentTarget.dataset.id
     console.log(id);
     request({
-      url:'url',
-      data:id
+      url:'/Order/Cancel?orderId='+id,
+    }).then(res=>{
+      console.log(res.success)
+      if(res.success){
+        this.onShow();
+      }
     })
   },
   //跳转评价页面

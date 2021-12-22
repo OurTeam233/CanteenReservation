@@ -22,11 +22,13 @@
 
   <!--预约时间-->
   <view class="appointment-time-wrapper">
-    <view class="title">预约时间</view>
+    <view class="title" bind:tap="maxDate">预约时间</view>
+    <view class="select-time" is-link  bind:tap="showPopup">
+        预约日期( {{year}}-{{month}}-{{date}} )
+    </view>
     <view class="select-time"
           bind:tap="selectTime"
     >
-      <view class="date-time">今天 ( {{currentYear}}-{{currentMonth}}-{{currentDay}} )</view>
       <view class="time-time">
         <view class="start-time">开始时间: {{startHour}} : {{startMin}}</view>
         <view class="end-time">结束时间: {{endHour}} : {{endMin}}</view>
@@ -61,6 +63,25 @@
   </van-submit-bar>
 
   <!--弹出层-->
+  <!-- 日期弹出层 -->
+  <van-popup show="{{ show }}" bind:close="onClose" 
+      round
+      safe-area-inset-top
+      position="bottom"
+      custom-style="height: 44%"
+  >
+    <van-datetime-picker
+    type="date"
+    value="{{ currentDate }}"
+    bind:input="onInput"
+    min-date="{{ minDate }}"
+    max-date="{{maxDate}}"
+    formatter="{{ formatter }}"
+    bind:confirm="dateConfirm"
+    bind:cancel="dateCancel"
+    />
+  </van-popup>
+  <!-- 时间弹出层 -->
   <van-popup
       show="{{showSelectTime}}"
       round
@@ -73,8 +94,8 @@
       <van-datetime-picker
           type="time"
           title="请选择开始时间"
-          min-hour="{{currentHour}}"
-          min-minute="{{currentMinute}}"
+          min-hour="{{0}}"
+          min-minute="{{0}}"
           formatter="{{ formatter }}"
           bind:confirm="tapConfirm"
           bind:cancel="closeSelectTime"
