@@ -37,7 +37,7 @@ Page({
     // 左侧菜单被选中的id
     leftIndex: 0,
     //是否跳转选好了界面
-    flag:'false',
+    flag:false,
     //收藏
     collected:false,//boolean
     collect:''
@@ -51,7 +51,7 @@ Page({
   },
   //事件加载
   onLoad(options) {
-    console.log(options)
+    // console.log(options)
     //获取上一个页面参数
     this.QueryParams.query = options.id;
     //或去缓存数据
@@ -78,8 +78,8 @@ Page({
         this.Store = res
         //店铺收藏状态
         let collected1 = res.collected
-        console.log(res)
-        console.log(collected1)
+        // console.log(res)
+        // console.log(collected1)
         if(collected1){
           this.setData({
             collected:true,
@@ -91,8 +91,8 @@ Page({
             collect:'收藏'
           })
         }
-        console.log(this.data.collected)
-        console.log(this.data.collect)
+        // console.log(this.data.collected)
+        // console.log(this.data.collect)
         const score = res.score.toFixed(1)
         res.score = score
         //将店铺数据存入本地中
@@ -111,7 +111,7 @@ Page({
       }).then(
         res => {
           let cates = res
-          console.log(res)
+          // console.log(res)
           //将店铺菜品数据写入本地
           wx.setStorageSync('cates', res)
           //构造左侧菜单数据
@@ -130,7 +130,7 @@ Page({
               }
             })
           })
-          console.log(cates)
+          // console.log(cates)
           //将数据存入本地
           wx.setStorageSync('cates', cates)
           //构造右侧商品数据
@@ -174,22 +174,20 @@ Page({
     })
   },
   // 点击选择好了
-  tapSubmit(event) {
+  tapSubmit() {
     //判断是否进行跳转，如果购车是空的，弹出弹窗，无法跳转，否则进行调换
-    this.flag = 'false'
     const cates = this.data.cates;
     for (const item1 of cates) {
       for (const item2 of item1.dishes) {
         if (item2.num != 0) {
-          this.flag='true'
+          this.setData({
+            flag : true
+          })
           break;
         }
       }
     };
-    this.setData({
-      flag:this.flag
-    })
-    console.log(this.flag);
+    // console.log(this.data.flag);
     if (!this.data.flag) {
       wx.showToast({
         title: '请先加入购物车', //弹框内容
@@ -201,12 +199,15 @@ Page({
         url: '/pages/appointment/index'
       })
     }
+    this.setData({
+      flag:false
+    })
   },
   // 监听步进器的改变
   handleStepperChange(e) {
     let id = e.target.dataset.id
     let value = e.detail
-    console.log(e.detail)
+    // console.log(e.detail)
     let temp = this.data.cates
     temp.forEach(obj => {
       obj.dishes.forEach(v => {
@@ -229,7 +230,7 @@ Page({
   //计算总价格和数量
   getCount() {
     const carts = this.data.cates
-    console.log(carts);
+    // console.log(carts);
     this.sumPrice = 0;
     this.dishesNumber = 0;
     for (const item1 of carts) {
@@ -274,8 +275,8 @@ Page({
     console.log(e)
     let storeId = this.data.store.id
     let collected = this.data.store.collected
-    console.log(storeId)
-    console.log(collected)
+    // console.log(storeId)
+    // console.log(collected)
     if(collected){
       //店铺已经收藏，取消收藏状态
       request({
@@ -286,8 +287,10 @@ Page({
           collected:false,
           collect:'收藏'
         })
-        console.log(this.data.collected)
-        console.log(this.data.collect)
+        wx.showToast({
+          title: '已取消收藏',
+          icon:'error',
+        })
         this.getCanteenList();
       })
     }else{
@@ -300,9 +303,12 @@ Page({
           collected:true,
           collect:'已收藏'
         })
-        console.log(this.data.collected)
-        console.log(this.data.collect)
         this.getCanteenList();
+      }).catch(v=>{
+        wx.showToast({
+          title: '已取消收藏失败',
+          icon:'error',
+        })
       })
     }
     

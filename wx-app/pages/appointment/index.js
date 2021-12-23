@@ -25,6 +25,8 @@ Page({
     currentDay: new Date().getDate(),
     currentHour: new Date().getHours(),
     currentMinute: new Date().getMinutes(),
+    minHour:6,
+    minMin:0,
     //预约年月日
     year:new Date().getFullYear(),
     month: new Date().getMonth() + 1,
@@ -36,6 +38,13 @@ Page({
     startMin: '00',
     endHour: '00',
     endMin: '00',
+    filter(type, options) {
+      if (type === 'minute') {
+        return options.filter((option) => option % 15 === 0);
+      }
+
+      return options;
+    },
     formatter(type, value) {
       if (type === 'hour') {
         return `${value}时`;
@@ -115,6 +124,7 @@ Page({
   },
   // 点击打开时间选择栏
   selectTime: function () {
+    this.minHourAndMinMin();
     this.setData({
       showSelectTime: true
     })
@@ -144,15 +154,46 @@ Page({
     })
     this.legalTime();
   },
+  //确定最小时间
+  minHourAndMinMin(){
+    //获取预约日期
+    const year = this.data.year;
+    const month = this.data.month;
+    const date = this.data.date;
+    // console.log(year,month,date)
+    //将日期对应成毫秒
+    //拼接预定时间 (new Date("2017/04/25 19:44:11"))
+    // const time = `${year}/${month}/${date} 00:00:00`
+    const ordertime =  (new Date(`${year}/${month}/${date} 00:00:00`)).getTime(); 
+    // console.log(ordertime)
+    //获取当前时间毫秒值
+    const time = new Date().getTime()
+    const hour = new Date().getHours()
+    const min = new Date().getMinutes()
+    // console.log(hour)
+    // console.log(time)
+    if(ordertime>time){
+      this.setData({
+        minHour:6,
+      })
+    }else{
+      this.setData({
+        minHour:hour,
+      })
+    }
+
+  },
   //判断预定时间是否符合条件
   legalTime(){
     //获取当前时间
     const time = new Date().getTime();
     const ordertime = this.getMillisecond();
+    console.log(time)
+    console.log(ordertime)
     if(ordertime<time){
        //预约无效
        wx.showToast({
-        title: '日期无效',
+        title: '预约时间无效',
         icon: 'error',
       })
       return false;
@@ -186,10 +227,13 @@ Page({
   },
   // 底部栏
   tapSubmit: function (event) {
+    const flag = this.legalTime();
+    console.log(flag)
     const order = this.all();
-    console.log(order);
+    // console.log(order);
     const token = wx.getStorageSync('token')
     //发送请求给后端
+    if(flag){
     wx.request({
       url: 'http://121.43.56.241:8080/CanteenWeb/Order/Insert',
       data: {
@@ -203,32 +247,30 @@ Page({
         wx.setStorageSync('cates', [])
       },
     })
-  
-    
     //跳转也页面
     wx.switchTab({
       url: '/pages/order/index'
     })
+  }
+
+    
     // TODO 提交成功代码
   },
+ //获取预约时间毫秒值
   getMillisecond(){
-    //获取去预定年月日
+    //获取预定年月日
     const currentYear = this.data.year;
     const currentMonth = this.data.month;
     const currentDay = this.data.date;
     //获取预定时间
     const startHour = this.data.startHour;
     const startMin = this.data.startMin;
-    if(currentMonth<10){
-      currentMonth = `0${currentMonth}`
-    };
-    if(currentDay<10){
-      currentDay = `0${currentDay}`
-    };
     //拼接预定时间 (new Date("2017/04/25 19:44:11"))
     const ordertime = `${currentYear}/${currentMonth}/${currentDay} ${startHour}:${startMin}:00`
+    // console.log(ordertime)
     //获取预定时间毫秒值
     const orderTime =  (new Date(ordertime)).getTime(); 
+    // console.log(orderTime)
     return orderTime;
 },
   //整合传递数据，
@@ -237,7 +279,7 @@ Page({
     const store = wx.getStorageSync('store');
     const ordertime = this.getMillisecond();
     order.storeId  = store.id;//店铺id
-    console.log(order.storeId)
+    // console.log(order.storeId)
     order.dishes = this.data.carts;//菜品数据（id,num）
     order.totalPrice = this.data.sumPrice*100;//总价（分）
     order.note = this.data.notesValue;//备注、
@@ -249,7 +291,7 @@ Page({
     // console.log(this.data.order);
     return this.data.order;
   },
-  //获取预约时间毫秒值
+
  
 
 })

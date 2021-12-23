@@ -1,0 +1,215 @@
+<!--
+此文件为开发者工具生成，生成时间: 2021/12/23 下午4:09:46
+使用方法：
+在 D:\canteenproject\canteen-wxapp\CanteenReservation\wx-app\pages\information\index.wxml 引入模板
+
+```
+<import src="index.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 D:\canteenproject\canteen-wxapp\CanteenReservation\wx-app\pages\information\index.wxss 中引入样式
+```
+@import "./index.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="container">
+      <view class="info-wrap">
+        <view class="title-wrap">
+          <text class="title sk-transparent sk-text-14-2857-680 sk-text">五食堂一窗口</text>
+          <view is="miniprogram_npm/@vant/weapp/button/index">
+            <button app-parameter="true" business-id="true" class="van-button button-index--van-button van-button--danger button-index--van-button--danger van-button--mini button-index--van-button--mini van-button--plain button-index--van-button--plain sk-button sk-pseudo sk-pseudo-circle"
+              data-detail="null" form-type="true" hover-class="van-button--active hover-class" lang="true" open-type="true" send-message-img="true" send-message-path="true" send-message-title="true" session-from="true" style="border: none;">
+              <view class="van-button__text button-index--van-button__text sk-transparent sk-text-25-0000-336 sk-text" style="background-position-x: 50%;">评论</view>
+            </button>
+          </view>
+        </view>
+        <view class="score-wrap">
+          <view class="score sk-transparent">
+            <view is="miniprogram_npm/@vant/weapp/rate/index">
+              <view class="van-rate rate-index--van-rate ">
+                <view class="van-rate__item rate-index--van-rate__item" style="true">
+                  <view is="miniprogram_npm/@vant/weapp/icon/index" class="van-rate__icon rate-index--van-rate__icon van-rate__icon--full rate-index--van-rate__icon--full" data-score="0" style="font-size:15px">
+                    <view class="van-icon icon-index--van-icon van-icon-star icon-index--van-icon-star sk-pseudo sk-pseudo-circle" style="true"></view>
+                  </view>
+                  <view is="miniprogram_npm/@vant/weapp/icon/index" class="van-rate__icon rate-index--van-rate__icon van-rate__icon--half rate-index--van-rate__icon--half van-rate__icon--full rate-index--van-rate__icon--full" data-score="-0.5" style="font-size:15px">
+                    <view class="van-icon icon-index--van-icon van-icon-star icon-index--van-icon-star sk-pseudo sk-pseudo-circle" style="true"></view>
+                  </view>
+                </view>
+                <view class="van-rate__item rate-index--van-rate__item" style="true">
+                  <view is="miniprogram_npm/@vant/weapp/icon/index" class="van-rate__icon rate-index--van-rate__icon van-rate__icon--full rate-index--van-rate__icon--full" data-score="1" style="font-size:15px">
+                    <view class="van-icon icon-index--van-icon van-icon-star icon-index--van-icon-star sk-pseudo sk-pseudo-circle" style="true"></view>
+                  </view>
+                  <view is="miniprogram_npm/@vant/weapp/icon/index" class="van-rate__icon rate-index--van-rate__icon van-rate__icon--half rate-index--van-rate__icon--half van-rate__icon--full rate-index--van-rate__icon--full" data-score="0.5" style="font-size:15px">
+                    <view class="van-icon icon-index--van-icon van-icon-star icon-index--van-icon-star sk-pseudo sk-pseudo-circle" style="true"></view>
+                  </view>
+                </view>
+                <view class="van-rate__item rate-index--van-rate__item" style="true">
+                  <view is="miniprogram_npm/@vant/weapp/icon/index" class="van-rate__icon rate-index--van-rate__icon van-rate__icon--full rate-index--van-rate__icon--full" data-score="2" style="font-size:15px">
+                    <view class="van-icon icon-index--van-icon van-icon-star icon-index--van-icon-star sk-pseudo sk-pseudo-circle" style="true"></view>
+                  </view>
+                  <view is="miniprogram_npm/@vant/weapp/icon/index" class="van-rate__icon rate-index--van-rate__icon van-rate__icon--half rate-index--van-rate__icon--half van-rate__icon--full rate-index--van-rate__icon--full" data-score="1.5" style="font-size:15px">
+                    <view class="van-icon icon-index--van-icon van-icon-star icon-index--van-icon-star sk-pseudo sk-pseudo-circle" style="true"></view>
+                  </view>
+                </view>
+                <view class="van-rate__item rate-index--van-rate__item" style="true">
+                  <view is="miniprogram_npm/@vant/weapp/icon/index" class="van-rate__icon rate-index--van-rate__icon van-rate__icon--full rate-index--van-rate__icon--full" data-score="3" style="font-size:15px">
+                    <view class="van-icon icon-index--van-icon van-icon-star icon-index--van-icon-star sk-pseudo sk-pseudo-circle" style="true"></view>
+                  </view>
+                  <view is="miniprogram_npm/@vant/weapp/icon/index" class="van-rate__icon rate-index--van-rate__icon van-rate__icon--half rate-index--van-rate__icon--half van-rate__icon--full rate-index--van-rate__icon--full" data-score="2.5" style="font-size:15px">
+                    <view class="van-icon icon-index--van-icon van-icon-star icon-index--van-icon-star sk-pseudo sk-pseudo-circle" style="true"></view>
+                  </view>
+                </view>
+                <view class="van-rate__item rate-index--van-rate__item" style="true">
+                  <view is="miniprogram_npm/@vant/weapp/icon/index" class="van-rate__icon rate-index--van-rate__icon" data-score="4" style="font-size:15px">
+                    <view class="van-icon icon-index--van-icon van-icon-star-o icon-index--van-icon-star-o sk-pseudo sk-pseudo-circle" style="true"></view>
+                  </view>
+                  <view is="miniprogram_npm/@vant/weapp/icon/index" class="van-rate__icon rate-index--van-rate__icon van-rate__icon--half rate-index--van-rate__icon--half" data-score="3.5" style="font-size:15px">
+                    <view class="van-icon icon-index--van-icon van-icon-star-o icon-index--van-icon-star-o sk-pseudo sk-pseudo-circle" style="true"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            4.2分
+          </view>
+          <view is="miniprogram_npm/@vant/weapp/button/index">
+            <button app-parameter="true" business-id="true" class="van-button button-index--van-button van-button--default button-index--van-button--default van-button--mini button-index--van-button--mini van-button--plain button-index--van-button--plain sk-button sk-pseudo sk-pseudo-circle"
+              data-detail="null" form-type="true" hover-class="van-button--active hover-class" lang="true" open-type="true" send-message-img="true" send-message-path="true" send-message-title="true" session-from="true" style="border: none;">
+              <view class="van-button__text button-index--van-button__text sk-transparent sk-text-25-0000-778 sk-text" style="background-position-x: 50%;">已收藏</view>
+            </button>
+          </view>
+        </view>
+      </view>
+      <view is="miniprogram_npm/@vant/weapp/image/index" class="logo">
+        <view class=" van-image image-index--van-image" style="width:80px;height:80px">
+          <image class="van-image__img image-index--van-image__img sk-image" mode="scaleToFill"></image>
+          <view class=" van-image__loading image-index--van-image__loading">
+            <view is="miniprogram_npm/@vant/weapp/icon/index">
+              <view class="image-index--van-image__loading-icon van-icon icon-index--van-icon van-icon-photo icon-index--van-icon-photo sk-pseudo sk-pseudo-circle" style="true"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="menu-info">
+      <view is="miniprogram_npm/@vant/weapp/sidebar/index" data-index="undefined">
+        <view class="van-sidebar sidebar-index--van-sidebar menu-custom-class">
+          <view is="miniprogram_npm/@vant/weapp/sidebar-item/index">
+            <view class="van-sidebar-item item-index--van-sidebar-item van-sidebar-item--selected item-index--van-sidebar-item--selected  menu-custom" hover-class="van-sidebar-item--hover" hover-stay-time="70" style="border: none;">
+              <view class="van-sidebar-item__text item-index--van-sidebar-item__text">
+                <view class="sk-transparent sk-text-15-0000-920 sk-text">花荤</view>
+              </view>
+            </view>
+          </view>
+          <view is="miniprogram_npm/@vant/weapp/sidebar-item/index">
+            <view class="van-sidebar-item item-index--van-sidebar-item menu-custom" hover-class="van-sidebar-item--hover" hover-stay-time="70" style="border: none;">
+              <view class="van-sidebar-item__text item-index--van-sidebar-item__text">
+                <view class="sk-transparent sk-text-15-0000-175 sk-text">素菜</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="goods-wrapper">
+        <view class="goods-components-wrapper">
+          <view class="image-wrapper">
+            <view is="miniprogram_npm/@vant/weapp/image/index">
+              <view class="image-class van-image image-index--van-image" style="width:90px;height:70px">
+                <image class="van-image__img image-index--van-image__img sk-image" mode="scaleToFill" lazy-load="true"></image>
+              </view>
+            </view>
+          </view>
+          <view class="info-wrapper">
+            <view class="title sk-transparent sk-text-14-2857-270 sk-text">肉沫茄子</view>
+            <view>
+              <view class="middle-wrapper">
+                <view class="origin-price sk-transparent sk-text-14-2857-167 sk-text">原价 4￥</view>
+                <view class="sell-number sk-transparent sk-text-14-2857-877 sk-text">月售 1002</view>
+              </view>
+              <view class="bottom-wrapper">
+                <view class="vip-prices sk-transparent sk-text-14-2857-79 sk-text">会员价 ￥</view>
+                <view is="miniprogram_npm/@vant/weapp/stepper/index" data-id="2">
+                  <view class="van-stepper stepper-index--van-stepper van-stepper--round stepper-index--van-stepper--round ">
+                    <view class="van-stepper__minus stepper-index--van-stepper__minus van-stepper__minus--disabled stepper-index--van-stepper__minus--disabled sk-pseudo sk-pseudo-circle" data-type="minus" hover-class="van-stepper__minus--hover" hover-stay-time="70"
+                      style="width: 17px; height: 17px; border: none;"></view>
+                    <view class="number-input-class van-stepper__input stepper-index--van-stepper__input van-stepper__input--disabled stepper-index--van-stepper__input--disabled sk-image" style="height:17px" type="digit" value="0" disabled="true"></view>
+                    <view class="van-stepper__plus stepper-index--van-stepper__plus sk-pseudo sk-pseudo-circle" data-type="plus" hover-class="van-stepper__plus--hover" hover-stay-time="70" style="width:17px;height:17px"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="goods-components-wrapper">
+          <view class="image-wrapper">
+            <view is="miniprogram_npm/@vant/weapp/image/index">
+              <view class="image-class van-image image-index--van-image" style="width:90px;height:70px">
+                <image class="van-image__img image-index--van-image__img sk-image" mode="scaleToFill" lazy-load="true"></image>
+              </view>
+            </view>
+          </view>
+          <view class="info-wrapper">
+            <view class="title sk-transparent sk-text-14-2857-225 sk-text">番茄炒蛋</view>
+            <view>
+              <view class="middle-wrapper">
+                <view class="origin-price sk-transparent sk-text-14-2857-901 sk-text">原价 4￥</view>
+                <view class="sell-number sk-transparent sk-text-14-2857-940 sk-text">月售 561</view>
+              </view>
+              <view class="bottom-wrapper">
+                <view class="vip-prices sk-transparent sk-text-14-2857-748 sk-text">会员价 ￥</view>
+                <view is="miniprogram_npm/@vant/weapp/stepper/index" data-id="4">
+                  <view class="van-stepper stepper-index--van-stepper van-stepper--round stepper-index--van-stepper--round ">
+                    <view class="van-stepper__minus stepper-index--van-stepper__minus van-stepper__minus--disabled stepper-index--van-stepper__minus--disabled sk-pseudo sk-pseudo-circle" data-type="minus" hover-class="van-stepper__minus--hover" hover-stay-time="70"
+                      style="width: 17px; height: 17px; border: none;"></view>
+                    <view class="number-input-class van-stepper__input stepper-index--van-stepper__input van-stepper__input--disabled stepper-index--van-stepper__input--disabled sk-image" style="height:17px" type="digit" value="0" disabled="true"></view>
+                    <view class="van-stepper__plus stepper-index--van-stepper__plus sk-pseudo sk-pseudo-circle" data-type="plus" hover-class="van-stepper__plus--hover" hover-stay-time="70" style="width:17px;height:17px"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view is="miniprogram_npm/@vant/weapp/divider/index">
+      <view class="van-divider divider-index--van-divider van-divider--center divider-index--van-divider--center sk-transparent sk-text-20-8333-135 sk-text sk-pseudo sk-pseudo-circle" style="border: none;">没菜了</view>
+    </view>
+    <view is="miniprogram_npm/@vant/weapp/submit-bar/index">
+      <view class="van-submit-bar bar-index--van-submit-bar appointment-wrapper">
+        <view class=" van-submit-bar__bar bar-index--van-submit-bar__bar">
+          <view is="miniprogram_npm/@vant/weapp/icon/index" class="shopping-cart-icon">
+            <view class="van-icon icon-index--van-icon van-icon-shopping-cart icon-index--van-icon-shopping-cart sk-pseudo sk-pseudo-circle" style="font-size:50px">
+              <view is="miniprogram_npm/@vant/weapp/info/index">
+                <view class="van-info info-index--van-info icon-index--van-icon__info sk-transparent sk-text-0-0000-135 sk-text" style="border: none;">0</view>
+              </view>
+            </view>
+          </view>
+          <view class="van-submit-bar__text bar-index--van-submit-bar__text">
+            <text class="sk-transparent sk-text-14-2857-799 sk-text" style="background-position-x: 100%;">合计：</text>
+            <text class="van-submit-bar__price bar-index--van-submit-bar__price "><text class="van-submit-bar__currency bar-index--van-submit-bar__currency sk-transparent sk-opacity">¥ </text>
+            <text class="van-submit-bar__price-integer bar-index--van-submit-bar__price-integer sk-transparent sk-opacity">0</text>
+            <text class="sk-transparent sk-text-14-2857-627 sk-text" style="background-position-x: 100%;">.00</text></text>
+            <text class="van-submit-bar__suffix-label bar-index--van-submit-bar__suffix-label"></text>
+          </view>
+          <view is="miniprogram_npm/@vant/weapp/button/index" class="van-submit-bar__button bar-index--van-submit-bar__button">
+            <button app-parameter="true" business-id="true" class="van-button button-index--van-button van-button--danger button-index--van-button--danger van-button--normal button-index--van-button--normal van-button--round button-index--van-button--round sk-button sk-pseudo sk-pseudo-circle"
+              data-detail="null" form-type="true" hover-class="van-button--active hover-class" lang="true" open-type="true" send-message-img="true" send-message-path="true" send-message-title="true" session-from="true" style="width: 100%; border: none;">
+              <view class="van-button__text button-index--van-button__text sk-transparent sk-text-32-5000-390 sk-text" style="background-position-x: 50%;">
+                我选好了
+              </view>
+            </button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view is="miniprogram_npm/@vant/weapp/popup/index">
+      <view is="miniprogram_npm/@vant/weapp/overlay/index">
+        <view is="miniprogram_npm/@vant/weapp/transition/index"></view>
+      </view>
+    </view>
+  </view>
+</template>

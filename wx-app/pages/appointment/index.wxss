@@ -21,8 +21,11 @@
   margin: 30rpx 0;
 }
 .content .appointment-time-wrapper .select-time {
-  background-color: #FAFAFA;
+  background-color: #fcf7f7;
   padding: 25rpx;
+  border: 1rpx rgb(248, 235, 226) solid;
+  border-radius: 2%;
+  color: rgb(247, 86, 58);
 }
 .content .appointment-time-wrapper .select-time .date-time {
   display: flex;

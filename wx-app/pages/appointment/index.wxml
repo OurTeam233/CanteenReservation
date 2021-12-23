@@ -24,14 +24,14 @@
   <view class="appointment-time-wrapper">
     <view class="title" bind:tap="maxDate">预约时间</view>
     <view class="select-time" is-link  bind:tap="showPopup">
-        预约日期( {{year}}-{{month}}-{{date}} )
+        * 预约日期：{{year}}-{{month}}-{{date}}
     </view>
     <view class="select-time"
           bind:tap="selectTime"
     >
-      <view class="time-time">
-        <view class="start-time">开始时间: {{startHour}} : {{startMin}}</view>
-        <view class="end-time">结束时间: {{endHour}} : {{endMin}}</view>
+      <view>
+        <view class="start-time">* 取餐时间:（ {{startHour}} : {{startMin}}--{{endHour}} : {{endMin}}）</view>
+        <!-- <view class="end-time">结束时间: {{endHour}} : {{endMin}}</view> -->
       </view>
 
     </view>
@@ -94,8 +94,9 @@
       <van-datetime-picker
           type="time"
           title="请选择开始时间"
-          min-hour="{{0}}"
+          min-hour="{{minHour}}"
           min-minute="{{0}}"
+          filter="{{ filter }}"
           formatter="{{ formatter }}"
           bind:confirm="tapConfirm"
           bind:cancel="closeSelectTime"
