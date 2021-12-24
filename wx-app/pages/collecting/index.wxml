@@ -1,14 +1,16 @@
 <!--pages/collecting/index.wxml-->
 <view class="dishes-wrapper">
-  <canteen propertyImageURL="{{imageURL}}"
-           propertySales="{{sales}}"
-           propertyPerCost="{{perCost}}"
-           propertyScore="{{score}}"
-           propertyDescription="{{description}}"
-           propertyTagList="{{tagList}}"
-           propertyNavUrl="{{navUrl}}"
+  <canteen propertyImageURL="{{itemName.logoUrl}}"
+           propertyTitle="{{itemName.canteen.name}}{{itemName.address}}--{{itemName.name}}"
+           propertySales="{{itemName.sales}}"
+           propertyPerCost="{{itemName.perCost}}"
+           propertyScore="{{itemName.score}}"
+           propertyDescription="{{itemName.description}}"
+           propertyTagList="{{itemName.tagList}}"
+           propertyNavUrl="{{itemName.navUrl}}"
            class="canteen"
-           wx:for="{{6}}"
-           wx:key="{{index}}"
+           wx:for="{{collect}}"
+           wx:key="id"
+           wx:for-index="idx" wx:for-item="itemName" 
   ></canteen>
-</view>
+  </view>

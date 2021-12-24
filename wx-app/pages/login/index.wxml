@@ -2,11 +2,12 @@
 <view class='main'>
   <!--logo-->
   <view class="logo">
-    <van-image
+    <!-- <van-image
         width="200rpx"
         fit="widthFix"
         src="https://img.alicdn.com/tfs/TB10aMXfaNj0u4jSZFyXXXgMVXa-500-128.svg"
-    />
+    /> -->
+    <cover-image src="../../image/logo/dt.png" class="image"></cover-image>
   </view>
 
   <!-- 输入框 -->

@@ -9,7 +9,6 @@ Page({
    */
   data: {
     imageURL: 'https://img01.yzcdn.cn/vant/ipad.jpeg',
-    
     cates: [], //菜品数据
     carts:[],//菜品购物车
     sumPrice: 0, //购物总金额

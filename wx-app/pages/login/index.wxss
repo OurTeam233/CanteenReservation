@@ -60,3 +60,7 @@ page {
 .main .box .log .logBtn:after {
   border: 2px solid #009000;
 }
+.image{
+  width: 150rpx;
+  height: 150rpx;
+}

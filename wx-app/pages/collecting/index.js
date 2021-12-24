@@ -1,3 +1,5 @@
+import { request } from "../../utils/request"
+
 // pages/collecting/index.js
 Page({
 
@@ -11,62 +13,37 @@ Page({
     score: 4.4,
     description: "描述描述描述描述描述描述描述描述描述描述描述描述",
     tagList: ['热销', '新品', '推荐', '爆款'],
-    navUrl: '../information/index'
+    navUrl: '../information/index',
+    collect:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getCollectStore()
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+   * 获取收藏店铺信息
+  */
+  getCollectStore(){
+    //获取收藏店铺信息
+    request({
+      url:'/Collection/Store'
+    }).then(res=>{
+      console.log(res)
+      res.forEach(obj => {
+        obj.title = obj.canteen.name + obj.address
+        obj.tagList = []
+        obj.tags.forEach(tag => obj.tagList.push(tag.name));
+        // console.log(obj.id)
+        obj.navUrl = `../information/index?id=${obj.id}`
+      })
+      this.setData({
+        collect:res
+      })
+      console.log(this.data.collect)
+    })
   }
 })

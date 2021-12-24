@@ -24,7 +24,6 @@ Page({
     this.getSlideshow();
     this.getDetial();
   },
-
   //轮播数据获取
   getSlideshow(){
      //获取缓存里面的token
@@ -41,7 +40,6 @@ Page({
         })
       })
   },
-
   //获取详细信息
   getDetial(){
     request({
@@ -78,10 +76,11 @@ Page({
      },
      method:"POST",
      success:(result)=>{
+       console.log(result)
        this.setData({
          arrayList:result.data
        })
-      //  console.log(this.data.arrayList)
+       console.log(this.data.arrayList)
      },
    })
    
@@ -132,4 +131,40 @@ Page({
         })
       })
   },
+  
+  //下拉刷新
+  onPullDownRefresh:function()
+  {
+    wx.showNavigationBarLoading() //在标题栏中显示加载
+    //重置数组
+    this.setData({
+      arrayList:[]
+    })
+    //获取店铺数据
+    request({
+      url:'/Store/Recommend'
+    }).then(res=>{
+      console.log(res)
+      this.ArrayList=res
+        wx.setStorageSync('arrayList',res)
+        res.forEach(obj => {
+          obj.title = obj.canteen.name + obj.address
+          obj.tagList = []
+          obj.tags.forEach(tag => obj.tagList.push(tag.name));
+          // console.log(obj.id)
+          obj.navUrl = `../information/index?id=${obj.id}`
+        })
+      this.setData({
+        arrayList:res
+      })
+    })
+    //模拟加载
+    setTimeout(function()
+    {
+      // complete
+      wx.hideNavigationBarLoading() //完成停止加载
+      wx.stopPullDownRefresh() //停止下拉刷新
+    },1000);
+  },
+
 })

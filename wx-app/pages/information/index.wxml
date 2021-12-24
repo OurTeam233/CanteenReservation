@@ -3,15 +3,15 @@
 <view class="container">
   <view class="info-wrap">
     <view class="title-wrap">
-      <text class="title">{{store.canteen.name}}{{store.address}}</text>
-      <van-button plain size="mini" type="danger">评论</van-button>
+      <text class="title">{{store.canteen.name}}{{store.address}}--{{store.name}}</text>
+      <!-- <van-button plain size="mini" type="danger">评论</van-button> -->
     </view>
     <view class="score-wrap">
       <view class="score">
         <van-rate readonly allow-half value="{{ store.score }}" size="30rpx" />
         {{store.score}}分
       </view>
-      <van-button plain size="mini" type="default" bind:click="collect">{{collect}}</van-button>
+      <van-button plain size="mini" type="default" bind:click="collect" custom-class='custom-class'>{{collect}}</van-button>
     </view>
   </view>
   <van-image wx:if="{{store.logoUrl}}" width="160rpx" height="160rpx" fit="fill" class="logo" src="{{sotre.logoUrl}}" />

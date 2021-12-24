@@ -1,7 +1,7 @@
 <!--pages/mine/mine.wxml-->
 <!-- 头部 -->
 <view class='mine-info' bind:tap="toEditor">
-  <image class='mine-banner' src='../../image/mine/earth.png'></image>
+  <image class='mine-banner' src='../../image/community/m1.jpeg'></image>
   <view class='mine-info-head'>
     <view class='mine-head-left' bindtap='collecting'>
       <image class='mine-head-leftPic' src='../../image/mine/info.png'></image>

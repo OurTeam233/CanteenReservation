@@ -58,7 +58,7 @@
             <view class="ordered-bottom">
               <view class="ordered-all-price">总计: ￥ {{item1.totalPrice}}</view>
               <view class="ordered-button-wrapper">
-                <van-button round plain custom-class="ordered-button" size="small" type="danger">评价</van-button>
+                <!-- <van-button round plain custom-class="ordered-button" size="small" type="danger">评价</van-button> -->
                 <van-button round plain size="small" type="danger" bindtap="anotheList" data-id="{{item1.id}}">再来一单</van-button>
               </view>
             </view>
