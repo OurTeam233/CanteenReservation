@@ -187,8 +187,8 @@ Page({
     //获取当前时间
     const time = new Date().getTime();
     const ordertime = this.getMillisecond();
-    console.log(time)
-    console.log(ordertime)
+    // console.log(time)
+    // console.log(ordertime)
     if(ordertime<time){
        //预约无效
        wx.showToast({
@@ -227,14 +227,14 @@ Page({
   // 底部栏
   tapSubmit: function (event) {
     const flag = this.legalTime();
-    console.log(flag)
+    // console.log(flag)
     const order = this.all();
     // console.log(order);
     const token = wx.getStorageSync('token')
     //发送请求给后端
     if(flag){
     wx.request({
-      url: 'http://121.43.56.241:8080/CanteenWeb/Order/Insert',
+      url: 'https://121.43.56.241/CanteenWeb/Order/Insert',
       data: {
         order,
       },

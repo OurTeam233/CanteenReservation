@@ -78,8 +78,6 @@ Page({
         this.Store = res
         //店铺收藏状态
         let collected1 = res.collected
-        // console.log(res)
-        // console.log(collected1)
         if(collected1){
           this.setData({
             collected:true,
@@ -91,9 +89,7 @@ Page({
             collect:'收藏'
           })
         }
-        // console.log(this.data.collected)
-        // console.log(this.data.collect)
-        const score = res.score.toFixed(1)
+        const score = res.score.toFixed(1)//店铺评分保留1位小数
         res.score = score
         //将店铺数据存入本地中
         wx.setStorageSync('store', this.Store)
@@ -111,13 +107,9 @@ Page({
       }).then(
         res => {
           let cates = res
-          // console.log(res)
-          //将店铺菜品数据写入本地
-          wx.setStorageSync('cates', res)
-          //构造左侧菜单数据
-          let leftMenuList = cates.map(v => v.name);
+          wx.setStorageSync('cates', res) //将店铺菜品数据写入本地
+          let leftMenuList = cates.map(v => v.name);//构造左侧菜单数据
           // 解析出所有菜品并加入num字段
-          const dishesNumber = 0;
           cates.forEach(obj => {
             obj.dishes.forEach(v => {
               v.num = 0;
@@ -130,7 +122,6 @@ Page({
               }
             })
           })
-          // console.log(cates)
           //将数据存入本地
           wx.setStorageSync('cates', cates)
           //构造右侧商品数据
@@ -142,6 +133,8 @@ Page({
             dishesNumber:this.dishesNumber,
             sumPrice:this.sumPrice
           })
+          wx.setStorageSync('sumPrice', this.sumPrice)
+          wx.setStorageSync('dishesNumber', this.dishesNumber)
         }
         
       );

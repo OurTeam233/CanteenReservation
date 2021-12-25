@@ -17,7 +17,10 @@ Page({
   onLoad(){
     this.getAllList();
   },
-  // 加载的时候获取缓存中的页面信息
+
+  /**
+   *  加载的时候获取缓存中的页面信息
+   */
   onShow () {
     // let orderActivePage = wx.getStorageSync("orderActivePage");
     // this.setData({
@@ -26,17 +29,21 @@ Page({
     // console.log(this.data.activePage)
     this.getAllList();
   },
-  // 标签切换事件
+  /**
+   *  标签切换事件
+   */
   changePage (event) {
     // this.setData({
     //   activePage: this.data.activePage
     // })
-    console.log(this.data.activePage)
+    // console.log(this.data.activePage)
     // wx.showToast({
     //   title: `切换到标签 ${event.detail.name}`,
     // });
   },
-  //获取订单
+  /**
+   * 获取订单
+   */
   getAllList(){
     request({
       url: '/Order/Select'
@@ -84,13 +91,12 @@ Page({
         historyList:historyList,
         illegalList:illegalList,
        });
-       console.log(this.data.allList);
-       console.log(newList);
-       console.log(historyList);
-       console.log(illegalList)
     })
   },
-  //取消订单
+  /**
+   * 取消订单
+   * @param {*} e 
+   */
   abolishOrder(e){
     //获取参数
     const id = e.currentTarget.dataset.id
@@ -104,20 +110,26 @@ Page({
       }
     })
   },
-  //跳转评价页面
+  /**
+   * 跳转评价页面
+   * @param {*} e 
+   */
   skipLoad(e){
     wx.navigateTo({
       url:"/page/Loading/index"
   })
   },
-  //再来一单
+  /**
+   * 再来一单
+   * @param {*} e 
+   */
   anotheList(e){
     //获取订单参数
     const orderId = e.currentTarget.dataset.id
     request({
       url:'/Order/One?orderId='+orderId
     }).then(res=>{
-      console.log(res)
+      // console.log(res)
       const againStoreId = res.storeId
       const againCarts = res.orderDetailsList
       //将再来一单的店铺id 和订单详情 存入本地
@@ -129,7 +141,17 @@ Page({
       })
     })
   },
-  //申诉
+  /**
+   * 申诉
+   */
   appealOrder(){
+    request({
+      url:''
+    }).then(res=>{
+      console.log(res)
+      wx.showToast({
+        title: '申述成功',
+      })
+    })
   }
 })

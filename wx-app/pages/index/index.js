@@ -67,7 +67,7 @@ Page({
     const keyWord = e.detail
     //发送请求
      wx.request({
-     url: 'http://121.43.56.241:8080/CanteenWeb/Store/Like',
+     url: 'https://121.43.56.241/CanteenWeb/Store/Like',
      header: {
        token: wx.getStorageSync('token')
      },
