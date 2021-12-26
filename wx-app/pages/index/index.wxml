@@ -39,7 +39,7 @@
   </van-grid>
   <!--类别推荐-->
   <van-grid column-num="{{6}}" border="{{false}}" clickable>
-    <van-grid-item text="推荐" bindtap="onCommand" data-operation="{{0}}">
+    <van-grid-item text="推荐" bindtap="recommend">
       <van-image slot="icon" fit="contain" width="70rpx" height="70rpx" src="/image/index/ChickenLeg.svg"/>
     </van-grid-item>
     <van-grid-item text="米饭"  bindtap="onCommand" data-operation="{{1}}">

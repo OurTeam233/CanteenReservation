@@ -95,6 +95,7 @@ Page({
         wx.setStorageSync('store', this.Store)
         this.setData({
           store: res,
+          imageURL:res.logoUrl
         })
       })
   },
@@ -113,6 +114,7 @@ Page({
           cates.forEach(obj => {
             obj.dishes.forEach(v => {
               v.num = 0;
+              v.price=v.price*0.01;
               for(const item of againCarts){
                 if(item.dishesId == v.id){
                   v.num = parseInt(item.num)

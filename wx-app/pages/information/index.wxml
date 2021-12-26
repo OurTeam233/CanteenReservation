@@ -14,7 +14,8 @@
       <van-button plain size="mini" type="default" bind:click="collect" custom-class='custom-class'>{{collect}}</van-button>
     </view>
   </view>
-  <van-image wx:if="{{store.logoUrl}}" width="160rpx" height="160rpx" fit="fill" class="logo" src="{{sotre.logoUrl}}" />
+  <!-- <van-image wx:if="{{store.logoUrl}}" width="160rpx" height="160rpx" fit="fill" class="logo" src="{{sotre.logoUrl}}" /> -->
+  <cover-image class="logo"  src="{{imageURL}}"></cover-image>
 </view>
 <!--店铺详细信息结束-->
 

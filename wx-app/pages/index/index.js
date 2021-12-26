@@ -52,6 +52,7 @@ Page({
         res.forEach(obj => {
           obj.title = obj.canteen.name + obj.address
           obj.tagList = []
+          obj.score = obj.score.toFixed(1)
           obj.tags.forEach(tag => obj.tagList.push(tag.name));
           // console.log(obj.id)
           obj.navUrl = `../information/index?id=${obj.id}`
@@ -99,6 +100,7 @@ Page({
         res.forEach(obj => {
           obj.title = obj.canteen.name + obj.address
           obj.tagList = []
+          obj.score = obj.score.toFixed(1)
           obj.tags.forEach(tag => obj.tagList.push(tag.name));
           obj.navUrl = `../information/index?id=${obj.id}`
         })
@@ -122,7 +124,8 @@ Page({
         console.log(res)
         res.forEach(obj => {
           obj.title = obj.canteen.name + obj.address
-          obj.tagList = []                               
+          obj.tagList = []   
+          obj.score = obj.score.toFixed(1)                            
           obj.tags.forEach(tag => obj.tagList.push(tag.name));
           obj.navUrl = `../information/index?id=${obj.id}`
         })
@@ -144,12 +147,12 @@ Page({
     request({
       url:'/Store/Recommend'
     }).then(res=>{
-      console.log(res)
       this.ArrayList=res
         wx.setStorageSync('arrayList',res)
         res.forEach(obj => {
           obj.title = obj.canteen.name + obj.address
           obj.tagList = []
+          obj.score = obj.score.toFixed(1)
           obj.tags.forEach(tag => obj.tagList.push(tag.name));
           // console.log(obj.id)
           obj.navUrl = `../information/index?id=${obj.id}`
@@ -166,5 +169,25 @@ Page({
       wx.stopPullDownRefresh() //停止下拉刷新
     },1000);
   },
+  //推荐菜品
+  recommend(){
+    request({
+      url: '/Store/Recommend'
+    }).then(
+      res => {
+        console.log(res)
+        res.forEach(obj => {
+          obj.title = obj.canteen.name + obj.address
+          obj.tagList = []   
+          obj.score = obj.score.toFixed(1)                            
+          obj.tags.forEach(tag => obj.tagList.push(tag.name));
+          obj.navUrl = `../information/index?id=${obj.id}`
+        })
+        this.setData({
+          arrayList: res
+        })
+      })
+  }
+
 
 })

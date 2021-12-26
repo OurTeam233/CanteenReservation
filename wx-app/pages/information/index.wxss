@@ -47,6 +47,10 @@ page {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100rpx;
+  height: 160rpx;
+  padding: 20rpx;
+  border-radius: 50%;
 }
 /*菜品部分*/
 .menu-info {
