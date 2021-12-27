@@ -36,7 +36,8 @@ page {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20rpx;
+  /* margin-top: 20rpx; */
+  margin-bottom: 30rpx;
 }
 .phone .phone-number .van-button {
   margin-right: 100rpx;

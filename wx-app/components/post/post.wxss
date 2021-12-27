@@ -2,8 +2,13 @@
 .zhongdian {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 680rpx;
   margin-top: 20rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  padding-top: 20rpx;
+  box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
+  border-radius: 2%;
 }
 
 .one {
@@ -12,7 +17,7 @@
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  padding: 0 20rpx;
+  padding: 0 10rpx;
 }
 
 .one-left {
@@ -32,14 +37,14 @@
   width: 82rpx;
   height: 82rpx;
   border-radius: 50%;
-  border: 2px solid pink;
-
+  border: 2rpx solid rgb(245, 241, 241);
 }
 
 .touxiang {
-  width: 78rpx;
-  height: 78rpx;
+  width: 82rpx;
+  height: 82rpx;
   border-radius: 50%;
+  box-shadow: 2rpx 2rpx 10rpx rgb(241, 203, 203);
 }
 
 .biaoshi {
@@ -63,9 +68,10 @@
   margin-left: 20rpx;
 }
 
+/* 时间 */
 .one-left-xiao text {
   font-size: 24rpx;
-  color: #C0C0C0;
+  color: #e0dede;
   margin-top: 10rpx;
 }
 
@@ -78,15 +84,17 @@
   height: 10rpx;
   margin-left: 270rpx;
 }
-
+/* 昵称 */
 .nicheng {
   font-size: 28rpx;
+  text-shadow: 1rpx 1rpx 3rpx rgb(223, 220, 220);
 }
 
+/* 内容 */
 .neirong {
-  /* width: 100%; */
-  word-break: break-all;
-  padding: 0 14rpx;
+  font-size: 26rpx;
+  color: #1b1a1a;
+  text-shadow: 1rpx 1rpx 10rpx rgb(248, 247, 247);
 }
 
 .two {
@@ -98,10 +106,11 @@
 }
 
 .one-image image {
-  width: 680rpx;
+  width: 620rpx;
   height: 400rpx;
   margin-top: 26rpx;
   border-radius: 14rpx;
+  box-shadow: 1prx 1rpx 10rpx rgb(41, 41, 40);
 }
 
 .three {
@@ -112,6 +121,7 @@
   align-items: center;
   margin-top: 26rpx;
   margin-right: 80rpx;
+  margin-bottom: 20rpx;
 }
 
 .three image {
@@ -144,7 +154,7 @@
 
 .wall {
   border-bottom: 1px solid #eee;
-  width: 1000rpx;
+  /* width: 1000rpx; */
   margin-top: 16rpx;
   margin-left: -40rpx;
 }
@@ -170,13 +180,20 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  border-radius: 2%;
+  /* border: 1rpx rgb(248, 248, 248) solid; */
+  box-shadow: 1rpx 1rpx 10rpx rgb(231, 230, 230);
 }
 
 .nine-image {
-  width: 220rpx;
-  height: 220rpx;
+  width: 192rpx;
+  height: 192rpx;
   margin-left: 10rpx;
   margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  box-shadow: 1rpx 1rpx 10rpx rgb(231, 230, 230);
 }
 
 .activeLike {

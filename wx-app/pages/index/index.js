@@ -48,6 +48,7 @@ Page({
       res => {
         //把接口数据存入本地中
         this.ArrayList=res
+        console.log(res)
         wx.setStorageSync('arrayList', {time:Date.now(),data:this.ArrayList})
         res.forEach(obj => {
           obj.title = obj.canteen.name + obj.address

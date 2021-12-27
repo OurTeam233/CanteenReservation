@@ -49,18 +49,22 @@
         <!--寻物启事或失物招领展示区-->
         <view class="search-card-wrapper" bind:tap="intoLostFoundInfo">
           <van-card
-              title="{{'商品标题'}}"
+              title="{{'失物：手机'}}"
               thumb="{{ imageURL }}"
               tag="{{'失物'}}"
               custom-class="search-card"
+              thumb-class="van-card-thumb"
+              title-class="van-card-title"
+              desc-class="van-card-desc"
+              price-class="van-card-price"
               wx:for="{{2}}"
           >
-            <view slot="desc">
+            <view slot="desc" desc-class="van-card-desc">
               <view>丢失地点: {{'丢失的地点'}}</view>
               <view>描述: 一串长的跟钥匙一样的钥匙</view>
             </view>
             <view slot="price">
-              <view>时间: {{'1990-10-01'}}</view>
+              <view>时间: {{'2021-10-01'}}</view>
             </view>
           </van-card>
         </view>

@@ -45,17 +45,45 @@ page {
 }
 .top-tabBar-wrapper .search-search .search-title .search-wrapper {
   flex: 1;
+  margin-top: 10rpx;
+  margin-bottom: 5rpx;
+}
+.top-tabBar-wrapper .search-search .search-title .search-wrapper .search {
+  /* width: 300rpx; */
+  padding-right: 5rpx;
 }
 .top-tabBar-wrapper .search-search .search-title .active-search {
   color: #ED4450;
 }
 .top-tabBar-wrapper .search-search .search-card-wrapper {
   padding: 20rpx 20rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  border-top: 1rpx rgb(231, 230, 230) solid;
+  /* box-shadow: 1rpx 1rpx 10rpx rgb(231, 230, 230); */
+  border-radius: 2%;
 }
 .top-tabBar-wrapper .search-search .search-card-wrapper .search-card {
   background-color: #fff;
-  border-radius: 20rpx;
+  border-radius: 10rpx;
   margin-bottom: 20rpx;
+  border: 1rpx rgb(231, 230, 230) solid;
+  box-shadow: 1rpx 1rpx 10rpx rgb(231, 230, 230);
+}
+.top-tabBar-wrapper .search-search .search-card-wrapper .van-card-thumb{
+  border-right: 1rpx  rgb(231, 230, 230) solid;
+  box-shadow: 0rpx 1rpx 10rpx rgb(231, 230, 230);
+}
+.top-tabBar-wrapper .search-search .search-card-wrapper .van-card-title{
+  color: black;
+  font-size: 26rpx;
+  margin-bottom: 10rpx;
+}
+.top-tabBar-wrapper .search-search .search-card-wrapper .van-card-desc{
+  color: #ED4450;
+}
+.top-tabBar-wrapper .search-search .search-card-wrapper .van-card-price{
+  color: #ED4450;
 }
 .publish-button {
   display: flex;

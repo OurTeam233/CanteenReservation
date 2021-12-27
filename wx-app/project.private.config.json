@@ -101,6 +101,12 @@
           "pathName": "pages/commit/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "失物",
+          "pathName": "pages/lostFoundInfo/index",
+          "query": "id=1",
+          "scene": null
         }
       ]
     }

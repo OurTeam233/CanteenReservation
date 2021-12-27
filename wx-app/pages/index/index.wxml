@@ -66,7 +66,7 @@
   <canteen propertyImageURL="{{itemName.logoUrl}}"
            propertyTitle="{{itemName.canteen.name}}{{itemName.address}}--{{itemName.name}}"
            propertySales="{{itemName.sales}}"
-           propertyPerCost="{{itemName.perCost}}"
+           propertyPerCost="{{itemName.per}}"
            propertyScore="{{itemName.score}}"
            propertyDescription="{{itemName.description}}"
            propertyTagList="{{itemName.tagList}}"
@@ -78,6 +78,5 @@
   ></canteen>
 </view>
 <!-- 店铺详情结束 -->
-
 
 <van-divider contentPosition="center">我也是有底线的</van-divider>

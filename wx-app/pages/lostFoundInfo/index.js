@@ -6,9 +6,8 @@ Page({
    */
   data: {
     photo: [
-      'https://bkimg.cdn.bcebos.com/pic/d1a20cf431adcbef7609c52e60e539dda3cc7cd931ca?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U4MA==,g_7,xp_5,yp_5/format,f_auto',
-      'https://bkimg.cdn.bcebos.com/pic/b3b7d0a20cf431adcbeffb11877cbbaf2edda3cc32ca?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U4MA==,g_7,xp_5,yp_5/format,f_auto',
-      'https://bkimg.cdn.bcebos.com/pic/5882b2b7d0a20cf431ad47f7ba435c36acaf2edd33ca?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U4MA==,g_7,xp_5,yp_5/format,f_auto'
+      '../../image/community/phone1.webp',
+      '../../image/community/phone2.webp',
     ],
     phoneNumber: 192168000001,
     wxNumber: 'wx123456789',
