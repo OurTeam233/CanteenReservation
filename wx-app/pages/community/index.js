@@ -78,8 +78,8 @@ Page({
           'data:../../../../image/commityPhone/commity11.jfif',
 
         ],
-        'pinglunliang': '333',
-        'dianzanliang': '111',
+        'pinglunliang': '123',
+        'dianzanliang': '11',
       },
       {
         'id': "6",
@@ -93,8 +93,8 @@ Page({
           'data:../../../../image/commityPhone/commity12.webp',
           'data:../../../../image/commityPhone/commity18.webp',
         ],
-        'pinglunliang': '333',
-        'dianzanliang': '111',
+        'pinglunliang': '335',
+        'dianzanliang': '117',
       }
     ],
   },
