@@ -13,6 +13,7 @@ Page({
     newList:[],//新增订单
     historyList:[],//历史订单
     illegalList:[],//违规订单
+    flag:false//取消订单
   },
   onLoad(){
     this.getAllList();
@@ -22,11 +23,6 @@ Page({
    *  加载的时候获取缓存中的页面信息
    */
   onShow () {
-    // let orderActivePage = wx.getStorageSync("orderActivePage");
-    // this.setData({
-    //   activePage: orderActivePage
-    // })
-    // console.log(this.data.activePage)
     this.getAllList();
   },
   /**
@@ -70,9 +66,12 @@ Page({
       const historyList = new Array();
       const illegalList =  new Array();
       for(const item of res){
-        //type为0，表示商家未做，1 表示做好未取 2表示历史 3表示违规
-        // console.log(item.type)
-        if(item.type == 1 || item.type == 0){
+        item.totalPrice = item.totalPrice*0.01
+        for(const item2 of item.orderDetailsList){
+          item2.price = item2.price*0.01
+        }
+         //type为0，表示商家未做，1 表示做好未取 2表示历史 3表示违规 4表示已取消 5表示可取消
+        if(item.type == 1 || item.type == 0 || item.type == 5){
           //获取新增订单
           newList.push(item);
         }else{
@@ -100,15 +99,30 @@ Page({
   abolishOrder(e){
     //获取参数
     const id = e.currentTarget.dataset.id
-    console.log(id);
+    // console.log(id);
     request({
       url:'/Order/Cancel?orderId='+id,
     }).then(res=>{
-      console.log(res.success)
+      // console.log(res.success)
       if(res.success){
+        wx.showToast({
+          title: '以取消',
+          icon:"success"
+        })
         this.onShow();
+      }else{
+        wx.showToast({
+          title: '无法取消',
+          icon:"error"
+        })
       }
     })
+    
+    // wx.showToast({
+    //     title: '无法取消订单',
+    //     icon:'error',
+    //     duration:5000
+    // })    
   },
   /**
    * 跳转评价页面

@@ -28,7 +28,7 @@
               </van-cell-group>
             </view>
             <view class="ordering-bottom">
-              <view class="ordering-all-price">总计: ￥ {{item.totalPrice*0.01}}</view>
+              <view class="ordering-all-price">总计: ￥ {{item.totalPrice}}</view>
               <van-button round plain size="small" type="danger" bindtap="abolishOrder" data-id="{{item.id}}">取消订单</van-button>
             </view>
           </view>
@@ -71,22 +71,25 @@
       <van-tab title="违规订单">
         <view class="order-wrapper">
           <view class="err-order"
-                wx:for="{{3}}"
+                wx:for="{{illegalList}}"
+                wx:for-index="idx"
+                wx:for-item="item1"
           >
-            <view class="err-order-place">五食堂一窗口</view>
+            <view class="err-order-place">{{item1. canteenName}}{{item1.address}}</view>
             <view class="err-order-middle-wrapper">
-              <view class="err-order-number">取餐号: 11</view>
-              <view class="err-order-time">下单时间: 11月23号</view>
+              <view class="err-order-number">取餐号: {{item1.orderNumber}}</view>
+              <view class="err-order-time">下单时间: {{item1.time}}</view>
             </view>
             <view class="err-order-info-wrapper">
               <van-cell-group>
-                <van-cell title="单元格" value="内容"/>
-                <van-cell title="单元格" value="内容" border="{{ false }}"/>
+                <van-cell wx:for="{{item1.orderDetailsList}}" wx:for-index = "idx" wx:for-item = "item2" title="菜品" value="{{item2.name}}  ￥{{item2.price}}*{{item2.num}}" border="{{ false }}"/>
+                <van-cell title="备注" value="{{item1.note}}" />
               </van-cell-group>
             </view>
             <view class="err-order-bottom">
               <view class="err-order-desc">违规原因: 未在规定时间取餐</view>
-              <van-button round plain size="small" type="danger">申诉</van-button>
+              <view class="ordered-all-price">总计: ￥ {{item1.totalPrice}}</view>
+              <!-- <van-button round plain size="small" type="danger">申诉</van-button> -->
             </view>
           </view>
         </view>
