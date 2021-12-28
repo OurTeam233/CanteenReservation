@@ -168,4 +168,22 @@ Page({
       wx.stopPullDownRefresh() //停止下拉刷新
     },1000);
   },
+  // 扫描二维码
+  scanCode(e) {
+    let orderId = e.currentTarget.dataset.id;
+    let refresh = this.onPullDownRefresh
+    wx.scanCode({
+      success(res) {
+        if (res.result == orderId) {
+          request({
+            url: `/Order/Update?orderId=${res.result}&type=2`
+          }).then(res => {
+            if (res.success) {
+              refresh()
+            }
+          })
+        }
+      }
+    })
+  }
 })
