@@ -7,10 +7,8 @@
   <!-- 昵称 -->
   <view class="one-left">
     <open-data class="nicheng" type="userNickName"></open-data>
-  </view>
-  <!-- 发表时间 -->
-  <view>
-    <text class="time">{{}}</text>
+    <!-- 发表时间 -->
+    <text class="time">{{publicationTime}}</text>
   </view>
   <view class="ll">
     <!--弹框 事件-->
@@ -18,6 +16,7 @@
   </view>
 </view>
 
+<!-- 帖子文本 -->
 <view class="text">
   <van-field
       model:value="{{ value }}"
@@ -26,13 +25,14 @@
       placeholder="分享新鲜事~"
       custom-style="height: 40vh;background-color: #fff;border: 2px solid #F5F5F5;box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"
       input-class="input-class"
+      bind:input="inputText"
   />
 </view>
-
+<!-- 帖子图片 -->
 <view class="file">
-  <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" deletable max-count="9"/>
+  <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" deletable  max-count="9" bind:delete="deleteImg"/>
 </view>
 
 <view class="button-wrapper">
-  <van-button type="danger" custom-class="button" size="large" round>发布</van-button>
+  <van-button type="danger" custom-class="button" size="large" round bind:click="all">发布</van-button>
 </view>

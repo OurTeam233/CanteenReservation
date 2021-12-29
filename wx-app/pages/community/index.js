@@ -140,13 +140,16 @@ Page({
     let url = ''
     console.log(this.currentPage)
     if (this.currentPage === 0) {
-      url = '../publish/index'
+      url = '../publish/index?currentPage=1'
     } else if (this.currentPage === 1) {
-      url = '../publish/index'
+      url = '../publish/index?currentPage=2'
     } else if (this.currentPage === 2) {
-      url = '../publishLostFound/index'
+      url = '../publishLostFound/index?currentPage=3'
     } else if (this.currentPage === 3) {
-      url = '../publish/index'
+      wx.showToast({
+        title: '我的不能发帖哦',
+        icon:"error"
+      })
     }
 
     wx.navigateTo({

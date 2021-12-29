@@ -7,6 +7,7 @@ export const request = (params) => {
   // header['Authorization'] = wx.getStorageSync('token')
   let header = { ...params.header }
   header['token'] = wx.getStorageSync('token')
+  header['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8'
   // if (params.url.includes('/my/')) {
   //   // 拼接header 带上token
   //   header['Authorization'] = wx.getStorageSync('token')

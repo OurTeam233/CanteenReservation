@@ -1,48 +1,49 @@
+import{
+  request
+}from '../../utils/request' 
 Page({
   data: {
     //获取用户信息
     userInfo :[],
-    publicationTime:0,
+    publicationTime:' ',
+    //帖子类型
+    type:'',
     chooseImage: {
       sourceObj: {},
       isUploaded: false
     },
+    //个人信息
     mineInfo: {
       'touxiang': 'http://img5.imgtn.bdimg.com/it/u=183326193,1784969774&fm=26&gp=0.jpg',
       'nicheng': '王一傻子',
     },
+    // 图片信息
     fileList: [
-      {
-        url: 'https://img.yzcdn.cn/vant/leaf.jpg',
-        name: '图片1',
-      },
     ],
+    //帖子文本信息
+    text:'',
+    //帖子的内容
+    invitation:{}
   },
   //事件
-  onLoad(){
-    wx.getUserInfo({
-      success:(data)=>{        //原来的形式为success(data){console.log(data);}，但setData方法在成功的回调中，所以修改
-          console.log(data);
-          //更新data中的userInfo
-          //setData方法在成功的回调中，不是当前实例调用的，所以success成为箭头函数
-          this.setData({
-              userInfo:data.userInfo
-          })
-          wx.setStorageSync('userInfo', data.userInfo)
-      },
-      fail:()=>{
-          console.log('获取用户数据失败')
-      }
+  onLoad(e){
+    this.setData({
+      type:e.currentPage
     })
+    this.getPublicationTime();
   },
   // 上传文件
   afterRead (event) {
     const { file } = event.detail;
-    console.log(event)
+    const fileList = this.data.fileList
+    fileList.push(event.detail.file)
+    this.setData({
+      fileList:fileList
+    })
     // 当设置 mutiple 为 true 时, file 为数组格式，否则为对象格式
     wx.uploadFile({
-      url: '', // 仅为示例，非真实的接口地址
-      filePath: file.url,
+      url: 'http://121.43.56.241/upload', // 仅为示例，非真实的接口地址
+      filePath: "../../image/commityPhone",
       name: 'file',
       formData: { user: 'test' },
       success (res) {
@@ -53,9 +54,52 @@ Page({
       },
     });
   },
+  //删除图片
+  deleteImg(e){
+    const fileList = this.data.fileList
+    //获取删除图片的索引值
+    const index = e.detail.index
+    //删除特定索引的图片
+    fileList.splice(index,1)
+    this.setData({
+      fileList:fileList
+    })
+  },
   //发表时间
   getPublicationTime(){
+    const invitation=this.data.invitation
     const time = new Date();
-    console.log(time)
-  }
+    const year = time.getFullYear();
+    const month = time.getMonth()+1;
+    const day = time.getDate();
+    const hour = time.getHours();
+    const min = time.getMinutes();
+    const publicationTime =`${year}`+'-'+`${month}`+'-'+`${day}`+' '+`${hour}`+':'+`${min}`
+    this.setData({
+      publicationTime:publicationTime,
+    })
+  },
+  //获取帖子输入的文本内容
+  inputText(e){
+    const text = e.detail
+    this.setData({
+      text:text
+    })
+  },
+  //整合帖子数据
+  all(){
+    const invitation = this.data.invitation;
+    //将图片信息插入整合数据中
+    invitation.text = this.data.text
+    invitation.fileList = this.data.fileList;//图片信息
+    invitation.type = this.data.type;//帖子类型
+    console.log(invitation)
+    //发送去请求
+    request({
+      url:''
+    }).then(res=>{
+      console.log(res)
+    })
+
+  },
 })

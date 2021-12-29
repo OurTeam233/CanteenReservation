@@ -114,3 +114,8 @@ page {
 .button-wrapper {
   margin: 200rpx 30rpx 0;
 }
+.time{
+  margin-top: 10rpx;
+  font-size: 20rpx;
+  color: #C0C0C0;
+}
