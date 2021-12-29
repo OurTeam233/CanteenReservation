@@ -97,12 +97,21 @@ Page({
         'dianzanliang': '117',
       }
     ],
+    //页面跳转参数
+    type:0,
   },
   currentPage: 0,
+  onLoad(){
+    this.getDetail();
+  },
   // 标签切换事件
   changePage (event) {
-    // console.log(event.detail.index)
+    console.log(event.detail.index)
     this.currentPage = event.detail.index
+    this.setData({
+      type:event.detail.index
+    })
+    this.getDetail();
   },
   onClick () {
     console.log(this.data.value)
@@ -160,6 +169,19 @@ Page({
   intoLostFoundInfo () {
     wx.navigateTo({
       url: `../lostFoundInfo/index?id=${1}`,
+    })
+  },
+  //根据页面跳转参数，获取不同的页面详细信息
+  getDetail(){
+    const type = this.data.type
+    const token = wx.getStorageSync('token')
+    wx.request({
+      url: 'https://121.43.56.241/CanteenWeb/Post/Select?type='+type,
+      header:{token},
+      method: "POST",
+      success: (result) => {
+        console.log(result)
+      },
     })
   },
 

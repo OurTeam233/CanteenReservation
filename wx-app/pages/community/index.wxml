@@ -6,16 +6,19 @@
             swipeable
             line-width="130rpx"
   >
+    <!-- 浏览 -->
     <van-tab title="浏览">
       <view class="card-wrapper">
         <post proList="{{list}}"></post>
       </view>
     </van-tab>
+    <!-- 表白墙 -->
     <van-tab title="表白墙">
       <view class="card-wrapper">
         <post proUsedFor="{{false}}" proList="{{list}}"></post>
       </view>
     </van-tab>
+    <!-- 寻物屋 -->
     <van-tab title="寻物屋">
       <view class="search-search">
         <view class="search-title">
@@ -70,6 +73,7 @@
         </view>
       </view>
     </van-tab>
+    <!-- 我的 -->
     <van-tab class="card" title="我的">
       <view class="card-wrapper">
         <post proList="{{list}}"></post>

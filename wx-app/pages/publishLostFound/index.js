@@ -129,16 +129,18 @@ Page({
     invitation.type = this.data.type
     console.log(invitation)
     //发送请求
-    request({
-      url:'',
+    wx.request({
+      url: 'https://121.43.56.241/CanteenWeb?type='+type,
       data:{
         invitation
-      }
-    }).then(res=>{
-      // console.log(res)
+      },
+      header:{token},
+      method: "POST",
+      success: (result) => {
+        console.log(result)
+      },
     })
     //跳转页面
-
   },
 
 });

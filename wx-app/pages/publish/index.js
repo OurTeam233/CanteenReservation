@@ -94,12 +94,20 @@ Page({
     invitation.fileList = this.data.fileList;//图片信息
     invitation.type = this.data.type;//帖子类型
     console.log(invitation)
+    const token = wx.getStorageSync('token')
     //发送去请求
-    request({
-      url:''
-    }).then(res=>{
-      console.log(res)
+    wx.request({
+      url: 'https://121.43.56.241/CanteenWeb/Post/Insert',
+      data: {
+        "text": invitation.text,
+        "fileList": invitation.fileList,
+        "type": invitation.type
+      },
+      header:{token},
+      method: "POST",
+      success: (result) => {
+        console.log(result)
+      },
     })
-
   },
 })
