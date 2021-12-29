@@ -35,22 +35,20 @@ Page({
   // 上传文件
   afterRead (event) {
     const { file } = event.detail;
-    const fileList = this.data.fileList
-    fileList.push(event.detail.file)
-    this.setData({
-      fileList:fileList
-    })
+    let that = this
     // 当设置 mutiple 为 true 时, file 为数组格式，否则为对象格式
     wx.uploadFile({
       url: 'http://121.43.56.241/upload', // 仅为示例，非真实的接口地址
-      filePath: "../../image/commityPhone",
+      filePath: file.url,
       name: 'file',
-      formData: { user: 'test' },
       success (res) {
         // 上传完成需要更新 fileList
-        const { fileList = [] } = this.data;
-        fileList.push({ ...file, url: res.data });
-        this.setData({ fileList });
+        let parse = JSON.parse(res.data)
+        const { fileList = [] } = that.data;
+        let url = "http://121.43.56.241" + parse.msg
+        console.log(url)
+        fileList.push({ ...file, url });
+        that.setData({ fileList });
       },
     });
   },
@@ -107,6 +105,11 @@ Page({
       method: "POST",
       success: (result) => {
         console.log(result)
+        if (result.data.success) {
+          wx.navigateBack({
+            delta: 1
+          })
+        }
       },
     })
   },

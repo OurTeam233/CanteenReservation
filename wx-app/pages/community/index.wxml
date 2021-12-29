@@ -50,24 +50,25 @@
           </view>
         </view>
         <!--寻物启事或失物招领展示区-->
-        <view class="search-card-wrapper" bind:tap="intoLostFoundInfo">
+        <view class="search-card-wrapper">
           <van-card
-              title="{{'失物：手机'}}"
-              thumb="{{ imageURL }}"
-              tag="{{'失物'}}"
+              title="失物：{{item.itemName}}"
+              thumb="{{ item.pictureList[0].pictureUrl }}"
               custom-class="search-card"
               thumb-class="van-card-thumb"
               title-class="van-card-title"
               desc-class="van-card-desc"
               price-class="van-card-price"
-              wx:for="{{2}}"
+              wx:for="{{lostFoundList}}"
+              bind:tap="intoLostFoundInfo"
+              data-id="{{lostFoundList.id}}"
           >
             <view slot="desc" desc-class="van-card-desc">
-              <view>丢失地点: {{'丢失的地点'}}</view>
-              <view>描述: 一串长的跟钥匙一样的钥匙</view>
+              <view>丢失地点: {{item.address}}</view>
+              <view>描述: {{item.description}}</view>
             </view>
             <view slot="price">
-              <view>时间: {{'2021-10-01'}}</view>
+              <view>时间: {{item.startDate}}</view>
             </view>
           </van-card>
         </view>
