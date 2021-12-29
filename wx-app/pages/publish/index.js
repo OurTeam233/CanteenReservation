@@ -1,5 +1,8 @@
 Page({
   data: {
+    //获取用户信息
+    userInfo :[],
+    publicationTime:0,
     chooseImage: {
       sourceObj: {},
       isUploaded: false
@@ -14,6 +17,23 @@ Page({
         name: '图片1',
       },
     ],
+  },
+  //事件
+  onLoad(){
+    wx.getUserInfo({
+      success:(data)=>{        //原来的形式为success(data){console.log(data);}，但setData方法在成功的回调中，所以修改
+          console.log(data);
+          //更新data中的userInfo
+          //setData方法在成功的回调中，不是当前实例调用的，所以success成为箭头函数
+          this.setData({
+              userInfo:data.userInfo
+          })
+          wx.setStorageSync('userInfo', data.userInfo)
+      },
+      fail:()=>{
+          console.log('获取用户数据失败')
+      }
+    })
   },
   // 上传文件
   afterRead (event) {
@@ -33,4 +53,9 @@ Page({
       },
     });
   },
+  //发表时间
+  getPublicationTime(){
+    const time = new Date();
+    console.log(time)
+  }
 })

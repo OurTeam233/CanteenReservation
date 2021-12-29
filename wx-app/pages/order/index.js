@@ -44,7 +44,7 @@ Page({
     request({
       url: '/Order/Select'
     }).then(res=>{
-      // console.log(res)
+      console.log(res)
       //将订单里的数据全部转成年月日时分秒
       for(const item of res){
       //下单预定时间,将时间转化成年月日时分秒

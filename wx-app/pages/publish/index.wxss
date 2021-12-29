@@ -36,14 +36,22 @@ page {
   width: 82rpx;
   height: 82rpx;
   border-radius: 50%;
-  border: 2px solid pink;
-
+  border: 2px solid rgb(253, 251, 252);
+  box-shadow: 1rpx 1rpx 10rpx rgb(175, 174, 174) inset;
 }
 
 .touxiang {
   width: 78rpx;
   height: 78rpx;
   border-radius: 50%;
+}
+.Head {
+  width: 90rpx;
+  height: 90rpx;
+  display: block;
+  clip-path: circle(45rpx at center);
+  box-shadow: 10rpx 10rpx 10rpx rgb(27, 17, 12);
+  /* margin: 4rpx auto; */
 }
 
 .biaoshi {

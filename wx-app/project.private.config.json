@@ -107,6 +107,12 @@
           "pathName": "pages/lostFoundInfo/index",
           "query": "id=1",
           "scene": null
+        },
+        {
+          "name": "发帖",
+          "pathName": "pages/publish/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

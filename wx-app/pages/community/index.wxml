@@ -77,6 +77,7 @@
     </van-tab>
   </van-tabs>
 </view>
+<!-- 发帖 -->
 <view class="publish-button" bindtap="navigateToPublish">
   <van-icon name="plus" custom-class="publish-button-icon" size="50rpx"/>
 </view>
