@@ -101,7 +101,7 @@ Page({
   currentPage: 0,
   // 标签切换事件
   changePage (event) {
-    console.log(event.detail.index)
+    // console.log(event.detail.index)
     this.currentPage = event.detail.index
   },
   onClick () {
@@ -138,7 +138,7 @@ Page({
   // 发帖
   navigateToPublish () {
     let url = ''
-    console.log(this.currentPage)
+    // console.log(this.currentPage)
     if (this.currentPage === 0) {
       url = '../publish/index?currentPage=1'
     } else if (this.currentPage === 1) {

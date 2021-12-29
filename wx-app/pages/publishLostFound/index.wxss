@@ -19,3 +19,6 @@
   display:flex;
   justify-content:space-between;
 }
+.file {
+  margin: 0 30rpx;
+}

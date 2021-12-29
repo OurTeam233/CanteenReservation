@@ -38,41 +38,35 @@
 
   
   <view class="text">联系方式：</view>
-  <view class="checkbox">
-    <van-checkbox name="a" value="{{ checked }}" bind:change="onChange">微信号</van-checkbox>
-    <van-checkbox name="b" value="{{ checked }}" bind:change="onChange">手机号</van-checkbox>
-    <van-checkbox name="c" value="{{ checked }}" bind:change="onChange">站内信</van-checkbox>
-
-  </view>
-
+  <van-cell-group>
+    <van-field
+      value="{{ value }}"
+      placeholder="请输入联系电话"
+      border="{{ false }}"
+      bind:change="phone"
+    />
+  </van-cell-group>
+  <!-- 物品描述 -->
   <view class="text">物品描述：</view>
   <van-cell-group>
     <van-field
       value="{{ message }}"
-      
       type="textarea"
       placeholder="请输入物品描述(300字以内)"
       autosize
       border="{{ false }}"
+      bind:input="thingsDesc"
     />
   </van-cell-group>
 
+  <!-- 物品图片 -->
   <view class="text">物品图片：</view>
-  <van-uploader
-    class="uploader"
-    upload-text="上传图片"
-    max-count="{{ maxCount }}"
-    max-size="{{ maxSize }}"
-    accept="{{ accept }}"
-    disabled="{{ disabled }}"
-    bind:change="onChange"
-    bind:upload="onUpload"
-    bind:remove="onRemove"
-  />
-
-
+  <view class="file">
+  <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" deletable  max-count="9" bind:delete="deleteImg"/>
+  </view>
+  <!-- 提交 -->
   <view class="buttom">
-    <van-button type="danger" size="large">提交</van-button>
+    <van-button type="danger" size="large" bind:click='all'>提交</van-button>
   </view>
   
 
