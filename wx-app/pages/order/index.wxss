@@ -34,6 +34,9 @@
   align-items: center;
   padding: 20rpx 30rpx;
 }
+.content .top-tabBar-wrapper .ordering .ordering-bottom .van-button {
+  margin-left: 30rpx;
+}
 .content .top-tabBar-wrapper .ordered {
   margin-top: 30rpx;
   background-color: #FFFFFF;

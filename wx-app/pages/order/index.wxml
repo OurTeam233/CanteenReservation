@@ -29,7 +29,12 @@
             </view>
             <view class="ordering-bottom">
               <view class="ordering-all-price">总计: ￥ {{item.totalPrice}}</view>
-              <van-button round plain size="small" type="danger" bindtap="abolishOrder" data-id="{{item.id}}">取消订单</van-button>
+              <view class="ordering-bottom-btn">
+                <van-button round plain size="small" type="danger" bindtap="scanCode" data-id="{{item.id}}">扫码完成
+                </van-button>
+                <van-button round plain size="small" type="danger" bindtap="abolishOrder" data-id="{{item.id}}">取消订单
+                </van-button>
+              </view>
             </view>
           </view>
         </view>
