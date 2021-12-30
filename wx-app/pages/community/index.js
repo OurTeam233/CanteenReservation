@@ -1,5 +1,6 @@
 // pages/community/index.js
 import { formatTime } from '../../utils/util.js'
+import {request} from '../../utils/request.js'
 Page({
 
   /**
@@ -15,6 +16,7 @@ Page({
     lostFoundList: [],
     //页面跳转参数
     type: 1,
+    keyword: '',
   },
   currentPage: 1,
   onLoad(){
@@ -30,19 +32,28 @@ Page({
   },
   // 标签切换事件
   changePage (event) {
-    console.log(event.detail.index + 1)
+    let index = event.detail.index + 1
+    if (index == 4) {
+      index++
+    }
     this.currentPage = event.detail.index + 1
+    if (this.currentPage == 4) {
+      this.currentPage++
+    }
     this.setData({
-      type:event.detail.index + 1
+      type: index
     })
+    console.log(this.data.type)
     if (this.data.type == 1 || this.data.type == 2) {
       this.getDetail();
-    } else {
+    } else if (this.data.type == 3 || this.data.type == 4) {
       this.requestLostFound();
+    } else {
+      this.requestMyPost()
     }
   },
   onClick () {
-    console.log(this.data.value)
+    console.log(this.data.keyword)
   },
   // 点击失物招领
   tapSearch (event) {
@@ -63,8 +74,11 @@ Page({
     this.requestLostFound()
   },
   // 搜索框搜索时触发
-  onSearch () {
-    console.log(this.data.value)
+  onChange (e) {
+    console.log(e.detail)
+    this.setData({
+      keyword: e.detail
+    })
   },
   // 搜索框聚焦时触发
   focusSearch () {
@@ -76,6 +90,26 @@ Page({
   blurSearch () {
     this.setData({
       show: true
+    })
+
+    const token = wx.getStorageSync('token')
+    wx.request({
+      url: 'https://121.43.56.241/CanteenWeb/LostFound/Like',
+      header: { token },
+      method: "POST",
+      data: {
+        keyword: this.data.keyword
+      },
+      success: (result) => {
+        console.log(result.data)
+        let lostFoundList = result.data
+        lostFoundList.forEach(v => {
+          v.startDate = formatTime(new Date(v.startDate))
+        })
+        this.setData({
+          lostFoundList
+        })
+      }
     })
   },
   requestLostFound() {
@@ -108,6 +142,8 @@ Page({
     } else if (this.currentPage === 3) {
       url = '../publishLostFound/index?currentPage=3'
     } else if (this.currentPage === 4) {
+      url = '../publishLostFound/index?currentPage=4'
+    } else if (this.currentPage === 5) {
       wx.showToast({
         title: '我的不能发帖哦',
         icon:"error"
@@ -159,5 +195,28 @@ Page({
       },
     })
   },
-
+  requestMyPost () {
+    request({
+      url: '/Post/Select/My'
+    }).then(result => {
+      console.log(result)
+      let list = []
+      result.forEach(v => {
+        let post = {}
+        post.id = v.id
+        post.touxiang = v.student.avatarUrl
+        post.nicheng = v.student.nickName
+        post.shijian = formatTime(new Date(v.time))
+        post.neirong = v.content
+        post.tupian = []
+        v.pictureList.forEach(p => {
+          post.tupian.push(p.pictureUrl)
+        })
+        list.push(post)
+      })
+      this.setData({
+        list
+      })
+    })
+  }
 })
