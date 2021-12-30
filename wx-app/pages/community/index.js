@@ -12,39 +12,7 @@ Page({
     // 帖子
     list: [],
     // 失物招领
-    lostFoundList: [
-      {
-        "address": "文艺楼",
-        "description": "我的手机",
-        "id": 1,
-        "itemName": "手机",
-        "phone": "",
-        "pictureList": [
-          {
-            "id": 14,
-            "pictureUrl": "https://img0.baidu.com/it/u=481181041,3574048427&fm=26"
-          },
-          {
-            "id": 15,
-            "pictureUrl": "http://121.43.56.241/uploadImages/59/54/62/20/2021/12/26/20/04/2f480410-b1f1-413a-bfaa-c39a36c3b7b6.jpg"
-          },
-          {
-            "id": 16,
-            "pictureUrl": "http://121.43.56.241/uploadImages/59/54/62/20/2021/12/26/20/02/3d5dcf02-dd3c-455d-bfd5-c9551b2c6b83.png"
-          },
-          {
-            "id": 17,
-            "pictureUrl": "http://121.43.56.241/uploadImages/59/54/62/20/2021/12/26/20/05/667ff60d-f778-4b1a-a9e6-9cedcb62df59.jpg"
-          },
-          {
-            "id": 18,
-            "pictureUrl": "https://s3.bmp.ovh/imgs/2021/12/25665948e462e1bf.webp"
-          }
-        ],
-        "startDate": 1640775328000,
-        "studentId": 1
-      }
-    ],
+    lostFoundList: [],
     //页面跳转参数
     type: 1,
   },
@@ -54,7 +22,11 @@ Page({
   },
   onShow () {
     console.log("show")
-    this.getDetail();
+    if (this.data.type == 1 || this.data.type == 2) {
+      this.getDetail();
+    } else {
+      this.requestLostFound();
+    }
   },
   // 标签切换事件
   changePage (event) {
@@ -147,9 +119,14 @@ Page({
     })
   },
   // 跳转失物招领详情页
-  intoLostFoundInfo () {
+  intoLostFoundInfo (e) {
+    let id = e.currentTarget.dataset.id
+    // 将lostFound中id为id的数据传递提取出来
+    let lostFoundInfo = this.data.lostFoundList.find(v => v.id == id)
+    console.log(lostFoundInfo)
+    wx.setStorageSync("lostFoundInfo", lostFoundInfo)
     wx.navigateTo({
-      url: `../lostFoundInfo/index?id=${1}`,
+      url: `../lostFoundInfo/index?id=${id}`,
     })
   },
   //根据页面跳转参数，获取不同的页面详细信息

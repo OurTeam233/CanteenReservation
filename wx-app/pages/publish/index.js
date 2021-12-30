@@ -106,8 +106,21 @@ Page({
       success: (result) => {
         console.log(result)
         if (result.data.success) {
-          wx.navigateBack({
-            delta: 1
+          wx.showToast({
+            title: '发布成功',
+            icon: 'success',
+            duration: 2000
+          })
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: 1
+            })
+          }, 2000)
+        } else {
+          wx.showToast({
+            title: '发布失败',
+            icon: 'none',
+            duration: 2000
           })
         }
       },

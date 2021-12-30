@@ -5,20 +5,52 @@ Page({
    * 页面的初始数据
    */
   data: {
-    photo: [
-      '../../image/community/phone1.webp',
-      '../../image/community/phone2.webp',
-    ],
-    phoneNumber: 192168000001,
-    wxNumber: 'wx123456789',
+    pictureList: [],
+    phone: '',
+    wxNumber: '',
+    queryId: '',
+    itemName: '',
+    description: '',
+    wechat: '',
+    startDate:'',
+    address: ''
+  },
+  lostFoundInfo: [],
+  onLoad (query) {
+    // 获取页面参数
+    console.log(query.id)
+    let id = query.id
+    this.setData({
+      queryId: id
+    })
+    this.lostFoundInfo = wx.getStorageSync("lostFoundInfo")
+    console.log(this.lostFoundInfo)
+
+  },
+  onReady () {
+    console.log("ready")
+    let pictureList = []
+    this.lostFoundInfo.pictureList.forEach(v => {
+      pictureList.push(v.pictureUrl)
+    })
+    this.setData({
+      pictureList,
+      phone: this.lostFoundInfo.phone,
+      wxNumber: this.lostFoundInfo.wxNumber,
+      itemName: this.lostFoundInfo.itemName,
+      description: this.lostFoundInfo.description,
+      wechat: this.lostFoundInfo.wechat,
+      startDate: this.lostFoundInfo.startDate,
+      address: this.lostFoundInfo.address
+    })
   },
   // 预览图片
   tapImage (event) {
     // 帖子编号
     const { index } = event.target.dataset
     wx.previewImage({
-      current: this.data.photo[index],
-      urls: this.data.photo
+      current: this.data.pictureList[index],
+      urls: this.data.pictureList
     })
   },
   // 复制手机号

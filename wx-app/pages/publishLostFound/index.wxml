@@ -58,7 +58,6 @@
       bind:input="thingsDesc"
     />
   </van-cell-group>
-
   <!-- 物品图片 -->
   <view class="text">物品图片：</view>
   <view class="file">

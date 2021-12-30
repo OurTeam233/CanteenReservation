@@ -1,15 +1,15 @@
 <!--pages/lostFoundInfo/index.wxml-->
 <view class="title">
-  嘉然
-  <text class="time">2021-11-17</text>
+  {{itemName}}
+  <text class="time">{{startDate}}</text>
 </view>
 <view class="description">
-  描述 : {{'我在北境捡到了手机'}}
+  描述 : {{description}}
 </view>
 <view class="photo">
   <!--多张图片-->
-  <view class="image-card" wx:if="{{photo.length>1}}">
-    <image wx:for="{{photo}}"
+  <view class="image-card" wx:if="{{pictureList.length>1}}">
+    <image wx:for="{{pictureList}}"
            mode="aspectFill"
            class="nine-image"
            wx:key="*this"
@@ -18,8 +18,8 @@
     />
   </view>
   <!--一张图片-->
-  <view class="one-image" wx:if="{{photo.length===1}}">
-    <image src="{{photo[0]}}"
+  <view class="one-image" wx:if="{{pictureList.length===1}}">
+    <image src="{{pictureList[0]}}"
            bind:tap="tapImage" data-photoIndex="{{photoIndex}}" data-index="{{index}}"
     ></image>
   </view>
@@ -27,12 +27,12 @@
   <view class="no-image" wx:else></view>
 </view>
 <view class="phone">
-  <view class="phone-number" wx:if="{{phoneNumber}}">
-    <text>手机号 : {{phoneNumber}}</text>
+  <view class="phone-number" wx:if="{{phone}}">
+    <text>手机号 : {{phone}}</text>
     <van-button type="warning" round size="small" bind:click="copyPhoneNumber">复制</van-button>
   </view>
-  <view class="phone-number" wx:if="{{wxNumber}}">
-    <text>微信号 : {{wxNumber}}</text>
+  <view class="phone-number" wx:if="{{wechat}}">
+    <text>微信号 : {{wechat}}</text>
     <van-button type="warning" round size="small" bind:click="copyWxNumber">复制</van-button>
   </view>
 </view>

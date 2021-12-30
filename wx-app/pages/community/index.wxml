@@ -61,7 +61,7 @@
               price-class="van-card-price"
               wx:for="{{lostFoundList}}"
               bind:tap="intoLostFoundInfo"
-              data-id="{{lostFoundList.id}}"
+              data-id="{{item.id}}"
           >
             <view slot="desc" desc-class="van-card-desc">
               <view>丢失地点: {{item.address}}</view>
