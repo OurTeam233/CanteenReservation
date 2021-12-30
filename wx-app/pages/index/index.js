@@ -77,10 +77,16 @@ Page({
        keyword: keyWord
      },
      method:"POST",
-     success:(result)=>{
-       console.log(result)
+     success:(res)=>{
+       res.data.forEach(obj => {
+         obj.title = obj.canteen.name + obj.address
+         obj.tagList = []
+         obj.score = obj.score.toFixed(1)
+         obj.tags.forEach(tag => obj.tagList.push(tag.name));
+         obj.navUrl = `../information/index?id=${obj.id}`
+       })
        this.setData({
-         arrayList:result.data
+         arrayList: res.data
        })
        console.log(this.data.arrayList)
      },

@@ -53,9 +53,9 @@
         <!--寻物启事或失物招领展示区-->
         <view class="search-card-wrapper">
           <van-card
-              title="失物：{{item.itemName}}"
+              title="{{item.itemName}}"
               thumb="{{ item.pictureList[0].pictureUrl }}"
-              tag="{{item.type==3?'寻物':'招领'}}"
+              tag="{{item.types==4?'招领':'寻物'}}"
               custom-class="search-card"
               thumb-class="van-card-thumb"
               title-class="van-card-title"

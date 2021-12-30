@@ -46,6 +46,18 @@
       bind:change="phone"
     />
   </van-cell-group>
+  <!-- 地址描述 -->
+  <view class="text">地址：</view>
+  <van-cell-group>
+    <van-field
+        value="{{ address }}"
+        type="textarea"
+        placeholder="请输入地址"
+        autosize
+        border="{{ false }}"
+        bind:input="thingsAddress"
+    />
+  </van-cell-group>
   <!-- 物品描述 -->
   <view class="text">物品描述：</view>
   <van-cell-group>

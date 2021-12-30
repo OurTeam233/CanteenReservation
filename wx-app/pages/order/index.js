@@ -106,7 +106,7 @@ Page({
       // console.log(res.success)
       if(res.success){
         wx.showToast({
-          title: '以取消',
+          title: '已取消',
           icon:"success"
         })
         this.onShow();

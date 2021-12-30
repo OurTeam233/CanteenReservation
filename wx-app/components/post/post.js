@@ -52,7 +52,7 @@ Component({
       }
       // 跳转到帖子详情页
       wx.navigateTo({
-        url: `../../pages/posts/index?postId=${1}`
+        // url: `../../pages/posts/index?postId=${1}`
       })
     },
     // 点赞相关逻辑

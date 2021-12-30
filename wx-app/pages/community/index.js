@@ -134,16 +134,15 @@ Page({
   // 发帖
   navigateToPublish () {
     let url = ''
-    console.log(this.currentPage)
-    if (this.currentPage === 1) {
+    if (this.data.type === 1) {
       url = '../publish/index?currentPage=1'
-    } else if (this.currentPage === 2) {
+    } else if (this.data.type === 2) {
       url = '../publish/index?currentPage=2'
-    } else if (this.currentPage === 3) {
+    } else if (this.data.type === 3) {
       url = '../publishLostFound/index?currentPage=3'
-    } else if (this.currentPage === 4) {
+    } else if (this.data.type === 4) {
       url = '../publishLostFound/index?currentPage=4'
-    } else if (this.currentPage === 5) {
+    } else if (this.data.type === 5) {
       wx.showToast({
         title: '我的不能发帖哦',
         icon:"error"

@@ -284,7 +284,7 @@ Page({
         })
         wx.showToast({
           title: '已取消收藏',
-          icon:'error',
+          icon:'success',
         })
         this.getCanteenList();
       })
@@ -299,6 +299,10 @@ Page({
           collect:'已收藏'
         })
         this.getCanteenList();
+        wx.showToast({
+          title: '收藏成功',
+          icon: 'success',
+        })
       }).catch(v=>{
         wx.showToast({
           title: '已取消收藏失败',

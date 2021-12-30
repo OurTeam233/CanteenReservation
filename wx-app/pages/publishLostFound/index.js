@@ -20,6 +20,7 @@ Page({
     itemName:'',//物品名称
     phone:'',//联系电话
     time:0,//发生时间毫秒值
+    address:'',
     fileList:[],
     formatter(type, value) {
       if (type === 'year') {
@@ -75,6 +76,13 @@ Page({
       phone:e.detail
     })
     console.log(this.data.phone)
+  },
+  // 获取地址
+  thingsAddress(e) {
+    this.setData({
+      address: e.detail
+    })
+    console.log(this.data.address)
   },
   // //获取时间（毫秒）
   // getMillisecond(){
@@ -145,6 +153,7 @@ Page({
     invitation.phone=this.data.phone
     invitation.types = this.data.type
     invitation.startDate = this.data.currentDate
+    invitation.address = this.data.address
     console.log(invitation)
     const token = wx.getStorageSync('token')
     //发送请求
@@ -161,7 +170,7 @@ Page({
           wx.showToast({
             title: '发布成功',
             icon: 'success',
-            duration: 2000
+            duration: 1000
           })
           setTimeout(() => {
             wx.navigateBack({
@@ -172,7 +181,7 @@ Page({
           wx.showToast({
             title: '发布失败',
             icon: 'none',
-            duration: 2000
+            duration: 1000
           })
         }
       },

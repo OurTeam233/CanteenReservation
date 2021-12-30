@@ -56,7 +56,7 @@ Page({
   // 复制手机号
   copyPhoneNumber (event) {
     wx.setClipboardData({
-      data: this.data.phoneNumber + "",
+      data: this.data.phone + "",
     })
   },
   // 复制微信号
