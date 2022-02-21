@@ -40,7 +40,7 @@
             <view class="sell-number">月售 {{item.sales}}</view>
           </view>
           <view class="bottom-wrapper">
-            <view class="vip-prices">会员价 {{item.vipprice}}￥</view>
+            <view class="vip-prices">会员价 {{item.vipPrice / 100}}￥</view>
             <van-stepper value="{{item.num}}" min="0" disable-input long-press="{{ false }}" input-class="number-input-class" bind:change="handleStepperChange" data-id="{{item.id}}" theme="round" button-size="34rpx" />
           </view>
         </view>

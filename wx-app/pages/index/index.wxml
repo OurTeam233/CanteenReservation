@@ -66,7 +66,7 @@
   <canteen propertyImageURL="{{itemName.logoUrl}}"
            propertyTitle="{{itemName.canteen.name}}{{itemName.address}}--{{itemName.name}}"
            propertySales="{{itemName.sales}}"
-           propertyPerCost="{{itemName.per}}"
+           propertyPerCost="{{itemName.per / 100}}"
            propertyScore="{{itemName.score}}"
            propertyDescription="{{itemName.description}}"
            propertyTagList="{{itemName.tagList}}"
