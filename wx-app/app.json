@@ -17,7 +17,8 @@
     "pages/collecting/index",
     "pages/edit/index",
     "pages/posts/index",
-    "pages/lostFoundInfo/index"
+    "pages/lostFoundInfo/index",
+    "pages/connection/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -113,6 +113,12 @@
           "pathName": "pages/publish/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "联系",
+          "pathName": "pages/connection/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

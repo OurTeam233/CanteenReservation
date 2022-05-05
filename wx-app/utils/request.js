@@ -14,14 +14,7 @@ export const request = (params) => {
   // }
 
   ajaxTimes++
-  // 显示加载中 效果
-  // wx.showLoading({
-  //   title: '加载中',
-  //   mask: true,
-  // })
-
-  // 定义公共的url
-  const baseUrl = 'https://121.43.56.241/CanteenWeb'
+  const baseUrl = 'http://175.178.216.63:8888/CanteenWeb'
   return new Promise((resolve, reject) => {
     wx.request({
       ...params,

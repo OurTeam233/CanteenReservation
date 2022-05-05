@@ -1,0 +1,13 @@
+<!--pages/connection/index.wxml-->
+<view>
+  <van-search
+  value="{{ value }}"
+  shape="round"
+  placeholder="请输入搜索关键词"
+/>
+<view class="content">
+<view class="content_info">
+<image src="../../image/headPhone/head1.webp"></image>
+</view>
+</view>
+</view>

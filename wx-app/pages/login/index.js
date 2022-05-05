@@ -37,15 +37,11 @@ Page({
   },
   // 选定学院
   tapConfirmCollege(event) {
-    // console.log(event.detail.index)
     //获取根据学院获取班级数据
     const index=event.detail.index;
     const columns2=this.data.class[index].map(item=>{
       return item.name;
     })
-    // console.log(index)
-    // console.log(columns2)
-    // console.log(this.data.class)
     this.setData({
       columns2:columns2,
       valueCollege: event.detail.value
@@ -81,9 +77,7 @@ Page({
     request({ 
       url: '/Login/Class'
     }).then(res=>{
-      // console.log(res);
       const all = res;
-      // console.log(all);
       // 获取学院信息
       const college = all.map(item=>{
         return item.simpleName;
@@ -99,9 +93,6 @@ Page({
       //将信息写入缓存中
       wx.setStorageSync('college', college);
       wx.setStorageSync('class', Class)
-      // console.log(college);
-      // console.log(this.data.class);
-
     })
   },
   // 发送code和输入的数据，获取token
@@ -122,7 +113,7 @@ Page({
         const code = res.code
         // 2. 将code发送给服务器，这里就需要我们的接口了S
         const token = wx.request({
-          url: 'https://121.43.56.241/CanteenWeb/Login/Student?code=' + code,
+          url: 'http://175.178.216.63:8888/CanteenWeb/Login/Student?code=' + code,
           data: {
             userInfo
           },

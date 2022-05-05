@@ -45,32 +45,12 @@ Page({
       url: '/Order/Select'
     }).then(res=>{
       console.log(res)
-      //将订单里的数据全部转成年月日时分秒
-      for(const item of res){
-      //下单预定时间,将时间转化成年月日时分秒
-      var time = new Date(item.orderTime);
-      const orderTime  = item.orderTime;
-      item.orderTime =time.getHours()+":"+time.getMinutes()
-      // console.log('下单预定时间'+item.orderTime);
-      //下单取餐截止时间
-      const mss = parseInt(orderTime)+30*60*1000;
-      var time3 = new Date(mss)
-      const getTime = time3.getHours()+":"+time3.getMinutes()
-      item.getTime = getTime//插入获取截止时间
-      //下单时间时间
-      var time2 = new Date(item.time);
-      item.time = time2.getFullYear()+"-"+(time2.getMonth()+1)+"-"+time2.getDate()+" "+time2.getHours()+":"+time2.getMinutes()
-      // console.log('下单时间'+item.time);
-      };
       const newList = new Array();
       const historyList = new Array();
       const illegalList =  new Array();
       for(const item of res){
-        item.totalPrice = item.totalPrice*0.01
-        for(const item2 of item.orderDetailsList){
-          item2.price = item2.price*0.01
-        }
          //type为0，表示商家未做，1 表示做好未取 2表示历史 3表示违规 4表示已取消 5表示可取消
+         item.totalPrice=item.totalPrice*0.01
         if(item.type == 1 || item.type == 0 || item.type == 5){
           //获取新增订单
           newList.push(item);
@@ -84,6 +64,9 @@ Page({
           }
         }
       };
+      // console.log(newList)
+      // console.log(historyList)
+      // console.log(illegalList)
       this.setData({
         allList:res,
         newList:newList,
