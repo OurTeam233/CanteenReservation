@@ -23,7 +23,6 @@ Page({
     this.getDetail();
   },
   onShow () {
-    console.log("show")
     if (this.data.type == 1 || this.data.type == 2) {
       this.getDetail();
     } else {
