@@ -12,22 +12,6 @@
         <post proList="{{list}}"></post>
       </view>
     </van-tab>
-<<<<<<< HEAD
-    <!-- 表白墙 -->
-    <van-tab title="相亲">
-      <view class="card-wrapper">
-        <post proUsedFor="{{false}}" proList="{{list}}"></post>
-      </view>
-    </van-tab>
-    <!-- 闲鱼-->
-    <van-tab class="card" title="闲鱼">
-      <view class="card-wrapper">
-        <post proList="{{list}}"></post>
-      </view>
-    </van-tab>
-     <!-- 寻物 -->
-     <van-tab title="寻物">
-=======
         <!-- 相亲 -->
     <van-tab title="相亲">
       <view class="content-miai">
@@ -59,7 +43,7 @@
             <image src="../../image/headPhone/head7.webp"></image>
           </view>
           <view class="content-miai-info-3">
-            <image src="../../image/headPhone/head8.webp"></image>
+            <image src="../../image/headPhone/head5.webp"></image>
           </view>
         </view>
       </view>
@@ -69,7 +53,6 @@
     </van-tab>
     <!-- 寻物屋 -->
     <van-tab title="寻物屋">
->>>>>>> ba8cb5f5a073b1e541bd32a4c24c297e59ca83bd
       <view class="search-search">
         <view class="search-title">
           <view class="search-button-find {{activeSearch?'active-search':''}}" bind:tap="tapFind">
@@ -104,10 +87,7 @@
         </view>
       </view>
     </van-tab>
-<<<<<<< HEAD
-=======
 
->>>>>>> ba8cb5f5a073b1e541bd32a4c24c297e59ca83bd
   </van-tabs>
 </view>
 <view class="publish-button" bindtap="navigateToPublish" wx:if="{{type!==5}}">

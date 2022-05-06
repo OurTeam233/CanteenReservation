@@ -30,15 +30,10 @@ Page({
   onLoad() {
     this.getDetail();
   },
-<<<<<<< HEAD
-  onShow () {
-    if (this.data.type == 1 || this.data.type == 2) {
-=======
   onShow() {
     if (this.data.type == 1) {
       this.getDetail();
     }else if(this.data.type==2){
->>>>>>> ba8cb5f5a073b1e541bd32a4c24c297e59ca83bd
       this.getDetail();
     } else {
       this.requestLostFound();
