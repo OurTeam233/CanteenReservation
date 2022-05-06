@@ -1,13 +1,18 @@
 <!--pages/community/index.wxml-->
 <view class="top-tabBar-wrapper">
-  <van-tabs active="{{ active }}" bind:change="changePage" sticky swipeable line-width="130rpx">
+  <van-tabs active="{{ active }}"
+            bind:change="changePage"
+            sticky
+            swipeable
+            line-width="130rpx"
+  >
     <!-- 浏览 -->
     <van-tab title="浏览">
       <view class="card-wrapper">
         <post proList="{{list}}"></post>
       </view>
     </van-tab>
-    <!-- 相亲 -->
+        <!-- 相亲 -->
     <van-tab title="相亲">
       <view class="content-miai">
         <view class="content-miai-left">

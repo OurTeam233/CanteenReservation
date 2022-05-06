@@ -1,10 +1,6 @@
 // pages/community/index.js
-import {
-  formatTime
-} from '../../utils/util.js'
-import {
-  request
-} from '../../utils/request.js'
+import { formatTime } from '../../utils/util.js'
+import {request} from '../../utils/request.js'
 Page({
 
   /**

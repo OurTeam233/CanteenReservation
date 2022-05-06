@@ -1,20 +1,16 @@
 page {
   background: #fff;
 }
-
 .top-tabBar-wrapper {
   margin-bottom: 300rpx;
 }
-
 .top-tabBar-wrapper .card-wrapper {
   display: flex;
   justify-content: center;
 }
-
 .top-tabBar-wrapper .confessionWall-wrapper {
   margin: 0 40rpx;
 }
-
 .top-tabBar-wrapper .search-search .search-title {
   display: flex;
   align-items: center;
@@ -194,30 +190,4 @@ page {
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
-}
-
-.dislocat_content>dis_left {
-  width: 48.2%;
-  float: left;
-  border-radius: 10rpx;
-  margin-left: 1.2%;
-  margin-right: 0.6%;
-}
-
-.dislocat_content>dis_right {
-  width: 48.2%;
-  float: left;
-  border-radius: 10rpx;
-  margin-right: 1.2%;
-  margin-left: 0.6%;
-}
-
-.border-outside {
-  margin-top: 8rpx;
-}
-
-.border-outside>.img_icon {
-  width: 100%;
-  display: block;
-  border-radius: 10rpx;
 }
