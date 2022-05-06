@@ -1,22 +1,50 @@
 <!--pages/community/index.wxml-->
 <view class="top-tabBar-wrapper">
-  <van-tabs active="{{ active }}"
-            bind:change="changePage"
-            sticky
-            swipeable
-            line-width="130rpx"
-  >
+  <van-tabs active="{{ active }}" bind:change="changePage" sticky swipeable line-width="130rpx">
     <!-- 浏览 -->
     <van-tab title="浏览">
       <view class="card-wrapper">
         <post proList="{{list}}"></post>
       </view>
     </van-tab>
-    <!-- 表白墙 -->
-    <van-tab title="表白墙">
-      <view class="card-wrapper">
-        <post proUsedFor="{{false}}" proList="{{list}}"></post>
+    <!-- 相亲 -->
+    <van-tab title="相亲">
+      <view class="content-miai">
+        <view class="content-miai-left">
+          <view class="content-miai-info-1">
+          <image src="../../image/headPhone/head1.webp"></image>
+          <view>姓名：章法     性别：男  </view>
+          <view>年龄：20</view>
+          <view>身高：180cm   体重：63kg</view>
+          </view>
+          <view class="content-miai-info-2">
+            <image src="../../image/headPhone/head2.webp"></image>
+          </view>
+          <view class="content-miai-info-1">
+            <image src="../../image/headPhone/head3.webp"></image>
+          </view>
+          <view class="content-miai-info-2">
+            <image src="../../image/headPhone/head4.webp"></image>
+          </view>
+        </view>
+        <view class="content-miai-right">
+          <view class="content-miai-info-3">
+            <image src="../../image/headPhone/head5.webp"></image>
+            </view>
+          <view class="content-miai-info-2">
+            <image src="../../image/headPhone/head6.webp"></image>
+          </view>
+          <view class="content-miai-info-1">
+            <image src="../../image/headPhone/head7.webp"></image>
+          </view>
+          <view class="content-miai-info-3">
+            <image src="../../image/headPhone/head8.webp"></image>
+          </view>
+        </view>
       </view>
+    </van-tab>
+    <!-- 闲鱼 -->
+    <van-tab class="card" title="闲鱼">
     </van-tab>
     <!-- 寻物屋 -->
     <van-tab title="寻物屋">
@@ -35,36 +63,14 @@
             <text class="iconfont icon-shiwuzhaoling search-button-search-icon"></text>
           </view>
           <view class="search-wrapper">
-            <van-search
-                value="{{ keyword }}"
-                placeholder="请输入关键词"
-                use-action-slot
-                bind:search="onSearch"
-                bind:focus="focusSearch"
-                bind:blur="blurSearch"
-                bind:change="onChange"
-                custom-class="search"
-                shape="round"
-            >
+            <van-search value="{{ keyword }}" placeholder="请输入关键词" use-action-slot bind:search="onSearch" bind:focus="focusSearch" bind:blur="blurSearch" bind:change="onChange" custom-class="search" shape="round">
               <view slot="action" bind:tap="onClick">搜索</view>
             </van-search>
           </view>
         </view>
         <!--寻物启事或失物招领展示区-->
         <view class="search-card-wrapper">
-          <van-card
-              title="{{item.itemName}}"
-              thumb="{{ item.pictureList[0].pictureUrl }}"
-              tag="{{item.types==4?'招领':'寻物'}}"
-              custom-class="search-card"
-              thumb-class="van-card-thumb"
-              title-class="van-card-title"
-              desc-class="van-card-desc"
-              price-class="van-card-price"
-              wx:for="{{lostFoundList}}"
-              bind:tap="intoLostFoundInfo"
-              data-id="{{item.id}}"
-          >
+          <van-card title="{{item.itemName}}" thumb="{{ item.pictureList[0].pictureUrl }}" tag="{{item.types==4?'招领':'寻物'}}" custom-class="search-card" thumb-class="van-card-thumb" title-class="van-card-title" desc-class="van-card-desc" price-class="van-card-price" wx:for="{{lostFoundList}}" bind:tap="intoLostFoundInfo" data-id="{{item.id}}">
             <view slot="desc" desc-class="van-card-desc">
               <view>丢失地点: {{item.address}}</view>
               <view>描述: {{item.description}}</view>
@@ -76,14 +82,9 @@
         </view>
       </view>
     </van-tab>
-    <!-- 我的 -->
-    <van-tab class="card" title="我的">
-      <view class="card-wrapper">
-        <post proList="{{list}}"></post>
-      </view>
-    </van-tab>
+
   </van-tabs>
 </view>
 <view class="publish-button" bindtap="navigateToPublish" wx:if="{{type!==5}}">
-  <van-icon name="plus" custom-class="publish-button-icon" size="50rpx"/>
+  <van-icon name="plus" custom-class="publish-button-icon" size="50rpx" />
 </view>

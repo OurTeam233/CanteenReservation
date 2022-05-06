@@ -1,0 +1,48 @@
+.dislocat_content {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+dis_left {
+  width: 48.2%;
+  float: left;
+  border-radius: 10rpx;
+  margin-left: 1.2%;
+  margin-right: 0.6%;
+}
+
+.dis_lefdislocat_content_left {
+  width: 48.2%;
+  float: left;
+  border-radius: 10rpx;
+  margin-left: 1.2%;
+  margin-right: 0.6%;
+}
+
+dis_right {
+  width: 48.2%;
+  float: left;
+  border-radius: 10rpx;
+  margin-right: 1.2%;
+  margin-left: 0.6%;
+}
+
+.dislocat_content_right {
+  width: 48.2%;
+  float: left;
+  border-radius: 10rpx;
+  margin-right: 1.2%;
+  margin-left: 0.6%;
+}
+
+.border-outside {
+  margin-top: 8rpx;
+}
+
+.img_icon {
+  width: 100%;
+  display: block;
+  border-radius: 10rpx;
+}
