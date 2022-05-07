@@ -1,6 +1,11 @@
 // pages/mine/mine.js
 Page({
-  data: {},
+  data: {
+    username: '系统用户一二三四五六',
+    signature: '哈哈哈哈我好牛啊',
+    headImgUrl: '../../image/mine/default.png',
+    
+  },
   // 跳转个人信息编辑页
   toEditor () {
     wx.navigateTo({

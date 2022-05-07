@@ -1,0 +1,33 @@
+<!--pages/minePparticulars/index.wxml-->
+
+<view class="main">
+
+  <!-- 还是背景图片 -->
+  <image class='bg' src='../../image/mine/bg.png'></image>
+
+  <!-- 个人信息 -->
+  <view class="personInfo">
+    <view class="personInfoTop">
+      <view class="head">
+        <image src="{{ headImgUrl }}"></image>
+      </view>
+      <view class="buttonGourp">
+        <button>关注</button>
+        <button>私信</button>
+      </view>
+    </view>
+
+    <view class="personInfoBotton">
+      <view class="username">{{username}}</view>
+      <view class="signature">{{signature}}</view>
+
+    </view>
+  </view>
+
+  <!-- 标签栏 -->
+  <van-tabs swipeable style="color:#f85119;">
+    <van-tab title="发帖">内容 1</van-tab>
+    <van-tab title="二手">内容 2</van-tab>
+    <van-tab title="相亲">内容 3</van-tab>
+  </van-tabs>
+</view>

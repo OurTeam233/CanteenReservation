@@ -18,7 +18,8 @@
     "pages/edit/index",
     "pages/posts/index",
     "pages/lostFoundInfo/index",
-    "pages/connection/index"
+    "pages/connection/index",
+    "pages/minePparticulars/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,92 @@
+/* pages/minePparticulars/index.wxss */
+
+page{
+  background-color: #fff;
+}
+
+
+/* 背景图片 */
+.bg{
+  width: 100%;
+  height: 600rpx;
+  position: absolute;
+  z-index: -1;
+}
+
+/* 顶部个人信息 */
+.personInfo{
+  /* background-color: #ccc; */
+  width: 90%;
+  height: 430rpx;
+  margin: auto;
+  border-bottom: 1px #ccc solid;
+  /* display: flex; */
+
+}
+
+/* 顶部个人信息的上面一部分 */
+.personInfoTop{
+  display: flex;
+
+}
+
+/* 头像框 */
+.head {
+  border-radius: 50px;
+  width:160rpx;
+  height:160rpx;
+  margin: 20rpx 4rpx;
+  background-color: #fff;
+  margin-top: 120rpx;
+}
+
+.head > image{
+  border-radius: 50px;
+  width:160rpx;
+  height:160rpx;
+}
+
+/* 头像旁的按钮组 */
+.buttonGourp{
+  width: 510rpx;
+  /* background-color: #fff; */
+  display: flex;
+}
+
+/* 按钮样式 */
+.buttonGourp > button{
+  margin-top: 210rpx;
+  margin-left: 60rpx;
+  margin-right: 10rpx;
+  width: 180rpx;
+  height: 80rpx;
+  border-radius: 50rpx;
+  
+}
+
+/* 用户名 */
+.username {
+  width: 380rpx;
+  height: 36rpx;
+  font-weight: 1000;
+  font-size: 36rpx;
+  color: #000;
+  margin-top: 10rpx;
+}
+/* 个性签名 */
+.signature{
+  width: 180px;
+  height: 20px;
+  font-size: small;
+  color: rgb(121, 121, 121);
+  margin-top: 20rpx;
+
+}
+
+
+
+
+
+
+
+

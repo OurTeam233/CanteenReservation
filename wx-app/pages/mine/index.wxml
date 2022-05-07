@@ -1,7 +1,7 @@
 <!--pages/mine/mine.wxml-->
 <!-- 头部 -->
-<view class='mine-info' bind:tap="toEditor">
-  <image class='mine-banner' src='../../image/community/m1.jpeg'></image>
+<!-- <view class='mine-info' bind:tap="toEditor">
+  <image class='mine-banner' src='../../image/mine/bg.png'></image>
   <view class='mine-info-head'>
     <view class='mine-head-left' bindtap='collecting'>
       <image class='mine-head-leftPic' src='../../image/mine/info.png'></image>
@@ -16,7 +16,6 @@
       <view class='nameBox'>
         <open-data type="userNickName" lang="zh_CN" class="name"></open-data>
       </view>
-      <view class='lv'>VIP</view>
     </view>
     <view class='br'></view>
     <view class='mine-head-right' bindtap='fans'>
@@ -24,13 +23,13 @@
       <view class='mine-head-rightDes'>粉丝</view>
     </view>
   </view>
-</view>
+</view> -->
 <!-- 内容 -->
-<view class='list-content'>
+<!-- <view class='list-content'>
   <view class='list' bindtap='toAttention'>
     <view class='list-left'>
       <image class='listIcon' src=''></image>
-      <view class='listName'>我的关注</view>
+      <view class='listName'>我的信息</view>
     </view>
     <image src='../../image/mine/jiantou.png' class='jiantou'></image>
   </view>
@@ -56,5 +55,70 @@
     <image src='../../image/mine/jiantou.png' class='jiantou'></image>
   </view>
   <button class='signOut' bindtap='signOut'>退出登录</button>
-</view>
+</view> -->
 <!-- 热线 -->
+
+<!-- 背景图片 -->
+<!-- <image class='mine-banner' src='../../image/mine/bg.png'></image> -->
+
+
+<view class="main">
+  <image class='mine-banner' src='../../image/mine/bg.png'></image>
+
+  <!-- 头部信息 -->
+  <view class="head-info">
+    <view class="head">
+      <image src="{{ headImgUrl }}"></image>
+    </view>
+    <view class="nameBox">
+      <view class="username">{{username}}</view>
+      <view class="signature">{{signature}}</view>
+    </view>
+  </view>
+
+  <!-- 中部常用按钮 -->
+  <view class="common-button">
+    <view class="buttonBox">
+      <image src="../../image/mine/order2.svg"></image>
+      <text>订单</text>
+    </view>
+    <view class="buttonBox">
+      <image src="../../image/mine/collect.svg"></image>
+      <text>收藏</text>
+    </view>
+    <view class="buttonBox">
+      <image src="../../image/mine/msg.svg"></image>
+      <text>消息</text>
+    </view>
+  </view>
+
+
+  <!-- 底部很多栏 -->
+  <view class="botton-items">
+    <view class="bottonItem" id="bottonItem1"> 
+      <image src="../../image/mine/record.svg"></image>
+      <text>发帖记录</text>
+    </view>
+    <view class="bottonItem" > 
+      <image src="../../image/mine/manage.svg"></image>
+      <text>信息管理</text>
+    </view>
+    
+    <view class="bottonItem" > 
+      <image src="../../image/mine/feedback.svg"></image>
+      <text>用户反馈</text>
+    </view>
+    <view class="bottonItem" > 
+      <image src="../../image/mine/aboutUs.svg"></image>
+      <text>关于我们</text>
+    </view>
+    
+
+
+  </view>
+
+  <!-- 退出登录 -->
+  <button class='signOut' bindtap='signOut'>退出登录</button>
+
+
+</view>
