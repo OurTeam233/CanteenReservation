@@ -1,26 +1,21 @@
 <!--pages/community/index.wxml-->
 <view class="top-tabBar-wrapper">
-  <van-tabs active="{{ active }}"
-            bind:change="changePage"
-            sticky
-            swipeable
-            line-width="130rpx"
-  >
+  <van-tabs active="{{ active }}" bind:change="changePage" sticky swipeable line-width="130rpx">
     <!-- 浏览 -->
     <van-tab title="浏览">
       <view class="card-wrapper">
         <post proList="{{list}}"></post>
       </view>
     </van-tab>
-        <!-- 相亲 -->
+    <!-- 相亲 -->
     <van-tab title="相亲">
       <view class="content-miai">
         <view class="content-miai-left">
           <view class="content-miai-info-1">
-          <image src="../../image/headPhone/head1.webp"></image>
-          <view>姓名：章法     性别：男  </view>
-          <view>年龄：20</view>
-          <view>身高：180cm   体重：63kg</view>
+            <image src="../../image/headPhone/head1.webp"></image>
+            <view>姓名：章法 性别：男 </view>
+            <view>年龄：20</view>
+            <view>身高：180cm 体重：63kg</view>
           </view>
           <view class="content-miai-info-2">
             <image src="../../image/headPhone/head2.webp"></image>
@@ -35,7 +30,7 @@
         <view class="content-miai-right">
           <view class="content-miai-info-3">
             <image src="../../image/headPhone/head5.webp"></image>
-            </view>
+          </view>
           <view class="content-miai-info-2">
             <image src="../../image/headPhone/head6.webp"></image>
           </view>
@@ -43,7 +38,7 @@
             <image src="../../image/headPhone/head7.webp"></image>
           </view>
           <view class="content-miai-info-3">
-            <image src="../../image/headPhone/head5.webp"></image>
+            <image src="../../image/headPhone/head4.webp"></image>
           </view>
         </view>
       </view>
