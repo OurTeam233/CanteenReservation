@@ -84,6 +84,46 @@ page{
 }
 
 
+/* 中部标签页 */
+
+/* 抄原来项目的 */
+swiper{
+  height: 100%;
+}
+
+.tab {
+  margin-top: 20rpx;
+  display: flex;
+  height: 36px;
+  justify-content:left;
+  align-items: center;
+  background-color: #fff;
+}
+
+.tab-item{
+  margin-top: 10rpx;
+  margin-left: 40rpx;
+  margin-right: 10rpx;
+  font-size: 28rpx;
+}
+
+
+.active{
+  font-size: 32rpx;
+  color: #f85119;
+  text-align: center;
+}
+
+.active::after {
+  content: '';
+  width: 50%;
+  height: 1px;
+  display: block;
+  margin: 0 auto;
+  border-bottom: 2px solid #f85119;
+  padding: 1px;
+}
+
 
 
 

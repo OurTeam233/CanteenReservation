@@ -25,9 +25,23 @@
   </view>
 
   <!-- 标签栏 -->
-  <van-tabs swipeable style="color:#f85119;">
-    <van-tab title="发帖">内容 1</van-tab>
-    <van-tab title="二手">内容 2</van-tab>
-    <van-tab title="相亲">内容 3</van-tab>
-  </van-tabs>
+
+  <view class="tab">
+  <view class="tab-item {{item==0?'active':''}}" bindtap="changeItem" data-item="0">发帖</view>
+  <view class="tab-item {{item==1?'active':''}}" bindtap="changeItem" data-item="1">二手</view>
+  <view class="tab-item {{item==2?'active':''}}" bindtap="changeItem" data-item="2">相亲</view>
+</view>
+
+  <swiper current="{{item}}" bindchange="changeTab">
+    
+    <swiper-item >
+      <include src="info.wxml" />
+    </swiper-item>
+    <swiper-item>
+      <include src="play.wxml" />
+    </swiper-item>
+    <swiper-item>
+      <include src="dateInfo.wxml" />
+    </swiper-item>
+  </swiper>
 </view>
