@@ -14,7 +14,6 @@
         <view class="order-wrapper">
           <view class="ordering"
           wx:for="{{newList}}" 
-          wx:for-index="idx"
           wx:for-item="item"
           >
             <view class="ordering-title">取餐号</view>
@@ -23,7 +22,7 @@
             <view class="ordering-time">预约取餐时间:{{item.orderTime}}-{{item.time}}</view>
             <view class="ordering-info-wrapper">
               <van-cell-group>
-                <van-cell  wx:for="{{item.orderDetailsList}}" wx:for-index="idx2" wx:for-item="item2" title="菜品" value="{{item2.name}}  ￥{{item2.price}}*{{item2.num}}" border="{{ false }}"/>
+                <van-cell  wx:for="{{item.orderDetailsList}}" wx:for-item="item2" title="菜品" value="{{item2.name}}  ￥{{item2.price}}*{{item2.num}}" border="{{ false }}"/>
                 <van-cell wx:if="{{item.note}}" title="备注：" value="{{item.note}}" />
               </van-cell-group>
             </view>
@@ -46,17 +45,16 @@
         <view class="order-wrapper">
           <view class="ordered"
           wx:for="{{historyList}}" 
-          wx:for-index="idx"
           wx:for-item="item1"
           >
             <view class="ordered-place">{{item1. canteenName}}{{item1.address}}</view>
             <view class="ordered-middle-wrapper">
               <view class="ordered-number">取餐号:{{item1.orderNumber}}</view>
-              <view class="ordered-time">下单时间:{{item1.time}}</view>
+              <view class="ordered-time">下单时间:{{item1.orderTime}}</view>
             </view>
             <view class="ordered-info-wrapper">
               <van-cell-group>
-                <van-cell wx:for="{{item1.orderDetailsList}}" wx:for-index = "idx" wx:for-item = "item2" title="菜品" value="{{item2.name}}  ￥{{item2.price}}*{{item2.num}}" border="{{ false }}"/>
+                <van-cell wx:for="{{item1.orderDetailList}}" wx:for-item = "item2" title="菜品" value="{{item2.name}}  ￥{{item2.price}}*{{item2.num}}" border="{{ false }}"/>
                 <van-cell title="备注" value="{{item1.note}}" />
               </van-cell-group>
             </view>
@@ -87,7 +85,7 @@
             </view>
             <view class="err-order-info-wrapper">
               <van-cell-group>
-                <van-cell wx:for="{{item1.orderDetailsList}}" wx:for-index = "idx" wx:for-item = "item2" title="菜品" value="{{item2.name}}  ￥{{item2.price}}*{{item2.num}}" border="{{ false }}"/>
+                <van-cell wx:for="{{item1.orderDetailList}}" wx:for-index = "idx" wx:for-item = "item2" title="菜品" value="{{item2.name}}  ￥{{item2.price}}*{{item2.num}}" border="{{ false }}"/>
                 <van-cell title="备注" value="{{item1.note}}" />
               </van-cell-group>
             </view>
