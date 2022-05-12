@@ -42,10 +42,17 @@ Page({
     }
     
   },
-
-
   // miai中的函数
   onLoad(){
+    // 获取设备高度
+    var that=this
+    wx.getSystemInfo({
+        success: function (res) {
+          that.setData({
+            clientHeight: res.windowHeight
+          });
+        }
+      });  
     wx.loadFontFace({
       family: 'webfont',
       source: 'url("//at.alicdn.com/t/webfont_1f7b3qbimiv.eot")',
@@ -93,6 +100,7 @@ Page({
     this.setData({
       item: item
     })
+    console.log(this.data.item);
   },
   // 滑动页监听事件
   changeTab: function (e) {
@@ -101,7 +109,40 @@ Page({
       item: current
     })
   },
+  upper(e) {
+    console.log(e)
+  },
 
+  lower(e) {
+    console.log(e)
+  },
 
+  scroll(e) {
+    console.log(e)
+  },
+
+  scrollToTop() {
+    this.setAction({
+      scrollTop: 0
+    })
+  },
+
+  tap() {
+    for (let i = 0; i < order.length; ++i) {
+      if (order[i] === this.data.toView) {
+        this.setData({
+          toView: order[i + 1],
+          scrollTop: (i + 1) * 200
+        })
+        break
+      }
+    }
+  },
+
+  tapMove() {
+    this.setData({
+      scrollTop: this.data.scrollTop + 10
+    })
+  }
 
 })

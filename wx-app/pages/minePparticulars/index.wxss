@@ -112,11 +112,20 @@ page{
   background-color: #fff;
 }
 
+.content-tab {
+  margin-top: 20rpx;
+  height: 36px;
+  justify-content:left;
+  align-items: center;
+  background-color: #fff;
+}
+
 .tab-item{
   margin-top: 10rpx;
   margin-left: 40rpx;
   margin-right: 10rpx;
   font-size: 28rpx;
+
 }
 
 
@@ -286,7 +295,9 @@ page{
 }
 
 
-
+.title-tab {
+  width: 400rpx;
+}
 
 
 

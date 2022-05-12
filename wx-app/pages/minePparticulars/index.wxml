@@ -25,30 +25,41 @@
   </view>
 
   <!-- 标签栏 -->
-
-  <view class="tab">
+  <!-- <van-tabs sticky swipeable custom-class="tab">
+    <van-tab title="发帖" custom-class="tab-item" >
+      <include src="../miai/index.wxml" />
+    </van-tab>
+    <van-tab title="二手">内容 2</van-tab>
+    <van-tab title="相亲">内容 3</van-tab>
+  </van-tabs> -->
+  <!-- <view class="tab">
     <view class="tab-item {{item==0?'active':''}}" bindtap="changeItem" data-item="0">发帖</view>
     <view class="tab-item {{item==1?'active':''}}" bindtap="changeItem" data-item="1">二手</view>
     <view class="tab-item {{item==2?'active':''}}" bindtap="changeItem" data-item="2">相亲</view>
-  </view>
+  </view> -->
 
 
   <view class="content">
-    <swiper class="swiper" current="{{item}}" bindchange="changeTab">
+    <van-tabs sticky swipeable  nav-class="title-tab" color="#f85119" title-active-color="#f85119">
+      <van-tab title="发帖">
+        <include src="../miai/index.wxml" />
+      </van-tab>
+      <van-tab custom-class="tab-item" title="二手">
+        <include src="../miai/index.wxml" />
+      </van-tab>
+      <van-tab custom-class="tab-item" title="相亲">
+        <include src="../miai/index.wxml" />
+      </van-tab>
+    </van-tabs>
 
-      <scroll-view class="content-miai" scroll-y>
+    <!-- <swiper class="swiper" current="{{item}}" bindchange="changeTab">
+
+       <scroll-view class="content-miai" scroll-y="true" style="height: 500rpx;"bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" >
         <swiper-item>
           <include src="../miai/index.wxml" />
-        </swiper-item>
-      </scroll-view>
-
-      <swiper-item>
-        <include src="miai.wxml" />
-      </swiper-item>
-      <swiper-item>
-        <include src="miai.wxml" />
-      </swiper-item>
-    </swiper>
+        </swiper-item> 
+        </scroll-view>
+    </swiper>-->
 
   </view>
 
