@@ -29,13 +29,9 @@ Page({
    *  标签切换事件
    */
   changePage (event) {
-    // this.setData({
-    //   activePage: this.data.activePage
-    // })
-    // console.log(this.data.activePage)
-    // wx.showToast({
-    //   title: `切换到标签 ${event.detail.name}`,
-    // });
+    this.setData({
+      activePage: event.detail.index
+    })
   },
   /**
    * 获取订单
@@ -64,9 +60,6 @@ Page({
           }
         }
       };
-      // console.log(newList)
-      // console.log(historyList)
-      // console.log(illegalList)
       this.setData({
         allList:res,
         newList:newList,

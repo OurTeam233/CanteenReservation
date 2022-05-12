@@ -7,6 +7,8 @@
     "pages/order/index",
     "pages/appointment/index",
     "pages/community/index",
+    "pages/miai/index",
+    "pages/miaipost/index",
     "pages/information/index",
     "pages/mine/index",
     "pages/lostFound/index",

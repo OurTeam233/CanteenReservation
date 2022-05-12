@@ -112,10 +112,22 @@
           "scene": null
         },
         {
+
           "name": "我的详情",
           "pathName": "pages/minePparticulars/index",
           "query": "",
-          "launchMode": "default",
+          "scene": null,
+        },
+        {
+          "name": "相亲详情",
+          "pathName": "pages/miai/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "相亲发帖",
+          "pathName": "pages/miaipost/index",
+          "query": "",
           "scene": null
         }
       ]

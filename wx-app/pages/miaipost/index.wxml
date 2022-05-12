@@ -1,0 +1,51 @@
+<!--pages/miaipost/index.wxml-->
+<view>
+  <!-- 添加图片 -->
+  <view class="view_contain">
+    <!-- 上传多张图片 -->
+    <view class="ui_uploader_cell">
+      <view class='ui_uploader_item' wx:for="{{uploaderList}}" wx:key="{{index}}">
+        <icon class='ui_uploader_item_icon' bindtap='clearImg_d' data-index="{{index}}" type="clear" size="20" color="red" />
+        <image bindtap='showImg_d' data-index="{{index}}" src='{{item}}'></image>
+      </view>
+      <view class='ui_uploader' bindtap='choosePic_d' wx:if="{{showUpload}}">
+      </view>
+    </view>
+    <van-divider contentPosition="center">最多添加六张图片</van-divider>
+  </view>
+
+  <!-- 自身信息 -->
+  <view class="content">
+    <view class="content-info">自身信息</view>
+    <van-radio-group value="{{ radio }}" bind:change="onChange" direction="horizontal">
+      <van-radio name="1">男</van-radio>
+      <van-radio name="2">女</van-radio>
+    </van-radio-group>
+    <van-divider />
+    <van-cell-group>
+      <van-field value="{{ age }}" required clearable label="年龄" placeholder="请输入用户名" bind:click-icon="onClickIcon" />
+      <van-field value="{{ height }}" required clearable label="身高" placeholder="请输入身高" bind:click-icon="onClickIcon" />
+      <van-field value="{{ weight }}" required clearable label="体重" placeholder="请输入体重" bind:click-icon="onClickIcon" />
+      <van-field value="{{ address }}" required clearable label="地址" placeholder="家乡地址" bind:click-icon="onClickIcon" />
+      <van-field value="{{ text }}" required clearable label="宣言" placeholder="请输入宣言" bind:click-icon="onClickIcon" />
+    </van-cell-group>
+  </view>
+  <van-divider />
+
+  <!-- 理想型 -->
+  <view class="content">
+    <view class="content-info">理想型</view>
+    <van-radio-group value="{{ radio }}" bind:change="onChange" direction="horizontal">
+      <van-radio name="1">男</van-radio>
+      <van-radio name="2">女</van-radio>
+    </van-radio-group>
+    <van-divider />
+    <van-cell-group>
+      <van-field value="{{ age }}" required clearable label="年龄" placeholder="请输入用户名" bind:click-icon="onClickIcon" />
+      <van-field value="{{ height }}" required clearable label="身高" placeholder="请输入身高" bind:click-icon="onClickIcon" />
+      <van-field value="{{ text }}" required clearable label="其他条件" placeholder="请输入条件" bind:click-icon="onClickIcon" />
+    </van-cell-group>
+  </view>
+  <van-divider />
+  <button class="button-submit">上传</button>
+</view>
