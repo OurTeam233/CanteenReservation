@@ -112,11 +112,10 @@
           "scene": null
         },
         {
-
           "name": "我的详情",
           "pathName": "pages/minePparticulars/index",
           "query": "",
-          "scene": null,
+          "scene": null
         },
         {
           "name": "相亲详情",

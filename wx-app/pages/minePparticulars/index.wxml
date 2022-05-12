@@ -27,21 +27,29 @@
   <!-- 标签栏 -->
 
   <view class="tab">
-  <view class="tab-item {{item==0?'active':''}}" bindtap="changeItem" data-item="0">发帖</view>
-  <view class="tab-item {{item==1?'active':''}}" bindtap="changeItem" data-item="1">二手</view>
-  <view class="tab-item {{item==2?'active':''}}" bindtap="changeItem" data-item="2">相亲</view>
-</view>
+    <view class="tab-item {{item==0?'active':''}}" bindtap="changeItem" data-item="0">发帖</view>
+    <view class="tab-item {{item==1?'active':''}}" bindtap="changeItem" data-item="1">二手</view>
+    <view class="tab-item {{item==2?'active':''}}" bindtap="changeItem" data-item="2">相亲</view>
+  </view>
 
-  <swiper current="{{item}}" bindchange="changeTab">
-    
-    <swiper-item >
-      <include src="info.wxml" />
-    </swiper-item>
-    <swiper-item>
-      <include src="play.wxml" />
-    </swiper-item>
-    <swiper-item>
-      <include src="dateInfo.wxml" />
-    </swiper-item>
-  </swiper>
+
+  <view class="content">
+    <swiper class="swiper" current="{{item}}" bindchange="changeTab">
+
+      <scroll-view class="content-miai" scroll-y>
+        <swiper-item>
+          <include src="../miai/index.wxml" />
+        </swiper-item>
+      </scroll-view>
+
+      <swiper-item>
+        <include src="miai.wxml" />
+      </swiper-item>
+      <swiper-item>
+        <include src="miai.wxml" />
+      </swiper-item>
+    </swiper>
+
+  </view>
+
 </view>
