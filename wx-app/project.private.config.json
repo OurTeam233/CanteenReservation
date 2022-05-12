@@ -110,6 +110,18 @@
           "pathName": "pages/connection/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "相亲详情",
+          "pathName": "pages/miai/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "相亲发帖",
+          "pathName": "pages/miaipost/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

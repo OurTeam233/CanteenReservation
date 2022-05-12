@@ -18,6 +18,7 @@ page {
   background-color: #fff;
   margin: 0;
 }
+
 .top-tabBar-wrapper .search-search .search-title .search-button-find {
   height: 100%;
   display: flex;
@@ -25,36 +26,45 @@ page {
   align-items: center;
   margin: 0 20rpx 0 20rpx;
 }
+
 .top-tabBar-wrapper .search-search .search-title .search-button-find .search-button-find-text {
   margin-right: 8rpx;
 }
+
 .top-tabBar-wrapper .search-search .search-title .search-button-find .search-button-find-icon {
   font-size: 45rpx;
 }
+
 .top-tabBar-wrapper .search-search .search-title .search-button-search {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .top-tabBar-wrapper .search-search .search-title .search-button-search .search-button-search-text {
   margin-right: 8rpx;
 }
+
 .top-tabBar-wrapper .search-search .search-title .search-button-search .search-button-search-icon {
   font-size: 45rpx;
 }
+
 .top-tabBar-wrapper .search-search .search-title .search-wrapper {
   flex: 1;
   margin-top: 10rpx;
   margin-bottom: 5rpx;
 }
+
 .top-tabBar-wrapper .search-search .search-title .search-wrapper .search {
   /* width: 300rpx; */
   padding-right: 5rpx;
 }
+
 .top-tabBar-wrapper .search-search .search-title .active-search {
   color: #ED4450;
 }
+
 .top-tabBar-wrapper .search-search .search-card-wrapper {
   padding: 20rpx 20rpx;
   margin-left: 20rpx;
@@ -63,6 +73,7 @@ page {
   /* box-shadow: 1rpx 1rpx 10rpx rgb(231, 230, 230); */
   border-radius: 2%;
 }
+
 .top-tabBar-wrapper .search-search .search-card-wrapper .search-card {
   background-color: #fff;
   border-radius: 10rpx;
@@ -70,21 +81,26 @@ page {
   border: 1rpx rgb(231, 230, 230) solid;
   box-shadow: 1rpx 1rpx 10rpx rgb(231, 230, 230);
 }
-.top-tabBar-wrapper .search-search .search-card-wrapper .van-card-thumb{
-  border-right: 1rpx  rgb(231, 230, 230) solid;
+
+.top-tabBar-wrapper .search-search .search-card-wrapper .van-card-thumb {
+  border-right: 1rpx rgb(231, 230, 230) solid;
   box-shadow: 0rpx 1rpx 10rpx rgb(231, 230, 230);
 }
-.top-tabBar-wrapper .search-search .search-card-wrapper .van-card-title{
+
+.top-tabBar-wrapper .search-search .search-card-wrapper .van-card-title {
   color: black;
   font-size: 26rpx;
   margin-bottom: 10rpx;
 }
-.top-tabBar-wrapper .search-search .search-card-wrapper .van-card-desc{
+
+.top-tabBar-wrapper .search-search .search-card-wrapper .van-card-desc {
   color: #ED4450;
 }
-.top-tabBar-wrapper .search-search .search-card-wrapper .van-card-price{
+
+.top-tabBar-wrapper .search-search .search-card-wrapper .van-card-price {
   color: #ED4450;
 }
+
 .publish-button {
   display: flex;
   justify-content: center;
@@ -100,6 +116,78 @@ page {
   overflow: hidden;
   z-index: 999;
 }
+
 .publish-button .publish-button-icon {
   color: #ED4450;
+}
+
+.content-miai {
+  display: flex;
+  flex-direction: row;
+  width: 710rpx;
+  height: auto;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
+  border-radius: 2%;
+}
+.content-miai-left{
+  display: flex;
+  flex-direction: column;
+  width:345rpx;
+  height: auto;
+  margin-right: 10rpx;
+  /* box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
+  border-radius: 2%; */
+}
+.content-miai-right{
+  display: flex;
+  flex-direction: column;
+  width:345rpx;
+  height: auto;
+  margin-left: 10rpx;
+  /* box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
+  border-radius: 2%; */
+}
+.content-miai-info-1{
+  width:345rpx;
+  height: 600rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
+  border-radius: 2%;
+}
+.content-miai-info-2{
+  width:345rpx;
+  height: 560rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
+  border-radius: 2%;
+}
+.content-miai-info-3{
+  width:345rpx;
+  height: 520rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
+  border-radius: 2%;
+}
+.content-miai-info-1>image{
+  width: 345rpx;
+  height:460rpx;
+}
+.content-miai-info-2>image{
+  width: 345rpx;
+  height:420rpx;
+}
+.content-miai-info-3>image{
+  width: 345rpx;
+  height:380rpx;
+}
+.content-miai-info-1,.content-miai-info-2,.content-miai-info-3>view{
+  font-size: 26rpx;
+}
+.dislocat_content {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
 }
