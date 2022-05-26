@@ -96,6 +96,10 @@
   <!-- 底部很多栏 -->
   <view class="botton-items">
     <view class="bottonItem" id="bottonItem1"> 
+      <image src="../../image/mine/attention.svg"></image>
+      <text>我的关注</text>
+    </view>
+    <view class="bottonItem" id="bottonItem"> 
       <image src="../../image/mine/record.svg"></image>
       <text>发帖记录</text>
     </view>

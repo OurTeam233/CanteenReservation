@@ -42,10 +42,10 @@
   <view class="content">
     <van-tabs sticky swipeable  nav-class="title-tab" color="#f85119" title-active-color="#f85119">
       <van-tab title="发帖">
-        <include src="../miai/index.wxml" />
+        <include src="../posts/index.wxml" />
       </van-tab>
       <van-tab custom-class="tab-item" title="二手">
-        <include src="../miai/index.wxml" />
+        <include src="../posts/index.wxml" />
       </van-tab>
       <van-tab custom-class="tab-item" title="相亲">
         <include src="../miai/index.wxml" />
