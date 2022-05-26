@@ -47,9 +47,9 @@
   "libVersion": "2.20.2",
   "appid": "wxc2b4d4783308ec5a",
   "projectname": "Canteen",
-  "condition": {},
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-  }
+  },
+  "condition": {}
 }
