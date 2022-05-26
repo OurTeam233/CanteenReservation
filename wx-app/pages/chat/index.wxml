@@ -1,0 +1,14 @@
+<!--pages/chat/index.wxml-->
+<view wx:for="{{person}}" wx:for-item="item">
+  <view class="chat-content-list">
+    <image class="chat-content-list-head" src="{{item.picture}}"></image>
+    <view class="chat-content-list-info">
+      <text class="chat-content-list-info-nick">{{item.nike}}</text>
+      <text class="chat-content-list-info-info">{{item.word}}</text>
+    </view>
+    <view class="chat-content-list-info2">
+      <text class="chat-content-list-info2-time">{{item.time}}</text>
+      <text class="{{item.unread=='0'? 'chat-content-list-info2-unread':'chat-content-list-info2-unread1'}}">{{item.unread}}</text>
+    </view>
+  </view>
+</view>

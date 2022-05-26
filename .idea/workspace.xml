@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="219ac672-b86c-4fbc-9509-1369bc6da38d" name="变更" comment="" />
+    <list default="true" id="219ac672-b86c-4fbc-9509-1369bc6da38d" name="变更" comment="变更">
+      <change afterPath="$PROJECT_DIR$/.idea/qaplug_profiles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wx-app/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wx-app/pages/miaipost/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/pages/miaipost/index.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wx-app/project.private.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/wx-app/project.private.config.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,8 +34,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Facet" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.23214285" />
@@ -148,11 +162,13 @@
       <workItem from="1638327374167" duration="203000" />
       <workItem from="1639358215214" duration="396000" />
       <workItem from="1640854392086" duration="11000" />
+      <workItem from="1653034620970" duration="5000" />
+      <workItem from="1653450263438" duration="667000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

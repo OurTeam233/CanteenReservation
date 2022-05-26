@@ -1,0 +1,67 @@
+/* pages/chat/index.wxss */
+.chat-content-list{
+  display: flex;
+  width: 94%;
+  height: 120rpx;
+  /* border: 1rpx solid salmon; */
+  margin-left: 20rpx;
+  margin-right: 20prx;
+  margin-top: 20rpx;
+}
+.chat-content-list-info{
+  width: 50%;
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+}
+.chat-content-list-info2{
+  float: right;
+  height: 120rpx;
+  margin-left: 15%;
+  display: flex;
+  flex-direction: column;
+}
+.chat-content-list-head{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 1rpx solid rgbA(222, 222, 223,0.6) ;
+}
+.chat-content-list-info-nick{
+  font-size: 28rpx;
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+}
+.chat-content-list-info-info{
+  font-size: 26rpx;
+  color: rgb(190, 190, 190);
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+  overflow:hidden;
+  text-overflow:ellipsis
+}
+.chat-content-list-info2-time{
+  font-size: 24rpx;
+  color: rgb(190, 190, 190);
+  /* margin-left: 60%; */
+  margin-top: 30rpx;
+  float: right;
+}
+.chat-content-list-info2-unread1{
+  border: 1rpx solid rgb(240, 1, 1);
+  background-color: rgb(240, 1, 1);
+  border-radius: 50%;
+  width: 30rpx;
+  height: 30rpx;
+  font-size: 24rpx;
+  /* margin-left: 60%;*/
+  margin-top: 30rpx;
+  text-align: center;   /* 左右居中 */
+  line-height: 30rpx; 
+  color: rgb(255, 253, 253);
+  float: right;
+}
+.chat-content-list-info2-unread{
+  color: rgb(255, 253, 253);
+  font-size: 10rpx;
+}

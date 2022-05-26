@@ -106,6 +106,7 @@
   content: " ";
   position: absolute;
   height: 4rpx;
+   
   width: 79rpx;
   top: 50%;
   left: 50%;

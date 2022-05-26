@@ -131,6 +131,18 @@
           "pathName": "pages/miaipost/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "聊天",
+          "pathName": "pages/chat/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "聊天内容",
+          "pathName": "pages/chatinfo/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

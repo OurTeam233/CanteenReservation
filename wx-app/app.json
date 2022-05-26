@@ -20,6 +20,8 @@
     "pages/edit/index",
     "pages/posts/index",
     "pages/lostFoundInfo/index",
+    "pages/chat/index",
+    "pages/chatinfo/index",
     "pages/connection/index"
   ],
   "window": {
