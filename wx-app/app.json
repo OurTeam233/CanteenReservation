@@ -11,7 +11,6 @@
     "pages/miaipost/index",
     "pages/information/index",
     "pages/mine/index",
-    "pages/chat/index",
     "pages/lostFound/index",
     "pages/attention/index",
     "pages/publish/index",
@@ -22,7 +21,8 @@
     "pages/posts/index",
     "pages/lostFoundInfo/index",
     "pages/connection/index",
-    "pages/minePparticulars/index"
+    "pages/minePparticulars/index",
+    "pages/chat/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

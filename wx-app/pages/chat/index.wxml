@@ -2,3 +2,20 @@
 <view>
 
 </view>
+<view>
+  <view class="chat-content-list" wx:for="{{person}}" wx:for-item="item">
+    <image class="chat-content-list-img" src="{{item.img}}"></image>
+    <view class="chat-content-list-info1">
+      <view class="chat-content-list-info1-nike">{{item.nike}}</view>
+      <view class="chat-content-list-info1-words">{{item.words}}</view>
+    </view>
+    <view class="chat-content-list-info2">
+      <view class="chat-content-list-info2-time">{{item.time}}</view>
+      <view class="chat-content-list-info2-unread-box">
+        <view class="chat-content-list-info2-unread">{{item.unread}}</view>
+      </view>
+      
+    </view>
+
+  </view>
+</view>
