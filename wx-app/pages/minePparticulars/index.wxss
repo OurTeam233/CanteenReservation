@@ -1,0 +1,306 @@
+/* pages/minePparticulars/index.wxss */
+
+page{
+  background-color: #fff;
+}
+
+/* 隐藏滚动条 */
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+  }
+
+
+/* 背景图片 */
+.bg{
+  width: 100%;
+  height: 600rpx;
+  position: absolute;
+  z-index: -1;
+}
+
+/* 顶部个人信息 */
+.personInfo{
+  /* background-color: #ccc; */
+  width: 90%;
+  height: 430rpx;
+  margin: auto;
+  border-bottom: 1px #ccc solid;
+  /* display: flex; */
+
+}
+
+/* 顶部个人信息的上面一部分 */
+.personInfoTop{
+  display: flex;
+
+}
+
+/* 头像框 */
+.head {
+  border-radius: 50px;
+  width:160rpx;
+  height:160rpx;
+  margin: 20rpx 4rpx;
+  background-color: #fff;
+  margin-top: 120rpx;
+}
+
+.head > image{
+  border-radius: 50px;
+  width:160rpx;
+  height:160rpx;
+}
+
+/* 头像旁的按钮组 */
+.buttonGourp{
+  width: 510rpx;
+  /* background-color: #fff; */
+  display: flex;
+}
+
+/* 按钮样式 */
+.buttonGourp > button{
+  margin-top: 210rpx;
+  margin-left: 60rpx;
+  margin-right: 10rpx;
+  width: 180rpx;
+  height: 80rpx;
+  border-radius: 50rpx;
+  
+}
+
+/* 用户名 */
+.username {
+  width: 380rpx;
+  height: 36rpx;
+  font-weight: 1000;
+  font-size: 36rpx;
+  color: #000;
+  margin-top: 10rpx;
+}
+/* 个性签名 */
+.signature{
+  width: 180px;
+  height: 20px;
+  font-size: small;
+  color: rgb(121, 121, 121);
+  margin-top: 20rpx;
+
+}
+
+
+/* 中部标签页 */
+
+/* 抄原来项目的 */
+.content>swiper{
+  height: 500rpx;
+}
+
+.content-miai{
+  height: 500rpx;
+}
+
+
+.tab {
+  margin-top: 20rpx;
+  display: flex;
+  height: 36px;
+  justify-content:left;
+  align-items: center;
+  background-color: #fff;
+}
+
+.content-tab {
+  margin-top: 20rpx;
+  height: 36px;
+  justify-content:left;
+  align-items: center;
+  background-color: #fff;
+}
+
+.tab-item{
+  margin-top: 10rpx;
+  margin-left: 40rpx;
+  margin-right: 10rpx;
+  font-size: 28rpx;
+
+}
+
+
+.active{
+  font-size: 32rpx;
+  color: #f85119;
+  text-align: center;
+}
+
+.active::after {
+  content: '';
+  width: 50%;
+  height: 1px;
+  display: block;
+  margin: 0 auto;
+  border-bottom: 2px solid #f85119;
+  padding: 1px;
+}
+
+
+
+
+
+
+
+
+
+/* 相亲界面的(抄miai的) */
+/* pages/miai/index.wxss */
+.content-miai {
+  /* width:100%; */
+  height: auto;
+  padding: 0;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-top: 20rpx;
+}
+
+.content-miai-box1 {
+  /* width:100%; */
+  height: 700rpx;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 30rpx;
+  box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
+  background-color: rgb(245, 243, 241);
+  /* border: 1rpx solid rgb(218, 218, 218); */
+  border-radius: 30rpx
+}
+.content-miai-box2{
+  height: auto;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 30rpx;
+  box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
+  background-color: rgb(245, 243, 241);
+  /* border: 1rpx solid rgb(218, 218, 218); */
+  border-radius: 30rpx;
+  padding: 10rpx;
+}
+.content-miai-box-info{
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  font-style: inherit;
+  font-size: 28rpx;
+}
+.content-miai-box-info1{
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  font-style: inherit;
+  font-size: 36rpx;
+}
+.content-miai-box-info-image{
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+}
+.content-miai-swiper {
+  /* width:100%; */
+  height: 600rpx;
+  padding: 0;
+  box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
+  background-color: rgb(245, 243, 241);
+  border: 1rpx solid rgb(218, 218, 218);
+  border-radius: 50rpx
+}
+
+.content-miai-swiper>swiper {
+  /* width:100%; */
+  height: 600rpx;
+  border: 1rpx solid rgb(218, 218, 218);
+  border-radius: 50rpx
+}
+
+.content-miai-swiper-image {
+  width: 100%;
+  height: 100%;
+  border: 1rpx solid rgb(218, 218, 218);
+  border-radius: 50rpx;
+  box-shadow: 1rpx 1rpx 10rpx rgb(238, 193, 193);
+}
+
+.content-miai-info-1,
+.content-miai-info-2 {
+  display: flex;
+  height: auto;
+  margin-top: 36rpx;
+  margin-left: 30rpx;
+  margin-right: 60rpx;
+}
+
+.content-miai-info-self-name {
+  font-size: 28rpx;
+  font-weight: 350rpx;
+  margin-right: 20rpx;
+  font-family: Helvetica, Tahoma, Arial;
+  color: rgb(243, 128, 157);
+}
+
+.content-miai-info-self-info {
+  font-size: 22rpx;
+  margin-top: 6rpx;
+  color: rgba(141, 141, 141,0.5);
+}
+
+.content-miai-info-self-manifesto {
+  width: 670rpx;
+  height: 60rpx;
+  background-color: rgba(238, 236, 236, 0.8);
+  border-radius: 8rpx;
+  margin-top: 30rpx;
+  margin-right: 1rpx;
+  padding-left: 20rpx;
+  padding-top: 20rpx;
+  font-size: 28rpx;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(19, 18, 18);
+  
+  /* text-align: center; */
+}
+/* 字体 */
+.web-font{
+  font-family:"webfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.content-miai-info-image1{
+  width: 30rpx;
+  height: 30rpx;
+  margin: 6rpx;
+}
+.content-miai-info-image2{
+  width: 20rpx;
+  height: 20rpx;
+  margin: 6rpx;
+}
+.content-miai-info-image3{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 50rpx;
+  float: right;
+  border: 1rpx solid rgb(231, 227, 227);
+  box-shadow: 1rpx 1rpx 10rpx rgb(238, 193, 193);
+}
+
+
+.title-tab {
+  width: 400rpx;
+}
+
+
+
+
+
+

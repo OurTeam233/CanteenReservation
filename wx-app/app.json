@@ -22,7 +22,9 @@
     "pages/lostFoundInfo/index",
     "pages/chat/index",
     "pages/chatinfo/index",
-    "pages/connection/index"
+    "pages/connection/index",
+    "pages/connection/index",
+    "pages/minePparticulars/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
