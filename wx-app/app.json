@@ -11,6 +11,7 @@
     "pages/miaipost/index",
     "pages/information/index",
     "pages/mine/index",
+    "pages/chat/index",
     "pages/lostFound/index",
     "pages/attention/index",
     "pages/publish/index",

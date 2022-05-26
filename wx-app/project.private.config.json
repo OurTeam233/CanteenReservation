@@ -1,6 +1,16 @@
 {
   "setting": {},
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
   "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
     "miniprogram": {
       "list": [
         {
@@ -28,13 +38,13 @@
           "scene": null
         },
         {
-          "name": "社区界面",
+          "name": "社区浏览",
           "pathName": "pages/community/index",
           "query": "",
           "scene": null
         },
         {
-          "name": "我的",
+          "name": "我的主页",
           "pathName": "pages/mine/index",
           "query": "",
           "scene": null
@@ -52,7 +62,7 @@
           "scene": null
         },
         {
-          "name": "发布帖子",
+          "name": "普通帖子发布",
           "pathName": "pages/publish/index",
           "query": "",
           "scene": null
@@ -76,12 +86,6 @@
           "scene": null
         },
         {
-          "name": "帖子详情页",
-          "pathName": "pages/posts/index",
-          "query": "postId=1",
-          "scene": null
-        },
-        {
           "name": "失物招领详情页",
           "pathName": "pages/lostFoundInfo/index",
           "query": "",
@@ -97,12 +101,6 @@
           "name": "失物",
           "pathName": "pages/lostFoundInfo/index",
           "query": "id=1",
-          "scene": null
-        },
-        {
-          "name": "发帖",
-          "pathName": "pages/publish/index",
-          "query": "",
           "scene": null
         },
         {
@@ -128,9 +126,14 @@
           "pathName": "pages/miaipost/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "聊天",
+          "pathName": "pages/chat/index",
+          "query": "",
+          "scene": null
         }
       ]
     }
-  },
-  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html"
+  }
 }

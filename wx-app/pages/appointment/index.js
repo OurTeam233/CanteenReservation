@@ -233,8 +233,9 @@ Page({
     const token = wx.getStorageSync('token')
     //发送请求给后端
     if(flag){
+      console.log(order)
     wx.request({
-      url: 'https://121.43.56.241/CanteenWeb/Order/Insert',
+      url: 'http://175.178.216.63:8888/CanteenWeb/Order/Insert',
       data: {
         order,
       },
@@ -242,9 +243,13 @@ Page({
       method: "POST",
       success: (result) => {
         console.log(result)
-        console.log("成功了吗")
+        console.log("成功")
         wx.setStorageSync('cates', [])
       },
+      error:(result)=>{
+        console.log(result)
+        console.log("失败了")
+      }
     })
     //跳转也页面
     wx.switchTab({
@@ -252,7 +257,6 @@ Page({
     })
   }
 
-    
     // TODO 提交成功代码
   },
  //获取预约时间毫秒值
