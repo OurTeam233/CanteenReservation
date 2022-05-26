@@ -47,9 +47,9 @@
 }
 
 
-.list-att {
+/* .list-att {
 
-}
+} */
 
 .att {
   width: 48px;
