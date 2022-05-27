@@ -110,6 +110,12 @@
           "scene": null
         },
         {
+          "name": "我的",
+          "pathName": "pages/mine/index",
+          "query": "",
+          "scene": null
+        },
+        {
           "name": "我的详情",
           "pathName": "pages/minePparticulars/index",
           "query": "",

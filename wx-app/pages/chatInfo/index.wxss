@@ -1,99 +1,319 @@
+/* pages/wechat2/wechat2.wxss */
 page {
-  background-color: #f7f7f7;
-  height: 100%;
+  background-color: #f3f3f4;
+
 }
 
-.chat {
-  padding: 5rpx 10rpx;
-  font-size: 14px;
-  line-height: 80rpx;
-  word-break: break-all;
-  margin-bottom: 100rpx;
-  box-sizing: border-box;
-}
-
-.wrap {
-  height: 100%;
-  width: 100%;
+/* 聊天对象信息 */
+.chat-header {
   display: flex;
-  border-top: 0px;
-  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+  height: 80rpx;
+  padding: 0 12px;
+  background-color: #f85119;
+}
+
+.chat-name {
+  margin: auto;
+  line-height: 88rpx;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+
+.tab {
+  padding: 20rpx 20rpx 40rpx 50rpx;
+  height: 20%;
+  background-color: white;
+}
+
+.tab .tent {
+  font-size: 33rpx;
+  margin-bottom: 30rpx;
+}
+
+.jia_img {
+  height: 80rpx;
+  width: 90rpx;
+}
+
+.new_imgtent {
+  height: 180rpx;
+  width: 190rpx;
+}
+
+.tab .fabu {
+  font-size: 33rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.xiahuaxia {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  top: 60rpx;
+}
+
+.chat-time {
+  text-align: center;
+  padding: 5rpx 20rpx 5rpx 20rpx;
+  width: 200rpx;
+  font-size: 26rpx;
+  background-color: #e6e6e6;
+}
+
+.new_top_txt {
+  width: 50%;
+  position: relative;
+  top: 38rpx;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 30rpx;
+  color: #787878;
+  background-color: #f7f7f7;
+}
+
+/* 聊天内容 */
+
+.news {
+  margin-top: 0;
+  text-align: center;
+  margin-bottom: 9px;
+}
+
+.img_null {
+  height: 60rpx;
+}
+
+.l {
+  height: 5rpx;
+  width: 20%;
+  margin-top: 30rpx;
+  color: #000;
 }
 
 /* 聊天 */
 
-.chat-news {
-  width: 100%;
-  overflow: hidden;
-}
-
-.news-lf {
+.my_right {
   float: right;
-  padding-right: 20rpx;
+  position: relative;
+  right: 40rpx;
 }
 
-.chat-news::after {
-  display: block;
-  height: 0;
-  clear: both;
-  content: '';
-}
-
-.new-rl {
+.you_left {
   float: left;
+  position: relative;
+  left: 5rpx;
+}
+
+.new_img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.sanjiao {
+  top: 20rpx;
+  position: relative;
+  width: 0px;
+  height: 0px;
+  border-width: 10px;
+  border-style: solid;
+}
+
+.my {
+  border-color: transparent transparent transparent #95d4ff;
+}
+
+.you {
+  border-color: transparent #95d4ff transparent transparent;
+}
+
+.sendmessage {
+  /* display: flex;
+   align-items: center;
+  flex-direction: row; */
+  width: 100%;
+  min-height: 60px;
+  position: fixed;
+  bottom: 0px;
+  padding: 0 16px;
+  background-color: rgba(242, 242, 242, 100);
+  box-shadow: 0px -1px 5px 1px rgba(57, 57, 57, 0.1);
+}
+
+.send-message {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+
+.sendmessage input {
+  height: 80rpx;
+  background-color: white;
+  line-height: 80rpx;
+  font-size: 28rpx;
   padding-left: 20rpx;
 }
 
-.new-img {
-  width: 60rpx;
-  height: 60rpx;
-  border-radius: 50%;
-  vertical-align: middle;
-  margin-right: 10rpx;
+.sendmessage button {
+  width: 52px !important;
+  height: 32px;
+  line-height: 32px;
+  background: #169171 !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  text-align: center;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-.new-txt {
-  max-width: 300rpx;
-  display: inline-block;
-  border-radius: 6rpx;
-  line-height: 60rpx;
-  background-color: #95d4ff;
-  padding: 5rpx 20rpx;
-  margin: 0 10rpx;
-  margin-left: 50rpx;
-}
-
-.new-text {
-  margin-left: 0;
-  background: lightgreen;
-}
-
-/* 信息输入区域 */
-
-.message {
-  position: fixed;
-  bottom: 0;
+.historycon {
+  height: 90%;
+  /* background-color: pink; */
   width: 100%;
-  height: 102rpx;
-  padding: 10rpx;
-  background-color: #fff;
-  border-top: 2rpx solid #eee;
-  box-sizing: border-box;
-  z-index: 3;
+  flex-direction: column;
+  display: flex;
+  /* margin-top: 100rpx;  */
+  border-top: 0px;
 }
 
-.message input {
-  float: left;
-  width: 70%;
-  height: 100%;
+.hei {
+  margin-top: 50px;
+  height: 20rpx;
+}
+
+.history {
+  /* height: 300px;  */
+  margin-top: 30rpx;
+  margin: 20rpx;
+  font-size: 28rpx;
   line-height: 80rpx;
-  padding: 0 10rpx;
-  font-size: 35rpx;
-  color: #666;
+  word-break: break-all;
 }
 
-.message button {
-  float: right;
-  font-size: 35rpx;
-  width: 90px;
+.chat-input {
+  width: 60%;
+  height: 40px;
+  border: 0;
+  border-radius: 8px;
+  margin-left: 5rpx;
+}
+
+.back-icon {
+  margin-top: 25rpx;
+  margin-left: 25rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* other文本内容 */
+.other-record-content {
+  background-color: #fff;
+  width: auto;
+  max-width: 180px;
+  border-radius: 7px;
+  padding: 8px 16px;
+  text-align: left;
+  margin: 6px 0;
+  line-height: 50rpx;
+  letter-spacing: 4rpx;
+}
+
+.other-record {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* other头像 */
+.other-head-img {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin: 10rpx 10rpx 10rpx 10rpx;
+}
+
+.other-record-content-triangle {
+  width: 0;
+  height: 0;
+  border-top: 10rpx solid transparent;
+  border-right: 15rpx solid #fff;
+  border-bottom: 10rpx solid transparent;
+  margin-top: 36rpx;
+}
+
+.own-record {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30rpx;
+}
+
+/* own文本内容 */
+.own-record-content {
+  background-color: #209072;
+  max-width: 180px;
+  border-radius: 8px;
+  padding: 8px 20px;
+  color: #fff;
+  text-align: left;
+  margin: 6px 0;
+  line-height: 50rpx;
+  letter-spacing: 4rpx;
+
+}
+
+.own-record-content-triangle {
+  width: 0;
+  height: 0;
+  /* border-top: 20rpx solid transparent; 
+ border-left: 40rpx solid #F0F0F0; 
+ border-bottom: 20rpx solid transparent;  */
+  border-top: 10rpx solid transparent;
+  border-left: 15rpx solid #209072;
+  border-bottom: 10rpx solid transparent;
+  margin-top: 36rpx;
+}
+/* own头像 */
+.own-head-img {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin: 10rpx 10rpx 10rpx 10rpx;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.chat-emotion {
+  width: 28px;
+  height: 28px;
+  margin: 0 12px;
+}
+
+.emotions {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 200px;
+  height: 36px;
+  margin: 6px;
+}
+
+.emotions-item {
+  width: 24px;
+  height: 24px;
+  margin: 0 8px;
+}
+
+.historyText {
+  color: #ccc;
 }
