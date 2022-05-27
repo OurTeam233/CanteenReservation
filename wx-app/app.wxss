@@ -2,7 +2,7 @@
 @import '/styles/icon.wxss';
 page {
   background-color: #f5f5f5;
-  --themeColor: #ed4450;
+  --themeColor: #f85119;
   --fontSize: 24rpx;
   --titleSize: 28rpx
 }

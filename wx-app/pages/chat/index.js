@@ -1,4 +1,7 @@
 // pages/chat/index.js
+import{
+  request
+}from '../../utils/request'
 Page({
 
   /**
@@ -89,6 +92,14 @@ Page({
   changeToChatinfo(){
     wx.navigateTo({
       url: '../chatInfo/index',
+    })
+  },
+  // 获取消息信息，头像，昵称，时间，未读信息量，最近消息
+  getInfo(){
+    wx.request({
+      url: 'url',
+    }).then(result=>{
+      console.log(result)
     })
   }
 })

@@ -1,0 +1,95 @@
+<!--pages/wechat2/wechat2.wxml-->
+
+<!-- 聊天对象的信息 -->
+<view class="chat-header">
+  <view class="chat-name">张三</view>
+</view>
+
+<!-- 消息部分 -->
+<view class='news'>
+  <view class="historycon">
+    <scroll-view scroll-y="true" scroll-into-view="{{scrollid}}" scroll-with-animation="{{true}}" style="height:{{scrollHeight}}" class="history" refresher-enabled="true" bindrefresherrefresh="refresh" refresher-triggered="{{triggered}}">
+      <!-- 历史记录部分start -->
+      <view wx:if="{{historyList.length > 0}}">
+        <view class="historyText">历史消息</view>
+        <block wx:for="{{historyList}}" wx:key="index">
+          <!--此处为other -->
+          <view wx:if="{{item.type==1}}" id="historyscrollid{{index}}">
+            <view>
+              <text class='chat-time' style="display:none;">{{item.date}}</text>
+            </view>
+            <view class='other-record'>
+              <image class='other-head-img' src='{{receivebaseInfo.avatar}}'></image>
+              <view class='other-record-content-triangle'></view>
+              <view class='other-record-content'>
+                {{item.content_msg}}</view>
+            </view>
+          </view>
+          <!--此处为结尾 -->
+          <!--此处为own -->
+          <view id="historyscrollid{{index}}" wx:else>
+            <view>
+              <text class='chat-time' style="display:none;">{{item.date}}</text>
+            </view>
+            <view class='own-record'>
+              <view class='own-record-content'>{{item.content_msg}}</view>
+              <view class='own-record-content-triangle'></view>
+              <image class='own-head-img' src='{{sendAvatar}}'></image>
+            </view>
+          </view>
+          <!-- own结尾 -->
+        </block>
+        <view class="historyText">以上为历史消息</view>
+      </view>
+      <!-- 历史记录部分end -->
+
+      <!-- 新消息开始 -->
+      <block wx:for="{{newsList}}" wx:key="index">
+        <!--此处为other -->
+        <view wx:if="{{item.type==1}}" id="scrollid{{index}}">
+          <view>
+            <text class='chat-time' style="display:none;">{{item.date}}</text>
+          </view>
+          <view class='other-record'>
+            <!-- <image class='other-head-img' src='{{receivebaseInfo.avatar}}'></image> -->
+            <image class='other-head-img' src='../../image/headPhone/head4.webp'></image>
+            <view class='other-record-content-triangle'></view>
+            <view class='other-record-content'>
+              {{item.message}}</view>
+          </view>
+        </view>
+        <!--此处为结尾 -->
+        <!--此处为own -->
+        <view id="scrollid{{index}}" wx:else>
+          <view>
+            <text class='chat-time' style="display:none;">{{item.date}}</text>
+          </view>
+          <view class='own-record'>
+            <view class='own-record-content'>{{item.message}}</view>
+            <view class='own-record-content-triangle'></view>
+            <!-- <image class='own-head-img' src='{{sendAvatar}}'></image> -->
+            <image class='own-head-img' src='../../image/headPhone/head1.webp'></image>
+          </view>
+        </view>
+        <!-- own结尾 -->
+      </block>
+      <!-- 新消息结束 -->
+    </scroll-view>
+  </view>
+</view>
+
+<!-- 底部开始 -->
+<view class="sendmessage">
+  <view class="send-message">
+    <!-- 文字输入 -->
+    <input class="chat-input" type="text" bindinput="bindChange" confirm-type="done" value='{{input}}' cursor-spacing="16px" hold-keyboard="{{true}}" placeholder="" />
+    <!-- 表情按钮 -->
+    <image class="chat-emotion" src="../../image/mine/realName.png" bindtap="emotionChange"></image>
+    <button class="btn" bindtap='send'>发送</button>
+  </view>
+  <!-- 表情内容 -->
+  <view class="emotions" wx:if="{{emotionVisible}}">
+    <view class="emotions-item" wx:for="{{connectemoji}}" wx:key="index" bindtap="addemotion" data-index="{{index}}">{{item}}</view>
+  </view>
+</view>
+<!-- 底部结束 -->
