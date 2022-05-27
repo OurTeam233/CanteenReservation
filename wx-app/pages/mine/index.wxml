@@ -87,7 +87,7 @@
       <text>收藏</text>
     </view>
     <view class="buttonBox">
-      <image src="../../image/mine/msg.svg"></image>
+      <image src="../../image/mine/msg.svg" bindtap="toMsg"></image>
       <text>消息</text>
     </view>
   </view>
