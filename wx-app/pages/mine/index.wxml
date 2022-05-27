@@ -88,6 +88,7 @@
     </view>
 
     <view class="buttonBox">
+    <view  class="{{count!==0?'single':''}}"></view>
       <image src="../../image/mine/msg.svg" bindtap="toMsg"></image>
       <text>消息</text>
     </view>

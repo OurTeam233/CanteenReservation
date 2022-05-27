@@ -4,7 +4,12 @@ Page({
     username: '系统用户一二三四五六',
     signature: '哈哈哈哈我好牛啊',
     headImgUrl: '../../image/mine/default.png',
+    count:1,
     
+  },
+
+  onLoad(){
+    this.getInfo();
   },
   // 跳转个人信息编辑页
   toEditor () {
@@ -55,6 +60,18 @@ Page({
   toMsg(){
     wx.navigateTo({
       url: '../../pages/chatInfo/index',
+    })
+  },
+
+  //获取未读消息
+  getInfo(){
+    wx.request({
+      url: 'url',
+    }).then(res=>{
+      count=1;//消息数量
+      this.setData(
+        count
+      )
     })
   }
 })

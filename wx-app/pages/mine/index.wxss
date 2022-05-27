@@ -256,6 +256,7 @@ page {
 }
 .buttonBox{
   display: flex;
+  position: relative;
   flex-direction:column;
 }
 
@@ -269,6 +270,15 @@ page {
   font-size: smaller;
 }
 
+.single{
+  position: absolute;
+  top:-8rpx;
+  left: 34rpx;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  background-color: #f85119;
+}
 
 /* 底部很多栏 */
 #bottonItem1{
