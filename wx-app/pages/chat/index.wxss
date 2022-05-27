@@ -1,0 +1,60 @@
+.chat-content-list {
+  height: 120rpx;
+  /* border: 1rpx solid silver; */
+  margin-top: 40rpx;
+  display: flex;
+}
+
+.chat-content-list-img {
+  margin-left: 30rpx;
+  border: 1rpx solid rgb(228, 227, 227);
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.chat-content-list-info1 {
+  width: 50%;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+
+.chat-content-list-info2 {
+  margin-left: auto;
+  padding-right: 30rpx;
+  margin-top: 20rpx;
+
+}
+
+.chat-content-list-info1-nike {
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+.chat-content-list-info1-words {
+  height: 38%;
+  overflow: hidden;
+  font-size: 26rpx;
+  color: rgb(170, 169, 169);
+}
+
+.chat-content-list-info2-time {
+  font-size: 24rpx;
+  margin-bottom: 20rpx;
+  color: rgb(170, 169, 169)
+}
+
+.chat-content-list-info2-unread-box {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chat-content-list-info2-unread {
+  width: 30rpx;
+  height: 30rpx;
+  background-color: rgb(238, 1, 1);
+  border-radius: 50%;
+  font-size: 24rpx;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}

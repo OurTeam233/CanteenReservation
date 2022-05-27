@@ -12,6 +12,12 @@ Page({
       url: '../edit/index'
     })
   },
+  //跳转到聊天页面
+  changeToChat(){
+    wx.navigateTo({
+      url: '../chat/index'
+    })
+  },
   // 收藏页面跳转
   collecting () {
     wx.navigateTo({

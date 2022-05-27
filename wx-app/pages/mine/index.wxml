@@ -86,7 +86,7 @@
       <image src="../../image/mine/collect.svg"></image>
       <text>收藏</text>
     </view>
-    <view class="buttonBox">
+    <view class="buttonBox" bindtap="changeToChat">
       <image src="../../image/mine/msg.svg"></image>
       <text>消息</text>
     </view>
