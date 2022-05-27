@@ -49,5 +49,12 @@ Page({
     wx.reLaunch({
       url: '../login/index',
     })
+  },
+
+  //跳转到消息界面
+  toMsg(){
+    wx.navigateTo({
+      url: '../../pages/chatInfo/index',
+    })
   }
 })
