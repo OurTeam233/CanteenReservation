@@ -132,6 +132,12 @@
           "pathName": "pages/chat/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "聊天详情",
+          "pathName": "pages/chatInfo/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

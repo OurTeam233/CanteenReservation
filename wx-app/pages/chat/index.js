@@ -85,5 +85,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  changeToChatinfo(){
+    wx.navigateTo({
+      url: '../chatInfo/index',
+    })
   }
 })
