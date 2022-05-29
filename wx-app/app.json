@@ -23,7 +23,8 @@
     "pages/connection/index",
     "pages/minePparticulars/index",
     "pages/chat/index",
-    "pages/chatInfo/index"
+    "pages/chatInfo/index",
+    "pages/used/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

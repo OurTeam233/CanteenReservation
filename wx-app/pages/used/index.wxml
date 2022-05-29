@@ -1,0 +1,50 @@
+<!--pages/used/index.wxml-->
+<view class="content-miai">
+  <!-- 信息卡片 -->
+  <view class="content-miai-box1">
+    <!-- 图片 -->
+    <view class="content-miai-swiper">
+      <swiper indicator-dots autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <view wx:for="{{backgroundImage}}" wx:for-item="item">
+          <swiper-item>
+            <image class="content-miai-swiper-image" src="{{item}}" mode="aspectFill"></image>
+          </swiper-item>
+        </view>
+      </swiper>
+    </view>
+    <!-- 信息 -->
+    <view class="content-miai-info-1">
+      <image class="content-miai-info-image1" src="../../image/logo/like4.png"></image>
+      <view class="content-miai-info-self-name">{{person.name}}</view>
+      <view class="content-miai-info-self-info">
+        {{person.age}} | {{person.sex}} | {{person.address}} | {{person.type}}
+      </view>
+      <image class="content-miai-info-image2" src="../../image/logo/like4.png"></image>
+    </view>
+    <!-- 头像 -->
+    <!-- <view>
+      <image class="content-miai-info-image3" src="../../image/headPhone/head2.webp"></image>
+    </view> -->
+  </view>
+  <!-- 个人信息 -->
+  <view class="content-miai-box2">
+    <view class="content-miai-box-info1">个人信息</view>
+    <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/age.png"></image>年龄:{{person.age}}</view>
+    <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/sex.png"></image>性别:{{person.sex}}</view>
+    <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/height.png"></image>身高:{{person.height}}</view>
+    <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/weight.png"></image>体重:{{person.weight}}</view>
+    <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/hobby.png"></image>兴趣:{{person.hobby}}</view>
+    <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/address.png"></image>地址:{{person.address}}</view>
+    <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/laba.png"></image>宣言:{{person.manifesto}}</view>
+  </view>
+  <!-- 对方要求 -->
+  <view class="content-miai-box2">
+    <view class="content-miai-box-info1">理想型</view>
+    <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/age.png"></image>年龄:{{person1.age}}左右</view>
+    <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/sex.png"></image>性别:{{person1.sex}}</view>
+    <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/height.png"></image>身高:{{person1.height}}</view>
+    <view class="content-miai-box-info">其他条件:{{person1.condition}}</view>
+  </view>
+
+
+</view>

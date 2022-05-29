@@ -1,0 +1,141 @@
+/* pages/used/index.wxss */
+.content-miai {
+  /* width:100%; */
+  height: auto;
+  padding: 0;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-top: 20rpx;
+}
+
+.content-miai-box1 {
+  /* width:100%; */
+  height: 700rpx;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 30rpx;
+  box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
+  background-color: rgb(245, 243, 241);
+  /* border: 1rpx solid rgb(218, 218, 218); */
+  border-radius: 30rpx
+}
+.content-miai-box2{
+  height: auto;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 30rpx;
+  box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
+  background-color: rgb(245, 243, 241);
+  /* border: 1rpx solid rgb(218, 218, 218); */
+  border-radius: 30rpx;
+  padding: 10rpx;
+}
+.content-miai-box-info{
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  font-style: inherit;
+  font-size: 28rpx;
+}
+.content-miai-box-info1{
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  font-style: inherit;
+  font-size: 36rpx;
+}
+.content-miai-box-info-image{
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+}
+.content-miai-swiper {
+  /* width:100%; */
+  height: 600rpx;
+  padding: 0;
+  box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
+  background-color: rgb(245, 243, 241);
+  border: 1rpx solid rgb(218, 218, 218);
+  border-radius: 50rpx
+}
+
+.content-miai-swiper>swiper {
+  /* width:100%; */
+  height: 600rpx;
+  border: 1rpx solid rgb(218, 218, 218);
+  border-radius: 50rpx
+}
+
+.content-miai-swiper-image {
+  width: 100%;
+  height: 100%;
+  border: 1rpx solid rgb(218, 218, 218);
+  border-radius: 50rpx;
+  box-shadow: 1rpx 1rpx 10rpx rgb(238, 193, 193);
+}
+
+.content-miai-info-1,
+.content-miai-info-2 {
+  display: flex;
+  height: auto;
+  margin-top: 36rpx;
+  margin-left: 30rpx;
+  margin-right: 60rpx;
+}
+
+.content-miai-info-self-name {
+  font-size: 28rpx;
+  font-weight: 350rpx;
+  margin-right: 20rpx;
+  font-family: Helvetica, Tahoma, Arial;
+  color: rgb(243, 128, 157);
+}
+
+.content-miai-info-self-info {
+  font-size: 22rpx;
+  margin-top: 6rpx;
+  color: rgba(141, 141, 141,0.5);
+}
+
+.content-miai-info-self-manifesto {
+  width: 670rpx;
+  height: 60rpx;
+  background-color: rgba(238, 236, 236, 0.8);
+  border-radius: 8rpx;
+  margin-top: 30rpx;
+  margin-right: 1rpx;
+  padding-left: 20rpx;
+  padding-top: 20rpx;
+  font-size: 28rpx;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(19, 18, 18);
+  
+  /* text-align: center; */
+}
+/* 字体 */
+.web-font{
+  font-family:"webfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.content-miai-info-image1{
+  width: 30rpx;
+  height: 30rpx;
+  margin: 6rpx;
+}
+.content-miai-info-image2{
+  width: 20rpx;
+  height: 20rpx;
+  margin: 6rpx;
+}
+.content-miai-info-image3{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 50rpx;
+  float: right;
+  border: 1rpx solid rgb(231, 227, 227);
+  box-shadow: 1rpx 1rpx 10rpx rgb(238, 193, 193);
+}
+
+

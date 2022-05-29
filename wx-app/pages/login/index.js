@@ -127,14 +127,16 @@ Page({
             const {
               success,
               token,
-              openId
+              openId,
+              studentId
             } = result.data;
             if (success) {
               console.log(success)
               console.log(token)
               console.log(openId)
               wx.setStorageSync("token", token);
-              wx.setStorageSync('openId', openId)
+              wx.setStorageSync('openId', openId);
+              wx.setStorageSync('studentId', studentId);
               wx.switchTab({
                 url: '../../pages/index/index',
               })

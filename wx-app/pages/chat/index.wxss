@@ -27,7 +27,7 @@
 }
 
 .chat-content-list-info1-nike {
-  font-size: 28rpx;
+  font-size: 34rpx;
   margin-bottom: 20rpx;
 }
 

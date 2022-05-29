@@ -30,8 +30,8 @@ Page({
     inputShowed: false,
     scrollTop: 0,
     inputBottom: '0px',
-    receiveMemberId: null,
-    sendMemberId: null,
+    receiveMemberId: null,//接受者id
+    sendMemberId: null,//发送者id
     scrollid: 'scrollid',
     scrollHeight: '100px',
     //  下拉刷新
@@ -44,12 +44,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var receiveMemberId = options.receiveMemberId
-    var sendAvatar = wx.getStorageSync('avatarUrl');
+    var receiveMemberId = options.studentId//接收者studenId
+    var sendAvatar = wx.getStorageSync('UserInfo').avatarUrl;//发送者头像
+    var  sendMemberId= wx.getStorageSync('studentId');//发送者studentId
     var _this = this;
     _this.setData({
-      receiveMemberId:2,
-      sendMemberId:1
+      receiveMemberId:receiveMemberId,
+      sendMemberId:sendMemberId,
+      sendAvatar:sendAvatar
     })
     
     //  获取内存中的数据
@@ -75,7 +77,7 @@ Page({
     } = this.data
     //建立连接
     wx.connectSocket({
-      url: `ws://175.178.216.63:8888/CanteenWeb/chat/1/2`, //本地
+      url: `ws://175.178.216.63:8888/CanteenWeb/chat/`+receiveMemberId+`/`+sendMemberId, //本地
       success: function (e) {
         console.log(e)
         console.log('websocket连接成功~')
