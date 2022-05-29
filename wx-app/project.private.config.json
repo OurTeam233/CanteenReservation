@@ -135,6 +135,18 @@
           "pathName": "pages/chatInfo/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "二手",
+          "pathName": "pages/used/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "二手",
+          "pathName": "pages/used/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

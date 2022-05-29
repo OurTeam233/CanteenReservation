@@ -51,8 +51,8 @@
             <text class='chat-time' style="display:none;">{{item.date}}</text>
           </view>
           <view class='other-record'>
-            <!-- <image class='other-head-img' src='{{receivebaseInfo.avatar}}'></image> -->
-            <image class='other-head-img' src='../../image/headPhone/head4.webp'></image>
+            <image class='other-head-img' src='{{receivebaseInfo.avatar}}'></image>
+            <!-- <image class='other-head-img' src='../../image/headPhone/head4.webp'></image> -->
             <view class='other-record-content-triangle'></view>
             <view class='other-record-content'>
               {{item.message}}</view>
@@ -67,8 +67,8 @@
           <view class='own-record'>
             <view class='own-record-content'>{{item.message}}</view>
             <view class='own-record-content-triangle'></view>
-            <!-- <image class='own-head-img' src='{{sendAvatar}}'></image> -->
-            <image class='own-head-img' src='../../image/headPhone/head1.webp'></image>
+            <image class='own-head-img' src='{{sendAvatar}}'></image>
+            <!-- <image class='own-head-img' src='../../image/headPhone/head1.webp'></image> -->
           </view>
         </view>
         <!-- own结尾 -->
