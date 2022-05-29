@@ -231,6 +231,12 @@ page {
   font-size: large;
   color: #fff;
 }
+
+.username > image{
+  width: 20rpx;
+  height: 20rpx;
+}
+
 /* 个性签名 */
 .signature{
   margin: 30rpx 15rpx 5rpx 30rpx;
