@@ -71,7 +71,9 @@
       <image src="{{ headImgUrl }}"></image>
     </view>
     <view class="nameBox">
-      <view class="username">{{username}}</view>
+      <view class="username">{{username}}
+        <image src="../../image/mine/edit.svg"></image>
+      </view>
       <view class="signature">{{signature}}</view>
     </view>
   </view>
@@ -98,7 +100,7 @@
   <!-- 底部很多栏 -->
   <view class="botton-items">
     
-    <view class="bottonItem" id="bottonItem1"> 
+    <view class="bottonItem" id="bottonItem1" bindtap="toPostingRecord"> 
       <image src="../../image/mine/record.svg"></image>
       <text>发帖记录</text>
     </view>

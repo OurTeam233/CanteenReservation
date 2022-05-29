@@ -59,7 +59,14 @@ Page({
   //跳转到消息界面
   toMsg(){
     wx.navigateTo({
-      url: '../../pages/chatInfo/index',
+      url: '../../pages/chat/index',
+    })
+  },
+
+  //跳转到发帖记录
+  toPostingRecord(){
+    wx.navigateTo({
+      url: '../../pages/minePparticulars/index',
     })
   },
 
