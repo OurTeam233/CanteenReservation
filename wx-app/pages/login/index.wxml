@@ -1,4 +1,5 @@
-<!--pages/logs/log.wxml-->
+<!-- pages/logs/log.wxml -->
+
 <view class='main'>
   <!--logo-->
   <view class="logo">
@@ -7,69 +8,55 @@
         fit="widthFix"
         src="https://img.alicdn.com/tfs/TB10aMXfaNj0u4jSZFyXXXgMVXa-500-128.svg"
     /> -->
-    <cover-image src="../../image/logo/dt.png" class="image"></cover-image>
+    <cover-image  src="../../image/logo/dt.png" class="{{login==true?'image':'image2'}}"></cover-image>
   </view>
 
-  <!-- 输入框 -->
-  <view class='input-wrapper'>
-    <van-field
-        placeholder="请选择学院" label="学院" focus readonly required size="large" center
-        bind:click-input="showPopupCollege"
-        model:value="{{ valueCollege }}"
-        custom-style="border-bottom: 1.5rpx solid #E5E5E5; height: 100rpx;"
-    />
-    <van-field
-        placeholder="请选择班级" label="班级" focus readonly required size="large" center
-        bind:click-input="showPopupClass"
-        model:value="{{ valueClass }}"
-        custom-style="border-bottom: 1.5rpx solid #E5E5E5; height: 100rpx;"
-    />
-    <van-field
-        model:value="{{ suqence }}"
-        size="large" label="学号"
-        placeholder="请输入学号"
-        clearable required center
-        custom-style="border-bottom: 1.5rpx solid #E5E5E5; height: 100rpx;"
-    />
+  <view wx:if="{{login}}">
+    <!-- 输入框 -->
+    <view class='input-wrapper'>
+      <van-field placeholder="请选择学院" label="学院" focus readonly required size="large" center bind:click-input="showPopupCollege" model:value="{{ valueCollege }}" custom-style="border-bottom: 1.5rpx solid #E5E5E5; height: 100rpx;" />
+      <van-field placeholder="请选择班级" label="班级" focus readonly required size="large" center bind:click-input="showPopupClass" model:value="{{ valueClass }}" custom-style="border-bottom: 1.5rpx solid #E5E5E5; height: 100rpx;" />
+      <van-field model:value="{{ suqence }}" size="large" label="学号" placeholder="请输入学号" clearable required center custom-style="border-bottom: 1.5rpx solid #E5E5E5; height: 100rpx;" />
+    </view>
   </view>
+
+
+
 
 
   <!-- 微信登录 -->
   <view class='box'>
     <view class='log'>
-      <button class='logBtn'
+      <!-- <button class='logBtn'
       open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo" >
         登录
-      </button>
+      </button> -->
+      <block wx:if="{{!hasUserInfo}}">
+        <button class='logBtn1' wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 微信授权 </button>
+      </block>
+      <block wx:if="{{login}}">
+        <button class='logBtn' wx:if="{{canIUseGetUserProfile}}" bindtap="handleGetUserInfo"> 登录 </button>
+        <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button>
+      </block>
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+
     </view>
   </view>
 </view>
 
+
 <!--弹出框-->
 <!--学院-->
-<van-popup show="{{ showCollege }}" bind:close="onClose" round
-           position="bottom"
-           custom-style="height: 40%;">
+<van-popup show="{{ showCollege }}" bind:close="onClose" round position="bottom" custom-style="height: 40%;">
 
-  <van-picker columns="{{ columns1}}"
-              show-toolbar
-              title="请选择学院"
-              bind:cancel="onClose"
-              bind:confirm="tapConfirmCollege"
-              loading="{{false}}"
-  />
+  <van-picker columns="{{ columns1}}" show-toolbar title="请选择学院" bind:cancel="onClose" bind:confirm="tapConfirmCollege" loading="{{false}}" />
 
 </van-popup>
 <!--班级-->
-<van-popup show="{{ showClass }}" bind:close="onClose" round
-           position="bottom"
-           custom-style="height: 40%;">
+<van-popup show="{{ showClass }}" bind:close="onClose" round position="bottom" custom-style="height: 40%;">
 
-  <van-picker columns="{{ columns2 }}"
-              show-toolbar
-              title="请选择班级"
-              bind:cancel="onClose"
-              bind:confirm="tapConfirmClass"
-              loading="{{false}}"
-  />
+  <van-picker columns="{{ columns2 }}" show-toolbar title="请选择班级" bind:cancel="onClose" bind:confirm="tapConfirmClass" loading="{{false}}" />
 </van-popup>

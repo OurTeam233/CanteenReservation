@@ -22,7 +22,7 @@
               <image class='other-head-img' src='{{receivebaseInfo.avatar}}'></image>
               <view class='other-record-content-triangle'></view>
               <view class='other-record-content'>
-                {{item.content_msg}}</view>
+                {{item.message}}</view>
             </view>
           </view>
           <!--此处为结尾 -->
@@ -32,7 +32,7 @@
               <text class='chat-time' style="display:none;">{{item.date}}</text>
             </view>
             <view class='own-record'>
-              <view class='own-record-content'>{{item.content_msg}}</view>
+              <view class='own-record-content'>{{item.message}}</view>
               <view class='own-record-content-triangle'></view>
               <image class='own-head-img' src='{{sendAvatar}}'></image>
             </view>
