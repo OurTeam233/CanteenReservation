@@ -72,7 +72,7 @@
     </view>
     <view class="nameBox">
       <view class="username">{{username}}
-        <image src="../../image/mine/edit.svg"></image>
+        <image src="../../image/mine/edit.svg" bindtap="toEditor"></image>
       </view>
       <view class="signature">{{signature}}</view>
     </view>

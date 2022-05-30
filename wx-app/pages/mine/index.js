@@ -4,11 +4,19 @@ import {
 } from '../../utils/request';
 Page({
   data: {
-    username: '系统用户一二三四五六',
-    signature: '哈哈哈哈我好牛啊',
+    username: '微信用户111',
+    signature: '该用户什么都没写',
     headImgUrl: '../../image/mine/default.png',
     count:0,
     
+  },
+
+  onReady(){
+    let userInfo = wx.getStorageSync('userInfo');
+    this.setData({
+      username: userInfo.nickName,
+      headImgUrl: userInfo.avatarUrl
+    })
   },
 
   onShow(){

@@ -233,8 +233,8 @@ page {
 }
 
 .username > image{
-  width: 20rpx;
-  height: 20rpx;
+  width: 30rpx;
+  height: 30rpx;
 }
 
 /* 个性签名 */
