@@ -104,6 +104,7 @@ Page({
     userInfo.department = this.data.valueCollege
     userInfo.sequence = this.data.suqence
     console.log(userInfo)
+
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
@@ -145,5 +146,7 @@ Page({
         });
       }
     });
+    
+    wx.setStorageSync('userInfo',userInfo)
   }
 })

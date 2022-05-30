@@ -1,10 +1,13 @@
 // pages/mine/mine.js
+import {
+  request
+} from '../../utils/request';
 Page({
   data: {
     username: '系统用户一二三四五六',
     signature: '哈哈哈哈我好牛啊',
     headImgUrl: '../../image/mine/default.png',
-    count:1,
+    count:0,
     
   },
 
@@ -59,14 +62,15 @@ Page({
   //跳转到消息界面
   toMsg(){
     wx.navigateTo({
-      url: '../../pages/chatInfo/index',
+      url: '../../pages/chat/index',
     })
   },
 
   //获取未读消息
   getInfo(){
-    wx.request({
-      url: 'url',
+    let count
+    request({
+      url: '/communication/unreadCount',
     }).then(res=>{
       count=1;//消息数量
       this.setData(
