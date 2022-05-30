@@ -77,7 +77,7 @@ Page({
     } = this.data
     //建立连接
     wx.connectSocket({
-      url: `ws://175.178.216.63:8888/CanteenWeb/chat/`+receiveMemberId+`/`+sendMemberId, //本地
+      url: `ws://175.178.216.63:8888/CanteenWeb/chat/`+sendMemberId+`/`+receiveMemberId, //本地
       success: function (e) {
         console.log(e)
         console.log('websocket连接成功~')

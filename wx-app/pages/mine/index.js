@@ -1,8 +1,4 @@
 // pages/mine/mine.js
-<<<<<<< HEAD
-=======
-
->>>>>>> dev-z
 import {
   request
 } from '../../utils/request';
