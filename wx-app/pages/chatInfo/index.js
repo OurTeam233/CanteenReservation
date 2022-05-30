@@ -1,6 +1,9 @@
 var utils = require("../../utils/util.js")
 const app = getApp()
 const api = require('../../utils/request.js'); //相对路径
+import {
+  request
+} from '../../utils/request';
 Page({
 
   /**
@@ -9,19 +12,7 @@ Page({
   data: {
     receivebaseInfo: {}, //收到的other信息
     sendAvatar: '', //own头像
-    newsList: [{
-        date: "2020.10.19",
-        message: '哈喽，好久不见',
-        type: 0
-      },
-      {
-        date: "2020.10.20",
-        message: '是呀，好久不见',
-        type: 1
-      },
-      
-      
-    ], //消息列表
+    newsList: [], //消息列表
     historyList: [], //历史列表
     input: null,
     connectemoji: ["😘", "😡", "😔", "😄", "❤"],
@@ -62,6 +53,10 @@ Page({
     this.getHistory()
     // 初始化websocket
     this.initWebSocket()
+    
+  },
+
+  onReady(){
     //  页面进入滚动到底部
     this.scrollBottom()
   },
@@ -77,7 +72,7 @@ Page({
     } = this.data
     //建立连接
     wx.connectSocket({
-      url: `ws://175.178.216.63:8888/CanteenWeb/chat/`+receiveMemberId+`/`+sendMemberId, //本地
+      url: `ws://175.178.216.63:8888/CanteenWeb/chat/`+sendMemberId+`/`+receiveMemberId, //本地
       success: function (e) {
         console.log(e)
         console.log('websocket连接成功~')
@@ -125,58 +120,64 @@ Page({
       pageNo,
       pageSize: 5,
     }
-    // api.get("/zxxt/chat/msg/list", params, (res) => {
-    //   if (res.code == 'success') {
-    //     // var historyList = res.data.data
-    //     var historyList = [...res.data.data, ...this.data.historyList]
-    //     if (historyList && historyList.length > 0) {
-    //       historyList.forEach(item => {
-    //         if (item.send_member_id == sendMemberId) {
-    //           item.type = 0
-    //         } else {
-    //           item.type = 1
-    //         }
-    //       });
-    //       this.setData({
-    //         historyList
-    //       })
-    //       console.log(this.data.historyList, '历史记录数据')
-    //     } else {
-    //       // 判断是否是第一次进入查看历史记录：是（不显示弹框，不是则显示弹框）
-    //       if (this.data.pageNo > 1) {
-    //         wx.showToast({
-    //           title: "没有更多历史记录了",
-    //           icon: 'none',
-    //           duration: 2000
-    //         })
-    //       }
-    //     }
-    //   } else {
-    //     if (res.message) {
-    //       wx.showToast({
-    //         title: res.message,
-    //         icon: 'none',
-    //         duration: 2000
-    //       })
-    //     }
-    //   }
-    // }, (res) => {
-    //   if (res.message) {
-    //     wx.showToast({
-    //       title: res.message,
-    //       icon: 'none',
-    //       duration: 2000
-    //     })
-    //   }
-    // })
+    let toId =this.data.receiveMemberId;
+
+    request({
+      url: '/communication/'+toId + '?current=' + pageNo,
+    }).then(res => {
+      console.log(res)
+      if (res.success) {
+        // var historyList = res.data.data
+        let historyList = [...this.data.historyList, ...res.data.records]
+        if (historyList && historyList.length > 0) {
+          historyList.forEach(item => {
+            if (item.fromId == sendMemberId) {
+              item.type = 0
+            } else {
+              item.type = 1
+            }
+          });
+          historyList = historyList.reverse()
+          this.setData({
+            historyList: historyList
+          })
+          console.log(this.data.historyList, '历史记录数据')
+        } else {
+          // 判断是否是第一次进入查看历史记录：是（不显示弹框，不是则显示弹框）
+          if (this.data.pageNo > 1) {
+            wx.showToast({
+              title: "没有更多历史记录了",
+              icon: 'none',
+              duration: 2000
+            })
+          }
+        }
+      } else {
+        if (res.message) {
+          wx.showToast({
+            title: res.message,
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      }
+    }, (res) => {
+      if (res.message) {
+        wx.showToast({
+          title: res.message,
+          icon: 'none',
+          duration: 2000
+        })
+      }
+    })
   },
 
   // 滚动到底部
   scrollBottom: function () {
-    var {
-      newsList
-    } = this.data
-    var scrollid = `scrollid${newsList.length - 1}`
+    // var {
+    //   historyList
+    // } = this.data
+    var scrollid = `historyscrollid${this.data.historyList.length - 1}`
     this.setData({
       scrollid
     })

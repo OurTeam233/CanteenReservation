@@ -11,7 +11,7 @@ page {
 }
 .main .logo {
   position: absolute;
-  top: 10vh;
+  top: 20vh;
   right: 50%;
   transform: translate(50%, 0);
 }
@@ -61,6 +61,25 @@ page {
   border: 2px solid #009000;
 }
 .image{
+  position: absolute;
+  top: 10vh;
+  right: 50%;
   width: 150rpx;
   height: 150rpx;
+}
+.image2{
+  width: 260rpx;
+  height: 260rpx;
+}
+.logBtn1{
+  position: absolute;
+  top: -200rpx;
+  border: 2px solid #009000;
+  width: 600rpx;
+  background: #43ae3d;
+  height: 100rpx;
+  border-radius: 20rpx;
+  color: #ffffff;
+  font-size: 34rpx;
+  line-height: 100rpx;
 }

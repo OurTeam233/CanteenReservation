@@ -13,6 +13,7 @@ Page({
 
   onLoad(){
     this.getInfo();
+    //获取用户信息
   },
   // 跳转个人信息编辑页
   toEditor () {
