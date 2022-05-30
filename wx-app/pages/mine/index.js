@@ -1,4 +1,8 @@
 // pages/mine/mine.js
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev-z
 import {
   request
 } from '../../utils/request';
@@ -11,7 +15,7 @@ Page({
     
   },
 
-  onLoad(){
+  onShow(){
     this.getInfo();
   },
   // 跳转个人信息编辑页
@@ -76,14 +80,13 @@ Page({
 
   //获取未读消息
   getInfo(){
-    let count
     request({
       url: '/communication/unreadCount',
     }).then(res=>{
-      count=1;//消息数量
-      this.setData(
-        count
-      )
+      console.log(res)
+      this.setData({
+          count: res.data
+      })
     })
   }
 })
