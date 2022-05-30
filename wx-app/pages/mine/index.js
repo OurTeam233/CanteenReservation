@@ -1,14 +1,18 @@
 // pages/mine/mine.js
+
+import {
+  request
+} from '../../utils/request';
 Page({
   data: {
     username: '系统用户一二三四五六',
     signature: '哈哈哈哈我好牛啊',
     headImgUrl: '../../image/mine/default.png',
-    count:1,
+    count:0,
     
   },
 
-  onLoad(){
+  onShow(){
     this.getInfo();
   },
   // 跳转个人信息编辑页
@@ -72,13 +76,13 @@ Page({
 
   //获取未读消息
   getInfo(){
-    wx.request({
-      url: 'url',
+    request({
+      url: '/communication/unreadCount',
     }).then(res=>{
-      count=1;//消息数量
-      this.setData(
-        count
-      )
+      console.log(res)
+      this.setData({
+          count: res.data
+      })
     })
   }
 })
