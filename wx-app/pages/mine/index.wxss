@@ -237,6 +237,16 @@ page {
   height: 30rpx;
 }
 
+#one{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+#two{
+  margin-left: 10rpx;
+}
+
+
 /* 个性签名 */
 .signature{
   margin: 30rpx 15rpx 5rpx 30rpx;

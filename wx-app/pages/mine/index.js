@@ -5,23 +5,33 @@ import {
 Page({
   data: {
     username: '微信用户111',
-    signature: '该用户什么都没写',
+    signature: null,
     headImgUrl: '../../image/mine/default.png',
+    gender: null,
     count:0,
     
   },
 
+  
+
+
+
   onReady(){
-    let userInfo = wx.getStorageSync('userInfo');
-    this.setData({
-      username: userInfo.nickName,
-      headImgUrl: userInfo.avatarUrl
-    })
+    this.getUserInfo();
+    // let userInfo = wx.getStorageSync('userInfo');
+    // this.setData({
+    //   username: userInfo.nickName,
+    //   headImgUrl: userInfo.avatarUrl,
+    //   gender: userInfo.gender,
+    //   signature: userInfo.signature
+    // })
   },
+
 
   onShow(){
     this.getInfo();
     //获取用户信息
+    this.getUserInfo();
   },
   // 跳转个人信息编辑页
   toEditor () {
@@ -93,5 +103,20 @@ Page({
           count: res.data
       })
     })
-  }
+  },
+
+
+  //获取缓存中的个人信息
+  getUserInfo(){
+    let userInfo = wx.getStorageSync('userInfo');
+    this.setData({
+      username: userInfo.nickName,
+      headImgUrl: userInfo.avatarUrl,
+      gender: userInfo.gender,
+      signature: userInfo.signature
+      
+    })
+  },
+
+  
 })

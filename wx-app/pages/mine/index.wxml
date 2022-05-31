@@ -72,9 +72,10 @@
     </view>
     <view class="nameBox">
       <view class="username">{{username}}
-        <image src="../../image/mine/edit.svg" bindtap="toEditor"></image>
+        <image id="one" src="../../image/mine/{{ gender == '0' ? 'x': gender == '1' ? '' : 'wo'}}man.svg"></image>
+        <image id="two" src="../../image/mine/edit.svg" bindtap="toEditor"></image>
       </view>
-      <view class="signature">{{signature}}</view>
+      <view class="signature">{{ signature !== null? signature : '该用户什么都没留下'}}</view>
     </view>
   </view>
 
@@ -104,7 +105,7 @@
       <image src="../../image/mine/record.svg"></image>
       <text>发帖记录</text>
     </view>
-    <view class="bottonItem" > 
+    <view class="bottonItem" bindtap="toEditor"> 
       <image src="../../image/mine/manage.svg"></image>
       <text>信息管理</text>
     </view>

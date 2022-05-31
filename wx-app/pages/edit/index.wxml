@@ -26,12 +26,7 @@
         border="{{ false }}"
         input-class="input-class"
     />
-    <van-field
-        model:value="{{ career }}" is-link input-align="right" disabled
-        label="专业"
-        border="{{ false }}"
-        input-class="input-class"
-    />
+    
     <van-cell title="性别" is-link>
       <van-radio-group value="{{ gender }}" bind:change="onChangeGender" direction="horizontal">
         <van-radio name="1">男</van-radio>
@@ -46,5 +41,5 @@
     />
   </van-cell-group>
 
-  <van-button type="danger" size="large" custom-class="button">提交</van-button>
+  <van-button type="danger" size="large" custom-class="button" bindtap="updateUserInfo">提交</van-button>
 </view>
