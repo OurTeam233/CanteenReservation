@@ -10,41 +10,60 @@
     <!-- 相亲 -->
     <van-tab title="相亲">
       <view class="content-miai">
+        <!-- 左边数据开始 -->
         <view class="content-miai-left">
-          <view class="content-miai-info-1">
-            <image src="../../image/headPhone/head1.webp"></image>
-            <view>姓名：章法 性别：男 </view>
-            <view>年龄：20</view>
-            <view>身高：180cm 体重：63kg</view>
-          </view>
-          <view class="content-miai-info-2">
-            <image src="../../image/headPhone/head2.webp"></image>
-          </view>
-          <view class="content-miai-info-1">
-            <image src="../../image/headPhone/head3.webp"></image>
-          </view>
-          <view class="content-miai-info-2">
-            <image src="../../image/headPhone/head4.webp"></image>
+          <view wx:for="{{miaiLeftList}}" wx:for-item='item' wx:for-index='id'>
+            <view class="{{id%3==0?'content-miai-info-1':(id%3==1?'content-miai-info-2':'content-miai-info-3')}}"  bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
+              <image src="{{item.image}}"></image>
+              <view>姓名：{{item.nikename}} 性别：{{item.sex}} </view>
+              <view>年龄：{{item.age}}</view>
+              <view>身高：{{item.height}}g</view>
+            </view>
           </view>
         </view>
+        <!-- 左边数据结束-->
+
+        <!-- 右边数据开始 -->
         <view class="content-miai-right">
-          <view class="content-miai-info-3">
-            <image src="../../image/headPhone/head5.webp"></image>
-          </view>
-          <view class="content-miai-info-2">
-            <image src="../../image/headPhone/head6.webp"></image>
-          </view>
-          <view class="content-miai-info-1">
-            <image src="../../image/headPhone/head7.webp"></image>
-          </view>
-          <view class="content-miai-info-3">
-            <image src="../../image/headPhone/head4.webp"></image>
+          <view wx:for="{{miaiRightList}}" wx:for-item='item' wx:for-index='id'>
+            <view class="{{id%3==2?'content-miai-info-1':(id%3==0?'content-miai-info-2':'content-miai-info-3')}}"  bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
+              <image src="{{item.image}}"></image>
+              <view>姓名：{{item.nikename}} 性别：{{item.sex}}</view>
+              <view>年龄：{{item.age}}</view>
+              <view>身高：{{item.height}}g</view>
+            </view>
           </view>
         </view>
+        <!-- 右边数据结束 -->
       </view>
     </van-tab>
     <!-- 闲鱼 -->
     <van-tab class="card" title="闲鱼">
+      <view class="content-miai">
+        <!-- 左边数据开始 -->
+        <view class="content-miai-left">
+          <view wx:for="{{goodsLeftList}}" wx:for-item='item' wx:for-index='id'>
+            <view class="{{id%3==0?'content-miai-info-5':(id%3==1?'content-miai-info-4':'content-miai-info-6')}}"  bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
+              <image src="{{item.image}}"></image>
+              <view class="goods">{{item.nikename}}</view>
+              <view class="money">￥{{item.age}}</view>
+            </view>
+          </view>
+        </view>
+        <!-- 左边数据结束-->
+
+        <!-- 右边数据开始 -->
+        <view class="content-miai-left">
+          <view wx:for="{{goodsRightList}}" wx:for-item='item' wx:for-index='id'>
+            <view class="{{id%3==2?'content-miai-info-4':(id%3==0?'content-miai-info-6':'content-miai-info-5')}}"  bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
+              <image src="{{item.image}}"></image>
+              <view class="goods">{{item.nikename}}</view>
+              <view class="money">￥{{item.age}}</view>
+            </view>
+          </view>
+        </view>
+        <!-- 右边数据结束 -->
+      </view>
     </van-tab>
     <!-- 寻物屋 -->
     <van-tab title="寻物屋">
