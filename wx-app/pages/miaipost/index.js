@@ -14,7 +14,13 @@ Page({
     uploaderList: [],
     uploaderNum: 0,
     showUpload: true,
-
+    ownInfo:{},//个人信息
+    otherInfo:{},//理想型信息
+    ageMin:20,
+    ageMax:30,
+    heightMin:170,
+    heightMax:180,
+    age:null,
     time: '',
   },
 
@@ -88,9 +94,6 @@ Page({
 
     })
   },
-  /*********1、上传单张图片******************end */
-
-  /*********2、上传多张图片******************begin */
   //展示图片
   showImg_d: function (e) {
     var that = this;
@@ -150,6 +153,59 @@ Page({
       time: currentTime
     })
   },
+  // other年龄min
+  onChangeMinAge(event) {
+    var otherInfo = {}
+    otherInfo.ageMin=event.detail
+    this.setData({
+      otherInfo
+    })
+  },
+  // other年龄max
+  onChangeMaxAge(event){
+    var otherInfo = {}
+    otherInfo.ageMax=event.detail
+    this.setData({
+      otherInfo
+    })
+  },
+  //other身高min
+  onChangeMinheight(event){
+    var otherInfo = {}
+    otherInfo.heightMin=event.detail
+    this.setData({
+      otherInfo
+    })
+  },
+  // other身高max
+  onChangeMaxheight(event){
+    var otherInfo = {}
+    otherInfo.heightMax=event.detail
+    this.setData({
+      otherInfo
+    })
+  },
 
+  //监听other性别
+  onChangeotherSex(event){
+    var otherInfo = {}
+    otherInfo.sex=event.detail
+    this.setData({
+      otherInfo
+    })
+  },
+
+  //监听own性别
+  onChangeOwnSex(event){
+    var ownInfo = {}
+    ownInfo.sex=event.detail
+    this.setData({
+      ownInfo
+    })
+  },
+
+  onShow(){
+    console.log(this.data.age)
+  }
  
 })

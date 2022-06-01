@@ -7,6 +7,7 @@
   margin-right: 20rpx;
   display: flex;
   flex-direction: row;
+
 }
 
 .HeadPortraits {
@@ -133,10 +134,29 @@
 .content-info-sex {
   margin-bottom: 20rpx;
 }
+
 .button-submit {
-  width: 94%;
+  width: 100%;
   height: 100rpx;
-  margin: 20rpx;
+  /* margin: 20rpx; */
   background-color: rgb(240, 10, 10);
-  border-radius: 40rpx;
+  border-radius: 2rpx;
+}
+
+.age ,.height{
+  display: flex;
+}
+
+.ageMin {
+  margin-right: 86px;
+}
+.heightMin{
+  margin-right: 40px;
+  margin-bottom: 30rpx;
+}
+.ageInput {
+  margin-top: 30rpx;
+}
+.heightInput{
+  margin-top: 30rpx;
 }

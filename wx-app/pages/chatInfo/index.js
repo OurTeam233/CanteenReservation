@@ -35,16 +35,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 存receive的基本信息
+    var receivebaseInfo={}
+    receivebaseInfo.studentId=options.studentId,
+    receivebaseInfo.nick=options.nike
+    receivebaseInfo.avatar=options.image
+
     var receiveMemberId = options.studentId//接收者studenId
-    var sendAvatar = wx.getStorageSync('UserInfo').avatarUrl;//发送者头像
+    var sendAvatar = wx.getStorageSync('userInfo').avatarUrl;//发送者头像
     var  sendMemberId= wx.getStorageSync('studentId');//发送者studentId
+    
+    // 存入data
     var _this = this;
     _this.setData({
       receiveMemberId:receiveMemberId,
       sendMemberId:sendMemberId,
-      sendAvatar:sendAvatar
+      sendAvatar:sendAvatar,
+      receivebaseInfo
     })
-    
+
     //  获取内存中的数据
     this.getStorageBaseInfo()
     //  设置滚动区域的高度
@@ -198,6 +207,7 @@ Page({
     wx.getStorage({
       key: 'receivebaseInfo',
       success: (res) => {
+        // console.log(res)
         this.setData({
           receivebaseInfo: res.data
         })

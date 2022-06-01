@@ -21,10 +21,12 @@ Page({
   },
   //跳转页面并传递参数给下一个页面
   changeToChatinfo(e) {
-    console.log(e.currentTarget.dataset.index)
-    var studentId = e.currentTarget.dataset.index
+    console.log(e.currentTarget.dataset)
+    var studentId = e.currentTarget.dataset.studentid
+    var image = e.currentTarget.dataset.image
+    var nick =e.currentTarget.dataset.nike
     wx.navigateTo({
-      url: '../chatInfo/index?studentId=' + studentId,
+      url: '../chatInfo/index?studentId=' + studentId+'&image='+image+'&nike='+nick,
     })
   },
   // 获取所有消息信息，头像，昵称，时间，未读信息量，最近消息,用户id

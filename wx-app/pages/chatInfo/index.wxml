@@ -2,7 +2,7 @@
 
 <!-- 聊天对象的信息 -->
 <view class="chat-header">
-  <view class="chat-name">张三</view>
+  <view class="chat-name">{{receivebaseInfo.nick}}</view>
 </view>
 
 <!-- 消息部分 -->
