@@ -42,6 +42,12 @@ Page({
     }
     
   },
+
+  onReady(){
+    this.getUserInfo();
+  },
+
+
   // miai中的函数
   onLoad(){
     // 获取设备高度
@@ -143,6 +149,18 @@ Page({
     this.setData({
       scrollTop: this.data.scrollTop + 10
     })
-  }
+  },
+
+  //获取缓存中的个人信息
+  getUserInfo(){
+    let userInfo = wx.getStorageSync('userInfo');
+    this.setData({
+      username: userInfo.nickName,
+      headImgUrl: userInfo.avatarUrl,
+      gender: userInfo.gender,
+      signature: userInfo.signature
+      
+    })
+  },
 
 })
