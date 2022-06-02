@@ -17,17 +17,29 @@
   <!-- 自身信息 -->
   <view class="content">
     <view class="content-info">自身信息</view>
-    <van-radio-group value="{{ radio }}" bind:change="onChangeOwnSex" direction="horizontal">
+    <van-radio-group value="{{ ownSex }}" bind:change="onChangeOwnSex" direction="horizontal">
       <van-radio name="1">男</van-radio>
       <van-radio name="2">女</van-radio>
     </van-radio-group>
     <van-divider />
     <van-cell-group>
-      <van-field value="{{ age }}" type="number" required clearable label="年龄" placeholder="请输入用户名" bind:change="ownAge" />
-      <van-field value="{{ height }}" type="number" required clearable label="身高(cm)" placeholder="请输入身高(cm)" bind:change="ownHeight" />
-      <van-field value="{{ weight }}" type="number" required clearable label="体重(kg)" placeholder="请输入体重(cm)" bind:change="ownWeight" />
+    
+      <!-- own年龄开始 -->
+      <view class="age">
+        <view class="ageMin">*年龄：
+          <van-stepper value="{{ ownAge }}" custom-class="ageInput" bind:change="onChangeownAge" />
+        </view>
+        <view class="heightMin">*身高（cm）：
+          <van-stepper value="{{ ownHeight }}" custom-class="heightInput" bind:change="onChangeownHeight" />
+        </view>
+      </view>
+      <!-- own年龄结束 -->
+
+      <van-field value="{{ ownHobby }}" required clearable label="兴趣/爱好" maxlength='15' placeholder="家乡地址（15字以内）" bind:change="ownHobby" />
+
+      <van-field value="{{ owntext }}" required  maxlength='25' clearable label="宣言" placeholder="请输入宣言（25字以内）" bind:change="ownWords" />
+
       <van-field value="{{ address }}" required clearable label="地址" maxlength='15' placeholder="家乡地址（15字以内）" bind:change="ownAddress" />
-      <van-field value="{{ text }}" required clearable label="宣言" placeholder="请输入宣言" bind:change="ownWords" />
     </van-cell-group>
   </view>
   <van-divider />
@@ -35,38 +47,41 @@
   <!-- 理想型开始 -->
   <view class="content">
     <view class="content-info">理想型</view>
-    <van-radio-group value="{{ radio }}" bind:change="onChangeotherSex" direction="horizontal">
+    <van-radio-group value="{{ otherSex }}" bind:change="onChangeotherSex" direction="horizontal">
       <van-radio name="1">男</van-radio>
       <van-radio name="2">女</van-radio>
     </van-radio-group>
     <van-divider />
-    <!-- 年龄，身高 开始-->
+
+    <!-- other年龄开始-->
     <view class="age">
       <view class="ageMin">*年龄下限：
-        <van-stepper value="{{ ageMin }}" custom-class="ageInput" bind:change="onChangeMinAge" />
+        <van-stepper value="{{ otherAgeMin }}" custom-class="ageInput" bind:change="onChangeMinAge" />
       </view>
       <view>*年龄上限：
-        <van-stepper value="{{ ageMax }}" custom-class="ageInput" bind:change="onChangeMaxAge" />
+        <van-stepper value="{{ otherAgeMax }}" custom-class="ageInput" bind:change="onChangeMaxAge" />
       </view>
     </view>
+    <!-- other年龄结束-->
+
     <van-divider />
 
+    <!-- other身高开始-->
     <view class="height">
       <view class="heightMin">*身高下限（cm）：
-        <van-stepper value="{{ heightMin }}" custom-class="heightInput" bind:change="onChangeMinheight" />
+        <van-stepper value="{{ otherHeightMin }}" custom-class="heightInput" bind:change="onChangeMinheight" />
       </view>
       <view>*身高上限（cm）：
-        <van-stepper value="{{ heightMax }}" custom-class="heightInput" bind:change="onChangeMaxheight" />
+        <van-stepper value="{{ otherHeightMax }}" custom-class="heightInput" bind:change="onChangeMaxheight" />
       </view>
     </view>
-    <!-- 年龄，身高 结束-->
+    <!-- other身高结束-->
     <van-cell-group>
-      <van-field value="{{ text }}" required clearable label="其他条件" maxlength='20' placeholder="请输入条件(20字以内)" bind:click-icon="onClickIcon" />
+      <van-field value="{{ otherText }}" required clearable label="其他条件" maxlength='20' placeholder="请输入条件(20字以内)" bind:click-icon="onClickOthertext" />
     </van-cell-group>
   </view>
   <van-divider />
   <!-- 理想型结束 -->
 
-
-  <button class="button-submit">上传</button>
+  <button class="button-submit" bindtap="submit">上传</button>
 </view>

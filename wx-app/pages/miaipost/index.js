@@ -1,5 +1,8 @@
 // pages/miaipost/index.js
 var util = require('../../utils/util');
+import {
+  request
+} from '../../utils/request'
 Page({
 
   /**
@@ -14,8 +17,19 @@ Page({
     uploaderList: [],
     uploaderNum: 0,
     showUpload: true,
-
     time: '',
+    ownSex: '1',
+    ownAge: 20,
+    ownHeight: 179,
+    ownHobby: null,
+    address: null,
+    owntext: null,
+    otherSex: '2',
+    otherAgeMin: 20,
+    otherAgeMax: 22,
+    otherHeightMin: 170,
+    otherHeightMax: 180,
+    otherText: '',
   },
 
   /**
@@ -31,11 +45,11 @@ Page({
       });
     }, 1000);
   },
-   //展示图片
-   showImg: function (e) {
+  //展示图片
+  showImg: function (e) {
     var that = this;
     wx.previewImage({
-      urls: that.data.picturePathLocal, 
+      urls: that.data.picturePathLocal,
     })
   },
   // 删除图片
@@ -43,8 +57,8 @@ Page({
     let that = this;
     that.setData({
       showPic: true,
-      itemhide:false,
-      picturePathLocal:""
+      itemhide: false,
+      picturePathLocal: ""
     })
   },
   //选择图片
@@ -56,11 +70,11 @@ Page({
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
         console.log(res)
-          that.setData({
-            showPic: false,
-            itemhide:true,
-            picturePathLocal:res.tempFilePaths[0]
-          })
+        that.setData({
+          showPic: false,
+          itemhide: true,
+          picturePathLocal: res.tempFilePaths[0]
+        })
       }
     })
   },
@@ -78,12 +92,13 @@ Page({
       formData: {
         'user': 'test'
       },
-      success (res){
-        console.log("上传成功",res)
+      success(res) {
+        console.log("上传成功", res)
         // const data = res.data
         //do something
-      },fail(e){
-        console.log("上传失败",e)
+      },
+      fail(e) {
+        console.log("上传失败", e)
       }
 
     })
@@ -151,5 +166,155 @@ Page({
     })
   },
 
- 
+  //自身性别
+  onChangeOwnSex(e) {
+    this.setData({
+      ownSex: e.detail
+    })
+  },
+
+  //自身年龄
+  onChangeownAge(e) {
+    this.setData({
+      ownAge: e.detail
+    })
+  },
+  //自身身高
+  onChangeownHeight(e) {
+    this.setData({
+      ownHeight: e.detail
+    })
+  },
+  //自身兴趣
+  ownHobby(e) {
+    this.setData({
+      ownHeight: e.detail
+    })
+  },
+  //自身地址
+  ownAddress(e) {
+    this.setData({
+      address: e.detail
+    })
+  },
+  //自身宣言
+  ownWords(e) {
+    this.setData({
+      owntext: e.detail
+    })
+  },
+
+  //他人性别
+  onChangeotherSex(e) {
+    this.setData({
+      otherSex: e.detail
+    })
+  },
+  //他人n年龄min
+  onChangeMinAge() {
+    this.setData({
+      otherAgeMin: e.detail
+    })
+  },
+  //他人年龄max
+  onChangeMaxAge() {
+    this.setData({
+      otherAgeMax: e.detail
+    })
+  },
+  //他人身高min
+  onChangeMinheight() {
+    this.setData({
+      otherHeightMin: e.detail
+    })
+  },
+  //他人身高max
+  onChangeMaxheight() {
+    this.setData({
+      otherHeightMax: e.detail
+    })
+  },
+  //他人条件
+  onClickOthertext() {
+    this.setData({
+      otherText: e.detail
+    })
+  },
+  //提交
+  submit() {
+    var flag 
+    //整合own数据信息
+    var detail = {}
+    // detail.id = wx.getStorageSync('studentId')
+    detail.myGender = this.data.ownSex
+    detail.myAge = this.data.ownAge
+    detail.myHeight = this.data.ownHeight
+    detail.myWeight = 50
+    detail.myHobby = this.data.ownHobby
+    detail.myAddress = this.data.address
+    detail.myDeclaration = this.data.owntext
+
+
+    //整合other数据信息
+    detail.otherGender = this.data.otherSex
+    detail.otherStartAge = this.data.otherAgeMin
+    detail.otherEndAge = this.data.otherAgeMax
+    detail.otherStartHeight = this.data.otherHeightMin
+    detail.otherEndHeight = this.data.otherHeightMax
+    detail.other = this.data.otherText
+
+    console.log(detail)
+
+    flag = 0
+    if (detail.myHobby != null || detail.myDeclaration != null) {
+      flag = 1
+    }else{
+      flag=0
+    }
+
+
+    if (flag === 1) {
+      var token = wx.getStorageSync('token')
+      var type = 3
+      wx.request({
+        url: 'http://175.178.216.63:8888/CanteenWeb/Post/miai',
+        data: {
+          type,
+          detail
+        },
+        header: {
+          token
+        },
+        method: "POST",
+        success: (result) => {
+          console.log(result)
+          wx.navigateTo({
+            url: '../minePparticulars/index',
+          })
+        },
+        error: (result) => {
+          console.log(result)
+          console.log("失败了")
+        }
+      })
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '宣言和兴趣不可为空',
+        success: function (res) {
+          flag = 0
+          if (res.confirm) { //这里是点击了确定以后
+            console.log('用户点击确定')
+          } else { //这里是点击了取消以后
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }
+
+
+
+  }
+
+
 })
