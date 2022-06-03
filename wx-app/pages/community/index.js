@@ -281,6 +281,7 @@ Page({
   leftHeight: 0,
   rightHeight: 0,
   currentPage: 1,
+
   onLoad() {
     this.getDetail();
   },
@@ -435,37 +436,50 @@ Page({
       url: `../lostFoundInfo/index?id=${id}`,
     })
   },
+
+
   //根据页面跳转参数，获取不同的页面详细信息
   getDetail() {
     const type = this.data.type
     const token = wx.getStorageSync('token')
-    wx.request({
-      url: 'http://175.178.216.63:8888/CanteenWeb/Post/Select?type=' + type,
-      header: {
+    request({
+      url: '/Post/Select/' + type,
+      data:{
+        type,
         token
-      },
-      method: "GET",
-      success: (result) => {
-        let list = []
-        result.data.forEach(v => {
-          let post = {}
-          post.id = v.id
-          post.touxiang = v.student.avatarUrl
-          post.nicheng = v.student.nickName
-          post.shijian = formatTime(new Date(v.time))
-          post.neirong = v.content
-          post.tupian = []
-          v.pictureList.forEach(p => {
-            post.tupian.push(p.pictureUrl)
-          })
-          list.push(post)
-        })
-        this.setData({
-          list
-        })
-        // console.log(this.data.list)
-      },
+      }
+    }).then(res=>{
+      console.log(res)
     })
+    // wx.request({
+    //   url: 'http://175.178.216.63:8888/CanteenWeb/Post/Select/' + type,
+    //   header: {
+    //     type,
+    //     token
+    //   },
+    //   method: "GET",
+    //   success: (result) => {
+    //     console.log(result)
+    //     let list = []
+    //     result.data.forEach(v => {
+    //       let post = {}
+    //       post.id = v.id
+    //       post.touxiang = v.student.avatarUrl
+    //       post.nicheng = v.student.nickName
+    //       post.shijian = formatTime(new Date(v.time))
+    //       post.neirong = v.content
+    //       post.tupian = []
+    //       v.pictureList.forEach(p => {
+    //         post.tupian.push(p.pictureUrl)
+    //       })
+    //       list.push(post)
+    //     })
+    //     this.setData({
+    //       list
+    //     })
+    //     // console.log(this.data.list)
+    //   },
+    // })
   },
   requestMyPost() {
     request({
