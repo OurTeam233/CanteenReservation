@@ -35,7 +35,7 @@
       </view>
       <!-- own年龄结束 -->
 
-      <van-field value="{{ ownHobby }}" required clearable label="兴趣/爱好" maxlength='15' placeholder="家乡地址（15字以内）" bind:change="ownHobby" />
+      <van-field value="{{ ownHobby }}" required clearable label="兴趣/爱好" maxlength='15' placeholder="兴趣爱好（15字以内）" bind:change="ownHobby" />
 
       <van-field value="{{ owntext }}" required  maxlength='25' clearable label="宣言" placeholder="请输入宣言（25字以内）" bind:change="ownWords" />
 

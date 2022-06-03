@@ -188,7 +188,7 @@ Page({
   //自身兴趣
   ownHobby(e) {
     this.setData({
-      ownHeight: e.detail
+      ownHobby: e.detail
     })
   },
   //自身地址
@@ -211,31 +211,31 @@ Page({
     })
   },
   //他人n年龄min
-  onChangeMinAge() {
+  onChangeMinAge(e) {
     this.setData({
       otherAgeMin: e.detail
     })
   },
   //他人年龄max
-  onChangeMaxAge() {
+  onChangeMaxAge(e) {
     this.setData({
       otherAgeMax: e.detail
     })
   },
   //他人身高min
-  onChangeMinheight() {
+  onChangeMinheight(e) {
     this.setData({
       otherHeightMin: e.detail
     })
   },
   //他人身高max
-  onChangeMaxheight() {
+  onChangeMaxheight(e) {
     this.setData({
       otherHeightMax: e.detail
     })
   },
   //他人条件
-  onClickOthertext() {
+  onClickOthertext(e) {
     this.setData({
       otherText: e.detail
     })
@@ -275,7 +275,7 @@ Page({
 
     if (flag === 1) {
       var token = wx.getStorageSync('token')
-      var type = 3
+      var type = 2
       wx.request({
         url: 'http://175.178.216.63:8888/CanteenWeb/Post/miai',
         data: {

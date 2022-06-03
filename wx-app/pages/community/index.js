@@ -410,7 +410,7 @@ Page({
     } else if (this.data.type === 2) {
       url = '../miaipost/index?currentPage=2'
     } else if (this.data.type === 3) {
-      url = '../publishLostFound/index?currentPage=3'
+      url = '../used/index?currentPage=3'
     } else if (this.data.type === 4) {
       url = '../publishLostFound/index?currentPage=4'
     } else if (this.data.type === 5) {

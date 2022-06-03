@@ -1,50 +1,42 @@
-<!--pages/used/index.wxml-->
-<view class="content-miai">
-  <!-- 信息卡片 -->
-  <view class="content-miai-box1">
-    <!-- 图片 -->
-    <view class="content-miai-swiper">
-      <swiper indicator-dots autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <view wx:for="{{backgroundImage}}" wx:for-item="item">
-          <swiper-item>
-            <image class="content-miai-swiper-image" src="{{item}}" mode="aspectFill"></image>
-          </swiper-item>
-        </view>
-      </swiper>
-    </view>
-    <!-- 信息 -->
-    <view class="content-miai-info-1">
-      <image class="content-miai-info-image1" src="../../image/logo/like4.png"></image>
-      <view class="content-miai-info-self-name">{{person.name}}</view>
-      <view class="content-miai-info-self-info">
-        {{person.age}} | {{person.sex}} | {{person.address}} | {{person.type}}
+<!--pages/miaipost/index.wxml-->
+<view class="all">
+
+
+  <!-- 自身信息 -->
+  <view class="info">
+    <input model:value="{{thingName}}" bindblur="thingName" placeholder="输入名称" class="name" />
+    <van-divider />
+    <textarea model:value="{{describle}}" class="describle" bindblur="describle" auto-height placeholder="物品描述" />
+  </view>
+ 
+  <!-- 添加图片开始 -->
+  <view class="view_contain">
+    <!-- 上传多张图片 -->
+    <view class="ui_uploader_cell">
+      <view class='ui_uploader_item' wx:for="{{uploaderList}}" wx:key="{{index}}">
+        <icon class='ui_uploader_item_icon' bindtap='clearImg_d' data-index="{{index}}" type="clear" size="20" color="red" />
+        <image bindtap='showImg_d' data-index="{{index}}" src='{{item}}'></image>
       </view>
-      <image class="content-miai-info-image2" src="../../image/logo/like4.png"></image>
+      <view class='ui_uploader' bindtap='choosePic_d' wx:if="{{showUpload}}">
+      </view>
     </view>
-    <!-- 头像 -->
-    <!-- <view>
-      <image class="content-miai-info-image3" src="../../image/headPhone/head2.webp"></image>
-    </view> -->
+    <van-divider contentPosition="center"></van-divider>
   </view>
-  <!-- 个人信息 -->
-  <view class="content-miai-box2">
-    <view class="content-miai-box-info1">个人信息</view>
-    <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/age.png"></image>年龄:{{person.age}}</view>
-    <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/sex.png"></image>性别:{{person.sex}}</view>
-    <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/height.png"></image>身高:{{person.height}}</view>
-    <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/weight.png"></image>体重:{{person.weight}}</view>
-    <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/hobby.png"></image>兴趣:{{person.hobby}}</view>
-    <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/address.png"></image>地址:{{person.address}}</view>
-    <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/laba.png"></image>宣言:{{person.manifesto}}</view>
-  </view>
-  <!-- 对方要求 -->
-  <view class="content-miai-box2">
-    <view class="content-miai-box-info1">理想型</view>
-    <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/age.png"></image>年龄:{{person1.age}}左右</view>
-    <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/sex.png"></image>性别:{{person1.sex}}</view>
-    <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/height.png"></image>身高:{{person1.height}}</view>
-    <view class="content-miai-box-info">其他条件:{{person1.condition}}</view>
+  <!-- 添加图片结束 -->
+
+
+  <!-- 价格 -->
+  <view class="price">
+    <image src="../../image/mine/restMoney.png" class="money"></image>
+    <view class="moneyText">价格</view>
+ 
+    <view class="allmoney">￥
+      <input model:value="{{allMoney}}" class="priceLabel"  placeholder-style="color:#F76260"  placeholder="0.0" type="digit"  bindinput="getMoney"/>
+    </view>
+
   </view>
 
 
+
+  <button class="button-submit" bindtap="submit">上传</button>
 </view>

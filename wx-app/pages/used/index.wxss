@@ -1,141 +1,190 @@
-/* pages/used/index.wxss */
-.content-miai {
-  /* width:100%; */
-  height: auto;
-  padding: 0;
-  margin-left: 30rpx;
-  margin-right: 30rpx;
+/* pages/miaipost/index.wxss */
+.head {
   margin-top: 20rpx;
+  width: 100%;
+  height: auto;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: row;
+
 }
 
-.content-miai-box1 {
-  /* width:100%; */
-  height: 700rpx;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 30rpx;
-  box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
-  background-color: rgb(245, 243, 241);
-  /* border: 1rpx solid rgb(218, 218, 218); */
-  border-radius: 30rpx
+.HeadPortraits {
+  width: 120rpx;
+  height: 120rpx;
+  display: block;
+  clip-path: circle(50rpx at center);
 }
-.content-miai-box2{
-  height: auto;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 30rpx;
-  box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
-  background-color: rgb(245, 243, 241);
-  /* border: 1rpx solid rgb(218, 218, 218); */
-  border-radius: 30rpx;
-  padding: 10rpx;
-}
-.content-miai-box-info{
+
+.Nikename {
   margin-top: 20rpx;
-  margin-left: 20rpx;
-  font-style: inherit;
   font-size: 28rpx;
 }
-.content-miai-box-info1{
-  margin-top: 20rpx;
-  margin-left: 20rpx;
-  font-style: inherit;
-  font-size: 36rpx;
-}
-.content-miai-box-info-image{
-  width: 26rpx;
-  height: 26rpx;
-  margin-right: 10rpx;
-}
-.content-miai-swiper {
-  /* width:100%; */
-  height: 600rpx;
-  padding: 0;
-  box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
-  background-color: rgb(245, 243, 241);
-  border: 1rpx solid rgb(218, 218, 218);
-  border-radius: 50rpx
+
+.currentTime {
+  margin-top: 40rpx;
+  font-size: 24rpx;
+  color: rgb(155, 155, 158);
 }
 
-.content-miai-swiper>swiper {
-  /* width:100%; */
-  height: 600rpx;
-  border: 1rpx solid rgb(218, 218, 218);
-  border-radius: 50rpx
-}
-
-.content-miai-swiper-image {
-  width: 100%;
-  height: 100%;
-  border: 1rpx solid rgb(218, 218, 218);
-  border-radius: 50rpx;
-  box-shadow: 1rpx 1rpx 10rpx rgb(238, 193, 193);
-}
-
-.content-miai-info-1,
-.content-miai-info-2 {
+.view_contain {
   display: flex;
   height: auto;
-  margin-top: 36rpx;
-  margin-left: 30rpx;
-  margin-right: 60rpx;
+  /* margin: 20rpx; */
+  /* border: 1rpx solid rgb(235, 233, 233); */
+  /* box-shadow: 1rpx 1rpx 20rpx rgb(224, 224, 224); */
+  border-radius: 30rpx;
+  flex-direction: column;
+  background-color: #fff;
 }
 
-.content-miai-info-self-name {
-  font-size: 28rpx;
-  font-weight: 350rpx;
-  margin-right: 20rpx;
-  font-family: Helvetica, Tahoma, Arial;
-  color: rgb(243, 128, 157);
+/* uploader */
+.ui_uploader_cell {
+  width: 100%;
+  padding: 40rpx;
+  box-sizing: border-box;
 }
 
-.content-miai-info-self-info {
-  font-size: 22rpx;
-  margin-top: 6rpx;
-  color: rgba(141, 141, 141,0.5);
+.ui_uploader_item_1 {
+  float: left;
+  position: relative;
+  margin-right: 30rpx;
+  margin-bottom: 30rpx;
+  width: 165rpx;
+  height: 165rpx;
+  margin-left: 40rpx;
 }
 
-.content-miai-info-self-manifesto {
-  width: 670rpx;
-  height: 60rpx;
-  background-color: rgba(238, 236, 236, 0.8);
-  border-radius: 8rpx;
-  margin-top: 30rpx;
-  margin-right: 1rpx;
-  padding-left: 20rpx;
-  padding-top: 20rpx;
-  font-size: 28rpx;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: rgb(19, 18, 18);
-  
-  /* text-align: center; */
+.ui_uploader_item {
+  float: left;
+  position: relative;
+  margin-right: 30rpx;
+  margin-bottom: 30rpx;
+  width: 165rpx;
+  height: 165rpx;
 }
-/* 字体 */
-.web-font{
-  font-family:"webfont" !important;
-  font-size:16px;font-style:normal;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: 0.2px;
-  -moz-osx-font-smoothing: grayscale;
-}
-.content-miai-info-image1{
-  width: 30rpx;
-  height: 30rpx;
-  margin: 6rpx;
-}
-.content-miai-info-image2{
-  width: 20rpx;
-  height: 20rpx;
-  margin: 6rpx;
-}
-.content-miai-info-image3{
-  width: 100rpx;
-  height: 100rpx;
+
+.ui_uploader_item_icon {
+  position: absolute;
+  right: -20rpx;
+  top: -20rpx;
+  background: #fff;
   border-radius: 50%;
-  margin-right: 50rpx;
-  float: right;
-  border: 1rpx solid rgb(231, 227, 227);
-  box-shadow: 1rpx 1rpx 10rpx rgb(238, 193, 193);
+}
+
+.ui_uploader_item image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 方框+号 */
+.ui_uploader {
+  float: left;
+  position: relative;
+  margin-right: 25rpx;
+  margin-bottom: 25rpx;
+  width: 165rpx;
+  height: 165rpx;
+  border: 2rpx solid #d9d9d9;
+  box-sizing: border-box;
+}
+
+/* 方框+号 选择图片之前*/
+.ui_uploader:before {
+  content: " ";
+  position: absolute;
+  width: 4rpx;
+  height: 79rpx;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #d9d9d9;
+}
+
+/* 方框+号 选择图片之后*/
+.ui_uploader:after {
+  content: " ";
+  position: absolute;
+  height: 4rpx;
+  width: 79rpx;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #d9d9d9;
 }
 
 
+
+.info {
+  height: 400rpx;
+  /* margin: 20rpx; */
+  /* border: 1rpx solid #ffffff; */
+  background-color: rgb(255, 255, 255);
+  border-radius: 20rpx;
+  padding: 6rpx;
+  /* display: flex; */
+}
+.describ{
+  width: 100%;
+  height: 400rpx;
+}
+
+.button-submit {
+  width: 100%;
+  height: 100rpx;
+  /* margin: 20rpx; */
+  background-color: rgb(240, 10, 10);
+  border-radius: 2rpx;
+  position: fixed;
+  bottom: 0;
+}
+.price{
+  display: flex;
+}
+.money{
+  margin-left: 20rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+.moneyText{
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+  font-size: 36rpx;
+}
+.allmoney{
+  padding-top: 10rpx;
+  margin-left: auto;
+  width: 140rpx;
+  height: 80rpx;
+  color: red;
+  font-size: 40rpx;
+  display: flex;
+}
+.all{
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+}
+.priceLabel{
+  /* margin-left: auto; */
+  padding-top: 6rpx;
+  color: red;
+  font-size: 40rpx;
+}
+.name{
+  margin-top: 40rpx;
+  margin-left: 20rpx;
+  font-size: 32rpx;
+  letter-spacing:6rpx;
+}
+.describle{
+  /* margin-top: 40rpx; */
+  margin-left: 20rpx;
+  font-size: 32rpx;
+  color: rgb(85, 85, 85);
+  letter-spacing:6rpx;
+  /* height: auto; */
+}
