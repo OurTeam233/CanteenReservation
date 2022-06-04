@@ -1,6 +1,10 @@
 // pages/community/index.js
-import { formatTime } from '../../utils/util.js'
-import {request} from '../../utils/request.js'
+import {
+  formatTime
+} from '../../utils/util.js'
+import {
+  request
+} from '../../utils/request.js'
 Page({
 
   /**
@@ -9,275 +13,271 @@ Page({
   data: {
     show: true,
     activeSearch: true, // true为寻物启事，false为失物招领
-    list: [],// 帖子
-    lostFoundList: [],// 失物招领
+    list: [], // 帖子
+    lostFoundList: [], // 失物招领
     type: 1, //页面跳转参数
     keyword: '',
-    totalList:[
+    totalList: [
       '../../image/headPhone/head2.webp',
       '../../image/headPhone/head1.webp',
       '../../image/headPhone/head4.webp',
       '../../image/headPhone/head3.webp'
-    ],   //总数据
-    goodsLeftList: [
-      {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head1.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'男',
-        height:'180cm'
+    ], //总数据
+    goodsLeftList: [{
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head1.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '男',
+        height: '180cm'
       },
       {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head2.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'男',
-        身高:'180cm'
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head2.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '男',
+        身高: '180cm'
       },
       {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head3.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'男',
-        身高:'180cm'
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head3.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '男',
+        身高: '180cm'
       },
       {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head4.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'男',
-        身高:'180cm'
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head4.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '男',
+        身高: '180cm'
       },
       {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head5.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'女',
-        身高:'180cm',
-        
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head5.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '女',
+        身高: '180cm',
+
       },
       {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head6.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'女',
-        身高:'180cm'
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head6.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '女',
+        身高: '180cm'
       },
       {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head7.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'女',
-        身高:'180cm'
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head7.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '女',
+        身高: '180cm'
       },
-    ],		// 商品左边数据
-		goodsRightList: [
-      {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head4.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        身高:'180cm'
-      },
-      {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head3.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'男',
-        身高:'180cm'
+    ], // 商品左边数据
+    goodsRightList: [{
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head4.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        身高: '180cm'
       },
       {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head1.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'女',
-        身高:'180cm'
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head3.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '男',
+        身高: '180cm'
       },
       {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head2.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'男',
-        身高:'180cm'
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head1.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '女',
+        身高: '180cm'
+      },
+      {
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head2.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '男',
+        身高: '180cm'
       },
 
       {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head7.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'男',
-        身高:'180cm'
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head7.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '男',
+        身高: '180cm'
       },
       {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head5.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'男',
-        身高:'180cm'
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head5.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '男',
+        身高: '180cm'
       },
       {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head4.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'男',
-        身高:'180cm'
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head4.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '男',
+        身高: '180cm'
       },
-    ],		// 商品右边数据
-    miaiLeftList: [
-      {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head1.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'男',
-        height:'180cm'
-      },
-      {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head2.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'男',
-        身高:'180cm'
+    ], // 商品右边数据
+    miaiLeftList: [{
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head1.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '男',
+        height: '180cm'
       },
       {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head3.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'男',
-        身高:'180cm'
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head2.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '男',
+        身高: '180cm'
       },
       {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head4.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'男',
-        身高:'180cm'
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head3.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '男',
+        身高: '180cm'
       },
       {
-        image:'../../image/headPhone/head5.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'女',
-        身高:'180cm',
-        
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head4.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '男',
+        身高: '180cm'
       },
       {
-        image:'../../image/headPhone/head6.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'女',
-        身高:'180cm'
+        image: '../../image/headPhone/head5.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '女',
+        身高: '180cm',
+
       },
       {
-        image:'../../image/headPhone/head7.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'女',
-        身高:'180cm'
-      },
-    ],		// 相亲左边数据
-		miaiRightList: [
-      {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head4.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        身高:'180cm'
+        image: '../../image/headPhone/head6.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '女',
+        身高: '180cm'
       },
       {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head3.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'男',
-        身高:'180cm'
+        image: '../../image/headPhone/head7.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '女',
+        身高: '180cm'
+      },
+    ], // 相亲左边数据
+    miaiRightList: [{
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head4.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        身高: '180cm'
       },
       {
-        studentId:1,
-        id:2,
-        image:'../../image/headPhone/head1.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'女',
-        身高:'180cm'
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head3.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '男',
+        身高: '180cm'
       },
       {
-        studentId:5,
-        id:4,
-        image:'../../image/headPhone/head2.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'男',
-        身高:'180cm'
+        studentId: 1,
+        id: 2,
+        image: '../../image/headPhone/head1.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '女',
+        身高: '180cm'
+      },
+      {
+        studentId: 5,
+        id: 4,
+        image: '../../image/headPhone/head2.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '男',
+        身高: '180cm'
       },
 
       {
-        studentId:5,
-        id:4,
-        image:'../../image/headPhone/head7.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'男',
-        身高:'180cm'
+        studentId: 5,
+        id: 4,
+        image: '../../image/headPhone/head7.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '男',
+        身高: '180cm'
       },
       {
-        studentId:5,
-        id:4,
-        image:'../../image/headPhone/head5.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'男',
-        身高:'180cm'
+        studentId: 5,
+        id: 4,
+        image: '../../image/headPhone/head5.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '男',
+        身高: '180cm'
       },
       {
-        studentId:5,
-        id:4,
-        image:'../../image/headPhone/head4.webp',
-        nikename:'塔菲的猫',
-        age:21,
-        sex:'男',
-        身高:'180cm'
+        studentId: 5,
+        id: 4,
+        image: '../../image/headPhone/head4.webp',
+        nikename: '塔菲的猫',
+        age: 21,
+        sex: '男',
+        身高: '180cm'
       },
-    ],		// 相亲右边数据
-    
+    ], // 相亲右边数据
+
   },
-  query:{}, 
+  query: {},
   leftHeight: 0,
   rightHeight: 0,
   currentPage: 1,
@@ -285,21 +285,26 @@ Page({
   onLoad() {
     this.getDetail();
   },
+
   onShow() {
     if (this.data.type == 1) {
       this.getDetail();
-    }else if(this.data.type==2){
+    } else if (this.data.type == 2) {
+      this.getDetail();
+    }  else if (this.data.type == 3) {
       this.getDetail();
     } else {
       this.requestLostFound();
     }
   },
+
+
   // 标签切换事件
   changePage(event) {
     let index = event.detail.index + 1
-    if (index == 4) {
-      index++
-    }
+    // if (index == 4) {
+    //   index++
+    // }
     this.currentPage = event.detail.index + 1
     if (this.currentPage == 4) {
       this.currentPage++
@@ -308,11 +313,14 @@ Page({
       type: index
     })
     console.log(this.data.type)
+
     if (this.data.type == 1) {
       this.getDetail();
-    }else if(this.data.type==2){
+    } else if (this.data.type == 2) {
       this.getDetail();
-    } else if (this.data.type == 3 || this.data.type == 4) {
+    } else if (this.data.type == 3) {
+      this.getDetail();
+    }else if (this.data.type == 4) {
       this.requestLostFound();
     } else {
       this.requestMyPost()
@@ -326,7 +334,7 @@ Page({
   tapSearch(event) {
     this.setData({
       activeSearch: false,
-      type: 4
+      type: 5
     })
     console.log(this.data.type)
     this.requestLostFound()
@@ -335,11 +343,12 @@ Page({
   tapFind(event) {
     this.setData({
       activeSearch: true,
-      type: 3
+      type: 4
     })
     console.log(this.data.type)
     this.requestLostFound()
   },
+
   // 搜索框搜索时触发
   onChange(e) {
     console.log(e.detail)
@@ -347,21 +356,22 @@ Page({
       keyword: e.detail
     })
   },
+
   // 搜索框聚焦时触发
   focusSearch() {
     this.setData({
       show: false
     })
   },
+
   // 搜索框失焦时触发
   blurSearch() {
     this.setData({
       show: true
     })
-
     const token = wx.getStorageSync('token')
     wx.request({
-      url: 'https://121.43.56.241/CanteenWeb/LostFound/Like',
+      url: 'http://175.178.216.63:8888/CanteenWeb/LostFound/Like',
       header: {
         token
       },
@@ -381,8 +391,11 @@ Page({
       }
     })
   },
+
+  // 寻物启示
   requestLostFound() {
     const type = this.data.type
+    console.log(type)
     const token = wx.getStorageSync('token')
     wx.request({
       url: 'http://175.178.216.63:8888/CanteenWeb/LostFound/Select?types=' + type,
@@ -442,50 +455,94 @@ Page({
   getDetail() {
     const type = this.data.type
     const token = wx.getStorageSync('token')
-    request({
-      url: '/Post/Select/' + type,
-      data:{
+    wx.request({
+      url: 'http://175.178.216.63:8888/CanteenWeb/Post/Select/' + type,
+      header: {
         type,
         token
-      }
-    }).then(res=>{
-      console.log(res)
+      },
+      method: "GET",
+      success: (result) => {
+        console.log(result)
+       
+        let list = [] // 普通帖子
+        let miaiLeftList = []//相亲左边数据
+        let miaiRightList = []//相亲右边数据
+        let goodsLeftList = []//物品左边数据
+        let goodsRightList = []//物品右边数据
+
+        result.data.data.forEach(v => {
+          let post = {}
+          post.id = v.id
+          post.touxiang = v.student.avatarUrl
+          post.nicheng = v.student.nickName
+          post.shijian = formatTime(new Date(v.time))
+          post.neirong = v.content
+          post.tupian = []
+          v.pictureList.forEach(p => {
+            post.tupian.push(p.pictureUrl)
+          })
+          
+          if(type===2){
+            // 相亲
+            post.id = v.postDetail.id//帖子id
+            post.studentId = v.student.id//学生id
+            post.nikename =v.student.nickname//昵称
+            post.sex=v.postDetail.myGender//性别
+            post.age=v.postDetail.myAge//年龄
+            post.height=v.postDetail.myHeight//身高
+            post.avatarUrl=v.student.avatarUrl//头像
+            post.image = []
+          v.pictureList.forEach(p => {
+            post.image.push(p.pictureUrl)
+          })
+
+           if(post.id%2!=0){
+            miaiLeftList.push(post)
+           }else{
+            miaiRightList.push(post)
+           }
+          }else if(type===3){
+            // 二手
+            post.id = v.postDetail.id//帖子id
+            post.studentId = v.student.id//学生id
+            post.nikename =v.student.nickname//昵称
+            post.sex=v.postDetail.myGender//性别
+            post.age=v.postDetail.myAge//年龄
+            post.height=v.postDetail.myHeight//身高
+            post.avatarUrl=v.student.avatarUrl//头像
+            post.image = []
+          v.pictureList.forEach(p => {
+            post.image.push(p.pictureUrl)
+          })
+            if(post.id%2!=0){
+              goodsLeftList.push(post)
+             }else{
+              goodsRightList.push(post)
+             }
+          }else{
+            list.push(post)
+          }
+         
+          this.setData({
+            miaiLeftList,
+            miaiRightList,
+            goodsLeftList,
+            goodsRightList,
+            list
+          })
+         
+        })
+      },
     })
-    // wx.request({
-    //   url: 'http://175.178.216.63:8888/CanteenWeb/Post/Select/' + type,
-    //   header: {
-    //     type,
-    //     token
-    //   },
-    //   method: "GET",
-    //   success: (result) => {
-    //     console.log(result)
-    //     let list = []
-    //     result.data.forEach(v => {
-    //       let post = {}
-    //       post.id = v.id
-    //       post.touxiang = v.student.avatarUrl
-    //       post.nicheng = v.student.nickName
-    //       post.shijian = formatTime(new Date(v.time))
-    //       post.neirong = v.content
-    //       post.tupian = []
-    //       v.pictureList.forEach(p => {
-    //         post.tupian.push(p.pictureUrl)
-    //       })
-    //       list.push(post)
-    //     })
-    //     this.setData({
-    //       list
-    //     })
-    //     // console.log(this.data.list)
-    //   },
-    // })
   },
+
+  // //查询自己的帖子 
   requestMyPost() {
     request({
       url: '/Post/Select/My'
     }).then(result => {
-      console.log(result)
+      // console.log(result)
       let list = []
       result.forEach(v => {``
         let post = {}
@@ -506,47 +563,48 @@ Page({
     })
   },
 
-  //点击展示详情，进行页面跳转
-  onClickMiai(e){
+  // //点击展示详情，进行页面跳转
+  onClickMiai(e) {
     console.log(e.currentTarget.dataset)
-    var type = this.data.type//帖子类型
-    let id=e.currentTarget.dataset.id
+    var type = this.data.type //帖子类型
+    let id = e.currentTarget.dataset.id
     let studentId = e.currentTarget.dataset.studentid
     console.log(studentId)
     console.log(id)
     // 跳转页面
     wx.navigateTo({
-      url: '../minePparticulars/index?type='+type+'&id='+id+'&studentId='+studentId,
+      // url: '../minePparticulars/index?type=' + type + '&id=' + id + '&studentId=' + studentId,
+
+      url: '../minePparticulars/index?studentId=' + studentId,
+    })
+  },
+
+  getDataDom(){
+    let data = this.data;
+    console.log(data.totalList)
+    var query
+    query = uni.createSelectorQuery().in(this);
+    console.log(query)
+    for (let item in data.totalList) {
+      // 判断两边的高度
+      leftHeight <= rightHeight ? data.leftList.push(data.totalList[item]) : data.rightList.push(data.totalList[item]);
+      this.getBoxHeight(data.leftList, data.rightList);
+    }
+  },
+  getBoxHeight(leftList, rightList) {
+    return new Promise((resolve, reject) => {
+      this.data.leftList = leftList
+      this.data.rightList = rightList
+      query.select('#dis_left').boundingClientRect();
+      query.select('#dis_right').boundingClientRect();
+      // 处理异步问题，没有数据
+      setTimeout(() => {
+        query.exec((res) => {
+          leftHeight = res[0].height; //获取左边列表的高度
+          rightHeight = res[1].height; //获取右边列表的高度
+          resolve();
+        });
+      })
     })
   }
-
-
-  // getDataDom(){
-  //   let data = this.data;
-  //   console.log(data.totalList)
-  //   var query
-  //   query = uni.createSelectorQuery().in(this);
-  //   console.log(query)
-  //   for (let item in data.totalList) {
-  //     // 判断两边的高度
-  //     leftHeight <= rightHeight ? data.leftList.push(data.totalList[item]) : data.rightList.push(data.totalList[item]);
-  //     this.getBoxHeight(data.leftList, data.rightList);
-  //   }
-  // },
-  // getBoxHeight(leftList, rightList) {
-  //   return new Promise((resolve, reject) => {
-  //     this.data.leftList = leftList
-  //     this.data.rightList = rightList
-  //     query.select('#dis_left').boundingClientRect();
-  //     query.select('#dis_right').boundingClientRect();
-  //     // 处理异步问题，没有数据
-  //     setTimeout(() => {
-  //       query.exec((res) => {
-  //         leftHeight = res[0].height; //获取左边列表的高度
-  //         rightHeight = res[1].height; //获取右边列表的高度
-  //         resolve();
-  //       });
-  //     })
-  //   })
-  // }
 })

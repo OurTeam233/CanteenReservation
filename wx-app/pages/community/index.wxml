@@ -13,11 +13,11 @@
         <!-- 左边数据开始 -->
         <view class="content-miai-left">
           <view wx:for="{{miaiLeftList}}" wx:for-item='item' wx:for-index='id'>
-            <view class="{{id%3==0?'content-miai-info-1':(id%3==1?'content-miai-info-2':'content-miai-info-3')}}"  bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
-              <image src="{{item.image}}"></image>
+            <view class="{{id%3==0?'content-miai-info-1':(id%3==1?'content-miai-info-2':'content-miai-info-3')}}" bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
+              <image src="{{item.image[0]}}"></image>
               <view>姓名：{{item.nikename}} 性别：{{item.sex}} </view>
               <view>年龄：{{item.age}}</view>
-              <view>身高：{{item.height}}g</view>
+              <view>身高：{{item.height}}cm</view>
             </view>
           </view>
         </view>
@@ -26,7 +26,7 @@
         <!-- 右边数据开始 -->
         <view class="content-miai-right">
           <view wx:for="{{miaiRightList}}" wx:for-item='item' wx:for-index='id'>
-            <view class="{{id%3==2?'content-miai-info-1':(id%3==0?'content-miai-info-2':'content-miai-info-3')}}"  bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
+            <view class="{{id%3==2?'content-miai-info-1':(id%3==0?'content-miai-info-2':'content-miai-info-3')}}" bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
               <image src="{{item.image}}"></image>
               <view>姓名：{{item.nikename}} 性别：{{item.sex}}</view>
               <view>年龄：{{item.age}}</view>
@@ -43,7 +43,7 @@
         <!-- 左边数据开始 -->
         <view class="content-miai-left">
           <view wx:for="{{goodsLeftList}}" wx:for-item='item' wx:for-index='id'>
-            <view class="{{id%3==0?'content-miai-info-5':(id%3==1?'content-miai-info-4':'content-miai-info-6')}}"  bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
+            <view class="{{id%3==0?'content-miai-info-5':(id%3==1?'content-miai-info-4':'content-miai-info-6')}}" bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
               <image src="{{item.image}}"></image>
               <view class="goods">{{item.nikename}}</view>
               <view class="money">￥{{item.age}}</view>
@@ -55,7 +55,7 @@
         <!-- 右边数据开始 -->
         <view class="content-miai-left">
           <view wx:for="{{goodsRightList}}" wx:for-item='item' wx:for-index='id'>
-            <view class="{{id%3==2?'content-miai-info-4':(id%3==0?'content-miai-info-6':'content-miai-info-5')}}"  bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
+            <view class="{{id%3==2?'content-miai-info-4':(id%3==0?'content-miai-info-6':'content-miai-info-5')}}" bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
               <image src="{{item.image}}"></image>
               <view class="goods">{{item.nikename}}</view>
               <view class="money">￥{{item.age}}</view>
@@ -65,28 +65,43 @@
         <!-- 右边数据结束 -->
       </view>
     </van-tab>
-    <!-- 寻物屋 -->
+
+
+    <!-- 寻物屋开始 -->
     <van-tab title="寻物屋">
       <view class="search-search">
         <view class="search-title">
+
+          <!-- 寻物开始 -->
           <view class="search-button-find {{activeSearch?'active-search':''}}" bind:tap="tapFind">
             <van-transition show="{{ show }}" name="fade-left">
               <text class="search-button-find-text">寻物启事</text>
             </van-transition>
             <text class="iconfont icon-xunwu search-button-find-icon"></text>
           </view>
+          <!-- 寻物结束 -->
+
+          <!-- 失物招领开始 -->
           <view class="search-button-search {{!activeSearch?'active-search':''}}" bind:tap="tapSearch">
             <van-transition show="{{ show }}" name="fade-left">
               <text class="search-button-search-text">失物招领</text>
             </van-transition>
             <text class="iconfont icon-shiwuzhaoling search-button-search-icon"></text>
           </view>
+          <!-- 失物招领结束 -->
+
+          <!-- 搜索开始 -->
           <view class="search-wrapper">
             <van-search value="{{ keyword }}" placeholder="请输入关键词" use-action-slot bind:search="onSearch" bind:focus="focusSearch" bind:blur="blurSearch" bind:change="onChange" custom-class="search" shape="round">
               <view slot="action" bind:tap="onClick">搜索</view>
             </van-search>
           </view>
+          <!-- 搜索结束 -->
+
         </view>
+        <!-- 搜索结束 -->
+
+
         <!--寻物启事或失物招领展示区-->
         <view class="search-card-wrapper">
           <van-card title="{{item.itemName}}" thumb="{{ item.pictureList[0].pictureUrl }}" tag="{{item.types==4?'招领':'寻物'}}" custom-class="search-card" thumb-class="van-card-thumb" title-class="van-card-title" desc-class="van-card-desc" price-class="van-card-price" wx:for="{{lostFoundList}}" bind:tap="intoLostFoundInfo" data-id="{{item.id}}">
@@ -101,9 +116,12 @@
         </view>
       </view>
     </van-tab>
+    <!-- 寻物屋结束 -->
 
   </van-tabs>
 </view>
-<view class="publish-button" bindtap="navigateToPublish" wx:if="{{type!==5}}">
+
+<!-- 发帖按钮 -->
+<view class="publish-button" bindtap="navigateToPublish" wx:if="{{type!==6}}">
   <van-icon name="plus" custom-class="publish-button-icon" size="50rpx" />
 </view>
