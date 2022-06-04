@@ -17,8 +17,8 @@ Page({
     //是否了关注页面的主人
     isAtt: false,
     headImgUrl: "../../image/mine/default.png",
-    username: '系统用户一二三四五六',
-    signature: '哈哈哈哈我好牛啊',
+    username: '系统用户',
+    signature: '该用户什么都没留下',
 
 
 

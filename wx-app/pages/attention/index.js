@@ -97,4 +97,15 @@ Page({
     })
   },
 
+
+  //跳转到该用户的个人主页
+  toPostingRecord(e){
+    let index = e.currentTarget.dataset.id;
+    let studentId = this.data.myFollowList[index].studentId;
+    wx.navigateTo({
+      url: '../../pages/minePparticulars/index?studentId=' + studentId,
+
+    })
+  },
+
 })

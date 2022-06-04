@@ -1,6 +1,6 @@
 <view class="content">
   <view class="content-list" wx:for="{{myFollowList}}" wx:key="id" wx:for-item="myFollow">
-    <view class="user">
+    <view class="user" bindtap="toPostingRecord" data-id="{{myFollow.id}}">
       <image class="content-img" src="{{myFollow.avatarUrl}}"/>
       <view class="content-head-c">
         <view class="head-name">{{myFollow.nickname}}</view>
