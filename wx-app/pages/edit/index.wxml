@@ -1,4 +1,6 @@
 <!--pages/edit/index.wxml-->
+
+
 <view class="content">
   <van-cell-group inset>
     <van-cell title="头像" is-link custom-class="header" bind:click="tapShowUpload">
@@ -41,5 +43,8 @@
     />
   </van-cell-group>
 
+  
+
   <van-button type="danger" size="large" custom-class="button" bindtap="updateUserInfo">提交</van-button>
 </view>
+

@@ -1,5 +1,5 @@
 <!--pages/minePparticulars/index.wxml-->
-
+<van-notify id="van-notify" />
 <view class="main">
 
   <!-- 还是背景图片 -->
@@ -12,8 +12,14 @@
         <image src="{{ headImgUrl }}"></image>
       </view>
       <view class="buttonGourp">
-        <button>关注</button>
-        <button>私信</button>
+        <view class="msg" bindtap="toMsg">私信</view>
+        <view class="list-att" bindtap="toAttention" data-id="{{thisPageStudentId}}">
+          <view wx:if="{{isAtt}}" class="att" >已关注</view>
+          <view wx:else class="no-att">+ 关注</view>
+        </view>
+        
+        <!-- <view wx:if="{{myFollow.isFollow}}" class="att">已关注</view>
+        <view class="no-att" wx:else>+ 关注</view> -->
       </view>
     </view>
 
@@ -24,42 +30,40 @@
     </view>
   </view>
 
-  <!-- 标签栏 -->
-  <!-- <van-tabs sticky swipeable custom-class="tab">
-    <van-tab title="发帖" custom-class="tab-item" >
-      <include src="../miai/index.wxml" />
-    </van-tab>
-    <van-tab title="二手">内容 2</van-tab>
-    <van-tab title="相亲">内容 3</van-tab>
-  </van-tabs> -->
-  <!-- <view class="tab">
-    <view class="tab-item {{item==0?'active':''}}" bindtap="changeItem" data-item="0">发帖</view>
-    <view class="tab-item {{item==1?'active':''}}" bindtap="changeItem" data-item="1">二手</view>
-    <view class="tab-item {{item==2?'active':''}}" bindtap="changeItem" data-item="2">相亲</view>
-  </view> -->
-
 
   <view class="content">
     <van-tabs sticky swipeable  nav-class="title-tab" color="#f85119" title-active-color="#f85119">
+
+
+      <!-- 以下为发帖页面 -->
       <van-tab title="发帖">
+        <!-- <include src="../posts/index.wxml" /> -->
+        <!-- <van-empty description="什么都没有哦" /> -->
+
+        <!-- 据说是某个大佬写的组件 -->
+        <view class="header">
+          <post proList="{{topic}}" proClickable="{{false}}"></post>
+        </view>
+        <view>
+          <post proList="{{comment}}" proClickable="{{false}}"></post>
+        </view>
+
+      </van-tab>
+
+
+      <!-- 以下为二手页面 -->
+      <van-tab  title="二手">
         <include src="../posts/index.wxml" />
       </van-tab>
-      <van-tab custom-class="tab-item" title="二手">
-        <include src="../posts/index.wxml" />
-      </van-tab>
-      <van-tab custom-class="tab-item" title="相亲">
+
+
+      <!-- 以下为相亲页面 -->
+      <van-tab  title="相亲">
         <include src="../miai/index.wxml" />
       </van-tab>
     </van-tabs>
 
-    <!-- <swiper class="swiper" current="{{item}}" bindchange="changeTab">
-
-       <scroll-view class="content-miai" scroll-y="true" style="height: 500rpx;"bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" >
-        <swiper-item>
-          <include src="../miai/index.wxml" />
-        </swiper-item> 
-        </scroll-view>
-    </swiper>-->
+    
 
   </view>
 
