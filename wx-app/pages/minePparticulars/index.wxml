@@ -42,11 +42,9 @@
 
         <!-- 据说是某个大佬写的组件 -->
         <view class="header">
-          <post proList="{{topic}}" proClickable="{{false}}"></post>
+          <post proList="{{postList}}" proClickable="{{false}}"></post>
         </view>
-        <view>
-          <post proList="{{comment}}" proClickable="{{false}}"></post>
-        </view>
+        
 
       </van-tab>
 

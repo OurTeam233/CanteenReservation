@@ -17,87 +17,16 @@ Page({
     //是否了关注页面的主人
     isAtt: false,
     headImgUrl: "../../image/mine/default.png",
-    username: '系统用户一二三四五六',
-    signature: '哈哈哈哈我好牛啊',
+    username: '系统用户',
+    signature: '该用户什么都没留下',
 
 
 
 
     //二手数据
-    // 主贴
-    topic: [
-      {
-        'id': "1",
-        'touxiang': '../../image/headPhone/head1.webp',
-        'nicheng': '王二傻子',
-        'dingwei': '/images/zuixin/app_img_location.png',
-        'shijian': '32分钟前',
-        'neirong': '如果哪一天你突然想起我，请拿起手机拨通我的号码，哪怕我再忙再没空，只要你一句“我请你吃饭”，我都会风雨无阻的出现在你的面前。这是我对朋友一生一世的承诺！',
-        'tupian': [
-          'data:../../../../image/commityPhone/commity15.webp',
-          'data:../../../../image/commityPhone/commity16.webp',
-          'data:../../../../image/commityPhone/commity17.webp',
-        ],
-        'liulantu': '/images/zuixin/eye.png',
-        'pinglunliang': '450',
-        'dianzanliang': '560',
-      },
-    ],
-    // 评论
-    comment: [
-      {
-        'id': "1",
-        'touxiang': '../../image/headPhone/head5.webp',
-        'nicheng': '不是傻子',
-        'dingwei': '/images/zuixin/app_img_location.png',
-        'shijian': '32分钟前',
-        'neirong': '想要的是什么呢？真实的状态是怎样的呢？有时候见你只是想要个合理的理由',
-        'tupian': [
-        ],
-        'liulantu': '/images/zuixin/eye.png',
-        'pinglunliang': '450',
-        'dianzanliang': '560',
-      },
-      {
-        'id': "2",
-        'touxiang': '../../image/headPhone/head4.webp',
-        'nicheng': '无非',
-        'dingwei': '/images/zuixin/app_img_location.png',
-        'shijian': '32分钟前',
-        'neirong': '二话不说走起',
-        'tupian': [
-        ],
-        'liulantu': '/images/zuixin/eye.png',
-        'pinglunliang': '450',
-        'dianzanliang': '530',
-      },
-      {
-        'id': "3",
-        'touxiang': '../../image/headPhone/head7.webp',
-        'nicheng': '吱吱吱吱',
-        'dingwei': '/images/zuixin/app_img_location.png',
-        'shijian': '32分钟前',
-        'neirong': '多年以后的重逢，是喜悦还是遗憾呢',
-        'tupian': [
-        ],
-        'liulantu': '/images/zuixin/eye.png',
-        'pinglunliang': '450',
-        'dianzanliang': '500',
-      },
-      {
-        'id': "4",
-        'touxiang': '../../image/headPhone/head6.webp',
-        'nicheng': '看雪',
-        'dingwei': '/images/zuixin/app_img_location.png',
-        'shijian': '32分钟前',
-        'neirong': '珍惜珍惜，虽然这是个段子但反映这个当下社会常态',
-        'tupian': [
-        ],
-        'liulantu': '/images/zuixin/eye.png',
-        'pinglunliang': '450',
-        'dianzanliang': '660',
-      },
-    ],
+    // 发帖数据
+    postList: [],
+    
     
 
     // miai中的数据
@@ -146,6 +75,9 @@ Page({
 
     //查看是否关注了该用户
     this.isAttention();
+
+    //查看发帖
+    this.getStudentPosts();
     
   },
 
@@ -165,19 +97,7 @@ Page({
       item: current
     })
   },
-  
-  
 
-  // //获取缓存中的个人信息
-  // getUserInfo(){
-  //   let userInfo = wx.getStorageSync('userInfo');
-  //   this.setData({
-  //     username: userInfo.nickName,
-  //     headImgUrl: userInfo.avatarUrl,
-  //     gender: userInfo.gender,
-  //     signature: userInfo.signature
-  //   })
-  // },
 
   //获取studentId对应的学生信息
   getUserInfo(){
@@ -207,13 +127,43 @@ Page({
 
   //获取特定用户的发帖
   getStudentPosts(){
+    let _this = this;
+    let studentId = this.data.thisPageStudentId;
     let token = wx.getStorageSync('token');
     wx.request({
-      url: 'http://175.178.216.63:8888/CanteenWeb/Post/Select/2/1',
+      url: 'http://175.178.216.63:8888/CanteenWeb/Post/Select/' + studentId + '/1',
       header: {token},
       method: "GET",
       success: (res) => {
-        console.log(res)
+        //返回的结果数组
+        let resList = res.data.data;
+        let postList = [];
+        console.log(resList)
+        resList.forEach(function(item, index){
+          let {avatarUrl, id, nickname} = item.student;
+          let content = item.content;
+          let pictureList = item.pictureList;//点赞还没有写
+          let postId = item.id;
+          let time = item.time;
+          let like = item.like;
+          
+          postList.push({
+            id: postId,
+            studentId: id,
+            touxiang: avatarUrl,
+            nicheng: nickname,
+            shijian: time,
+            neirong: content,
+            tupian: pictureList,
+            dianzanliang: like
+          });
+
+          _this.setData({
+            postList
+          })
+
+        })
+
       },
       error: (res) => {
 
