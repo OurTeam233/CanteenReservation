@@ -1,13 +1,16 @@
 <!--pages/community/index.wxml-->
 <view class="top-tabBar-wrapper">
   <van-tabs active="{{ active }}" bind:change="changePage" sticky swipeable line-width="130rpx">
-    <!-- 浏览 -->
+  
+    <!-- 浏览开始 -->
     <van-tab title="浏览">
       <view class="card-wrapper">
         <post proList="{{list}}"></post>
       </view>
     </van-tab>
-    <!-- 相亲 -->
+    <!-- 浏览结束 -->
+
+    <!-- 相亲开始 -->
     <van-tab title="相亲">
       <view class="content-miai">
         <!-- 左边数据开始 -->
@@ -37,7 +40,9 @@
         <!-- 右边数据结束 -->
       </view>
     </van-tab>
-    <!-- 闲鱼 -->
+    <!-- 相亲结束 -->
+
+    <!-- 闲鱼开始 -->
     <van-tab class="card" title="闲鱼">
       <view class="content-miai">
         <!-- 左边数据开始 -->
@@ -45,8 +50,8 @@
           <view wx:for="{{goodsLeftList}}" wx:for-item='item' wx:for-index='id'>
             <view class="{{id%3==0?'content-miai-info-5':(id%3==1?'content-miai-info-4':'content-miai-info-6')}}" bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
               <image src="{{item.image}}"></image>
-              <view class="goods">{{item.nikename}}</view>
-              <view class="money">￥{{item.age}}</view>
+              <view class="goods">{{item.name}}--{{item.description}}</view>
+              <view class="money">￥{{item.price}}</view>
             </view>
           </view>
         </view>
@@ -65,7 +70,7 @@
         <!-- 右边数据结束 -->
       </view>
     </van-tab>
-
+    <!-- 闲鱼结束 -->
 
     <!-- 寻物屋开始 -->
     <van-tab title="寻物屋">

@@ -10,6 +10,9 @@ Page({
   /**
    * 页面的初始数据
    */
+// type 1 浏览  2 相亲  3 闲鱼  5 寻物  6 失物
+
+
   data: {
     show: true,
     activeSearch: true, // true为寻物启事，false为失物招领
@@ -291,7 +294,7 @@ Page({
       this.getDetail();
     } else if (this.data.type == 2) {
       this.getDetail();
-    }  else if (this.data.type == 3) {
+    } else if (this.data.type == 3) {
       this.getDetail();
     } else {
       this.requestLostFound();
@@ -302,9 +305,9 @@ Page({
   // 标签切换事件
   changePage(event) {
     let index = event.detail.index + 1
-    // if (index == 4) {
-    //   index++
-    // }
+    if (index == 4) {
+      index++
+    }
     this.currentPage = event.detail.index + 1
     if (this.currentPage == 4) {
       this.currentPage++
@@ -320,30 +323,36 @@ Page({
       this.getDetail();
     } else if (this.data.type == 3) {
       this.getDetail();
-    }else if (this.data.type == 4) {
+    } else if (this.data.type == 5) {
       this.requestLostFound();
-    } else {
-      this.requestMyPost()
+    } else if(this.data.type == 6) {
+      
     }
   },
+
+
   // 搜索
   onClick() {
     console.log(this.data.keyword)
   },
+
+
   // 点击失物招领
   tapSearch(event) {
     this.setData({
       activeSearch: false,
-      type: 5
+      type: 6
     })
     console.log(this.data.type)
     this.requestLostFound()
   },
+
+
   // 点击寻物启事
   tapFind(event) {
     this.setData({
       activeSearch: true,
-      type: 4
+      type: 5
     })
     console.log(this.data.type)
     this.requestLostFound()
@@ -415,6 +424,8 @@ Page({
       }
     })
   },
+
+
   // 发帖
   navigateToPublish() {
     // console.log(this.data.type)
@@ -425,9 +436,11 @@ Page({
       url = '../miaipost/index?currentPage=2'
     } else if (this.data.type === 3) {
       url = '../used/index?currentPage=3'
-    } else if (this.data.type === 4) {
-      url = '../publishLostFound/index?currentPage=4'
     } else if (this.data.type === 5) {
+      url = '../publishLostFound/index?currentPage=4'
+    } else if (this.data.type === 6) {
+      url = '../publishLostFound/index?currentPage=4'
+    } else{
       wx.showToast({
         title: '我的不能发帖哦',
         icon: "error"
@@ -438,6 +451,8 @@ Page({
       url,
     })
   },
+
+
   // 跳转失物招领详情页
   intoLostFoundInfo(e) {
     let id = e.currentTarget.dataset.id
@@ -451,7 +466,7 @@ Page({
   },
 
 
-  //根据页面跳转参数，获取不同的页面详细信息
+  //根据页面跳转参数，获取不同的页面详细信息()
   getDetail() {
     const type = this.data.type
     const token = wx.getStorageSync('token')
@@ -463,67 +478,71 @@ Page({
       },
       method: "GET",
       success: (result) => {
-        console.log(result)
-       
         let list = [] // 普通帖子
-        let miaiLeftList = []//相亲左边数据
-        let miaiRightList = []//相亲右边数据
-        let goodsLeftList = []//物品左边数据
-        let goodsRightList = []//物品右边数据
-
+        let miaiLeftList = [] //相亲左边数据
+        let miaiRightList = [] //相亲右边数据
+        let goodsLeftList = [] //物品左边数据
+        let goodsRightList = [] //物品右边数据
         result.data.data.forEach(v => {
           let post = {}
-          post.id = v.id
-          post.touxiang = v.student.avatarUrl
-          post.nicheng = v.student.nickName
-          post.shijian = formatTime(new Date(v.time))
-          post.neirong = v.content
-          post.tupian = []
-          v.pictureList.forEach(p => {
-            post.tupian.push(p.pictureUrl)
-          })
-          
-          if(type===2){
-            // 相亲
-            post.id = v.postDetail.id//帖子id
-            post.studentId = v.student.id//学生id
-            post.nikename =v.student.nickname//昵称
-            post.sex=v.postDetail.myGender//性别
-            post.age=v.postDetail.myAge//年龄
-            post.height=v.postDetail.myHeight//身高
-            post.avatarUrl=v.student.avatarUrl//头像
-            post.image = []
-          v.pictureList.forEach(p => {
-            post.image.push(p.pictureUrl)
-          })
 
-           if(post.id%2!=0){
-            miaiLeftList.push(post)
-           }else{
-            miaiRightList.push(post)
-           }
-          }else if(type===3){
-            // 二手
-            post.id = v.postDetail.id//帖子id
-            post.studentId = v.student.id//学生id
-            post.nikename =v.student.nickname//昵称
-            post.sex=v.postDetail.myGender//性别
-            post.age=v.postDetail.myAge//年龄
-            post.height=v.postDetail.myHeight//身高
-            post.avatarUrl=v.student.avatarUrl//头像
-            post.image = []
-          v.pictureList.forEach(p => {
-            post.image.push(p.pictureUrl)
-          })
-            if(post.id%2!=0){
-              goodsLeftList.push(post)
-             }else{
-              goodsRightList.push(post)
-             }
-          }else{
+          // 普通帖子
+          if (type == 1) {
+            post.id = v.id
+            post.touxiang = v.student.avatarUrl
+            post.nicheng = v.student.nickName
+            post.shijian = formatTime(new Date(v.time))
+            post.neirong = v.content
+            post.tupian = []
+            v.pictureList.forEach(p => {
+              post.tupian.push(p.pictureUrl)
+            })
             list.push(post)
           }
-         
+
+          // 相亲
+          if (type === 2) {
+            post.id = v.postDetail.id //帖子id
+            post.studentId = v.student.id //学生id
+            post.nikename = v.student.nickname //昵称
+            post.sex = v.postDetail.myGender //性别
+            post.age = v.postDetail.myAge //年龄
+            post.height = v.postDetail.myHeight //身高
+            post.avatarUrl = v.student.avatarUrl //头像
+            post.image = []
+            v.pictureList.forEach(p => {
+              post.image.push(p.pictureUrl)
+            })
+            if (post.id % 2 != 0) {
+              miaiLeftList.push(post)
+            } else {
+              miaiRightList.push(post)
+            }
+          }
+
+          // 二手
+          if (type === 3) {
+            console.log(result)
+            post.studentId = v.student.id //学生id
+            post.id = v.used.id //帖子id
+            post.name = v.used.name//物品名字
+            post.description=v.used.description//描述
+            post.price = v.used.price
+            post.avatarUrl = v.student.avatarUrl //头像
+
+            post.image = []
+            v.pictureList.forEach(p => {
+              post.image.push(p.pictureUrl)
+            })
+            if (post.id % 2 != 0) {
+              goodsLeftList.push(post)
+            } else {
+              goodsRightList.push(post)
+            }
+          } else {
+            list.push(post)
+          }
+
           this.setData({
             miaiLeftList,
             miaiRightList,
@@ -531,37 +550,39 @@ Page({
             goodsRightList,
             list
           })
-         
+
+
         })
       },
     })
   },
 
-  // //查询自己的帖子 
-  requestMyPost() {
-    request({
-      url: '/Post/Select/My'
-    }).then(result => {
-      // console.log(result)
-      let list = []
-      result.forEach(v => {``
-        let post = {}
-        post.id = v.id
-        post.touxiang = v.student.avatarUrl
-        post.nicheng = v.student.nickName
-        post.shijian = formatTime(new Date(v.time))
-        post.neirong = v.content
-        post.tupian = []
-        v.pictureList.forEach(p => {
-          post.tupian.push(p.pictureUrl)
-        })
-        list.push(post)
-      })
-      this.setData({
-        list
-      })
-    })
-  },
+  // // //查询自己的帖子 
+  // requestMyPost() {
+  //   request({
+  //     url: '/Post/Select/My'
+  //   }).then(result => {
+  //     // console.log(result)
+  //     let list = []
+  //     result.forEach(v => {
+  //       ``
+  //       let post = {}
+  //       post.id = v.id
+  //       post.touxiang = v.student.avatarUrl
+  //       post.nicheng = v.student.nickName
+  //       post.shijian = formatTime(new Date(v.time))
+  //       post.neirong = v.content
+  //       post.tupian = []
+  //       v.pictureList.forEach(p => {
+  //         post.tupian.push(p.pictureUrl)
+  //       })
+  //       list.push(post)
+  //     })
+  //     this.setData({
+  //       list
+  //     })
+  //   })
+  // },
 
   // //点击展示详情，进行页面跳转
   onClickMiai(e) {
@@ -573,13 +594,13 @@ Page({
     console.log(id)
     // 跳转页面
     wx.navigateTo({
-      // url: '../minePparticulars/index?type=' + type + '&id=' + id + '&studentId=' + studentId,
+      url: '../minePparticulars/index?type=' + type + '&id=' + id + '&studentId=' + studentId,
 
-      url: '../minePparticulars/index?studentId=' + studentId,
+      // url: '../minePparticulars/index?studentId=' + studentId,
     })
   },
 
-  getDataDom(){
+  getDataDom() {
     let data = this.data;
     console.log(data.totalList)
     var query
@@ -591,6 +612,8 @@ Page({
       this.getBoxHeight(data.leftList, data.rightList);
     }
   },
+
+
   getBoxHeight(leftList, rightList) {
     return new Promise((resolve, reject) => {
       this.data.leftList = leftList
