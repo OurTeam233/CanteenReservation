@@ -57,18 +57,50 @@ page{
 .buttonGourp{
   width: 510rpx;
   /* background-color: #fff; */
+  margin-left: 40rpx;
   display: flex;
 }
 
-/* 按钮样式 */
-.buttonGourp > button{
+.msg,
+.att,
+.no-att{
   margin-top: 210rpx;
-  margin-left: 60rpx;
+  margin-left: 40rpx;
   margin-right: 10rpx;
   width: 180rpx;
   height: 80rpx;
   border-radius: 50rpx;
-  
+}
+
+/* 按钮样式 */
+.msg{
+
+  background: #f85119;
+  font-size: 32rpx;
+  color: #ffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.att{
+
+  background: #f85119;
+  font-size: 32rpx;
+  color: #ffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-att{
+  background: #fff;
+  font-size: 32rpx;
+  border: 2rpx solid #f85119;
+  color: #f85119;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* 用户名 */

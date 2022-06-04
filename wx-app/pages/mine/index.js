@@ -87,8 +87,10 @@ Page({
 
   //跳转到发帖记录
   toPostingRecord(){
+    //将自己的studentId传过去
+    let studentId = wx.getStorageSync('studentId');
     wx.navigateTo({
-      url: '../../pages/minePparticulars/index',
+      url: '../../pages/minePparticulars/index?studentId=' + studentId,
 
     })
   },

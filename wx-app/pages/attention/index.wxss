@@ -61,6 +61,19 @@
   align-items: center;
 }
 
+.no-att {
+  width: 110rpx;
+  height: 45rpx;
+  background: #ffff;
+  font-size: 10px;
+  border-radius: 10px;
+  border: 1px solid #69d6bf;
+  color: #69d6bf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .msg{
   width: 110rpx;
   height: 45rpx;
@@ -74,18 +87,7 @@
   margin-right: 10rpx;
 }
 
-.no-att {
-  width: 110rpx;
-  height: 45rpx;
-  background: #ffff;
-  font-size: 10px;
-  border-radius: 10px;
-  border: 1px solid #69d6bf;
-  color: #69d6bf;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .content-head-c {
   width: 95px;

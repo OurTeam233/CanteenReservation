@@ -1,6 +1,8 @@
 import {
   request
 } from '../../utils/request';
+// import Toast from '@vant/weapp/toast/toast';
+
 
 Page({
   data: {
@@ -99,6 +101,9 @@ Page({
         userInfo.nickName = this.data.nickName;
         userInfo.signature = this.data.profileValue;
         wx.setStorageSync('userInfo', userInfo);
+
+        //修改成功后返回上一级
+        wx.navigateBack();
         
       },
       error: (res) => {
