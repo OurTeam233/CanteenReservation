@@ -28,11 +28,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let type = options.currentPage
     let that = this;
 
     setInterval(function () {
       that.setData({
+        type,
         time: util.formatTime(new Date())
       });
     }, 1000);
@@ -161,14 +162,31 @@ Page({
  
   //提交
   submit() {
-    let name = this.data.thingName
-    let allMoney = this.data.allMoney
-    let describle=this.data.describle
+    let used = {}
+    let fileList= []
+    let type = this.data.type
+    used. name = this.data.thingName
+    used. price = this.data.allMoney
+    used. description=this.data.describle
+    let token = wx.getStorageSync('token')
 
-    request({
-      url: 'url',
-    }).then(res=>{
-      console.log(res)
+    wx.request({
+      url: 'http://175.178.216.63:8888/CanteenWeb/Post/used',
+      data: {
+        type,
+        used
+      },
+      header: {
+        token
+      },
+      method: "POST",
+      success: (result) => {
+        console.log(result)
+      },
+      error: (result) => {
+        console.log(result)
+        console.log("失败了")
+      }
     })
   }
 

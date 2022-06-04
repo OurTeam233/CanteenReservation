@@ -540,7 +540,7 @@ Page({
               goodsRightList.push(post)
             }
           } else {
-            list.push(post)
+            // list.push(post)
           }
 
           this.setData({
