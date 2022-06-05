@@ -26,6 +26,37 @@ Page({
     //二手数据
     // 发帖数据
     postList: [],
+    //二手数据
+    usedList: [
+      {
+        id: "1",
+        name: "周边卫衣",
+        description: "七海鲨鱼卫衣，L码全套带徽章，没有双十一价买的，觉得贵别买",
+        price: "354",
+        pictures: [
+          'https://gd4.alicdn.com/imgextra/i4/2210965653000/O1CN01TBJ5FM1Y22utZ8KyJ_!!2210965653000.jpg',
+          'http://photo.weitianxia.cn/uploadhtml5_2021-03-02_603db2645fabf.png',
+          'http://photo.weitianxia.cn/uploadhtml5_2021-03-02_603db299a192d.png',
+          'http://photo.weitianxia.cn/uploadhtml5_2021-03-02_603db2bd3203b.png',
+          'http://photo.weitianxia.cn/uploadhtml5_2021-03-02_603db2d88939a.png',
+        ],
+      },
+      {
+        id: "2",
+        name: "周边卫衣",
+        description: "七海鲨鱼卫衣，L码全套带徽章，没有双十一价买的，觉得贵别买",
+        price: "354",
+        pictures: [
+          'https://gd4.alicdn.com/imgextra/i4/2210965653000/O1CN01TBJ5FM1Y22utZ8KyJ_!!2210965653000.jpg',
+          'http://photo.weitianxia.cn/uploadhtml5_2021-03-02_603db2645fabf.png',
+          'http://photo.weitianxia.cn/uploadhtml5_2021-03-02_603db299a192d.png',
+          'http://photo.weitianxia.cn/uploadhtml5_2021-03-02_603db2bd3203b.png',
+          'http://photo.weitianxia.cn/uploadhtml5_2021-03-02_603db2d88939a.png',
+        ],
+      },
+    ],
+    //相亲数据
+    miai: {},
     
     
 
@@ -58,9 +89,27 @@ Page({
       sex: '男',
       height: '176cm以上',
       condition:'有趣的灵魂',
-    }
+    },
     
   },
+
+
+  // 预览图片
+  previewImage: function (e) {
+    console.log(e)
+    console.log(e.currentTarget.dataset.index);
+    let index = e.currentTarget.dataset.index;
+    let list = this.data.usedList[index];
+    let urls = list.pictures;
+    let current = urls[0];
+    
+    // console.log(current);
+    wx.previewImage({
+      current, // 当前显示图片的http链接
+      urls, // 需要预览的图片http链接列表
+    })
+  },
+
 
   onReady(){
     this.getUserInfo();
@@ -78,6 +127,8 @@ Page({
 
     //查看发帖
     this.getStudentPosts();
+    //查看二手
+    this.getStudentUseds();
     
   },
 
@@ -158,11 +209,10 @@ Page({
             dianzanliang: like
           });
 
-          _this.setData({
-            postList
-          })
-
         })
+        _this.setData({
+          postList
+        });
 
       },
       error: (res) => {
@@ -170,6 +220,62 @@ Page({
       }
     })
   },
+
+
+  //获取特定用户的二手
+  getStudentUseds(){
+    let _this = this;
+    let studentId = this.data.thisPageStudentId;
+    let token = wx.getStorageSync('token');
+    wx.request({
+      url: 'http://175.178.216.63:8888/CanteenWeb/Post/Select/' + studentId + '/3',
+      header: {token},
+      method: "GET",
+      success: (res) => {
+        //返回的结果数组
+        let resList = res.data.data;
+        let usedList = [];
+        console.log(resList)
+        resList.forEach(function(item, index){
+          let id = item.id;
+          // let pictures = item.pictureList;
+          let pictures = [];
+          item.pictureList.forEach((item) => {
+            pictures.push(item.pictureUrl)
+          })
+          let name = item.used.name;
+          let description = item.used.description;
+          let price = item.used.price;
+          
+          //如果用户没有添加商品图片
+          if(pictures.length === 0){
+            console.log("没有图片")
+            pictures.push('http://www.sucaijishi.com/uploadfile/2020/0110/20200110051242482.png')
+          }
+
+          usedList.push({
+            id,
+            name,
+            description,
+            price,
+            pictures
+          });
+
+        })
+        
+
+
+        _this.setData({
+          usedList
+        });
+      },
+      error: (res) => {
+
+      }
+    })
+  },
+
+
 
   //查看该用户是否被自己关注
   isAttention(){

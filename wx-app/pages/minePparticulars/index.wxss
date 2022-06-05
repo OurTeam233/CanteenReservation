@@ -182,6 +182,67 @@ page{
 
 
 
+/* 二手页面的样式 */
+/* 外框样式 */
+.container {
+  display: flex;
+  box-sizing: border-box;
+  margin: 15rpx 30rpx;
+  border-radius: 20rpx;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+} 
+/* 预览图图片 */
+.previewimg{
+  width: 46%;
+  height: 360rpx;
+  margin: 2%;
+  border-radius: 20rpx;
+}
+/* 图片详情页 */
+.previewimg image{
+  width:100%;
+  height:100%;
+}
+/* 文字描述大框 */
+.goods-info{
+  margin: 2%;
+  width: 54%;
+  height: 360rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.goods-name{
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.goods-description{
+  margin-top: 30rpx;
+  font-size: 30rpx;
+  color: rgb(136, 136, 136);
+}
+
+.goods-value{
+  color: red;
+  font-size: 30rpx;
+  text-align: right;
+  margin-top: auto;
+
+}
+.goods-value > span{
+  font-size: 50rpx;
+  font-weight: bolder;
+}
+
+
+
+
+
+
+
+
+
 
 
 

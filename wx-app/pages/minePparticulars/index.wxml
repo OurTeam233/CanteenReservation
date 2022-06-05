@@ -44,6 +44,7 @@
         <view class="header">
           <post proList="{{postList}}" proClickable="{{false}}"></post>
         </view>
+        <van-empty description="Ta还没有发帖" wx:if="{{postList.length === 0}}" />
         
 
       </van-tab>
@@ -51,13 +52,28 @@
 
       <!-- 以下为二手页面 -->
       <van-tab  title="二手">
-        <include src="../posts/index.wxml" />
+        <!-- <view class="goods-content">
+          
+        </view> -->
+
+        <view class="container" wx:for="{{usedList}}" wx:key="{{id}}" wx:for-index='idx'>
+          <image class="previewimg" src="{{item.pictures[0]}}" bindtap="previewImage" data-index="{{idx}}"></image>
+          <view class="goods-info">
+            <view class="goods-name">{{item.name}}</view>
+            <view class="goods-description">{{item.description}}</view>
+            <view class="goods-value">¥ <span>{{item.price}}</span></view>
+          </view>
+        </view>
+
+        <van-empty description="Ta还没有二手" wx:if="{{usedList.length === 0}}" />
+
       </van-tab>
 
 
       <!-- 以下为相亲页面 -->
       <van-tab  title="相亲">
         <include src="../miai/index.wxml" />
+        <van-empty description="Ta还没有相亲" wx:if="{{miaiList.length === 0}}" />
       </van-tab>
     </van-tabs>
 
