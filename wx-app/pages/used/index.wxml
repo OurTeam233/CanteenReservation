@@ -11,16 +11,14 @@
  
   <!-- 添加图片开始 -->
   <view class="view_contain">
-    <!-- 上传多张图片 -->
-    <view class="ui_uploader_cell">
-      <view class='ui_uploader_item' wx:for="{{uploaderList}}" wx:key="{{index}}">
-        <icon class='ui_uploader_item_icon' bindtap='clearImg_d' data-index="{{index}}" type="clear" size="20" color="red" />
-        <image bindtap='showImg_d' data-index="{{index}}" src='{{item}}'></image>
+    <view class="file">
+      <view class="fileimage" wx:for="{{imageObject}}" wx:for-itme="item">
+        <image src="{{item.imageURL}}" mode="aspectFit"></image>
       </view>
-      <view class='ui_uploader' bindtap='choosePic_d' wx:if="{{showUpload}}">
-      </view>
+      <button class="submitImage" bindtap="afterRead">+</button>
     </view>
-    <van-divider contentPosition="center"></van-divider>
+
+    <van-divider contentPosition="center">最多添加六张图片</van-divider>
   </view>
   <!-- 添加图片结束 -->
 

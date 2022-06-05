@@ -1,107 +1,136 @@
-import{
+import {
   request
-}from '../../utils/request' 
+} from '../../utils/request'
+const {
+  uploadImage
+} = require('../../utils/uploadImage.js')
 Page({
   data: {
     //获取用户信息
-    userInfo :[],
-    publicationTime:' ',
+    userInfo: [],
+    publicationTime: ' ',
     //帖子类型
-    type:'',
+    type:1,
     chooseImage: {
       sourceObj: {},
       isUploaded: false
     },
     //个人信息
-    mineInfo: {
-      'touxiang': 'http://img5.imgtn.bdimg.com/it/u=183326193,1784969774&fm=26&gp=0.jpg',
-      'nicheng': '王一傻子',
-    },
+    mineInfo: {},
     // 图片信息
-    fileList: [
-    ],
+    fileList: [],
     //帖子文本信息
-    text:'',
+    text: '',
     //帖子的内容
-    invitation:{}
+    invitation: {},
+    imgUrls: [],
+    // 图片
+    imageObject: []
   },
   //事件
-  onLoad(e){
-    this.setData({
-      type:e.currentPage
-    })
+  onLoad(e) {
     this.getPublicationTime();
   },
+
+
   // 上传文件
-  afterRead (event) {
-    const { file } = event.detail;
+  afterRead(event) {
     let that = this
-    // 当设置 mutiple 为 true 时, file 为数组格式，否则为对象格式
-    wx.uploadFile({
-      url: 'http://121.43.56.241/upload', // 仅为示例，非真实的接口地址
-      filePath: file.url,
-      name: 'file',
-      success (res) {
-        // 上传完成需要更新 fileList
-        let parse = JSON.parse(res.data)
-        const { fileList = [] } = that.data;
-        let url = "http://121.43.56.241" + parse.msg
-        console.log(url)
-        fileList.push({ ...file, url });
-        that.setData({ fileList });
-      },
+    let imageObject = that.data.imageObject
+    let i = 0;
+    imageObject.forEach(item => {
+      i++
     });
+    if (i < 9) {
+      uploadImage(that)
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '最多添加9张',
+        success: function (res) {
+          if (res.confirm) { //这里是点击了确定以后
+            console.log('用户点击确定')
+          } else { //这里是点击了取消以后
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }
   },
+
+
+
   //删除图片
-  deleteImg(e){
+  deleteImg(e) {
     const fileList = this.data.fileList
     //获取删除图片的索引值
     const index = e.detail.index
     //删除特定索引的图片
-    fileList.splice(index,1)
+    fileList.splice(index, 1)
     this.setData({
-      fileList:fileList
+      fileList: fileList
     })
   },
   //发表时间
-  getPublicationTime(){
-    const invitation=this.data.invitation
+  getPublicationTime() {
+    const invitation = this.data.invitation
     const time = new Date();
     const year = time.getFullYear();
-    const month = time.getMonth()+1;
+    const month = time.getMonth() + 1;
     const day = time.getDate();
     const hour = time.getHours();
     const min = time.getMinutes();
-    const publicationTime =`${year}`+'-'+`${month}`+'-'+`${day}`+' '+`${hour}`+':'+`${min}`
+    const publicationTime = `${year}` + '-' + `${month}` + '-' + `${day}` + ' ' + `${hour}` + ':' + `${min}`
     this.setData({
-      publicationTime:publicationTime,
+      publicationTime: publicationTime,
     })
   },
   //获取帖子输入的文本内容
-  inputText(e){
+  inputText(e) {
     const text = e.detail
     this.setData({
-      text:text
+      text: text
     })
   },
+
+  //使用七牛云上传数据
+  uploadToQn(event) {
+    const {
+      file
+    } = event.detail;
+    var that = this
+    let imageUrl = uploadImage(that, file)
+    console.log(imageUrl)
+  },
+
   //整合帖子数据
-  all(){
-    const invitation = this.data.invitation;
-    //将图片信息插入整合数据中
-    invitation.text = this.data.text
-    invitation.fileList = this.data.fileList;//图片信息
-    invitation.type = this.data.type;//帖子类型
-    console.log(invitation)
+  all() {
+
+    //获取图片
+    let imageObject=this.data.imageObject
+    let fileList = []
+    imageObject.forEach(item => {
+      fileList.push(item.imageURL)
+    });
+    //获取类型
+    let types = this.data.type
+    //获取文本
+    let text = this.data.text 
     const token = wx.getStorageSync('token')
+    console.log(fileList)
+    console.log(types)
+    console.log(text)
     //发送去请求
     wx.request({
-      url: 'https://121.43.56.241/CanteenWeb/Post/Insert',
+      url: 'http://175.178.216.63:8888/CanteenWeb/Post/Insert',
       data: {
-        "text": invitation.text,
-        "fileList": invitation.fileList,
-        "type": invitation.type
+        text,
+        fileList,
+        type: types
       },
-      header:{token},
+      header: {
+        token
+      },
       method: "POST",
       success: (result) => {
         console.log(result)
@@ -112,8 +141,8 @@ Page({
             duration: 2000
           })
           setTimeout(() => {
-            wx.navigateBack({
-              delta: 1
+            wx.navigateTo({
+              url: '../community',
             })
           }, 2000)
         } else {

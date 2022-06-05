@@ -2,17 +2,18 @@
 <view>
   <!-- 添加图片 -->
   <view class="view_contain">
-    <!-- 上传多张图片 -->
-    <view class="ui_uploader_cell">
-      <view class='ui_uploader_item' wx:for="{{uploaderList}}" wx:key="{{index}}">
-        <icon class='ui_uploader_item_icon' bindtap='clearImg_d' data-index="{{index}}" type="clear" size="20" color="red" />
-        <image bindtap='showImg_d' data-index="{{index}}" src='{{item}}'></image>
+    <view class="file">
+      <view class="fileimage" wx:for="{{imageObject}}" wx:for-itme="item">
+        <image src="{{item.imageURL}}" mode="aspectFit"></image>
       </view>
-      <view class='ui_uploader' bindtap='choosePic_d' wx:if="{{showUpload}}">
-      </view>
+      <button class="submitImage" bindtap="afterRead">+</button>
     </view>
+
     <van-divider contentPosition="center">最多添加六张图片</van-divider>
   </view>
+
+
+
 
   <!-- 自身信息 -->
   <view class="content">
@@ -23,7 +24,7 @@
     </van-radio-group>
     <van-divider />
     <van-cell-group>
-    
+
       <!-- own年龄开始 -->
       <view class="age">
         <view class="ageMin">*年龄：
@@ -37,7 +38,7 @@
 
       <van-field value="{{ ownHobby }}" required clearable label="兴趣/爱好" maxlength='15' placeholder="兴趣爱好（15字以内）" bind:change="ownHobby" />
 
-      <van-field value="{{ owntext }}" required  maxlength='25' clearable label="宣言" placeholder="请输入宣言（25字以内）" bind:change="ownWords" />
+      <van-field value="{{ owntext }}" required maxlength='25' clearable label="宣言" placeholder="请输入宣言（25字以内）" bind:change="ownWords" />
 
       <van-field value="{{ address }}" required clearable label="地址" maxlength='15' placeholder="家乡地址（15字以内）" bind:change="ownAddress" />
     </van-cell-group>

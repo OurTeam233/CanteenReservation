@@ -24,7 +24,8 @@
     "pages/minePparticulars/index",
     "pages/chat/index",
     "pages/chatInfo/index",
-    "pages/used/index"
+    "pages/used/index",
+    "pages/explain/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

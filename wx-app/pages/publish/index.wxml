@@ -18,20 +18,17 @@
 
 <!-- 帖子文本 -->
 <view class="text">
-  <van-field
-      model:value="{{ value }}"
-      type="textarea"
-      maxlength="255" show-word-limit
-      placeholder="分享新鲜事~"
-      custom-style="height: 40vh;background-color: #fff;border: 2px solid #F5F5F5;box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;"
-      input-class="input-class"
-      bind:input="inputText"
-  />
+  <van-field model:value="{{ value }}" type="textarea" maxlength="255" show-word-limit placeholder="分享新鲜事~" custom-style="height: 40vh;background-color: #fff;border: 2px solid #F5F5F5;box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;" input-class="input-class" bind:input="inputText" />
 </view>
+
 <!-- 帖子图片 -->
 <view class="file">
-  <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" deletable  max-count="9" bind:delete="deleteImg"/>
+  <view class="fileimage"  wx:for="{{imageObject}}" wx:for-itme="item"  >
+    <image src="{{item.imageURL}}" mode="aspectFit"></image>
+  </view>
+  <button class="submitImage" bindtap="afterRead">+</button>
 </view>
+
 
 <view class="button-wrapper">
   <van-button type="danger" custom-class="button" size="large" round bind:click="all">发布</van-button>

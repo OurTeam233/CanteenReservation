@@ -26,258 +26,10 @@ Page({
       '../../image/headPhone/head4.webp',
       '../../image/headPhone/head3.webp'
     ], //总数据
-    goodsLeftList: [{
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head1.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '男',
-        height: '180cm'
-      },
-      {
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head2.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '男',
-        身高: '180cm'
-      },
-      {
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head3.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '男',
-        身高: '180cm'
-      },
-      {
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head4.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '男',
-        身高: '180cm'
-      },
-      {
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head5.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '女',
-        身高: '180cm',
-
-      },
-      {
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head6.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '女',
-        身高: '180cm'
-      },
-      {
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head7.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '女',
-        身高: '180cm'
-      },
-    ], // 商品左边数据
-    goodsRightList: [{
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head4.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        身高: '180cm'
-      },
-      {
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head3.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '男',
-        身高: '180cm'
-      },
-      {
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head1.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '女',
-        身高: '180cm'
-      },
-      {
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head2.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '男',
-        身高: '180cm'
-      },
-
-      {
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head7.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '男',
-        身高: '180cm'
-      },
-      {
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head5.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '男',
-        身高: '180cm'
-      },
-      {
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head4.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '男',
-        身高: '180cm'
-      },
-    ], // 商品右边数据
-    miaiLeftList: [{
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head1.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '男',
-        height: '180cm'
-      },
-      {
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head2.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '男',
-        身高: '180cm'
-      },
-      {
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head3.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '男',
-        身高: '180cm'
-      },
-      {
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head4.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '男',
-        身高: '180cm'
-      },
-      {
-        image: '../../image/headPhone/head5.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '女',
-        身高: '180cm',
-
-      },
-      {
-        image: '../../image/headPhone/head6.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '女',
-        身高: '180cm'
-      },
-      {
-        image: '../../image/headPhone/head7.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '女',
-        身高: '180cm'
-      },
-    ], // 相亲左边数据
-    miaiRightList: [{
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head4.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        身高: '180cm'
-      },
-      {
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head3.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '男',
-        身高: '180cm'
-      },
-      {
-        studentId: 1,
-        id: 2,
-        image: '../../image/headPhone/head1.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '女',
-        身高: '180cm'
-      },
-      {
-        studentId: 5,
-        id: 4,
-        image: '../../image/headPhone/head2.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '男',
-        身高: '180cm'
-      },
-
-      {
-        studentId: 5,
-        id: 4,
-        image: '../../image/headPhone/head7.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '男',
-        身高: '180cm'
-      },
-      {
-        studentId: 5,
-        id: 4,
-        image: '../../image/headPhone/head5.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '男',
-        身高: '180cm'
-      },
-      {
-        studentId: 5,
-        id: 4,
-        image: '../../image/headPhone/head4.webp',
-        nikename: '塔菲的猫',
-        age: 21,
-        sex: '男',
-        身高: '180cm'
-      },
-    ], // 相亲右边数据
+    goodsLeftList: [], // 商品右边数据
+    goodsRightList: [], // 商品左边数据
+    miaiLeftList: [], // 相亲左边数据
+    miaiRightList: [], // 相亲右边数据
 
   },
   query: {},
@@ -478,6 +230,7 @@ Page({
       },
       method: "GET",
       success: (result) => {
+        console.log(result)
         let list = [] // 普通帖子
         let miaiLeftList = [] //相亲左边数据
         let miaiRightList = [] //相亲右边数据
@@ -518,6 +271,7 @@ Page({
             } else {
               miaiRightList.push(post)
             }
+
           }
 
           // 二手
@@ -550,6 +304,7 @@ Page({
             goodsRightList,
             list
           })
+
 
 
         })

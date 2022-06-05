@@ -1,0 +1,11 @@
+<!--pages/explain/index.wxml-->
+<view wx:for="info" wx:for-item="item">
+  <view class="content">
+    <view class="content-image">
+
+    </view>
+    <view class="content-info">
+    
+    </view>
+  </view>
+</view>
