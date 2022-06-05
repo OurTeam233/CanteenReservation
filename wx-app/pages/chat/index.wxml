@@ -4,7 +4,7 @@
 </view>
 <view>
   <view class="chat-content-list" wx:for="{{person}}" wx:for-item="item"  bindtap="changeToChatinfo" data-studentId="{{item.studentId}}" data-image="{{item.student.avatarUrl}}" data-nike="{{item.student.nickname}}">
-    <image class="chat-content-list-img" src="{{item.student.avatarUrl}}"></image>
+    <image class="chat-content-list-img" data-studentId="{{item.studentId}}" src="{{item.student.avatarUrl}}" bindtap="toPostingRecord"></image>
     <view class="chat-content-list-info1">
       <view class="chat-content-list-info1-nike">{{item.student.nickname}}</view>
       <view class="chat-content-list-info1-words">{{item.lastMessage}}</view>

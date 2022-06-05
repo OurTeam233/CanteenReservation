@@ -29,6 +29,16 @@ Page({
       url: '../chatInfo/index?studentId=' + studentId+'&image='+image+'&nike='+nick,
     })
   },
+
+  //跳转到该用户的个人主页
+  toPostingRecord(e){
+    let studentId = e.currentTarget.dataset.studentid;
+    wx.navigateTo({
+      url: '../../pages/minePparticulars/index?studentId=' + studentId,
+
+    })
+  },
+
   // 获取所有消息信息，头像，昵称，时间，未读信息量，最近消息,用户id
   getInfo() {
     request({

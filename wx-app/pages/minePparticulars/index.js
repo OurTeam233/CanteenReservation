@@ -27,52 +27,24 @@ Page({
     // 发帖数据
     postList: [],
     //二手数据
-    usedList: [
-      {
-        id: "1",
-        name: "周边卫衣",
-        description: "七海鲨鱼卫衣，L码全套带徽章，没有双十一价买的，觉得贵别买",
-        price: "354",
-        pictures: [
-          'https://gd4.alicdn.com/imgextra/i4/2210965653000/O1CN01TBJ5FM1Y22utZ8KyJ_!!2210965653000.jpg',
-          'http://photo.weitianxia.cn/uploadhtml5_2021-03-02_603db2645fabf.png',
-          'http://photo.weitianxia.cn/uploadhtml5_2021-03-02_603db299a192d.png',
-          'http://photo.weitianxia.cn/uploadhtml5_2021-03-02_603db2bd3203b.png',
-          'http://photo.weitianxia.cn/uploadhtml5_2021-03-02_603db2d88939a.png',
-        ],
-      },
-      {
-        id: "2",
-        name: "周边卫衣",
-        description: "七海鲨鱼卫衣，L码全套带徽章，没有双十一价买的，觉得贵别买",
-        price: "354",
-        pictures: [
-          'https://gd4.alicdn.com/imgextra/i4/2210965653000/O1CN01TBJ5FM1Y22utZ8KyJ_!!2210965653000.jpg',
-          'http://photo.weitianxia.cn/uploadhtml5_2021-03-02_603db2645fabf.png',
-          'http://photo.weitianxia.cn/uploadhtml5_2021-03-02_603db299a192d.png',
-          'http://photo.weitianxia.cn/uploadhtml5_2021-03-02_603db2bd3203b.png',
-          'http://photo.weitianxia.cn/uploadhtml5_2021-03-02_603db2d88939a.png',
-        ],
-      },
-    ],
-    //相亲数据
-    miai: {},
-    
-    
+    usedList: [],
 
-    // miai中的数据
-    backgroundImage: [
-      '../../image/information/women3.webp',
-      '../../image/information/women.webp',
-      '../../image/information/women2.webp'
-    ],
+    //相亲轮播图设置
     indicatorDots: true,
     vertical: true,
     autoplay: false,
     interval: 2000,
     duration: 2000,
-    time: '2020.2.7',
+    
+    
 
+    // 相亲中的数据
+    backgroundImage: [
+      '../../image/information/women3.webp',
+      '../../image/information/women.webp',
+      '../../image/information/women2.webp'
+    ],
+    haveMiai: false,
     person: {
       name: '海的味道我知道',
       age: '21',
@@ -82,7 +54,7 @@ Page({
       address: '江苏南通',
       type: '可爱',
       manifesto: '我能享受平淡，但我也能够经得起风浪',
-      hobby:['钢琴','写作业'],
+      hobby:'吃饭',
     },
     person1: {
       age: '21~24',
@@ -129,6 +101,8 @@ Page({
     this.getStudentPosts();
     //查看二手
     this.getStudentUseds();
+    //查看相亲
+    this.getStudentMiai();
     
   },
 
@@ -268,6 +242,93 @@ Page({
         _this.setData({
           usedList
         });
+      },
+      error: (res) => {
+
+      }
+    })
+  },
+
+  //获取特定用户的相亲
+  getStudentMiai(){
+    let _this = this;
+    let studentId = this.data.thisPageStudentId;
+    let token = wx.getStorageSync('token');
+    wx.request({
+      url: 'http://175.178.216.63:8888/CanteenWeb/Post/Select/' + studentId + '/2',
+      header: {token},
+      method: "GET",
+      success: (res) => {
+        //返回的结果数组
+        let resList = res.data.data[0];
+        console.log(resList)
+        let backgroundImage = [];
+        resList.pictureList.forEach((item) => {
+          backgroundImage.push(item.pictureUrl)
+        })
+
+        //自己的信息
+        let name = this.data.username;
+        let address = resList.postDetail.myAddress;
+        let manifesto = resList.postDetail.myDeclaration;
+        let hobby = resList.postDetail.myHobby;
+        let myGender = '';
+        if(resList.postDetail.myGender == 1) {
+          myGender = '男';
+        } else {
+          myGender = '女';
+        }
+
+        //理想型的信息
+        let oGender = '';
+        if(resList.postDetail.otherGender == 1) {
+          oGender = '男';
+        } else {
+          oGender = '女';
+        }
+        //计算年龄区间
+        let oAge = '';
+        let startAge = resList.postDetail.otherStartAge;
+        let endAge = resList.postDetail.otherEndAge;
+        if(startAge == 0){
+          oAge = endAge + '以下';
+        } else if(endAge == 100){
+          oAge = startAge + '以上';
+        } else {
+          oAge = startAge + '~' + endAge;
+        }
+        //计算身高区间
+        let oHeight = '';
+        let startHeight = resList.postDetail.otherStartHeight;
+        let endHeight = resList.postDetail.otherEndHeight;
+        if(startHeight == 0){
+          oHeight = endHeight + 'cm以下';
+        } else if(endHeight == 200){
+          oHeight = startHeight + 'cm以上';
+        } else {
+          oHeight = startHeight + '~' + endHeight + 'cm';
+        }
+        
+
+        _this.setData({
+          backgroundImage,
+          'person.name': name, 
+          'person.address': address,
+          'person.manifesto': manifesto,
+          'person.hobby': hobby,
+          'person.height': resList.postDetail.myHeight,
+          'person.weight': resList.postDetail.myWeight,
+          'person.age': resList.postDetail.myAge,
+          'person.sex': myGender,
+
+          'person1.condition': resList.postDetail.other,
+          'person1.age': oAge,
+          'person1.sex': oGender,
+          'person1.height': oHeight,
+          
+        })
+
+        console.log(this.data.person)
       },
       error: (res) => {
 
