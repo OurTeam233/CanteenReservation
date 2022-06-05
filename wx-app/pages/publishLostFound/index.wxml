@@ -4,86 +4,47 @@
 
   <view class="text">物品名称：</view>
   <van-cell-group>
-    <van-field
-      value="{{ value }}"
-      placeholder="请输入物品名称"
-      border="{{ false }}"
-      bind:change="onChange"
-    />
+    <van-field value="{{ value }}" placeholder="请输入物品名称" border="{{ false }}" bind:change="onChange" />
   </van-cell-group>
 
-  
-  
+
+
   <view bind:tap="showPopup">
     <view class="text">发生时间：</view>
     <view class="time">{{year}} 年 {{month}} 月 {{day}} 日</view>
   </view>
-  <van-popup
-    show="{{ show }}"
-    round
-    position="bottom"
-    custom-style="height: 50%"
-    bind:close="onClose"
-  >
-    <van-datetime-picker
-      type="date"
-      value="{{ currentDate }}"
-      bind:input="onInput"
-      max-date="{{ maxtDate }}"
-      min-date="{{ minDate }}"
-      formatter="{{ formatter }}"
-      bind:confirm="confirm"
-    />
+  <van-popup show="{{ show }}" round position="bottom" custom-style="height: 50%" bind:close="onClose">
+    <van-datetime-picker type="date" value="{{ currentDate }}" bind:input="onInput" max-date="{{ maxtDate }}" min-date="{{ minDate }}" formatter="{{ formatter }}" bind:confirm="confirm" />
   </van-popup>
 
-  
+
   <view class="text">联系方式：</view>
   <van-cell-group>
-    <van-field
-      value="{{ value }}"
-      placeholder="请输入联系电话"
-      border="{{ false }}"
-      bind:change="phone"
-    />
+    <van-field value="{{ value }}" placeholder="请输入联系电话" border="{{ false }}" bind:change="phone" />
   </van-cell-group>
   <!-- 地址描述 -->
   <view class="text">地址：</view>
   <van-cell-group>
-    <van-field
-        value="{{ address }}"
-        type="textarea"
-        placeholder="请输入地址"
-        autosize
-        border="{{ false }}"
-        bind:input="thingsAddress"
-    />
+    <van-field value="{{ address }}" type="textarea" placeholder="请输入地址" autosize border="{{ false }}" bind:input="thingsAddress" />
   </van-cell-group>
   <!-- 物品描述 -->
   <view class="text">物品描述：</view>
   <van-cell-group>
-    <van-field
-      value="{{ message }}"
-      type="textarea"
-      placeholder="请输入物品描述(300字以内)"
-      autosize
-      border="{{ false }}"
-      bind:input="thingsDesc"
-    />
+    <van-field value="{{ message }}" type="textarea" placeholder="请输入物品描述(300字以内)" autosize border="{{ false }}" bind:input="thingsDesc" />
   </van-cell-group>
-  <!-- 物品图片 -->
+  <!-- 帖子图片 -->
   <view class="text">物品图片：</view>
   <view class="file">
-  <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" deletable  max-count="9" bind:delete="deleteImg"/>
+
+    <view class="fileimage" wx:for="{{imageObject}}" wx:for-itme="item">
+      <image src="{{item.imageURL}}" mode="aspectFit"></image>
+    </view>
+    <button class="submitImage" bindtap="afterRead">+</button>
   </view>
   <!-- 提交 -->
   <view class="buttom">
     <van-button type="danger" size="large" bind:click='all'>提交</van-button>
   </view>
-  
+
 
 </view>
-
-
-
-
-

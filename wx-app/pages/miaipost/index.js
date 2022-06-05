@@ -1,5 +1,8 @@
 // pages/miaipost/index.js
 var util = require('../../utils/util');
+const {
+  uploadImage
+} = require('../../utils/uploadImage.js')
 import {
   request
 } from '../../utils/request'
@@ -30,6 +33,9 @@ Page({
     otherHeightMin: 170,
     otherHeightMax: 180,
     otherText: '',
+
+     // 图片
+     imageObject: []
   },
 
   /**
@@ -243,6 +249,14 @@ Page({
   //提交
   submit() {
     var flag 
+     //获取图片
+     let imageObject=this.data.imageObject
+     let fileList = []
+     imageObject.forEach(item => {
+       fileList.push(item.imageURL)
+     });
+     
+     console.log(fileList)
     //整合own数据信息
     var detail = {}
     // detail.id = wx.getStorageSync('studentId')
@@ -280,7 +294,8 @@ Page({
         url: 'http://175.178.216.63:8888/CanteenWeb/Post/miai',
         data: {
           type,
-          detail
+          detail,
+          fileList
         },
         header: {
           token
@@ -288,9 +303,14 @@ Page({
         method: "POST",
         success: (result) => {
           console.log(result)
-          wx.navigateTo({
-            url: '../minePparticulars/index',
-          })
+          wx.navigateBack({
+            delta: 1,//上一个页面
+            success: () => {
+                //调用前一个页面的方法takePhoto()。
+                prevPage.takePhoto()
+            }
+        });
+
         },
         error: (result) => {
           console.log(result)
@@ -314,7 +334,42 @@ Page({
 
 
 
-  }
+  },
+
+
+    //使用七牛云上传数据
+    uploadToQn(event) {
+      const {
+        file
+      } = event.detail;
+      var that = this
+      let imageUrl = uploadImage(that, file)
+      console.log(imageUrl)
+    },
+     // 上传图片文件
+  afterRead(event) {
+    let that = this
+    let imageObject = that.data.imageObject
+    let i = 0;
+    imageObject.forEach(item => {
+      i++
+    });
+    if (i < 9) {
+      uploadImage(that)
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '最多添加9张',
+        success: function (res) {
+          if (res.confirm) { //这里是点击了确定以后
+            console.log('用户点击确定')
+          } else { //这里是点击了取消以后
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }
+  },
 
 
 })

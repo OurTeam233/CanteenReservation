@@ -1,6 +1,9 @@
 import{
   request
 }from '../../utils/request'
+const {
+  uploadImage
+} = require('../../utils/uploadImage.js')
 Page({
   data: {
     show: false,
@@ -15,7 +18,7 @@ Page({
     day: new Date().getDate(),
     currentChoose:'',
     checked: true,
-    type:'',//帖子类型
+    types:5,//帖子类型
     description:'',//物品描述
     itemName:'',//物品名称
     phone:'',//联系电话
@@ -31,11 +34,18 @@ Page({
       }
       return value;
     },
+
+
+     // 图片
+     imageObject: []
   },
+
+
   onLoad(e){
-    this.setData({
-      type:e.currentPage
-    })
+    console.log(e)
+    // this.setData({
+    //   types:e.currentPage
+    // })
   },
   showPopup() {
     this.setData({ show: true });
@@ -141,24 +151,31 @@ Page({
   },
   //整合数据
   all(){
+    console.log(this.data.types)
+     //获取图片
+     let imageObject=this.data.imageObject
+     let pictureList = []
+     imageObject.forEach(item => {
+       let v = {}
+       v.url = item.imageURL
+      pictureList.push(v)
+     });
+     
+     console.log
     const invitation = new Object();
-    invitation.pictureList = []
-    this.data.fileList.forEach(item => {
-      let obj = {}
-      obj.pictureUrl = item.url
-      invitation.pictureList.push(obj)
-    })
+    invitation.pictureList = pictureList//图片
     invitation.itemName= this.data.itemName
     invitation.description = this.data.description
     invitation.phone=this.data.phone
-    invitation.types = this.data.type
+    invitation.types = this.data.types
     invitation.startDate = this.data.currentDate
     invitation.address = this.data.address
+    invitation.wechat = '**********'
     console.log(invitation)
     const token = wx.getStorageSync('token')
     //发送请求
     wx.request({
-      url: 'https://121.43.56.241/CanteenWeb/LostFound/Insert',
+      url: 'http://175.178.216.63:8888/CanteenWeb/LostFound/Insert',
       data:{
         post: invitation
       },
@@ -172,11 +189,13 @@ Page({
             icon: 'success',
             duration: 1000
           })
-          setTimeout(() => {
-            wx.navigateBack({
-              delta: 1
-            })
-          }, 2000)
+          wx.navigateBack({
+            delta: 1,//上一个页面
+            success: () => {
+                //调用前一个页面的方法takePhoto()。
+                prevPage.takePhoto()
+            }
+        });
         } else {
           wx.showToast({
             title: '发布失败',
@@ -188,5 +207,41 @@ Page({
     })
     //跳转页面
   },
+
+
+    //使用七牛云上传数据
+    uploadToQn(event) {
+      const {
+        file
+      } = event.detail;
+      var that = this
+      let imageUrl = uploadImage(that, file)
+      console.log(imageUrl)
+    },
+     // 上传图片文件
+  afterRead(event) {
+    let that = this
+    let imageObject = that.data.imageObject
+    let i = 0;
+    imageObject.forEach(item => {
+      i++
+    });
+    if (i < 9) {
+      uploadImage(that)
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '最多添加9张',
+        success: function (res) {
+          if (res.confirm) { //这里是点击了确定以后
+            console.log('用户点击确定')
+          } else { //这里是点击了取消以后
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }
+  },
+
 
 });

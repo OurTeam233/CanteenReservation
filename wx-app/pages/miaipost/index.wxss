@@ -18,7 +18,7 @@
 }
 
 .Nikename {
-  margin-top: 20rpx;
+  margin-top: 10rpx;
   font-size: 28rpx;
 }
 
@@ -31,7 +31,7 @@
 .view_contain {
   display: flex;
   height: auto;
-  margin: 20rpx;
+  margin-top: 20rpx;
   /* border: 1rpx solid rgb(235, 233, 233); */
   /* box-shadow: 1rpx 1rpx 20rpx rgb(224, 224, 224); */
   border-radius: 30rpx;
@@ -41,7 +41,7 @@
 /* uploader */
 .ui_uploader_cell {
   width: 100%;
-  padding: 40rpx;
+  /* padding: 40rpx; */
   box-sizing: border-box;
 }
 
@@ -159,4 +159,24 @@
 }
 .heightInput{
   margin-top: 30rpx;
+}
+
+.file {
+  display: flex;
+  height: 450rpx;
+  margin: 0 20rpx;
+  flex-wrap: wrap;
+}
+.submitImage{
+  margin: 0;
+  width: 160rpx;
+  height: 160rpx;
+  font-size: 32px;
+  color: #C0C0C0;
+  align-items: center;
+}
+.fileimage>image{
+  width: 160rpx;
+  height: 160rpx;
+  margin-left: 10rpx;
 }

@@ -188,3 +188,23 @@
   letter-spacing:6rpx;
   /* height: auto; */
 }
+
+.file {
+  display: flex;
+  height: 450rpx;
+  margin: 0 20rpx;
+  flex-wrap: wrap;
+}
+.submitImage{
+  margin: 0;
+  width: 160rpx;
+  height: 160rpx;
+  font-size: 32px;
+  color: #C0C0C0;
+  align-items: center;
+}
+.fileimage>image{
+  width: 160rpx;
+  height: 160rpx;
+  margin-left: 10rpx;
+}

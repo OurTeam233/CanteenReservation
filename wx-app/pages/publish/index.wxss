@@ -108,7 +108,10 @@ page {
 }
 
 .file {
+  display: flex;
+  height: 450rpx;
   margin: 0 30rpx;
+  flex-wrap: wrap;
 }
 
 .button-wrapper {
@@ -118,4 +121,17 @@ page {
   margin-top: 10rpx;
   font-size: 20rpx;
   color: #C0C0C0;
+}
+.submitImage{
+  margin: 0;
+  width: 160rpx;
+  height: 160rpx;
+  font-size: 32px;
+  color: #C0C0C0;
+  align-items: center;
+}
+.fileimage>image{
+  width: 160rpx;
+  height: 160rpx;
+  margin-left: 10rpx;
 }
