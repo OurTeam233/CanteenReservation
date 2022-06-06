@@ -182,7 +182,10 @@ Page({
         resList.forEach(function(item, index){
           let {avatarUrl, id, nickname} = item.student;
           let content = item.content;
-          let pictureList = item.pictureList;//点赞还没有写
+          let pictureList = [];
+          item.pictureList.forEach((i) => {
+            pictureList.push(i.pictureUrl)
+          })
           let postId = item.id;
           let time = item.time;
           let like = item.like;
