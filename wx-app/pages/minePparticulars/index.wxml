@@ -32,7 +32,7 @@
 
 
   <view class="content">
-    <van-tabs sticky swipeable  nav-class="title-tab" color="#f85119" title-active-color="#f85119">
+    <van-tabs sticky swipeable  nav-class="title-tab" color="#f85119" title-active-color="#f85119" active="{{ item }}">
 
 
       <!-- 以下为发帖页面 -->

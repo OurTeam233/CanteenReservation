@@ -93,6 +93,22 @@ Page({
       thisPageStudentId: e.studentId
     });
 
+    //从社区进入定位到特定的分类
+    if(e.type == "2") {
+      this.setData({
+        item: 2
+      })
+    } else if(e.type == "1"){
+      this.setData({
+        item: 0
+      })
+    } else if(e.type == "3"){
+      this.setData({
+        item: 1
+      })
+    }
+    // console.log(e)
+
     //查看是否关注了该用户
     this.isAttention();
 
