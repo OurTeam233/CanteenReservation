@@ -158,41 +158,51 @@ page {
 
 .content-miai-info-1,.content-miai-info-4{
   width: 345rpx;
-  height: 560rpx;
+  /* height: 560rpx; */
+  height: auto;
   margin-bottom: 20rpx;
   box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
   border-radius: 2%;
+  padding-bottom: 20rpx;
 }
 
 .content-miai-info-2,.content-miai-info-5 {
   width: 345rpx;
-  height: 540rpx;
+  /* height: 540rpx; */
+  height: auto;
   margin-bottom: 20rpx;
   box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
   border-radius: 2%;
+  padding-bottom: 20rpx;
 }
 
 .content-miai-info-3,.content-miai-info-6 {
   width: 345rpx;
-  height: 520rpx;
+  /* height: 520rpx; */
+  height: auto;
   margin-bottom: 20rpx;
   box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
   border-radius: 2%;
+  padding-bottom: 20rpx;
 }
 
 .content-miai-info-1>image,.content-miai-info-4>image {
   width: 345rpx;
-  height: 460rpx;
+  /* height: 460rpx; */
+  max-height: 500px;
+  /* height: auto; */
 }
 
 .content-miai-info-2>image,.content-miai-info-5>image {
   width: 345rpx;
   height: 400rpx;
+  /* height: auto; */
 }
 
 .content-miai-info-3>image,.content-miai-info-6>image {
   width: 345rpx;
   height: 380rpx;
+  /* height: auto; */
 }
 
 .content-miai-info-1,

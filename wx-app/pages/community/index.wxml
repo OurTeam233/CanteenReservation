@@ -17,7 +17,7 @@
         <view class="content-miai-left">
           <view wx:for="{{miaiLeftList}}" wx:for-item='item' wx:for-index='id'>
             <view class="{{id%3==0?'content-miai-info-1':(id%3==1?'content-miai-info-2':'content-miai-info-3')}}" bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
-              <image src="{{item.image[0]}}"></image>
+              <image src="{{item.image[0]}}" mode="aspectFill"></image>
               <view wx:if="{{item.sex==1}}">昵称：{{item.nikename}}   --性别：男</view>
               <view wx:if="{{item.sex==2}}">昵称：{{item.nikename}}   --性别：女</view>
               <view>年龄：{{item.age}}</view>
@@ -31,7 +31,7 @@
         <view class="content-miai-right">
           <view wx:for="{{miaiRightList}}" wx:for-item='item' wx:for-index='id'>
             <view class="{{id%3==2?'content-miai-info-1':(id%3==0?'content-miai-info-2':'content-miai-info-3')}}" bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
-              <image src="{{item.image}}"></image>
+              <image src="{{item.image}}" mode="aspectFill"></image>
               <view wx:if="{{item.sex==1}}">昵称：{{item.nikename}}   --性别：男</view>
               <view wx:if="{{item.sex==2}}">昵称：{{item.nikename}}   --性别：女</view>
               <view>年龄：{{item.age}}岁</view>
@@ -51,7 +51,7 @@
         <view class="content-miai-left">
           <view wx:for="{{goodsLeftList}}" wx:for-item='item' wx:for-index='id'>
             <view class="{{id%3==0?'content-miai-info-5':(id%3==1?'content-miai-info-4':'content-miai-info-6')}}" bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
-              <image src="{{item.image}}"></image>
+              <image src="{{item.image}}" mode="aspectFill"></image>
               <view class="goods">{{item.name}}--{{item.description}}</view>
               <view class="money">￥{{item.price}}</view>
             </view>
@@ -63,7 +63,7 @@
         <view class="content-miai-left">
           <view wx:for="{{goodsRightList}}" wx:for-item='item' wx:for-index='id'>
             <view class="{{id%3==2?'content-miai-info-4':(id%3==0?'content-miai-info-6':'content-miai-info-5')}}" bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
-              <image src="{{item.image}}"></image>
+              <image src="{{item.image}}" mode="aspectFill"></image>
               <view class="goods">{{item.name}}--{{item.description}}</view>
               <view class="money">￥{{item.price}}</view>
             </view>
