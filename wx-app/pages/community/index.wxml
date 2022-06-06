@@ -18,7 +18,8 @@
           <view wx:for="{{miaiLeftList}}" wx:for-item='item' wx:for-index='id'>
             <view class="{{id%3==0?'content-miai-info-1':(id%3==1?'content-miai-info-2':'content-miai-info-3')}}" bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
               <image src="{{item.image[0]}}"></image>
-              <view>姓名：{{item.nikename}} 性别：{{item.sex}} </view>
+              <view wx:if="{{item.sex==1}}">昵称：{{item.nikename}}   --性别：男</view>
+              <view wx:if="{{item.sex==2}}">昵称：{{item.nikename}}   --性别：女</view>
               <view>年龄：{{item.age}}</view>
               <view>身高：{{item.height}}cm</view>
             </view>
@@ -31,9 +32,10 @@
           <view wx:for="{{miaiRightList}}" wx:for-item='item' wx:for-index='id'>
             <view class="{{id%3==2?'content-miai-info-1':(id%3==0?'content-miai-info-2':'content-miai-info-3')}}" bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
               <image src="{{item.image}}"></image>
-              <view>姓名：{{item.nikename}} 性别：{{item.sex}}</view>
-              <view>年龄：{{item.age}}</view>
-              <view>身高：{{item.height}}g</view>
+              <view wx:if="{{item.sex==1}}">昵称：{{item.nikename}}   --性别：男</view>
+              <view wx:if="{{item.sex==2}}">昵称：{{item.nikename}}   --性别：女</view>
+              <view>年龄：{{item.age}}岁</view>
+              <view>身高：{{item.height}}cm</view>
             </view>
           </view>
         </view>
@@ -62,8 +64,8 @@
           <view wx:for="{{goodsRightList}}" wx:for-item='item' wx:for-index='id'>
             <view class="{{id%3==2?'content-miai-info-4':(id%3==0?'content-miai-info-6':'content-miai-info-5')}}" bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
               <image src="{{item.image}}"></image>
-              <view class="goods">{{item.nikename}}</view>
-              <view class="money">￥{{item.age}}</view>
+              <view class="goods">{{item.name}}--{{item.description}}</view>
+              <view class="money">￥{{item.price}}</view>
             </view>
           </view>
         </view>

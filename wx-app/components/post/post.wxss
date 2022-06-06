@@ -107,7 +107,7 @@
 
 .one-image image {
   width: 620rpx;
-  height: 400rpx;
+  height: 500rpx;
   margin-top: 26rpx;
   border-radius: 14rpx;
   box-shadow: 1prx 1rpx 10rpx rgb(41, 41, 40);

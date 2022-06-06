@@ -140,11 +140,9 @@ Page({
             icon: 'success',
             duration: 2000
           })
-          setTimeout(() => {
-            wx.navigateTo({
-              url: '../community',
-            })
-          }, 2000)
+          wx.navigateBack({
+            delta: 1
+          })
         } else {
           wx.showToast({
             title: '发布失败',
