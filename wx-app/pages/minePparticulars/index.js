@@ -52,7 +52,6 @@ Page({
       height: '167cm',
       weight: '56kg',
       address: '江苏南通',
-      type: '可爱',
       manifesto: '我能享受平淡，但我也能够经得起风浪',
       hobby:'吃饭',
     },
@@ -259,74 +258,85 @@ Page({
       header: {token},
       method: "GET",
       success: (res) => {
-        //返回的结果数组
-        let resList = res.data.data[0];
-        console.log(resList)
-        let backgroundImage = [];
-        resList.pictureList.forEach((item) => {
-          backgroundImage.push(item.pictureUrl)
-        })
+        //返回的结果数组中有数据就进行更新，没有数据就不处理
+        if(res.data.data.length != 0) {
+          this.setData({
+            haveMiai: true
+          })
+          let resList = res.data.data[0];
+          console.log(resList)
 
-        //自己的信息
-        let name = this.data.username;
-        let address = resList.postDetail.myAddress;
-        let manifesto = resList.postDetail.myDeclaration;
-        let hobby = resList.postDetail.myHobby;
-        let myGender = '';
-        if(resList.postDetail.myGender == 1) {
-          myGender = '男';
-        } else {
-          myGender = '女';
-        }
-
-        //理想型的信息
-        let oGender = '';
-        if(resList.postDetail.otherGender == 1) {
-          oGender = '男';
-        } else {
-          oGender = '女';
-        }
-        //计算年龄区间
-        let oAge = '';
-        let startAge = resList.postDetail.otherStartAge;
-        let endAge = resList.postDetail.otherEndAge;
-        if(startAge == 0){
-          oAge = endAge + '以下';
-        } else if(endAge == 100){
-          oAge = startAge + '以上';
-        } else {
-          oAge = startAge + '~' + endAge;
-        }
-        //计算身高区间
-        let oHeight = '';
-        let startHeight = resList.postDetail.otherStartHeight;
-        let endHeight = resList.postDetail.otherEndHeight;
-        if(startHeight == 0){
-          oHeight = endHeight + 'cm以下';
-        } else if(endHeight == 200){
-          oHeight = startHeight + 'cm以上';
-        } else {
-          oHeight = startHeight + '~' + endHeight + 'cm';
-        }
-        
-
-        _this.setData({
-          backgroundImage,
-          'person.name': name, 
-          'person.address': address,
-          'person.manifesto': manifesto,
-          'person.hobby': hobby,
-          'person.height': resList.postDetail.myHeight,
-          'person.weight': resList.postDetail.myWeight,
-          'person.age': resList.postDetail.myAge,
-          'person.sex': myGender,
-
-          'person1.condition': resList.postDetail.other,
-          'person1.age': oAge,
-          'person1.sex': oGender,
-          'person1.height': oHeight,
+          let backgroundImage = [];
+          if(resList.pictureList.length != 0){
+            resList.pictureList.forEach((item) => {
+              backgroundImage.push(item.pictureUrl)
+            })
+          }
           
-        })
+
+          //自己的信息
+          let name = this.data.username;
+          let address = resList.postDetail.myAddress;
+          let manifesto = resList.postDetail.myDeclaration;
+          let hobby = resList.postDetail.myHobby;
+          let myGender = '';
+          if(resList.postDetail.myGender == 1) {
+            myGender = '男';
+          } else {
+            myGender = '女';
+          }
+
+          //理想型的信息
+          let oGender = '';
+          if(resList.postDetail.otherGender == 1) {
+            oGender = '男';
+          } else {
+            oGender = '女';
+          }
+          //计算年龄区间
+          let oAge = '';
+          let startAge = resList.postDetail.otherStartAge;
+          let endAge = resList.postDetail.otherEndAge;
+          if(startAge == 0){
+            oAge = endAge + '以下';
+          } else if(endAge == 100){
+            oAge = startAge + '以上';
+          } else {
+            oAge = startAge + '~' + endAge;
+          }
+          //计算身高区间
+          let oHeight = '';
+          let startHeight = resList.postDetail.otherStartHeight;
+          let endHeight = resList.postDetail.otherEndHeight;
+          if(startHeight == 0){
+            oHeight = endHeight + 'cm以下';
+          } else if(endHeight == 200){
+            oHeight = startHeight + 'cm以上';
+          } else {
+            oHeight = startHeight + '~' + endHeight + 'cm';
+          }
+          
+
+          _this.setData({
+            backgroundImage,
+            'person.name': name, 
+            'person.address': address,
+            'person.manifesto': manifesto,
+            'person.hobby': hobby,
+            'person.height': resList.postDetail.myHeight,
+            'person.weight': resList.postDetail.myWeight,
+            'person.age': resList.postDetail.myAge,
+            'person.sex': myGender,
+
+            'person1.condition': resList.postDetail.other,
+            'person1.age': oAge,
+            'person1.sex': oGender,
+            'person1.height': oHeight,
+            
+          })
+        }
+
+        
 
         console.log(this.data.person)
       },
