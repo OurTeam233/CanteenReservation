@@ -31,6 +31,8 @@ Page({
     miaiLeftList: [], // 相亲左边数据
     miaiRightList: [], // 相亲右边数据
 
+    x:5,
+
   },
   query: {},
   leftHeight: 0,
@@ -276,11 +278,14 @@ Page({
 
           // 二手
           if (type === 3) {
-            console.log(result)
+            
+            // console.log(result)
             post.studentId = v.student.id //学生id
             post.id = v.used.id //帖子id
             post.name = v.used.name//物品名字
             post.description=v.used.description//描述
+            post.length = v.used.description.length+v.used.name.length//字符长度
+            // console.log(post.length)
             post.price = v.used.price
             post.avatarUrl = v.student.avatarUrl //头像
 
@@ -311,33 +316,6 @@ Page({
       },
     })
   },
-
-  // // //查询自己的帖子 
-  // requestMyPost() {
-  //   request({
-  //     url: '/Post/Select/My'
-  //   }).then(result => {
-  //     // console.log(result)
-  //     let list = []
-  //     result.forEach(v => {
-  //       ``
-  //       let post = {}
-  //       post.id = v.id
-  //       post.touxiang = v.student.avatarUrl
-  //       post.nicheng = v.student.nickName
-  //       post.shijian = formatTime(new Date(v.time))
-  //       post.neirong = v.content
-  //       post.tupian = []
-  //       v.pictureList.forEach(p => {
-  //         post.tupian.push(p.pictureUrl)
-  //       })
-  //       list.push(post)
-  //     })
-  //     this.setData({
-  //       list
-  //     })
-  //   })
-  // },
 
   // //点击展示详情，进行页面跳转
   onClickMiai(e) {
@@ -385,4 +363,6 @@ Page({
       })
     })
   }
+
+  
 })

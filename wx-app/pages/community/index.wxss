@@ -156,53 +156,61 @@ page {
   border-radius: 2%; */
 }
 
-.content-miai-info-1,.content-miai-info-4{
+.content-miai-info-1,
+.content-miai-info-4 {
   width: 345rpx;
   /* height: 560rpx; */
-  height: auto;
+  max-height: 560px;
   margin-bottom: 20rpx;
   box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
   border-radius: 2%;
   padding-bottom: 20rpx;
 }
 
-.content-miai-info-2,.content-miai-info-5 {
+.content-miai-info-2,
+.content-miai-info-5 {
   width: 345rpx;
   /* height: 540rpx; */
-  height: auto;
+  /* height: auto; */
+  max-height: 600px;
   margin-bottom: 20rpx;
   box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
   border-radius: 2%;
   padding-bottom: 20rpx;
 }
 
-.content-miai-info-3,.content-miai-info-6 {
+.content-miai-info-3,
+.content-miai-info-6 {
   width: 345rpx;
   /* height: 520rpx; */
-  height: auto;
+  /* height: auto; */
+  max-height: 400px;
   margin-bottom: 20rpx;
   box-shadow: 1rpx 1rpx 10rpx rgb(218, 216, 216);
   border-radius: 2%;
   padding-bottom: 20rpx;
 }
 
-.content-miai-info-1>image,.content-miai-info-4>image {
+.content-miai-info-1>image,
+.content-miai-info-4>image {
   width: 345rpx;
-  /* height: 460rpx; */
-  max-height: 500px;
+  height: 460rpx;
+  /* max-height: 540px; */
+}
+
+.content-miai-info-2>image,
+.content-miai-info-5>image {
+  width: 345rpx;
+  height: 540rpx;
+  /* max-height: 540px; */
   /* height: auto; */
 }
 
-.content-miai-info-2>image,.content-miai-info-5>image {
+.content-miai-info-3>image,
+.content-miai-info-6>image {
   width: 345rpx;
-  height: 400rpx;
-  /* height: auto; */
-}
-
-.content-miai-info-3>image,.content-miai-info-6>image {
-  width: 345rpx;
-  height: 380rpx;
-  /* height: auto; */
+  /* max-height: 580px; */
+  height: 300rpx;
 }
 
 .content-miai-info-1,
@@ -219,11 +227,25 @@ page {
 }
 
 .goods {
-  font-size: 34rpx;
+  font-size: 30rpx;
   color: rgb(33, 34, 3);
   margin-left: 20rpx;
   margin-top: 10rpx;
   letter-spacing: 2px;
+  padding-top: 5rpx;
+}
+
+.goods1 {
+  width:340rpx ;
+  font-size: 28rpx;
+  color: rgb(33, 34, 3);
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+  letter-spacing: 2px;
+  padding-top: 5rpx;
+  height: 80rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .money {
