@@ -89,7 +89,8 @@ Page({
       },
       method: "POST",
       success: (res) => {
-        res.data.forEach(obj => {
+        console.log(res.data.data)
+        res.data.data.forEach(obj => {
           obj.title = obj.canteen.name + obj.address
           obj.tagList = []
           obj.score = obj.score.toFixed(1)
@@ -97,7 +98,7 @@ Page({
           obj.navUrl = `../information/index?id=${obj.id}`
         })
         this.setData({
-          arrayList: res.data
+          arrayList: res.data.data
         })
         console.log(this.data.arrayList)
       },
