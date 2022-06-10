@@ -56,8 +56,8 @@
       <text class="t2">{{item.pinglunliang}}</text>
     </view>
     <view class="gg {{}}" bind:tap="tapLike" data-index="{{index}}">
-      <van-icon name="good-job-o"/>
-      <text class="t2">{{item.dianzanliang}}</text>
+      <van-icon style="{{proTags?'color: chocolate;':' '}}" name="good-job-o"/>
+      <text class="t2">{{item.likeNum}}</text>
     </view>
   </view>
 </view>

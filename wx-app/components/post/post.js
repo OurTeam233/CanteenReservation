@@ -17,6 +17,10 @@ Component({
       type: Boolean,
       value: true
     },
+    proTags: {
+      type: Boolean,
+      value: true
+    },
   },
 
   /**
@@ -51,14 +55,35 @@ Component({
         return
       }
       // 跳转到帖子详情页
-      wx.navigateTo({
-        // url: `../../pages/posts/index?postId=${1}`
-      })
+      // wx.navigateTo({
+      //   url: `../../pages/posts/index?postId=${1}`
+      // })
+      console.log(this.properties.proList);
     },
     // 点赞相关逻辑
     tapLike (event) {
-      console.log(event)
-      // TODO  点赞相关逻辑
+      // console.log(event)
+      let proList = this.properties.proList
+      let index = event.currentTarget.dataset.index
+      this.properties.tapLike=!this.properties.tapLike
+      let postId = proList[index].id
+      console.log(postId);
+      const token = wx.getStorageSync('token')
+      wx.request({
+        url: 'http://175.178.216.63:8888/CanteenWeb/Post/like?postId=' + postId,
+        header: {
+          token
+        },
+        method: "POST",
+        success: (result) => {
+          console.log(result)
+        }
+      })
+      proList[index].likeNum++
+      this.setData({
+        proList
+      })
+     console.log(proList);
     }
   }
 })

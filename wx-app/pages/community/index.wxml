@@ -129,6 +129,6 @@
 </view>
 
 <!-- 发帖按钮 -->
-<view class="publish-button" bindtap="navigateToPublish" wx:if="{{type!==6}}">
+<view class="publish-button" bindtap="navigateToPublish" wx:if="{{type!==4}}">
   <van-icon name="plus" custom-class="publish-button-icon" size="50rpx" />
 </view>

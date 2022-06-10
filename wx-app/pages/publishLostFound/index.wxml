@@ -43,7 +43,8 @@
   </view>
   <!-- 提交 -->
   <view class="buttom">
-    <van-button type="danger" size="large" bind:click='all'>提交</van-button>
+    <van-button type="danger" size="normal"  custom-class="van-button" bind:click='allOne'>寻物启示发布</van-button>
+    <van-button type="warning" size="normal"custom-class="van-button" bind:click='allTwo'>失物招领发布</van-button>
   </view>
 
 
