@@ -149,8 +149,8 @@ Page({
       fileList:fileList
     })
   },
-  //整合数据
-  all(){
+  //寻物启示发布 type = 5
+  allOne(){
     console.log(this.data.types)
      //获取图片
      let imageObject=this.data.imageObject
@@ -167,7 +167,66 @@ Page({
     invitation.itemName= this.data.itemName
     invitation.description = this.data.description
     invitation.phone=this.data.phone
-    invitation.types = this.data.types
+    invitation.types = 5
+    invitation.startDate = this.data.currentDate
+    invitation.address = this.data.address
+    invitation.wechat = '**********'
+    console.log(invitation)
+    const token = wx.getStorageSync('token')
+    //发送请求
+    wx.request({
+      url: 'http://175.178.216.63:8888/CanteenWeb/LostFound/Insert',
+      data:{
+        post: invitation
+      },
+      header:{token},
+      method: "POST",
+      success: (result) => {
+        console.log(result)
+        if (result.data.success) {
+          wx.showToast({
+            title: '发布成功',
+            icon: 'success',
+            duration: 1000
+          })
+          wx.navigateBack({
+            delta: 1,//上一个页面
+            success: () => {
+                //调用前一个页面的方法takePhoto()。
+                prevPage.takePhoto()
+            }
+        });
+        } else {
+          wx.showToast({
+            title: '发布失败',
+            icon: 'none',
+            duration: 1000
+          })
+        }
+      },
+    })
+    //跳转页面
+  },
+
+  // 失物招领   type=6
+  allTwo(){
+    console.log(this.data.types)
+     //获取图片
+     let imageObject=this.data.imageObject
+     let pictureList = []
+     imageObject.forEach(item => {
+       let v = {}
+       v.url = item.imageURL
+      pictureList.push(v)
+     });
+     
+     console.log
+    const invitation = new Object();
+    invitation.pictureList = pictureList//图片
+    invitation.itemName= this.data.itemName
+    invitation.description = this.data.description
+    invitation.phone=this.data.phone
+    invitation.types = 6
     invitation.startDate = this.data.currentDate
     invitation.address = this.data.address
     invitation.wechat = '**********'

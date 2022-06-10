@@ -241,12 +241,15 @@ Page({
 
           // 普通帖子
           if (type == 1) {
+            console.log(v)
             post.id = v.id
             post.touxiang = v.student.avatarUrl
-            post.nicheng = v.student.nickName
+            post.nicheng = v.student.nickname
             post.shijian = formatTime(new Date(v.time))
             post.neirong = v.content
             post.tupian = []
+            post.likeNum = v.likeNum
+            post.del = v.del
             v.pictureList.forEach(p => {
               post.tupian.push(p.pictureUrl)
             })
@@ -263,6 +266,8 @@ Page({
             post.height = v.postDetail.myHeight //身高
             post.avatarUrl = v.student.avatarUrl //头像
             post.image = []
+            post.likeNum = v.likeNum
+            post.del = v.del
             v.pictureList.forEach(p => {
               post.image.push(p.pictureUrl)
             })
@@ -283,7 +288,8 @@ Page({
             post.description=v.used.description//描述
             post.price = v.used.price
             post.avatarUrl = v.student.avatarUrl //头像
-
+            post.likeNum = v.likeNum
+            post.del = v.del
             post.image = []
             v.pictureList.forEach(p => {
               post.image.push(p.pictureUrl)
@@ -312,32 +318,6 @@ Page({
     })
   },
 
-  // // //查询自己的帖子 
-  // requestMyPost() {
-  //   request({
-  //     url: '/Post/Select/My'
-  //   }).then(result => {
-  //     // console.log(result)
-  //     let list = []
-  //     result.forEach(v => {
-  //       ``
-  //       let post = {}
-  //       post.id = v.id
-  //       post.touxiang = v.student.avatarUrl
-  //       post.nicheng = v.student.nickName
-  //       post.shijian = formatTime(new Date(v.time))
-  //       post.neirong = v.content
-  //       post.tupian = []
-  //       v.pictureList.forEach(p => {
-  //         post.tupian.push(p.pictureUrl)
-  //       })
-  //       list.push(post)
-  //     })
-  //     this.setData({
-  //       list
-  //     })
-  //   })
-  // },
 
   // //点击展示详情，进行页面跳转
   onClickMiai(e) {

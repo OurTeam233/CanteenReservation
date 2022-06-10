@@ -39,3 +39,7 @@
   height: 160rpx;
   margin-left: 10rpx;
 }
+.van-button{
+  margin-left: 60rpx;
+  /* margin-right: 50rpx; */
+}
