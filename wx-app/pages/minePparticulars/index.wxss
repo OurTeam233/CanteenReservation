@@ -114,8 +114,8 @@ page{
 }
 /* 个性签名 */
 .signature{
-  width: 180px;
-  height: 20px;
+  width: 100%;
+  height: 70rpx;
   font-size: small;
   color: rgb(121, 121, 121);
   margin-top: 20rpx;
@@ -184,13 +184,20 @@ page{
 
 /* 二手页面的样式 */
 /* 外框样式 */
-.container {
+.innercontainer{
   display: flex;
   box-sizing: border-box;
   margin: 15rpx 30rpx;
   border-radius: 20rpx;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-} 
+}
+
+/* 已售出的二手样式 */
+.containerDel{
+  filter: grayscale(100%);
+}
+
+
 /* 预览图图片 */
 .previewimg{
   width: 46%;
@@ -235,6 +242,15 @@ page{
   font-weight: bolder;
 }
 
+.goods-title{
+  display: flex;
+}
+
+.goods-title > image{
+  margin-left: auto;
+  width: 43rpx;
+  height: 43rpx;
+}
 
 
 
@@ -392,6 +408,17 @@ page{
   width: 400rpx;
 }
 
+
+.delMiai {
+  width: 84%;
+  height: 78rpx;
+  margin: auto;
+  font-size: 30rpx;
+  color: #ffffff;
+  border-radius: 39rpx;
+  background: #f85119;
+  margin-top: 120rpx;
+}
 
 
 

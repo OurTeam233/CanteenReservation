@@ -95,6 +95,13 @@ Page({
     })
   },
 
+  //跳转到收藏界面
+  toCollect(){
+    wx.navigateTo({
+      url: '../../pages/collecting/index',
+    })
+  },
+
   //获取未读消息
   getInfo(){
     request({

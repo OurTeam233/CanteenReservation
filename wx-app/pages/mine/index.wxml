@@ -85,7 +85,7 @@
       <image src="../../image/mine/attention.svg"></image>
       <text>关注</text>
     </view>
-    <view class="buttonBox">
+    <view class="buttonBox" bindtap="toCollect">
       <image src="../../image/mine/collect.svg"></image>
       <text>收藏</text>
     </view>
