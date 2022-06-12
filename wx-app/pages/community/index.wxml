@@ -50,11 +50,14 @@
         <!-- 左边数据开始 -->
         <view class="content-miai-left">
           <view wx:for="{{goodsLeftList}}" wx:for-item='item' wx:for-index='id'>
+          <view wx:if="{{item.del===0}}">
             <view class="{{id%3==0?'content-miai-info-5':(id%3==1?'content-miai-info-4':'content-miai-info-6')}}" bindtap="onClickMiai" data-studentId="{{item.studentId}}" data-id="{{item.id}}">
               <image src="{{item.image}}" mode="aspectFill"></image>
               <view class="goods" class="{{item.length<7?'goods':'goods1'}}">{{item.name}}--{{item.description}}</view>
               <view class="money">￥{{item.price}}</view>
             </view>
+          </view>
+            
           </view>
         </view>
         <!-- 左边数据结束-->

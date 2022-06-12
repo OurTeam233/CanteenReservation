@@ -1,5 +1,5 @@
 <!--pages/lostFoundInfo/index.wxml-->
-<view class="title">
+<view class="title">{{typeName}}
   {{itemName}}
   <text class="time">{{startDate}}</text>
 </view>

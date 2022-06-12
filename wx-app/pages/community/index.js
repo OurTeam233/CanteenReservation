@@ -261,6 +261,7 @@ Page({
           // 相亲
           if (type === 2) {
             post.id = v.postDetail.id //帖子id
+            post.del = v.del //是否删除 0未删除 1删除
             post.studentId = v.student.id //学生id
             post.nikename = v.student.nickname //昵称
             post.sex = v.postDetail.myGender //性别
@@ -283,9 +284,9 @@ Page({
 
           // 二手
           if (type === 3) {
-            
-            // console.log(result)
+            // console.log(v)
             post.studentId = v.student.id //学生id
+            post.del = v.del //是否删除 0未删除 1删除
             post.id = v.used.id //帖子id
             post.name = v.used.name//物品名字
             post.description=v.used.description//描述

@@ -13,7 +13,8 @@ Page({
     description: '',
     wechat: '',
     startDate:'',
-    address: ''
+    address: '',
+    typeName:''
   },
   lostFoundInfo: [],
   onLoad (query) {
