@@ -62,7 +62,7 @@
             <view class="goods-info">
               <view class="goods-title">
                 <view class="goods-name">{{item.name}}</view>
-                <image src="../../image/mine/sold.svg" wx:if="{{item.del == 0}}" bindtap="delUsed" data-id="{{item.id}}"></image>
+                <image src="../../image/mine/sold.svg" wx:if="{{item.del == 0 && isMyPage}}" bindtap="delUsed" data-id="{{item.id}}"></image>
               </view>
               
               <view class="goods-description">{{item.description}}</view>

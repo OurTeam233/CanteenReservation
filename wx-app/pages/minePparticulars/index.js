@@ -194,8 +194,12 @@ Page({
           item.pictureList.forEach((i) => {
             pictureList.push(i.pictureUrl)
           })
+
+          //转化orderTime
+          let dateee = new Date(item.time).toJSON();
+          dateee = new Date(+new Date(dateee) + 8 * 3600 * 1000).toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '')
           let postId = item.id;
-          let time = item.time;
+          // let time = item.time;
           let like = item.like;
           
           postList.push({
@@ -203,7 +207,7 @@ Page({
             studentId: id,
             touxiang: avatarUrl,
             nicheng: nickname,
-            shijian: time,
+            shijian: dateee,
             neirong: content,
             tupian: pictureList,
             dianzanliang: like
