@@ -14,11 +14,15 @@ Page({
     //关于这个页面的学生信息
     //这个页面的学生id
     thisPageStudentId: null,
+    //是否是我的页面
+    isMyPage:true,
     //是否了关注页面的主人
     isAtt: false,
     headImgUrl: "../../image/mine/default.png",
     username: '系统用户',
     signature: '该用户什么都没留下',
+
+    
 
 
 
@@ -39,6 +43,7 @@ Page({
     
 
     // 相亲中的数据
+    miaiId: null,
     backgroundImage: [
       '../../image/information/women3.webp',
       '../../image/information/women.webp',
@@ -89,9 +94,12 @@ Page({
 
   onLoad: function(e){
     //获取从上个页面传过来的学生id
+    console.log(e)
     this.setData({
       thisPageStudentId: e.studentId
     });
+
+    this.isMyPage();
 
     //从社区进入定位到特定的分类
     if(e.type == "2") {
@@ -186,8 +194,12 @@ Page({
           item.pictureList.forEach((i) => {
             pictureList.push(i.pictureUrl)
           })
+
+          //转化orderTime
+          let dateee = new Date(item.time).toJSON();
+          dateee = new Date(+new Date(dateee) + 8 * 3600 * 1000).toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '')
           let postId = item.id;
-          let time = item.time;
+          // let time = item.time;
           let like = item.like;
           
           postList.push({
@@ -195,7 +207,7 @@ Page({
             studentId: id,
             touxiang: avatarUrl,
             nicheng: nickname,
-            shijian: time,
+            shijian: dateee,
             neirong: content,
             tupian: pictureList,
             dianzanliang: like
@@ -238,7 +250,7 @@ Page({
           let name = item.used.name;
           let description = item.used.description;
           let price = item.used.price;
-          
+          let del = item.del;
           //如果用户没有添加商品图片
           if(pictures.length === 0){
             console.log("没有图片")
@@ -247,6 +259,7 @@ Page({
 
           usedList.push({
             id,
+            del,
             name,
             description,
             price,
@@ -292,6 +305,8 @@ Page({
             })
           }
           
+          //相亲的帖子id
+          let miaiId = resList.id;
 
           //自己的信息
           let name = this.data.username;
@@ -337,6 +352,7 @@ Page({
           
 
           _this.setData({
+            miaiId,
             backgroundImage,
             'person.name': name, 
             'person.address': address,
@@ -433,6 +449,61 @@ Page({
       })
     }
     
+  },
+
+
+  //判断这个页面是不是自己的页面
+  isMyPage(){
+    let studentId = wx.getStorageSync('studentId');
+    console.log("有吗有吗")
+    if(this.data.thisPageStudentId == studentId){
+      this.setData({
+        isMyPage: true
+      })
+    } else {
+      this.setData({
+        isMyPage: false
+      })
+    }
+  },
+
+  //删除自己的相亲
+  delMiai(){
+    let id = this.data.miaiId;
+    let token = wx.getStorageSync('token')
+    console.log(id)
+    wx.request({
+      url: 'http://175.178.216.63:8888/CanteenWeb/Post?id=' + id,
+      header: {token},
+      method: 'DELETE',
+      success: (res) => {
+        console.log("ok");
+        this.getStudentMiai();
+      },
+      error: (res) => {
+
+      }
+    })
+
+  },
+
+  //删除自己的二手
+  delUsed(e){
+    // console.log(e.target.dataset.id);
+    let id = e.target.dataset.id;
+    let token = wx.getStorageSync('token')
+    wx.request({
+      url: 'http://175.178.216.63:8888/CanteenWeb/Post?id=' + id,
+      header: {token},
+      method: 'DELETE',
+      success: (res) => {
+        console.log("ok");
+        this.getStudentUseds();
+      },
+      error: (res) => {
+
+      }
+    })
   }
 
 

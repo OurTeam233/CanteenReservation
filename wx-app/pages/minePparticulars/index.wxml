@@ -56,12 +56,18 @@
           
         </view> -->
 
-        <view class="container" wx:for="{{usedList}}" wx:key="{{id}}" wx:for-index='idx'>
-          <image class="previewimg" src="{{item.pictures[0]}}" bindtap="previewImage" data-index="{{idx}}"></image>
-          <view class="goods-info">
-            <view class="goods-name">{{item.name}}</view>
-            <view class="goods-description">{{item.description}}</view>
-            <view class="goods-value">¥ <span>{{item.price}}</span></view>
+        <view class="container" wx:for="{{usedList}}" wx:key="{{id}}" wx:for-index='idx' >
+          <view class="innercontainer {{item.del == 1 ? 'containerDel' : ''}}">
+            <image class="previewimg" src="{{item.pictures[0]}}" bindtap="previewImage" data-index="{{idx}}"></image>
+            <view class="goods-info">
+              <view class="goods-title">
+                <view class="goods-name">{{item.name}}</view>
+                <image src="../../image/mine/sold.svg" wx:if="{{item.del == 0 && isMyPage}}" bindtap="delUsed" data-id="{{item.id}}"></image>
+              </view>
+              
+              <view class="goods-description">{{item.description}}</view>
+              <view class="goods-value">¥ <span>{{item.price}}</span></view>
+            </view>
           </view>
         </view>
 
@@ -118,6 +124,8 @@
             <view class="content-miai-box-info"><image class="content-miai-box-info-image"  src="../../image/information/height.png"></image>身高:{{person1.height}}</view>
             <view class="content-miai-box-info">其他条件:{{person1.condition}}</view>
           </view>
+
+          <button class='delMiai' bindtap='delMiai' wx:if="{{isMyPage}}">删除相亲</button>
 
 
         </view>
